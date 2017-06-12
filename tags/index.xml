@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Richard Millen</title>
-    <link>https://richardmillen.com/tags/</link>
+    <link>https:///richardmillen.github.io/tags/</link>
     <description>Recent content in Tags on Richard Millen</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
     
-	<atom:link href="https://richardmillen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https:///richardmillen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
