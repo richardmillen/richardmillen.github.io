@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>C&#43;&#43;, Part 1</title>
+  <meta property="og:title" content="C&#43;&#43;, Part 1" />
+  <meta name="twitter:title" content="C&#43;&#43;, Part 1" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/cplusplus-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/cplusplus-1/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>C&#43;&#43;, Part 1</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>Explain why you might want to define your own type-specific swap function?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;Valuelike copy-assignment operator.
+&gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.
+&gt; When possible, we should write our assignment operators so that they will leave the left-hand operand in a sensible state should an exception occur.
+e.g.
+    MyType&amp; MyType::operator=(const MyType &amp;rhs) {
+        auto newp = new string(*rhs.ps);
+        delete ps;
+        ps = newp;
+        i = rhs.i;
+        return *this;
+    }&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;When we initialise a variable using =, we are asking the compiler to copy initialise the object by copying the initialiser on the right-hand side into the object being created.
+When we omit the =, we use direct initialisation.
+e.g.
+    string s1 = &ldquo;&ldquo;hello&rdquo;&ldquo;;    // copy initialisation
+    string s2(&ldquo;&ldquo;hello&rdquo;&ldquo;);     // direct initialisation
+    string s3(10, &lsquo;c&rsquo;);     // direct initialisation&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Cannot initialise a built-in array from another array.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Cannot initialise a built-in array from a vector.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;We can use an array to initialise a vector.
+e.g.
+    int arr[] = {0, 1, 2, 3, 4, 5};
+    vector<int> ivec(begin(arr), end(arr));&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;Arithmetic operators are left associative, which means operators at the same precedence group left to right:
+    ~ Because of precedence, the expression 3+4*5 is 23, not 35.
+    ~ Because of associativity, the expression 20-15-3 is 2, not 8.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;C++ library defines several exception classes used to report problems in the standard library, also intended to be used by the client. Defined in headers:-
+    <exception>
+        exception - no additional info.
+    <stdexcept>
+        exception - most general.
+        runtime_error - problem detectable only at runtime.
+        range_error - outside the meaningful range of values.
+        overflow_error - computation overflowed.
+        underflow_error - computation underflowed.
+        logic_error - error in logic of program.
+        domain_error - argument for which no result exists.
+        invalid_argument - inappropriate argument.
+        length_error - attempt to create object large than max size for type.
+        out_of_range - value outside valid range.
+    <new>
+        bad_alloc
+    <type_info>
+        bad_cast&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&ldquo;Standard library convention for managing array arguments is to pass pointers to first and one past last element.
+e.g.
+    void print(const int *beg, const int *end) {
+        while (beg != end)
+            cout &lt;&lt; *beg++ &lt;&lt; endl;
+    }&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;The form of a function that returns a pointer to an array is:
+    type (*function(parameter_list))[dimension]
+e.g.
+    int arr[10];
+    int *p1[10];
+    int (*p2)[10] = &arr;&ldquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li>What is a &ldquo;recursive_mutex&rdquo;?</li>
+<li>What is a &ldquo;timed_mutex&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;If we know the array(s) to which our function can return a pointer, we can use decltype to declare the return type.
+decltype does not automatically convert an array to its corresponding pointer type.
+The type returned by decltype is an array, to which we must add a * to indicate that arrPtr returns a pointer.
+e.g.
+    int odd[] = {1, 3, 5, 7};
+    int even[] = {0, 2, 4, 6};
+    decltype(odd) *arrPtr(int i) {
+        return (i % d) ? &amp;odd : &even;
+    }&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;The sequential containers (except array) define a member named &lsquo;assign&rsquo; that lets us assign from a different but compatible type, or assign from a subsequence of a container.
+Replaces all elements in the left-hand container with (copies of) the elements specified by its arguments.
+e.g.
+    list<string> names;
+    vector<const char*> oldstyle;
+    names = oldstyle; // error
+    names.assign(oldstyle.cbegin(), oldstyle.cend());&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;The swap operation exchanges the contents of two containers of the same type.
+With exception of arrays, guaranteed to be fast as the elements themselves are not swapped; internal data structures are.
+e.g.
+    vector<string> svec1(10);
+    vector<string> svec2(24);
+    swap(svec1, svec2);&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What is a &ldquo;recursive_timed_mutex&rdquo;?</li>
+<li></li>
+<li>What does the make_shared function do?</li>
+<li></li>
+<li>When should a parameter be marked as const?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<p>It is not necessary to explicitly close a file (std::ofstream supports RAII)</p>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<p>The compiler cannot inline a virtual function</p>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What are the differences if const is placed before or after an asterisk?</li>
+<li></li>
+<li>What are move semantics?</li>
+<li>What is perfect forwarding?</li>
+<li>What is constexpr?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<p>Go to project properties/Configuration Properties/Linker/Optimization and set References setting to Keep Unreferenced Data (/OPT:NOREF). This will keep Visual C++ linker from discarding individual symbols generated by your tests from the final executable.</p>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>How many ways are there to initialize a primitive data type in C++ and what are they?</li>
+<li>Why should you declare a destructor as virtual?</li>
+<li>What does it mean that C++ supports overloading?</li>
+<li>What are examples of overloading in C++?</li>
+<li>What is name mangling in C++ and why is it used?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li>What is an abstract base class?</li>
+<li>What is RTTI?</li>
+<li>How can you access a variable that is “hidden” by another variable of the same name?</li>
+<li>What is a namespace and how is it used.</li>
+<li>What are the differences between a class and a struct in C++, and how does this compare to C?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>What are templates? How are they used?</li>
+<li>What is a copy constructor and when is it used, especially in comparison to the equal operator.</li>
+<li>What is the difference between a “shallow” and a “deep” copy?</li>
+<li>What is the const operator and how is it used?</li>
+<li>What are the differences between passing by reference, passing by value, and passing by pointer in C++?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li>When is it and when is it not a good idea to return a value by reference in C++?</li>
+<li>What is the difference between a variable created on the stack and one created on the heap?</li>
+<li>How do you free memory allocated dynamically for an array? What are the implications of just using delete?</li>
+<li>What is multiple inheritance? When should it be used?</li>
+<li>What is a pure virtual function?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li>What does the keyword volatile do?</li>
+<li>What is the STL?</li>
+<li>What is a Vector?</li>
+<li>What is contained in the <algorithms> header?</li>
+<li>What is the difference between #include <iostream.h> and #include <iostream>?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li>What&rsquo;s the difference between “++i” and “i++”?</li>
+<li>What is short circuit evaluation? How can it be used? Why can is be dangerous?</li>
+<li>What is the ‘,’ operator?</li>
+<li>What is the only ternary operator? How is it used?</li>
+<li>What is the use of a const member function and how can it be used?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li>How is try/catch used in C++?</li>
+<li>Why should you never throw an exception in a destructor?</li>
+<li>What is the explicit keyword?</li>
+<li>What is the proper way to perform a cast in C++?</li>
+<li>What does inline do?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li>What is an iterator?</li>
+<li>What is GCC?</li>
+<li>What is Clang?</li>
+<li>What is <code>difference_type</code>?</li>
+<li>What is a predicate?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li>What is auto linking?</li>
+<li>What is a binary predicate?</li>
+<li>What is a &ldquo;back_inserter&rdquo;?</li>
+<li>What is the &ldquo;bind&rdquo; function?</li>
+<li>Why should you be cautious when working with iterators while adding or removing elements from a container?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Special code in header files detects your compiler options and uses that information to encode the name of the correct library into your object files; the linker selects the library with that name from the directories you&rsquo;ve told it to search.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Predicate that takes two parameters.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Iterator adapter.
+&gt; Takes a reference to a container and generates an insert iterator that uses push_back to add elements.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Library function.
+&gt; Defined in <functional>
+&gt; Binds one or more arguments to a callable expression.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Container operations that add/remove elements can invalidate iterators, pointers or references to elements .</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li>What is an io buffer?</li>
+<li>What is clog?</li>
+<li>What is an alias declaration?</li>
+<li>What does low-level const mean?</li>
+<li>What does top-level const mean?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Used by the io facilities to store input or output and read or write the buffer independently from actions in the program.
+&gt; Output buffers can be explicitly flushed to force the buffer to be written.
+&gt; By default, reading cin flushes cout. cout is also flushed when the program ends normally.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; ostream object tied to the standard error.
+&gt; Buffered by default.
+&gt; Usually used to write to a log file.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Defines a synonym for another type.
+e.g.
+    using name = type&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>A const that is not top-level; integral to the type and are never ignored.</p>
+
+<h4 id="5">5.</h4>
+
+<p>The const that specifies that an object may not be changed.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li>What is nullptr?</li>
+<li>What is constexpr?</li>
+<li>What is decltype?</li>
+<li>What is a const pointer?</li>
+<li>What is a const reference ?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Literal constant that denotes the null pointer.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Variable that represents a constant expression.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Type specifier that deduces the type of a variable or an expression.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Pointer that is const.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Colloquial synonym for reference to const.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li>What is a pointer to const?</li>
+<li>What is a reference to const?</li>
+<li>What is a &lsquo;temporary&rsquo;?</li>
+<li>What does void* mean?</li>
+<li>What does the typedef statement do?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Pointer that can hold address of a const object.
+&gt; May not be used to change the value of the object to which it points.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Reference that may not change the value of the object to which it refers.
+&gt; May be bound to a const object, a nonconst object, or the result of an expression.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Unnamed object created by the compiler while evaluating an expression.
+&gt; Exists until the end of the largest expression that encloses the expression for which it was created.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Pointer type that can point to any nonconst type.
+&gt; May not be dereferenced.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Defines an alias for another type.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li>What is the begin() function?</li>
+<li>What is copy initialisation?</li>
+<li>What is direct initialisation?</li>
+<li>Explain the getline() function.</li>
+<li>What is an off-the-end iterator?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Member of string and vector stl types.
+&gt; Returns an iterator to the first element.
+&gt; Also a free-standing library function that takes an array and returns a pointer to the first element.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Form of initialisation that uses an =.
+&gt; The newly created object is a copy of the given initialiser.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>Form of initialisation that does not include an =</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Defined in <string>.
+&gt; Takes an istream an a string.
+&gt; Reads the stream up to the next newline, storing what it read into the string.
+&gt; Returns the istream.
+&gt; The newline is read and discarded.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Returned by end().
+&gt; Refers to a nonexistent element on past the end of a container.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li>What is ptrdiff_t?</li>
+<li>What is a &lsquo;range for&rsquo;?</li>
+<li>What is size_t?</li>
+<li>What is size_type?</li>
+<li>What is dynamic_cast?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Machine-dependent signed integral type.
+&gt; Defined in <cstddef>
+&gt; Large enough to hold the difference between two pointers into the largest possible array.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Control statement that iterates through a collection of values.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Machine-dependent unsigned integral type.
+&gt; Defined in <cstddef>
+&gt; Large enough to hold the size of the largest possible array.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Unsigned type defined by string or vector.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Function that converts an object&rsquo;s type.
+&gt; Used in combination with inheritance and runtime type identification.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li>What is const_cast?</li>
+<li>What is reinterpret_cast?</li>
+<li>What is static_cast?</li>
+<li>What are integral promotions?</li>
+<li>What is an implicit conversion?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Function that converts a low-level const object to the corresponding nonconst type or vice versa.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Interprets the contents of the operand as a different type.
+&gt; Inherently machine-dependent and dangerous.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; An explicit request for a well-defined type conversion.
+&gt; Often used to override an implicit conversion the compiler would otherwise perform.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Conversions that take a smaller integral type to its most closely related larger integral type.
+&gt; Operands of small integral types are always promoted, even in contexts where such conversions might not seem to be required.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Automatically generated by the compiler if an appropriate conversion exists.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/linux-1/" data-toggle="tooltip" data-placement="top" title="Linux">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/cplusplus-2/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43;, Part 2">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

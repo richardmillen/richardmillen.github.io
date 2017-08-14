@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Linux</title>
+  <meta property="og:title" content="Linux" />
+  <meta name="twitter:title" content="Linux" />
+  <meta name="description" content="Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset. Ex doctus deseruisse pro, ad pri assueverit signiferumque. Timeam inciderint quaerendum id nec. Ius epicuri fabellas nominati ei. Nonumy oportere eos ad, has no stet meliore senserit, et vel accumsan sententiae. Eu iriure efficiantur nam.
+Quiz 1  What is XFS? What is BtrFS? What&rsquo;s the difference between Ext2, Ext3 and Ext4?">
+  <meta property="og:description" content="Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset. Ex doctus deseruisse pro, ad pri assueverit signiferumque. Timeam inciderint quaerendum id nec. Ius epicuri fabellas nominati ei. Nonumy oportere eos ad, has no stet meliore senserit, et vel accumsan sententiae. Eu iriure efficiantur nam.
+Quiz 1  What is XFS? What is BtrFS? What&rsquo;s the difference between Ext2, Ext3 and Ext4?">
+  <meta name="twitter:description" content="Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset. Ex doctus deseruisse pro, ad pri assueverit signiferumque. Timeam …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/linux-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/linux-1/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>Linux</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset. Ex doctus deseruisse pro, ad pri assueverit signiferumque. Timeam inciderint quaerendum id nec. Ius epicuri fabellas nominati ei. Nonumy oportere eos ad, has no stet meliore senserit, et vel accumsan sententiae. Eu iriure efficiantur nam.</p>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>What is XFS?</li>
+<li>What is BtrFS?</li>
+<li>What&rsquo;s the difference between Ext2, Ext3 and Ext4?</li>
+<li>What command would you use to copy a file from Linux to Windows?</li>
+<li>How do you add an existing user to an existing group?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<pre><code class="language-bash">
+smbclient --workgroup &lt;domain-name&gt; --user &lt;user-name&gt; //&lt;server&gt;/&lt;share&gt;
+put &lt;local-file&gt;
+logoff
+
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<pre><code class="language-bash">
+usermod -a -G group-name user-name
+
+</code></pre>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>How do you change the primary group of an existing user?</li>
+<li>How do you set the password for a user?</li>
+<li>How do you create a new user and add the user to a group?</li>
+<li>How do you list cron jobs for a user?</li>
+<li>How do you list cron jobs for the current user?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<pre><code class="language-bash">
+usermod -g group-name user-name
+
+</code></pre>
+
+<h4 id="2">2.</h4>
+
+<pre><code class="language-bash">
+passwd &lt;user-name&gt;
+
+</code></pre>
+
+<h4 id="3">3.</h4>
+
+<pre><code class="language-bash">
+useradd -G group-name user-name
+
+</code></pre>
+
+<h4 id="4">4.</h4>
+
+<pre><code class="language-bash">
+crontab -u user-name -l
+
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<pre><code class="language-bash">
+crontab -l
+
+</code></pre>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>How do you edit the current users cron jobs?</li>
+<li>What is the format of the crontab file?</li>
+<li>How do you view the date &amp; time?</li>
+<li>How do you list disk usage in Linux?</li>
+<li>How do you check the file system type(s) of your system?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<pre><code class="language-bash">
+crontab -e
+
+</code></pre>
+
+<h4 id="2">2.</h4>
+
+<p><code>&lt;minute&gt; &lt;hour&gt; &lt;day-of-month&gt; &lt;month&gt; &lt;day-of-week&gt; &lt;command&gt;</code></p>
+
+<h4 id="3">3.</h4>
+
+<pre><code class="language-bash">
+date
+
+</code></pre>
+
+<h4 id="4">4.</h4>
+
+<pre><code class="language-bash">
+df -h
+
+</code></pre>
+
+<blockquote>
+<p>Prints the results i.e. disk sizes etc. in human readable format.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<pre><code class="language-bash">
+df -T
+
+</code></pre>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What is the common disk partition configuration?</li>
+<li>How do you create an environment from the current working directory?</li>
+<li>What should you do with your dot files?</li>
+<li>How do you configure SSH server on CentOS?</li>
+<li>How do you print the contents of a text file to the screen, showing line endings and tabs?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>/boot - boot partition - contains the bootloader
+/swap - swap partition - assuming there&rsquo;s not enough ram to hold all in-memory processes.
+/ - root partition - contains the installation.
+/home - home partition - contains user documents etc.</p>
+
+<h4 id="2">2.</h4>
+
+<pre><code class="language-bash">
+export &lt;NAME&gt;=`pwd`
+
+</code></pre>
+
+<h4 id="3">3.</h4>
+
+<p>Put them in version control e.g. github.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Install
+    yum update
+    yum install openssh-server
+&gt; Configure openssh daemon
+    /etc/ssh/sshd_config
+&gt; Start openssh
+    /sbin/service sshd start
+&gt; Configure user
+    chmod 755 ~/.ssh
+    cat ~/.ssh/<key-file>.pub &gt;&gt; ~/.ssh/authorized_keys
+    chmod 644 ~/.ssh/authorized_keys&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<pre><code class="language-bash">
+cat -et file
+
+</code></pre>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What do pushd and popd do and how are they used?</li>
+<li>How might you create a symbolic link to your previous working directory that is relative to your new current working directory?</li>
+<li>Assuming you&rsquo;ve used pushd to move to a new directory, how do you echo your previous working directory?</li>
+<li>How do you echo your current working directory?</li>
+<li>What alternative to virtualisation exists for Linux users?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;pushd <move-to-this-directory>
+ln -s <code>dirs +1</code> <relative-path-to-new-link>&ldquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;dirs +1
+OR
+echo <code>dirs +1</code>&ldquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&ldquo;pwd
+OR (even if NOT using pushd &amp; popd)
+dirs +0&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Linux containers instead create a separate process space in which other processes live.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li>What are some of the benefits of using Linux containers over VMs?</li>
+<li>What are some downsides of Linux containers?</li>
+<li>How do you copy the contents of a text file to the clipboard from a bash shell?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Each container is effectively a subtree of the overall system process tree. These containers can have physical resources allocated to them, something the kernel handles for us. This general approach has been around in many forms, such as Solaris Zones and OpenVZ, but it is LXC that has become most popular. LXC is now available out of the box in any modern Linux kernel.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; host running LXC
+&gt; we don’t need a hypervisor.
+&gt; although each container can run its own operating system distribution, it has to share the same kernel
+    ~ because the kernel is where the process tree lives.
+&gt; our host operating system could run Ubuntu, and our containers CentOS, as long as they could both share the same kernel.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Linux containers are much faster to provision than full-fat virtual machines.
+&gt; Resources saved by not needing a hypervisor.
+&gt; Finer-grained control over the containers themselves in terms of assigning resources to them.
+&gt; Due to the lighter-weight nature of containers, we can have many more of them running on the same hardware than would be possible with VMs.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; The outside world can&rsquo;t see them and configuring port forwarding can be timeconsuming.
+&gt; These containers cannot be considered completely sealed from each other.
+    ~ There are many documented and known ways in which a process from one container can bust out and interact with other containers or the underlying host.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Use clip.
+e.g.
+    clip &lt; ~/myfile.txt&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li>How do you generate an SSH keypair?</li>
+<li>Where is your SSH keypair stored?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:me@email.com">me@email.com</a>&ldquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Private key - ~/.ssh/id<em><type>
+&gt; Public key - ~/.ssh/id</em><type>.pub&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/docker-1/" data-toggle="tooltip" data-placement="top" title="Docker">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/cplusplus-1/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43;, Part 1">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

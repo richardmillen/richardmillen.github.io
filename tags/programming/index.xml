@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Richard Millen</title>
+    <link>https://richardmillen.github.io/tags/programming/</link>
+    <description>Recent content in Programming on Richard Millen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
+    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
+    <lastBuildDate>Wed, 28 Jun 2017 11:26:56 +0100</lastBuildDate>
+    
+	<atom:link href="https://richardmillen.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43;, Part 1</title>
+      <link>https://richardmillen.github.io/questions/cplusplus-1/</link>
+      <pubDate>Wed, 28 Jun 2017 11:26:56 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/cplusplus-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &amp;ldquo;Valuelike copy-assignment operator. &amp;gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.</description>
+    </item>
+    
+  </channel>
+</rss>

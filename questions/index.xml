@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Questions on Richard Millen</title>
+    <link>https://richardmillen.github.io/questions/</link>
+    <description>Recent content in Questions on Richard Millen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
+    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
+    <lastBuildDate>Mon, 14 Aug 2017 17:33:29 +0100</lastBuildDate>
+    
+	<atom:link href="https://richardmillen.github.io/questions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>French (Advanced), Part 2</title>
+      <link>https://richardmillen.github.io/questions/french-adv-2/</link>
+      <pubDate>Mon, 14 Aug 2017 17:33:29 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/french-adv-2/</guid>
+      <description>Quiz 1  Give some examples of re verbs. &amp;ldquo;To put&amp;rdquo; &amp;ldquo;To be able&amp;rdquo; &amp;ldquo;The power&amp;rdquo; &amp;ldquo;To have to&amp;rdquo; / &amp;ldquo;must&amp;rdquo;   Show Answers   avoir, savoir, voir, pouvoir, devoir. mettre (put money in the meter) pouvoir le pouvoir (noun) devoir    function showAnswers(divId) { var x = document.getElementById(divId); if (x.style.display === &#39;none&#39;) { x.style.display = &#39;block&#39;; } else { x.style.display = &#39;none&#39;; } }   Quiz 2  &amp;ldquo;The duty&amp;rdquo; &amp;ldquo;Homework&amp;rdquo; That is your duty What are the two categories of verbs?</description>
+    </item>
+    
+    <item>
+      <title>French (Advanced), Part 1</title>
+      <link>https://richardmillen.github.io/questions/french-adv-1/</link>
+      <pubDate>Mon, 14 Aug 2017 16:30:10 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/french-adv-1/</guid>
+      <description>Quiz 1  &amp;ldquo;I want it now&amp;rdquo; &amp;ldquo;I don&amp;rsquo;t want them&amp;rdquo; &amp;ldquo;Do you want it?&amp;rdquo; (short term) &amp;ldquo;Do you want it?&amp;rdquo; (long form) &amp;ldquo;Do you want it?&amp;rdquo; (with inflection)   Show Answers   je le veux maintenant je ne les veux pas le voulez-vous? est-ce que vous le voulez? vous le voulez?    function showAnswers(divId) { var x = document.getElementById(divId); if (x.style.display === &#39;none&#39;) { x.</description>
+    </item>
+    
+    <item>
+      <title>Climate</title>
+      <link>https://richardmillen.github.io/questions/climate-1/</link>
+      <pubDate>Wed, 28 Jun 2017 18:03:50 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/climate-1/</guid>
+      <description>A series of short quizes about Earth&amp;rsquo;s climate.
+Quiz 1  What happens to ice when it&amp;rsquo;s warmed? From where does Earth get almost all of it&amp;rsquo;s energy from? What form does it take? How does the Earth lose energy? What is infrared radiation? What is the temperature of the Sun?   Show Answers  1. The temperature increases until it reaches 32F (the freezing point of water), then changes state (becomes liquid) and continues to warm only once it&amp;rsquo;s finished changing state.</description>
+    </item>
+    
+    <item>
+      <title>Electricity</title>
+      <link>https://richardmillen.github.io/questions/electricity-1/</link>
+      <pubDate>Wed, 28 Jun 2017 17:46:54 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/electricity-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1         Show Answers  1. Electrical power generation as the result of some mechanical motion is generally handled by two principal components.
+ The field exists simply to create a magnetic field, depending on the motor, this is created by either permanent magnets or electromagnets.</description>
+    </item>
+    
+    <item>
+      <title>Lexicon</title>
+      <link>https://richardmillen.github.io/questions/lexicon-1/</link>
+      <pubDate>Wed, 28 Jun 2017 17:22:29 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/lexicon-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Isomorphic Percentil (centile) Aphorism Lurid Apace   Show Answers  1. 2. &amp;rdquo;&amp;gt; Often used in the reporting of scores from norm-referenced tests. &amp;gt; For example, if a score is in the 86th percentile, it is higher than 86% of the other scores. &amp;gt; The 25th percentile is also known as the first quartile (Q1), &amp;gt; The 50th percentile as the median or second quartile (Q2), &amp;gt; The 75th percentile as the third quartile (Q3).</description>
+    </item>
+    
+    <item>
+      <title>Go, Part 2</title>
+      <link>https://richardmillen.github.io/questions/go-2/</link>
+      <pubDate>Wed, 28 Jun 2017 13:14:43 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?</description>
+    </item>
+    
+    <item>
+      <title>Go, Part 1</title>
+      <link>https://richardmillen.github.io/questions/go-1/</link>
+      <pubDate>Wed, 28 Jun 2017 13:03:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
+If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
+e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
+    </item>
+    
+    <item>
+      <title>CentOS</title>
+      <link>https://richardmillen.github.io/questions/centos-1/</link>
+      <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/centos-1/</guid>
+      <description>Below are some short quizes about the CentOS operation system.
+Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to stop the OpenSSH service? If SSH is used, which insecure services should be disabled? What is the default system-wide SSH client configuration file? How may it be overriden?   Show Answers  1. /etc/ssh/sshd_config</description>
+    </item>
+    
+    <item>
+      <title>Google Test</title>
+      <link>https://richardmillen.github.io/questions/google-test-1/</link>
+      <pubDate>Wed, 28 Jun 2017 12:09:56 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/google-test-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  When are the SetUp() and TearDown() methods of a test fixture invoked? How do you tell Google Mock to throw an exception? How do you tell Google Mock to set the value of a variable? How do you tell Google Mock to delete an argument? How do you tell Google Mock to invoke a function?</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;, Part 3</title>
+      <link>https://richardmillen.github.io/questions/cplusplus-3/</link>
+      <pubDate>Wed, 28 Jun 2017 12:01:25 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/cplusplus-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a &amp;ldquo;hash&amp;rdquo;?   Show Answers  1. &amp;ldquo;std::string codes[128]; &amp;hellip; codes[&amp;lsquo;a&amp;rsquo;] = mapped_value; codes[&amp;lsquo;b&amp;rsquo;] = mapped_value; codes[&amp;lsquo;c&amp;rsquo;] = mapped_value; &amp;hellip; mapped_value = codes[static_cast(map_from[n])];&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;, Part 2</title>
+      <link>https://richardmillen.github.io/questions/cplusplus-2/</link>
+      <pubDate>Wed, 28 Jun 2017 11:39:26 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/cplusplus-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What is an lvalue? What is an rvalue? What is order of evaluation? What is precedence? What is short-circuit evaluation?   Show Answers  1. &amp;rdquo;&amp;gt; An expression that yields an object or function. &amp;gt; A nonconst lvalue that denotes an object may be the left-hand operand of assignment.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;, Part 1</title>
+      <link>https://richardmillen.github.io/questions/cplusplus-1/</link>
+      <pubDate>Wed, 28 Jun 2017 11:26:56 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/cplusplus-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &amp;ldquo;Valuelike copy-assignment operator. &amp;gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://richardmillen.github.io/questions/linux-1/</link>
+      <pubDate>Wed, 28 Jun 2017 11:18:21 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/linux-1/</guid>
+      <description>Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset. Ex doctus deseruisse pro, ad pri assueverit signiferumque. Timeam inciderint quaerendum id nec. Ius epicuri fabellas nominati ei. Nonumy oportere eos ad, has no stet meliore senserit, et vel accumsan sententiae. Eu iriure efficiantur nam.
+Quiz 1  What is XFS? What is BtrFS? What&amp;rsquo;s the difference between Ext2, Ext3 and Ext4?</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://richardmillen.github.io/questions/docker-1/</link>
+      <pubDate>Wed, 28 Jun 2017 11:06:00 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/docker-1/</guid>
+      <description>Quiz 1  How do you run a container with interactive shell access? How do you commit changes to a new Docker image instance? How can you view the container id from an interactive shell? How do you list the docker images on your machine? How do you view active containers?   Show Answers  1. docker run -it image-name  2. docker commit -m &amp;quot;&amp;lt;commit message...&amp;gt;&amp;quot; -a &amp;quot;&amp;lt;author.</description>
+    </item>
+    
+  </channel>
+</rss>

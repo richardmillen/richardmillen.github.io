@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>C&#43;&#43;, Part 3</title>
+  <meta property="og:title" content="C&#43;&#43;, Part 3" />
+  <meta name="twitter:title" content="C&#43;&#43;, Part 3" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a &ldquo;hash&rdquo;?   Show Answers  1. &ldquo;std::string codes[128]; &hellip; codes[&lsquo;a&rsquo;] = mapped_value; codes[&lsquo;b&rsquo;] = mapped_value; codes[&lsquo;c&rsquo;] = mapped_value; &hellip; mapped_value = codes[static_cast(map_from[n])];&rdquo;">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a &ldquo;hash&rdquo;?   Show Answers  1. &ldquo;std::string codes[128]; &hellip; codes[&lsquo;a&rsquo;] = mapped_value; codes[&lsquo;b&rsquo;] = mapped_value; codes[&lsquo;c&rsquo;] = mapped_value; &hellip; mapped_value = codes[static_cast(map_from[n])];&rdquo;">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/cplusplus-3/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/cplusplus-3/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>C&#43;&#43;, Part 3</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>How might you store and retrieve character code mappings using strings?</li>
+<li>How many associative containers are provided in the standard library?</li>
+<li>What is an associative array?</li>
+<li>What is an associative container?</li>
+<li>What is a &ldquo;hash&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;std::string codes[128];
+&hellip;
+codes[&lsquo;a&rsquo;] = mapped_value;
+codes[&lsquo;b&rsquo;] = mapped_value;
+codes[&lsquo;c&rsquo;] = mapped_value;
+&hellip;
+mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; 8
+&gt; Each is either a &ldquo;&ldquo;map&rdquo;&rdquo; or a &ldquo;&ldquo;set&rdquo;&ldquo;.
+    1) set
+    2) multiset
+    3) map
+    4) multimap
+    5) unordered_set
+    6) unordered_multiset
+    7) unordered_map
+    8) unordered_multimap&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Elements indexed by key rather than positionally.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Collection that supports efficient lookup by key.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Library template.
+&gt; Used by unordered containers to manage position of their elements.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What is a &ldquo;key_type&rdquo;?</li>
+<li>What is a &ldquo;map&rdquo;?</li>
+<li>What is a &ldquo;mapped_type&rdquo;?</li>
+<li>What is a &ldquo;multimap&rdquo;?</li>
+<li>What is a &ldquo;multiset&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Type used and defined by associative containers.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Class template.
+&gt; Each element must have a unique key.
+&gt; Dereferencing an iterator yields a &ldquo;&ldquo;pair&rdquo;&ldquo;.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Type defined by map types.
+&gt; Type of the values associated with the keys in a &ldquo;&ldquo;map&rdquo;&ldquo;.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Similar to map, except a given key may appear more than once.
+&gt; Doesn&rsquo;t support subscripting.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Similar to set, except a given key may appear more than once.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>What is a &ldquo;pair&rdquo;?</li>
+<li>What is a &ldquo;set&rdquo;?</li>
+<li>What is strict weak ordering?</li>
+<li>What is an unordered container?</li>
+<li>What is an &ldquo;unordered_map&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Type with two public data members:
+    1) first
+    2) second&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Holds keys.
+&gt; A given key may appear only once.
+&gt; &ldquo;&ldquo;key_type&rdquo;&rdquo; and &ldquo;&ldquo;value_type&rdquo;&rdquo; are the same.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Relationship among keys in associative container.
+&gt; Possible to compare any two and determine which is &lsquo;less&rsquo;, if not they&rsquo;re considered equal.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Uses hashing rather than comparison operation on keys to store / access elements.
+&gt; Performance depends on hash function.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Elements are key-value pairs.
+&gt; Permits only one element per key.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What is an &ldquo;unordered_multimap&rdquo;?</li>
+<li>What is an &ldquo;unordered_multiset&rdquo;?</li>
+<li>What is an &ldquo;unordered_set&rdquo;?</li>
+<li>What is an &ldquo;allocator&rdquo;?</li>
+<li>Which companion functions are there to the allocator class?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Elements are key-value pairs.
+&gt; Allows multiple elements per key.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Stores keys.
+&gt; Allows multiple elements per key.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Associative container.
+&gt; Stores keys.
+&gt; Permits only one element per key.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Library class.
+&gt; Defined in <memory>.
+&gt; Lets you separate allocation from construction.
+&gt; Sometimes you allocate a block of memory you plan to use to construct objects as needed. This way you pay the overhead of constructing objects only when you actually need to create them.
+&gt; Provides type-aware allocation of raw, &lsquo;unconstructed&rsquo; memory.
+&gt; Allocates memory that is appropriately sized and aligned to hold the objects.
+&gt; User must construct objects in order to use memory returned by &ldquo;&ldquo;allocate&rdquo;&ldquo;.
+&gt; User must call &ldquo;&ldquo;destroy&rdquo;&rdquo; on objects that were constructed in this memory before calling &ldquo;&ldquo;deallocate&rdquo;&ldquo;.
+e.g.
+    allocator<string> alloc;
+    auto const p = alloc.allocate(n);
+    auto q = p;
+    alloc.construct(q++);
+    alloc.construct(q++, 10, &lsquo;c&rsquo;);
+    alloc.construct(q++, &ldquo;&ldquo;hi!&rdquo;&ldquo;);
+    &hellip;
+    while (q != p)
+        alloc.destroy(&ndash;q);
+    alloc.dealloc(p, n);&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;1) uninitialized_copy
+    ~ Copies elements denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, into unconstructed, raw memory denoted by a third iterator.
+2) uninitialized_copy_n
+    ~ Copies &lsquo;n&rsquo; elements starting from &lsquo;begin&rsquo; iterator, into unconstructed, raw memory denoted by a second iterator.
+3) uninitialized_fill
+    ~ Constructs objects into raw memory denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, as a copy of a third parameter.
+4) uninitialized_fill_n
+    ~ Constructs &lsquo;n&rsquo; objects starting from &lsquo;begin&rsquo; iterator, which denotes unconstructed, raw memory large enough to hold the given number of objects.
+&gt; These functions construct elements in the destination, rather than assigning to them.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<h4 id="1">1.</h4>
+
+<p>&ldquo;Using the two companion algorithms of the allocator class, implement the following:</p>
+
+<pre><code>1. allocate twice as many elements as variable 'vi' holds,
+2. construct elements (starting at the beginning of the allocated memory), as copies of elements in vi.
+3. initialise the remaining elements to 42.&quot;
+</code></pre>
+
+<h4 id="2">2.</h4>
+
+<p>What is a dangling pointer?</p>
+
+<h4 id="3">3.</h4>
+
+<p>What is a &lsquo;deleter&rsquo;?</p>
+
+<h4 id="4">4.</h4>
+
+<p>What does dynamically allocated mean?</p>
+
+<h4 id="5">5.</h4>
+
+<p>What is the free store?</p>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;auto p = alloc.allocate(vi.size() * 2);
+auto q = unintialized_copy(vi.begin(), vi.end(), p);
+uninitialized_fill_n(q, vi.size(), 42);&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Pointer that refers to memory that once had an object but no longer does.
+&gt; Difficult to debug.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Function passed to a smart pointer.
+&gt; Used in place of &lsquo;delete&rsquo;.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Object is allocated on the free store.
+&gt; They exist until explicitly deleted or program terminates.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Memory pool available to a program to hold dynamically allocated objects.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>What is &lsquo;placement new&rsquo;?</li>
+<li>What is a &ldquo;shared_ptr&rdquo;?</li>
+<li>What is a &ldquo;unique_ptr&rdquo;?</li>
+<li>What is a &ldquo;weak_ptr&rdquo;?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Form of new that takes additional arguments.
+e.g.
+    new (nothrow) int;&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Smart pointer.
+&gt; Shared ownership.
+&gt; Pointer deleted when last shared_ptr is destroyed.
+&gt; Uses a reference count.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Smart pointer.
+&gt; Single ownership.
+&gt; Object deleted when unique_ptr is destroyed.
+&gt; Cannot be directly copied or assigned.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Smart pointer.
+&gt; Points to object managed by &ldquo;&ldquo;shared_ptr&rdquo;&ldquo;.
+&gt; Not counted when &ldquo;&ldquo;shared_ptr&rdquo;&rdquo; deleted the object.
+&gt; Must call lock in order to access the object.
+e.g.
+    auto p = make_shared<int>(42);
+    weak_ptr<int> wp(p);
+    if (shared_ptr<int> np = wp.lock()) {
+        // np shares object with p
+    }&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;When we use direct initialisation, we are asking the compiler to use ordinary function matching to select the constructor that best maches the arguments we provide.
+When we use copy initialisation, we are asking the compiler to copy the right-hand operand into the object being created, converting that operand if necessary.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li></li>
+<li>When does copy initialisation occur?</li>
+<li></li>
+<li></li>
+<li>What rule of thumb can be used when deciding whether a class needs to define its own versions of the copy-control members?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;Copy initialisation ordinarily uses the copy constructor.
+If a class has a move constructor, then copy initialisation sometimes uses that instead.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; When defining a variable using an &lsquo;=&rsquo;.
+&gt; Passing an object as an argument to a parameter of nonreference type.
+&gt; Returning an object from a function that has a nonreference return type.
+&gt; Brace initialising the elements in an array or the members of an aggregate class.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;Library containers copy initialise their elements when you initialise the container or when calling insert of push.
+Elements created by emplace are direct initialised.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; A constructor that can be called with a single argument defines an implicit conversion from the constructor&rsquo;s parameter type (x) to the class type (y).
+&gt; That is, you can use an &lsquo;x&rsquo; where an object of type &lsquo;y&rsquo; is expected.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Decide whether the class needs a destructor. Often more obvious.
+&gt; If yes, it almost surely needs a copy constructor and copy-assignment operator as well.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>How do you prevent copies of a class being made?</li>
+<li>What is a deleted function?</li>
+<li>What is a type-specific swap function?</li>
+<li>What is ADL?</li>
+<li>What is a type-specific swap function often used for?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Define the copy constructor and copy-assignment operator as deleted functions.
+e.g.
+    NoCopy(const NoCopy&amp;) = delete;
+    NoCopy&amp; operator=(const NoCopy&amp;) = delete;&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;One that is declared by may not be used in any other way.
+Defined as deleted by following its parameter list with = delete.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Function written to swap the state of two objects of the same type.
+&gt; Never necessary, but can be an important optimisation for classes that allocate.
+&gt; Declare the swap function as a friend to give it access to the type&rsquo;s private data members.
+&gt; Because it exists to optimise our code, define swap as inline.
+&gt; A type-specific version of swap will be a better match that the one in std.
+&gt; If no type-specific version is defined then (assuming there is a using decl for swap in scope) calls to swap will use std::swap.
+&gt; Each call to swap should be unqualified i.e. not std::swap.
+e.g.
+class MyType {
+    friend void swap(MyType&amp;, MyType&amp;);
+    &hellip;
+};
+inline void swap(MyType &amp;lhs, MyType &amp;rhs) {
+    using std::swap;
+    swap(lhs.member, rhs.member);
+    &hellip;
+}&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Argument-dependent lookup.
+&gt; aka &lsquo;Koenig lookup&rsquo;.
+&gt; The set of rules for looking up the unqualified function names in a function-call expressions.
+&gt; Makes it possible to use operators defined in a different namespace.
+e.g.
+    #include <iostream>
+    &hellip;
+    std::cout &lt;&lt; &ldquo;&ldquo;Test\n&rdquo;&ldquo;; // OK: operator&lt;&lt; is found in std because the left arg is in std.
+    std::cout &lt;&lt; endl; // ERROR: not in global ns, not a func call to endl() so ADL does not apply.
+    end(std::cout); // OK: func call, ADL examines std because of argument.
+    (endl)(std::cout); // ERROR: &lsquo;end&rsquo; not in global ns, sub-expression (endl) not a func call.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; To define the classes assignment operator.
+&gt; The operator uses a technique known as &lsquo;copy and swap&rsquo;.
+&gt; Swaps the left-hand operand with a copy of the right-hand operand.
+e.g.
+    MyType&amp; MyType::operator=(MyType rhs) {
+        swap(*this, rhs);
+        return *this;
+    } // &lsquo;rhs&rsquo; is destroyed, which deletes what was previously in &lsquo;this&rsquo;.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/cplusplus-2/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43;, Part 2">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/google-test-1/" data-toggle="tooltip" data-placement="top" title="Google Test">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

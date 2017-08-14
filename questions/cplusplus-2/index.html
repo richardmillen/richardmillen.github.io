@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>C&#43;&#43;, Part 2</title>
+  <meta property="og:title" content="C&#43;&#43;, Part 2" />
+  <meta name="twitter:title" content="C&#43;&#43;, Part 2" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What is an lvalue? What is an rvalue? What is order of evaluation? What is precedence? What is short-circuit evaluation?   Show Answers  1. &rdquo;&gt; An expression that yields an object or function. &gt; A nonconst lvalue that denotes an object may be the left-hand operand of assignment.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What is an lvalue? What is an rvalue? What is order of evaluation? What is precedence? What is short-circuit evaluation?   Show Answers  1. &rdquo;&gt; An expression that yields an object or function. &gt; A nonconst lvalue that denotes an object may be the left-hand operand of assignment.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What is an lvalue? What is an rvalue? What is order of evaluation? What is precedence? What is short-circuit evaluation?   Show Answers  1. &rdquo;&gt; An …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/cplusplus-2/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/cplusplus-2/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>C&#43;&#43;, Part 2</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>What is an lvalue?</li>
+<li>What is an rvalue?</li>
+<li>What is order of evaluation?</li>
+<li>What is precedence?</li>
+<li>What is short-circuit evaluation?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; An expression that yields an object or function.
+&gt; A nonconst lvalue that denotes an object may be the left-hand operand of assignment.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Expression that yields a value but not the associated location, if any, of that value</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; The order, if any, in which the operands to an operator are evaluated.
+&gt; In most cases, compiler is free to evaluated operands in any order.
+&gt; Only &lsquo;&amp;&amp;&lsquo;, &lsquo;||&rsquo;, &lsquo;?:&rsquo; and &lsquo;,&rsquo; specify the order.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Order in which different operators in a compound expression are grouped.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Used to describe how logical AND and OR operators execute.
+&gt; If first operand is sufficient to determine result, evaluation stops.
+&gt; Not guaranteed that second operand is NOT evaluated.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What is the &lsquo;,&rsquo; operator?</li>
+<li>What is the &lsquo;^&rsquo; operator?</li>
+<li>What is the &lsquo;~&rsquo; operator?</li>
+<li>What is the &lsquo;&lt;&lt;&rsquo; operator?</li>
+<li>What is the &lsquo;&gt;&gt;&rsquo; operator?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Binary.
+&gt; Evaluated left-to-right.
+&gt; Result is the value of the right-hand operand.
+&gt; Result is lvalue if operand is lvalue.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Bitwise exclusive or.
+&gt; Generates new integral value in which each position is 1 if either but not both operands contain a 1, otherwise 0.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Bitwise NOT operator.
+&gt; Generates new integral value in which each bit is an inverted copy of those in the (possibly promoted) operand.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Left-shift operator.
+&gt; Left-hand operand should be unsigned.
+&gt; If the left-hand operand is signed, it is undefined if a shift causes a different bit to shift into the sign bit.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Right-shift operator.
+&gt; Opposite to left-shift operator.
+&gt; If the left-hand operand is signed, it is implementation defined whether bits shifted into the result are 0 or a copy of the sign bit.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>What is a dangling else?</li>
+<li>What is a null statement?</li>
+<li>What is are candidate functions?</li>
+<li>What is a function prototype?</li>
+<li>What is an initializer_list?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Colloquial term.
+&gt; The problem of how to process nested if statements in which there are more ifs than elses.
+&gt; An else is always paired with the closest preceding unmatched if.
+&gt; Use curly braces to control which if/else should match.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>Indicated with a single semicolon.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Set of functions that are considered when resolving a function call.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Function declaration.
+&gt; A function prototype must have been declared before the point of calling it.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Library class that represents a comma-separated list of objects of a single type enclosed inside curly braces.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What is an abstract data type?</li>
+<li>What is an access specifier?</li>
+<li>What is an aggregate class?</li>
+<li>What is a const member function?</li>
+<li>What is a converting constructor?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Data structure that encapsulates its implementation.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Used to define whether members are accessible to users of the class.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Class with only public data members that has no in-class initialisation or constructors.
+&gt; Members can be initialised by a brace-enclosed list of initialisers.
+e.g.
+    struct Data {
+        int ival;
+        string s;
+    };
+    &hellip;
+    Data val1 = { 0, &ldquo;&ldquo;Rich&rdquo;&rdquo; };&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; May not change an object&rsquo;s ordinary data members.
+&gt; The &lsquo;this&rsquo; pointer in a const member is a pointer to const.
+&gt; const and nonconst functions may overload one another.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Nonexplicit constructor that can be called with a single argument.
+&gt; Implicitly convert from the argument&rsquo;s type to the class.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What is an explicit constructor?</li>
+<li>What is a forward declaration?</li>
+<li>What is a &lsquo;friend&rsquo;?</li>
+<li>What is an incomplete type?</li>
+<li>What is a &lsquo;mutable&rsquo; data member?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Can be called with a single argument but cannot be used in an implicit conversion.
+&gt; Made explicit by prepending the keyword explicit to its declaration.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Declaration of an as yet undefined name.
+&gt; Often used to refer to a class that appears prior to its definition.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Mechanism by which a class grants access to its nonpublic members.
+&gt; Have same access rights as members.
+&gt; Applies to both classes and functions.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Type that is declared, but not defined.
+&gt; Not possible to use to define a variable or class member.
+&gt; Is legal to use to define references or pointers.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Data member that is never const.
+&gt; Can be changed inside a const function.
+e.g.
+    class Screen {
+    public:
+        void some_member() const;
+    private:
+        mutable size_t access_ctr;
+    };
+    void Screen::some_member() const {
+        ++access_ctr;
+    }&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>Where / when is &ldquo;= default&rdquo; used?</li>
+<li>What is an &ldquo;fstream&rdquo;?</li>
+<li>What is an &ldquo;ifstream&rdquo;?</li>
+<li>What is an &ldquo;istringstream&rdquo;?</li>
+<li>What is an &ldquo;ofstream&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Used to signal to compiler that it should generate default constructor.
+&gt; Used when class has other constructors.
+&gt; Put after the parameter list of declaration of default constructor.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Read/write file stream.
+&gt; Opened with in and out mode set by default.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Reads a file stream.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Reads a string stream.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Writes to a file stream.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li>What is an &ldquo;ostringstream&rdquo;?</li>
+<li>What is a &ldquo;stringstream&rdquo;?</li>
+<li>What is an adapter?</li>
+<li>What is a sequential container?</li>
+<li>What is a &ldquo;deque&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Writes to a string stream.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Read/write string stream.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Library type, function or iterator that, given a type, function or iterator, makes it act like another.
+&gt; Three sequential container adapters: stack, queue, priority_queue.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Type that holds ordered collection of single type.
+&gt; Elements are accessed by position.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Sequential container.
+&gt; Elements can be accessed by their positional index.
+&gt; Support fast random access.
+&gt; Like vector except supports fast insertion / deletion at the front and does not relocate elements due to insertions / deletions at either end.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>What is a &ldquo;forward_list&rdquo;?</li>
+<li>What is a left-inclusive interval?</li>
+<li>What is a &ldquo;list&rdquo;?</li>
+<li>What is an &ldquo;off-the-beginning iterator&rdquo;?</li>
+<li>What is a &ldquo;priority_queue&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Sequential container.
+&gt; Singly linked list.
+&gt; Elements accessed only sequentially.
+&gt; Iterators do not support &lsquo;&ndash;&rsquo;.
+&gt; Supports fast insertion / deletion anywhere.
+&gt; Unlike other containers, insertions / deletions can occur after a given iterator position.
+&gt; As a result, it has a &ldquo;&ldquo;before-the-beginning&rdquo;&rdquo; iterator.
+&gt; Iterators remain valid when new elements are added.
+&gt; Iterators remain valid when elements are deleted, unless is iterator to deleted element.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Range of values that includes its first element but not its last.
+&gt; Typically denoted as [i, j), meaning starting at and including i, up to but excluding j.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Sequential container.
+&gt; Doubly linked list.
+&gt; Elements accessed only sequentially.
+&gt; Iterators support both &lsquo;&ndash;&rsquo; and &lsquo;++&rsquo;.
+&gt; Supports fast insertion / deletion anywhere.
+&gt; Iterators remain valid when new elements are added.
+&gt; Iterators remain valid when elements are deleted, unless is iterator to deleted element.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Iterator denoting the (nonexistent) element just before the beginning of a forward_list.
+&gt; before_begin()
+&gt; May not be dereferenced.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Adapter for sequential containers.
+&gt; Elements not inserted at end, but based on specified priority level.
+&gt; Default uses less-than operator for element type.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li>What is a &ldquo;queue&rdquo;?</li>
+<li>What is a &ldquo;stack&rdquo;?</li>
+<li>What is a &ldquo;vector&rdquo;?</li>
+<li>What are iterator categories?</li>
+<li>What is a &ldquo;back_inserter&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Adapter for sequential containers.
+&gt; Elements are added to back, removed from front.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Adapter for sequential containers.
+&gt; Elements are added / removed from one end only.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Sequential container.
+&gt; Elements accessed by their positional index.
+&gt; Supports fast random access.
+&gt; Elements can be added / removed efficiently at the back only.
+&gt; Adding elements might cause it to be reallocated, invalidating all iterators.
+&gt; Adding / removing elements in the middle invalidates all iterators to elements after that point.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Iterators are classified depending on functionality they implement:-
+    1) Input
+    2) Output
+    3) Forward
+        ~ Extends Input, also extends Output (if nonconst).
+    4) Bidirectional
+        ~ Extends Forward, also supports backwards.
+    5) Random Access
+        ~ Extends Bidirectional, also access ranges non-sequentially.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Iterator adapter that takes a reference to a container and generates an insert iterator that uses push_back to add elements to the specified container.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li>What is a bidirectional iterator?</li>
+<li>What is the &ldquo;bind&rdquo; function?</li>
+<li>What is a capture list?</li>
+<li>What is the &ldquo;cref&rdquo; function?</li>
+<li>What is a &ldquo;front_inserter&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Same operations as forward iterators plus the ability to use &lsquo;&ndash;&rsquo; to move backward.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;Library function that binds one or more arguments to a callable expression.
+#include <functional>&ldquo;</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Portion of a lambda that specifies which variables from the surrounding context it can access.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Library function.
+&gt; Returns a copyable object that holds a reference to a const object of a type that cannot be copied.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Iterator adapter
+&gt; given a container, generates an insert iterator that uses push_front to add elements.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li>What are &lsquo;generic algorithms&rsquo;?</li>
+<li>What is an &lsquo;input iterator&rsquo;?</li>
+<li>What is an &lsquo;insert iterator&rsquo;?</li>
+<li>What is an &lsquo;inserter&rsquo;?</li>
+<li>What is an &ldquo;istream_iterator&rdquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Type-independent algorithms.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Can read, but not write elements of a sequence.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Iterator adapter
+&gt; Generates an iterator that uses a container operation to add elements to a given container.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Iterator adapter that takes an iterator and a reference to a container and generates an insert iterator that uses insert to add elements just ahead of the element referred to by the given iterator.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Stream iterator that reads an input stream.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li>What are &lsquo;iterator categories&rsquo;?</li>
+<li>What is a lambda expression?</li>
+<li>What is a &lsquo;move iterator&rsquo;?</li>
+<li>What is an &ldquo;ostream_iterator&rdquo;?</li>
+<li>What is an &lsquo;output iterator&rsquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;Based on operations that an iterator supports.
+Form a hierarchy, where more powerful iterators offer same operations as less categories.
+Algorithms use categories to specify what operations the iterator arguments must support.
+e.g. Some algorithms require only input iterators so won&rsquo;t work on an iterator that only supports output iterator requirements.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Callable unit of code.
+&gt; Like an unnamed, inline function.
+&gt; Starts with a capture list, allowing access to variables in the enclosing function.
+&gt; If body is a single return then type is inferred, otherwise defaults to void.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Iterator adapter
+&gt; Generates an iterator that moves elements instead of copying them.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Iterator that writes to an output stream.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Can write, but not necessarily read elements.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li>What is a &lsquo;predicate&rsquo;?</li>
+<li>What is a &lsquo;random-access iterator&rsquo;?</li>
+<li>What is the &ldquo;ref&rdquo; function?</li>
+<li>What is a &lsquo;reverse iterator&rsquo;?</li>
+<li>Where are search directories defined in Visual C++?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Function that returns a bool.
+&gt; Often used by generic algorithms to test elements.
+&gt; Those used by the library are either unary or binary.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Same operations as bidirectional iterators plus relational operators to compare iterator values, and subscript operator and arithmetic operations on iterators.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Library function
+&gt; Generates a copyable object from a reference to an object of a type that cannot be copied.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Iterator that moves backward through a sequence.
+&gt; Exchanges the meaning of ++ and &ndash;.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>In Property Manager, expand &ldquo;Debug | Win32&rdquo; or &ldquo;Release | Win32&rdquo;, right click &ldquo;Microsoft.Cpp.Win32.user&rdquo;, click &ldquo;Properties&rdquo;. Go to &ldquo;VC++ Directories&rdquo;, under &ldquo;Common Properties&rdquo;.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li>What is a raw string and how do you define one?</li>
+<li>Describe VC++ runtime library linking options and their differences?</li>
+<li>With VC++, under what circumstances will an imported library not be linked to an executable? How might this be remedied?</li>
+<li>When must a class destructor be virtual?</li>
+<li>When and how is the override keyword used?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;String literal - used to avoid escaping of any character. Anything between the delimiters becomes part of the string.
+R&rdquo;&ldquo;(&hellip;&hellip;&hellip;..)&rdquo;&ldquo;&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;/MT - Multi-threaded
+/MTd - Multi-threaded Debug
+/MD - Multi-threaded DLL
+/MDd - Multi-threaded Debug DLL
+TODO: explain the differences here.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; When Visual C++ linker sees that nothing in the library is referenced from other object modules it throws the library out.
+&gt; Export a function e.g. PullInMyLibrary, call it from the application or another library.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>If you intend to inherit from it - otherwise the destructor of the derived class will not be called when you delete an object through a base pointer.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Lets the compiler verify that you’ve properly overridden a function.
+&gt; It follows the function parentheses.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li>Can a parameter containing a pointer return newly allocated memory to the caller?</li>
+<li>What is a vtable?</li>
+<li>What is often a more performant alternative to mocking via virtual functions?</li>
+<li>How do you convert a reverse_iterator to an iterator?</li>
+<li>What does reverse_iterator::base() do?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;No.
+Parameters are passed by value, including the value held in a pointer.
+If memory were to be allocated only the parameter would receive its address.
+When the function returns the variable passed as a parameter would be unchanged.
+The parameter must be made a pointer to a pointer.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Virtual function table.
+&gt; C++ requires an additional lookup into the vtable (instead of simply calling a function).
+&gt; In most cases the performance impact is negligible or even nonexistent. The compiler is able to optimise away some cost in certain cases.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;Template-based.
+i.e.
+template <typename DEPENDENCY>
+class <class-under-test> {
+private:
+    DEPENDENCY dependency_;
+};
+typedef ClassUnderTest<ProductionType> ClassUnderTest;&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<pre><code class="language-c++">
+iterator.base()
+
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Returns the underlying base iterator.
+&gt; The base iterator refers to the element that is next to the element the reverse_iterator is currently pointing to.
+i.e.
+&amp;*(rit.base() - 1) == &amp;*rit&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li>What is PIMPL?</li>
+<li>How do you read a binary file into a data structure?</li>
+<li>How do you write a data structure to a binary file?</li>
+<li>What is CppUTest&rsquo;s leak detection? How does it work?</li>
+<li>What is linker substitution and when might it be used?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&ldquo;&ldquo;pointer to implementation&rdquo;&ldquo;.
+&gt; Extract concrete details to a separate implementation class.
+&gt; Delegate to the implementation as needed from the interface functions.
+&gt; You&rsquo;re then free to change the implementation all you want, without triggering recompiles on the code dependent on the public interface.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;e.g.
+ifstream file{filename, ios::in | ios::binary};
+if (!file.is_open()) {
+    // unable to read
+}
+file.read(reinterpret_cast<char*>(&amp;mydata), sizeof(MyData));
+file.close();&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&ldquo;e.g.
+ofstream file{filename, ios::out | ios::binary};
+file.write(reinterpret_cast<char*>(&amp;mydata), sizeof(MyData));
+file.close();&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Compares memory at the start of its execution with memory at its completion and fails if there’s a mismatch.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Create a library of stub functions for each one in use and link against that library.
+&gt; In order to dummy-out a third-party library, esp. when writing tests.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li>What are the four keywords for type casting and in what scenarios would you use each of them?</li>
+<li>What does sizeof on an empty class return?</li>
+<li>What does sizeof on a class with a constructor &amp; destructor return?</li>
+<li>What does sizeof on a class with a constructor &amp; virtual destructor return?</li>
+<li>What does sizeof on a class with a constructor &amp; virtual destructor and a virtual method return?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;1) const_cast
+2) static_cast
+3) dynamic_cast
+4) reinterpret_cast&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; 1 (byte).
+&gt; The size of memory is decided by the compiler.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; 1 (byte).
+&gt; Function addresses are irrelevant to instances and compilers don&rsquo;t add any instance data.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; C++ compiler creates a virtual function table for the class and adds a pointer to the table in each instance.
+&gt; 4 bytes on a 32-bit system, 8 bytes on a 64-bit system - the size of a pointer.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; C++ compiler creates a virtual function table for the class and adds a pointer to the table in each instance.
+&gt; 4 bytes on a 32-bit system, 8 bytes on a 64-bit system - the size of a pointer.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<h4 id="1">1.</h4>
+
+<p>&ldquo;What is the result if you compile and execute the code below?
+    a) Compiling error.
+    b) Compiles ok, but crashes.
+    c) Compiles ok, executes with output of 10.
+class A {
+private:
+    int value;
+public:
+    A(int n) {
+        value = n;
+    }
+    A(A other) {
+        value = other.value;
+    }
+    void Print() {
+        std::cout &lt;&lt; value &lt;&lt; std::endl;
+    }
+};
+int main(int argc, _TCHAR* argv[]) {
+    A a = 10;
+    A b = a;
+    b.Print();
+    return 0;
+}&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;Implement an assignment operator for the class below:
+class CMyString {
+public:
+    CMyString(char* pData = NULL);
+    CMyString(const CMyString&amp; str);
+    ~CMyString(void);
+private:
+    char* m_pData;
+};&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>What are the differences between structs and classes?</p>
+
+<h4 id="4">4.</h4>
+
+<p>&ldquo;Explain the following VC++ error:
+&ldquo;&ldquo;list initialization inside member initializer list or non-static data member initializer is not implemented&rdquo;&ldquo;&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>What is a condition_variable?</p>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; &lsquo;a&rsquo;
+&gt; When the copy constructor is executed, it (recursively) calls the copy constructor due to the pass-by-value parameter.
+&gt; Endless recursive calls cause a stack overflow.
+&gt; Therefore, a pass-by-value parameter in a copy constructor is not allowed in the C++ standard.
+&gt; Both Visual Studio &amp; GCC report an error during compiling time. The copy constructor must be changed to:
+    A(const A&amp; other)&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;CMyString&amp; CMyString::operator=(const CMyString&amp; str) {
+    if (this != &amp;str) {
+         CMyString strTemp(str);
+         char* pTemp = strTemp.m_pData;
+         strTemp.m_pData = m_pData;
+         m_pData = pTemp;
+    }
+    return *this;
+}
+&gt; Key points to look out for:-
+    ~ Does it return a reference? Without it, it&rsquo;s not possible to chain assignments.
+    ~ Is the argument passed by a constant reference? If it&rsquo;s by value then a copy is made which is wasteful.
+    ~ Is the existing memory freed?
+    ~ Does it protect against self-assignment?
+    ~ What if an exception is throw while reallocating memory? This would leave the object in an invalid state.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>The default access level in a struct is public, while in a class it is private.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; The C++ compiler in Visual Studio does not implement list initialization inside either a member initializer list or a non-static data member initializer.
+&gt; Visual Studio 2013 Update 3 reports this as an error.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Synchronization primitive that can be used to block one or more threads, until another thread notifies the condition variable.
+&gt; Works only with std::unique_lock<a href="std::mutex">std::mutex</a>.
+&gt; Waiting threads must acquire std::unique_lock<a href="std::mutex">std::mutex</a> on the same mutex used to protect the shared variable.
+&gt; The wait operation atomically releases the mutex and suspends execution.
+&gt; The working thread notifies the condition variable via notify_one() or notify_all().&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li>What is the difference between a condition_variable and a condition_variable_any?</li>
+<li>What is a unique_lock?</li>
+<li>What is a mutex (class)? How is it used?</li>
+<li>What is a standard-layout type?</li>
+<li>What is the deque template class?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; condition_variable works only with std::unique_lock<a href="std::mutex">std::mutex</a>; allowing for maximal efficiency on some platforms.
+&gt; condition_variable_any works with any BasicLockable object.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Mutex ownership wrapper.
+&gt; It allows:
+    ~ Deferred locking.
+    ~ Time-constrained locking attempts.
+    ~ Recursive locking.
+    ~ Transfer of lock ownership.
+    ~ Use with condition variables.
+e.g.
+    #include <mutex>
+    std::mutex m;
+    std::unique_lock<a href="std::mutex">std::mutex</a> lock(m);
+    // critical section&hellip;
+    lock.unlock();&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; A lockable object, designed to signal when critical sections of code need exclusive access.
+&gt; Prevents other threads with the same protection from executing concurrently.
+&gt; Provide exclusive ownership.
+&gt; Do not support recursivity.
+e.g.
+    #include <mutex>
+    &hellip;.
+    std::mutex m;
+    lock(m);
+    // critical section.
+    m.unlock();&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; A type with a simple linear data structure and access control that can easily be used to communicate with code written in other programming languages, such as C.
+&gt; Defined with class, struct, or union.
+&gt; Has no virtual functions or virtual base classes.
+&gt; Has the same access control level for all its non-static data members.
+&gt; Has no non-static data in the most derived class, max one base class with non-static data.
+&gt; Its base class (if any) is a standard-layout class. And,
+&gt; Has no base classes of the same type as its first non-static data member.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Double-ended queue
+&gt; Sequence container with dynamic size that can be expanded or contracted on both ends.
+&gt; Allow for the individual elements to be accessed directly through random access iterators.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li>How does a deque differ from a vector?</li>
+<li>How do you define a type that may be used as though it were a function?</li>
+<li>When are function objects typically used?</li>
+<li>What is the thread class?</li>
+<li>What is a lock_guard used for?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Similar to vectors, but with efficient insertion and deletion at the beginning, not only at its end.
+&gt; Vectors use a single array that needs to be reallocated occasionally for growth.
+&gt; Elements of a deque can be scattered in different chunks of storage.
+&gt; More complex internally than vectors.
+&gt; Grow more efficiently under certain circumstances, especially with very long sequences, where reallocations become more expensive.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&ldquo;By defining member function operator() in the class.
+e.g.
+struct myclass {
+    int operator()(int a) {return a;}
+} myobject;
+&hellip;
+int x = myobject(0);&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>As arguments to functions, such as predicates or comparison functions passed to standard algorithms.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; An initialised thread object represents an active thread of execution.
+&gt; An initialised thread object is joinable.
+&gt; An initialised thread object has a unique thread id.
+&gt; A default-constructed (non-initialised) thread object is not joinable and has a common thread id.
+&gt; A joinable thread becomes not joinable if move-assigned, or join() or detach() is called.
+&gt; Thread objects cannot be copied.
+&gt; Calling the join() method on a thread causes the calling code to pause until the thread finishes.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Prevents concurrent access to code.
+&gt; It&rsquo;s a mutex wrapper that provides a convenient RAII-style mechanism for owning a mutex for the duration of a scoped block.
+e.g.
+#include <mutex>
+void doItSafely() {
+    std::lock_guard<a href="std::mutex">std::mutex</a> block(mymutex);
+    // from this point until the &lsquo;block&rsquo; variable goes out of scope,
+    // we&rsquo;re thread safe!
+}&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/cplusplus-1/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43;, Part 1">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/cplusplus-3/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43;, Part 3">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+
