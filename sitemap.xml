@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/questions/csharp-1/</loc>
+    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/centos-1/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
   </url>
@@ -78,6 +83,12 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/tags/.net/</loc>
+    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/tags/bash/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
     <priority>0</priority>
@@ -85,6 +96,12 @@
   
   <url>
     <loc>https://richardmillen.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/c#/</loc>
+    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -117,6 +134,18 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/tags/go/</loc>
+    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/golang/</loc>
+    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/tags/linux/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
     <priority>0</priority>
@@ -135,7 +164,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/programming/</loc>
-    <lastmod>2017-06-28T12:09:56+01:00</lastmod>
+    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,7 +182,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/</loc>
-    <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   

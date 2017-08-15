@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Richard Millen</title>
+    <link>https://richardmillen.github.io/tags/golang/</link>
+    <description>Recent content in Golang on Richard Millen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
+    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
+    <lastBuildDate>Wed, 28 Jun 2017 13:14:43 +0100</lastBuildDate>
+    
+	<atom:link href="https://richardmillen.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/go-2/</link>
+      <pubDate>Wed, 28 Jun 2017 13:14:43 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/go-1/</link>
+      <pubDate>Wed, 28 Jun 2017 13:03:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
+If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
+e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
+    </item>
+    
+  </channel>
+</rss>
