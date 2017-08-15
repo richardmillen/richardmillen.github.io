@@ -8,9 +8,12 @@
   <title>C&#43;&#43;, Part 1</title>
   <meta property="og:title" content="C&#43;&#43;, Part 1" />
   <meta name="twitter:title" content="C&#43;&#43;, Part 1" />
-  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
-  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
-  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. &ldquo;Valuelike copy-assignment operator. &gt; It is …">
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. Valuelike copy-assignment operator.
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. Valuelike copy-assignment operator.
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Explain why you might want to define your own type-specific swap function?       Show Answers  1. 2. Valuelike copy-assignment operator.
+It is crucially …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -207,26 +210,30 @@
 
 <h4 id="2">2.</h4>
 
-<p>&ldquo;Valuelike copy-assignment operator.
-&gt; It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.
-&gt; When possible, we should write our assignment operators so that they will leave the left-hand operand in a sensible state should an exception occur.
-e.g.
-    MyType&amp; MyType::operator=(const MyType &amp;rhs) {
-        auto newp = new string(*rhs.ps);
-        delete ps;
-        ps = newp;
-        i = rhs.i;
-        return *this;
-    }&rdquo;</p>
+<p>Valuelike copy-assignment operator.<br />
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.<br />
+When possible, we should write our assignment operators so that they will leave the left-hand operand in a sensible state should an exception occur.<br />
+e.g.</p>
+
+<pre><code class="language-c++">MyType&amp; MyType::operator=(const MyType &amp;rhs) {
+    auto newp = new string(*rhs.ps);
+    delete ps;
+    ps = newp;
+    i = rhs.i;
+    return *this;
+}
+</code></pre>
 
 <h4 id="3">3.</h4>
 
-<p>&ldquo;When we initialise a variable using =, we are asking the compiler to copy initialise the object by copying the initialiser on the right-hand side into the object being created.
-When we omit the =, we use direct initialisation.
-e.g.
-    string s1 = &ldquo;&ldquo;hello&rdquo;&ldquo;;    // copy initialisation
-    string s2(&ldquo;&ldquo;hello&rdquo;&ldquo;);     // direct initialisation
-    string s3(10, &lsquo;c&rsquo;);     // direct initialisation&rdquo;</p>
+<p>When we initialise a variable using =, we are asking the compiler to copy initialise the object by copying the initialiser on the right-hand side into the object being created.<br />
+When we omit the =, we use direct initialisation.<br />
+e.g.</p>
+
+<pre><code class="language-c++">string s1 = &quot;hello&quot;;    // copy initialisation
+string s2(&quot;hello&quot;);     // direct initialisation
+string s3(10, 'c');     // direct initialisation
+</code></pre>
 
 <h4 id="4">4.</h4>
 
@@ -267,55 +274,82 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&ldquo;We can use an array to initialise a vector.
-e.g.
-    int arr[] = {0, 1, 2, 3, 4, 5};
-    vector<int> ivec(begin(arr), end(arr));&rdquo;</p>
+<p>We can use an array to initialise a vector.<br />
+e.g.</p>
+
+<pre><code class="language-c++">int arr[] = {0, 1, 2, 3, 4, 5};
+vector&lt;int&gt; ivec(begin(arr), end(arr));
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&ldquo;Arithmetic operators are left associative, which means operators at the same precedence group left to right:
-    ~ Because of precedence, the expression 3+4*5 is 23, not 35.
-    ~ Because of associativity, the expression 20-15-3 is 2, not 8.&rdquo;</p>
+<p>Arithmetic operators are left associative, which means operators at the same precedence group left to right:</p>
+
+<ul>
+<li>Because of precedence, the expression 3+4*5 is 23, not 35.</li>
+<li>Because of associativity, the expression 20-15-3 is 2, not 8.</li>
+</ul>
 
 <h4 id="3">3.</h4>
 
-<p>&ldquo;C++ library defines several exception classes used to report problems in the standard library, also intended to be used by the client. Defined in headers:-
-    <exception>
-        exception - no additional info.
-    <stdexcept>
-        exception - most general.
-        runtime_error - problem detectable only at runtime.
-        range_error - outside the meaningful range of values.
-        overflow_error - computation overflowed.
-        underflow_error - computation underflowed.
-        logic_error - error in logic of program.
-        domain_error - argument for which no result exists.
-        invalid_argument - inappropriate argument.
-        length_error - attempt to create object large than max size for type.
-        out_of_range - value outside valid range.
-    <new>
-        bad_alloc
-    <type_info>
-        bad_cast&rdquo;</p>
+<p>C++ library defines several exception classes used to report problems in the standard library, also intended to be used by the client. Defined in headers:-</p>
+
+<ul>
+<li><code>&lt;exception&gt;</code>
+
+<ul>
+<li>exception - no additional info.</li>
+</ul></li>
+<li><code>&lt;stdexcept&gt;</code>
+
+<ul>
+<li><code>exception</code> - most general.</li>
+<li><code>runtime_error</code> - problem detectable only at runtime.</li>
+<li><code>range_error</code> - outside the meaningful range of values.</li>
+<li><code>overflow_error</code> - computation overflowed.</li>
+<li><code>underflow_error</code> - computation underflowed.</li>
+<li><code>logic_error</code> - error in logic of program.</li>
+<li><code>domain_error</code> - argument for which no result exists.</li>
+<li><code>invalid_argument</code> - inappropriate argument.</li>
+<li><code>length_error</code> - attempt to create object large than max size for type.</li>
+<li><code>out_of_range</code> - value outside valid range.</li>
+</ul></li>
+<li><code>&lt;new&gt;</code>
+
+<ul>
+<li><code>bad_alloc</code></li>
+</ul></li>
+<li><code>&lt;type_info&gt;</code>
+
+<ul>
+<li><code>bad_cast</code></li>
+</ul></li>
+</ul>
 
 <h4 id="4">4.</h4>
 
-<p>&ldquo;Standard library convention for managing array arguments is to pass pointers to first and one past last element.
-e.g.
-    void print(const int *beg, const int *end) {
-        while (beg != end)
-            cout &lt;&lt; *beg++ &lt;&lt; endl;
-    }&rdquo;</p>
+<p>Standard library convention for managing array arguments is to pass pointers to first and one past last element.<br />
+e.g.</p>
+
+<pre><code class="language-c++">void print(const int *beg, const int *end) {
+    while (beg != end)
+        cout &lt;&lt; *beg++ &lt;&lt; endl;
+}
+</code></pre>
 
 <h4 id="5">5.</h4>
 
-<p>&ldquo;The form of a function that returns a pointer to an array is:
-    type (*function(parameter_list))[dimension]
-e.g.
-    int arr[10];
-    int *p1[10];
-    int (*p2)[10] = &arr;&ldquo;</p>
+<p>The form of a function that returns a pointer to an array is:</p>
+
+<pre><code class="language-c++">type (*function(parameter_list))[dimension]
+</code></pre>
+
+<p>e.g.</p>
+
+<pre><code class="language-c++">int arr[10];
+int *p1[10];
+int (*p2)[10] = &amp;arr;
+</code></pre>
 
   </div>
   <script>
@@ -336,8 +370,8 @@ e.g.
 <li></li>
 <li></li>
 <li></li>
-<li>What is a &ldquo;recursive_mutex&rdquo;?</li>
-<li>What is a &ldquo;timed_mutex&rdquo;?</li>
+<li>What is a <code>recursive_mutex</code>?</li>
+<li>What is a <code>timed_mutex</code>?</li>
 </ol>
 
 <div>
@@ -348,34 +382,40 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&ldquo;If we know the array(s) to which our function can return a pointer, we can use decltype to declare the return type.
-decltype does not automatically convert an array to its corresponding pointer type.
-The type returned by decltype is an array, to which we must add a * to indicate that arrPtr returns a pointer.
-e.g.
-    int odd[] = {1, 3, 5, 7};
-    int even[] = {0, 2, 4, 6};
-    decltype(odd) *arrPtr(int i) {
-        return (i % d) ? &amp;odd : &even;
-    }&rdquo;</p>
+<p>If we know the array(s) to which our function can return a pointer, we can use decltype to declare the return type.<br />
+decltype does not automatically convert an array to its corresponding pointer type.<br />
+The type returned by decltype is an array, to which we must add a * to indicate that arrPtr returns a pointer.<br />
+e.g.</p>
+
+<pre><code class="language-c++">int odd[] = {1, 3, 5, 7};
+int even[] = {0, 2, 4, 6};
+decltype(odd) *arrPtr(int i) {
+    return (i % d) ? &amp;odd : &amp;even;
+}
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&ldquo;The sequential containers (except array) define a member named &lsquo;assign&rsquo; that lets us assign from a different but compatible type, or assign from a subsequence of a container.
-Replaces all elements in the left-hand container with (copies of) the elements specified by its arguments.
-e.g.
-    list<string> names;
-    vector<const char*> oldstyle;
-    names = oldstyle; // error
-    names.assign(oldstyle.cbegin(), oldstyle.cend());&rdquo;</p>
+<p>The sequential containers (except array) define a member named &lsquo;assign&rsquo; that lets us assign from a different but compatible type, or assign from a subsequence of a container.<br />
+Replaces all elements in the left-hand container with (copies of) the elements specified by its arguments.<br />
+e.g.</p>
+
+<pre><code class="language-c++">list&lt;string&gt; names;
+vector&lt;const char*&gt; oldstyle;
+names = oldstyle; // error
+names.assign(oldstyle.cbegin(), oldstyle.cend());
+</code></pre>
 
 <h4 id="3">3.</h4>
 
-<p>&ldquo;The swap operation exchanges the contents of two containers of the same type.
-With exception of arrays, guaranteed to be fast as the elements themselves are not swapped; internal data structures are.
-e.g.
-    vector<string> svec1(10);
-    vector<string> svec2(24);
-    swap(svec1, svec2);&rdquo;</p>
+<p>The swap operation exchanges the contents of two containers of the same type.<br />
+With exception of arrays, guaranteed to be fast as the elements themselves are not swapped; internal data structures are.<br />
+e.g.</p>
+
+<pre><code class="language-c++">vector&lt;string&gt; svec1(10);
+vector&lt;string&gt; svec2(24);
+swap(svec1, svec2);
+</code></pre>
 
 <h4 id="4">4.</h4>
 
@@ -397,11 +437,11 @@ e.g.
 <h3 id="quiz-4">Quiz 4</h3>
 
 <ol>
-<li>What is a &ldquo;recursive_timed_mutex&rdquo;?</li>
+<li>What is a <code>recursive_timed_mutex</code>?</li>
 <li></li>
-<li>What does the make_shared function do?</li>
+<li>What does the <code>make_shared</code> function do?</li>
 <li></li>
-<li>When should a parameter be marked as const?</li>
+<li>When should a parameter be marked as <code>const</code>?</li>
 </ol>
 
 <div>
@@ -414,7 +454,7 @@ e.g.
 
 <h4 id="2">2.</h4>
 
-<p>It is not necessary to explicitly close a file (std::ofstream supports RAII)</p>
+<p>It is not necessary to explicitly close a file (<code>std::ofstream</code> supports <em>RAII</em>)</p>
 
 <h4 id="3">3.</h4>
 
@@ -457,7 +497,8 @@ e.g.
 
 <h4 id="2">2.</h4>
 
-<p>Go to project properties/Configuration Properties/Linker/Optimization and set References setting to Keep Unreferenced Data (/OPT:NOREF). This will keep Visual C++ linker from discarding individual symbols generated by your tests from the final executable.</p>
+<p>Go to <code>project properties/Configuration Properties/Linker/Optimization</code> and set <code>References</code> setting to <code>Keep Unreferenced Data (/OPT:NOREF)</code>.<br />
+This will keep Visual C++ linker from discarding individual symbols generated by your tests from the final executable.</p>
 
 <h4 id="3">3.</h4>
 
@@ -483,9 +524,9 @@ e.g.
 <ol>
 <li>How many ways are there to initialize a primitive data type in C++ and what are they?</li>
 <li>Why should you declare a destructor as virtual?</li>
-<li>What does it mean that C++ supports overloading?</li>
+<li>What does it mean that C++ supports <em>overloading</em>?</li>
 <li>What are examples of overloading in C++?</li>
-<li>What is name mangling in C++ and why is it used?</li>
+<li>What is <em>name mangling</em> in C++ and why is it used?</li>
 </ol>
 
 <div>
@@ -520,9 +561,9 @@ e.g.
 <h3 id="quiz-7">Quiz 7</h3>
 
 <ol>
-<li>What is an abstract base class?</li>
-<li>What is RTTI?</li>
-<li>How can you access a variable that is “hidden” by another variable of the same name?</li>
+<li>What is an <em>abstract base class</em>?</li>
+<li>What is <em>RTTI</em>?</li>
+<li>How can you access a variable that is <em>hidden</em> by another variable of the same name?</li>
 <li>What is a namespace and how is it used.</li>
 <li>What are the differences between a class and a struct in C++, and how does this compare to C?</li>
 </ol>
@@ -560,9 +601,9 @@ e.g.
 
 <ol>
 <li>What are templates? How are they used?</li>
-<li>What is a copy constructor and when is it used, especially in comparison to the equal operator.</li>
-<li>What is the difference between a “shallow” and a “deep” copy?</li>
-<li>What is the const operator and how is it used?</li>
+<li>What is a <em>copy constructor</em> and when is it used, especially in comparison to the equal operator.</li>
+<li>What is the difference between a <em>shallow</em> and a <em>deep</em> copy?</li>
+<li>What is the <code>const</code> operator and how is it used?</li>
 <li>What are the differences between passing by reference, passing by value, and passing by pointer in C++?</li>
 </ol>
 
@@ -598,11 +639,11 @@ e.g.
 <h3 id="quiz-9">Quiz 9</h3>
 
 <ol>
-<li>When is it and when is it not a good idea to return a value by reference in C++?</li>
+<li>When is it a good idea to return a value by reference in C++? When is it not?</li>
 <li>What is the difference between a variable created on the stack and one created on the heap?</li>
-<li>How do you free memory allocated dynamically for an array? What are the implications of just using delete?</li>
-<li>What is multiple inheritance? When should it be used?</li>
-<li>What is a pure virtual function?</li>
+<li>How do you free memory allocated dynamically for an array? What are the implications of just using <code>delete</code>?</li>
+<li>What is <em>multiple inheritance</em>? When should it be used?</li>
+<li>What is a <em>pure virtual function</em>?</li>
 </ol>
 
 <div>
@@ -640,8 +681,8 @@ e.g.
 <li>What does the keyword volatile do?</li>
 <li>What is the STL?</li>
 <li>What is a Vector?</li>
-<li>What is contained in the <algorithms> header?</li>
-<li>What is the difference between #include <iostream.h> and #include <iostream>?</li>
+<li>What is contained in the <code>&lt;algorithms&gt;</code> header?</li>
+<li>What is the difference between <code>#include &lt;iostream.h&gt;</code> and <code>#include &lt;iostream&gt;</code>?</li>
 </ol>
 
 <div>
@@ -676,11 +717,11 @@ e.g.
 <h3 id="quiz-11">Quiz 11</h3>
 
 <ol>
-<li>What&rsquo;s the difference between “++i” and “i++”?</li>
-<li>What is short circuit evaluation? How can it be used? Why can is be dangerous?</li>
-<li>What is the ‘,’ operator?</li>
+<li>What&rsquo;s the difference between <code>++i</code> and <code>i++</code>?</li>
+<li>What is <em>short circuit evaluation</em>? How can it be used? Why can is be dangerous?</li>
+<li>What is the <code>,</code> operator?</li>
 <li>What is the only ternary operator? How is it used?</li>
-<li>What is the use of a const member function and how can it be used?</li>
+<li>What is the use of a <code>const</code> member function and how can it be used?</li>
 </ol>
 
 <div>
@@ -717,9 +758,9 @@ e.g.
 <ol>
 <li>How is try/catch used in C++?</li>
 <li>Why should you never throw an exception in a destructor?</li>
-<li>What is the explicit keyword?</li>
+<li>What is the <code>explicit</code> keyword?</li>
 <li>What is the proper way to perform a cast in C++?</li>
-<li>What does inline do?</li>
+<li>What does <code>inline</code> do?</li>
 </ol>
 
 <div>
@@ -758,7 +799,7 @@ e.g.
 <li>What is GCC?</li>
 <li>What is Clang?</li>
 <li>What is <code>difference_type</code>?</li>
-<li>What is a predicate?</li>
+<li>What is a <em>predicate</em>?</li>
 </ol>
 
 <div>
@@ -793,10 +834,10 @@ e.g.
 <h3 id="quiz-14">Quiz 14</h3>
 
 <ol>
-<li>What is auto linking?</li>
-<li>What is a binary predicate?</li>
-<li>What is a &ldquo;back_inserter&rdquo;?</li>
-<li>What is the &ldquo;bind&rdquo; function?</li>
+<li>What is <em>auto linking</em>?</li>
+<li>What is a <em>binary predicate</em>?</li>
+<li>What is a <code>back_inserter</code>?</li>
+<li>What is the <code>bind</code> function?</li>
 <li>Why should you be cautious when working with iterators while adding or removing elements from a container?</li>
 </ol>
 
@@ -816,20 +857,18 @@ e.g.
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Iterator adapter.
-&gt; Takes a reference to a container and generates an insert iterator that uses push_back to add elements.&rdquo;</p>
+<p>Iterator adapter.<br />
+Takes a reference to a container and generates an insert iterator that uses push_back to add elements.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Library function.
-&gt; Defined in <functional>
-&gt; Binds one or more arguments to a callable expression.&rdquo;</p>
+<p>Library function.<br />
+Defined in <code>&lt;functional&gt;</code><br />
+Binds one or more arguments to a callable expression.</p>
 
 <h4 id="5">5.</h4>
 
-<blockquote>
-<p>Container operations that add/remove elements can invalidate iterators, pointers or references to elements .</p>
-</blockquote>
+<p>Container operations that add/remove elements can invalidate iterators, pointers or references to elements.</p>
 
   </div>
   <script>
@@ -848,10 +887,10 @@ e.g.
 
 <ol>
 <li>What is an io buffer?</li>
-<li>What is clog?</li>
+<li>What is <code>clog</code>?</li>
 <li>What is an alias declaration?</li>
-<li>What does low-level const mean?</li>
-<li>What does top-level const mean?</li>
+<li>What does <em>low-level const</em> mean?</li>
+<li>What does <em>top-level const</em> mean?</li>
 </ol>
 
 <div>
@@ -862,21 +901,23 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Used by the io facilities to store input or output and read or write the buffer independently from actions in the program.
-&gt; Output buffers can be explicitly flushed to force the buffer to be written.
-&gt; By default, reading cin flushes cout. cout is also flushed when the program ends normally.&rdquo;</p>
+<p>Used by the io facilities to store input or output and read or write the buffer independently from actions in the program.<br />
+Output buffers can be explicitly flushed to force the buffer to be written.<br />
+By default, reading cin flushes cout. cout is also flushed when the program ends normally.</p>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; ostream object tied to the standard error.
-&gt; Buffered by default.
-&gt; Usually used to write to a log file.&rdquo;</p>
+<p><code>ostream</code> object tied to the standard error.<br />
+Buffered by default.<br />
+Usually used to write to a log file.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Defines a synonym for another type.
-e.g.
-    using name = type&rdquo;</p>
+<p>Defines a synonym for another type.<br />
+e.g.</p>
+
+<pre><code class="language-c++">using name = type
+</code></pre>
 
 <h4 id="4">4.</h4>
 
@@ -902,11 +943,11 @@ e.g.
 <h3 id="quiz-16">Quiz 16</h3>
 
 <ol>
-<li>What is nullptr?</li>
-<li>What is constexpr?</li>
-<li>What is decltype?</li>
+<li>What is <code>nullptr</code>?</li>
+<li>What is <code>constexpr</code>?</li>
+<li>What is <code>decltype</code>?</li>
 <li>What is a const pointer?</li>
-<li>What is a const reference ?</li>
+<li>What is a const reference?</li>
 </ol>
 
 <div>
@@ -929,11 +970,11 @@ e.g.
 
 <h4 id="4">4.</h4>
 
-<p>Pointer that is const.</p>
+<p>Pointer that is <code>const</code>.</p>
 
 <h4 id="5">5.</h4>
 
-<p>Colloquial synonym for reference to const.</p>
+<p>Colloquial synonym for reference to <code>const</code>.</p>
 
   </div>
   <script>
@@ -951,11 +992,11 @@ e.g.
 <h3 id="quiz-17">Quiz 17</h3>
 
 <ol>
-<li>What is a pointer to const?</li>
-<li>What is a reference to const?</li>
-<li>What is a &lsquo;temporary&rsquo;?</li>
-<li>What does void* mean?</li>
-<li>What does the typedef statement do?</li>
+<li>What is a pointer to <code>const</code>?</li>
+<li>What is a reference to <code>const</code>?</li>
+<li>What is a <em>temporary</em>?</li>
+<li>What does <code>void*</code> mean?</li>
+<li>What does the <code>typedef</code> statement do?</li>
 </ol>
 
 <div>
@@ -966,23 +1007,23 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Pointer that can hold address of a const object.
-&gt; May not be used to change the value of the object to which it points.&rdquo;</p>
+<p>Pointer that can hold address of a const object.<br />
+May not be used to change the value of the object to which it points.</p>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Reference that may not change the value of the object to which it refers.
-&gt; May be bound to a const object, a nonconst object, or the result of an expression.&rdquo;</p>
+<p>Reference that may not change the value of the object to which it refers.<br />
+May be bound to a const object, a nonconst object, or the result of an expression.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Unnamed object created by the compiler while evaluating an expression.
-&gt; Exists until the end of the largest expression that encloses the expression for which it was created.&rdquo;</p>
+<p>Unnamed object created by the compiler while evaluating an expression.<br />
+Exists until the end of the largest expression that encloses the expression for which it was created.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Pointer type that can point to any nonconst type.
-&gt; May not be dereferenced.&rdquo;</p>
+<p>Pointer type that can point to any nonconst type.<br />
+May not be dereferenced.</p>
 
 <h4 id="5">5.</h4>
 
@@ -1004,11 +1045,11 @@ e.g.
 <h3 id="quiz-18">Quiz 18</h3>
 
 <ol>
-<li>What is the begin() function?</li>
-<li>What is copy initialisation?</li>
-<li>What is direct initialisation?</li>
-<li>Explain the getline() function.</li>
-<li>What is an off-the-end iterator?</li>
+<li>What is the <code>begin()</code> function?</li>
+<li>What is <em>copy initialisation</em>?</li>
+<li>What is <em>direct initialisation</em>?</li>
+<li>Explain the <code>getline()</code> function.</li>
+<li>What is an <em>off-the-end</em> iterator?</li>
 </ol>
 
 <div>
@@ -1019,31 +1060,31 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Member of string and vector stl types.
-&gt; Returns an iterator to the first element.
-&gt; Also a free-standing library function that takes an array and returns a pointer to the first element.&rdquo;</p>
+<p>Member of string and vector stl types.<br />
+Returns an iterator to the first element.<br />
+Also a free-standing library function that takes an array and returns a pointer to the first element.</p>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Form of initialisation that uses an =.
-&gt; The newly created object is a copy of the given initialiser.&rdquo;</p>
+<p>Form of initialisation that uses an <code>=</code>.<br />
+The newly created object is a copy of the given initialiser.</p>
 
 <h4 id="3">3.</h4>
 
-<p>Form of initialisation that does not include an =</p>
+<p>Form of initialisation that does not include an <code>=</code></p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Defined in <string>.
-&gt; Takes an istream an a string.
-&gt; Reads the stream up to the next newline, storing what it read into the string.
-&gt; Returns the istream.
-&gt; The newline is read and discarded.&rdquo;</p>
+<p>Defined in <code>&lt;string&gt;</code>.<br />
+Takes an istream an a string.<br />
+Reads the stream up to the next newline, storing what it read into the string.<br />
+Returns the istream.<br />
+The newline is read and discarded.</p>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Returned by end().
-&gt; Refers to a nonexistent element on past the end of a container.&rdquo;</p>
+<p>Returned by <code>end()</code>.<br />
+Refers to a nonexistent element on past the end of a container.</p>
 
   </div>
   <script>
@@ -1061,11 +1102,11 @@ e.g.
 <h3 id="quiz-19">Quiz 19</h3>
 
 <ol>
-<li>What is ptrdiff_t?</li>
-<li>What is a &lsquo;range for&rsquo;?</li>
-<li>What is size_t?</li>
-<li>What is size_type?</li>
-<li>What is dynamic_cast?</li>
+<li>What is <code>ptrdiff_t</code>?</li>
+<li>What is a <em>range for</em>?</li>
+<li>What is <code>size_t</code>?</li>
+<li>What is <code>size_type</code>?</li>
+<li>What is <code>dynamic_cast</code>?</li>
 </ol>
 
 <div>
@@ -1076,21 +1117,19 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Machine-dependent signed integral type.
-&gt; Defined in <cstddef>
-&gt; Large enough to hold the difference between two pointers into the largest possible array.&rdquo;</p>
+<p>Machine-dependent signed integral type.<br />
+Defined in <code>&lt;cstddef&gt;</code><br />
+Large enough to hold the difference between two pointers into the largest possible array.</p>
 
 <h4 id="2">2.</h4>
 
-<blockquote>
 <p>Control statement that iterates through a collection of values.</p>
-</blockquote>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Machine-dependent unsigned integral type.
-&gt; Defined in <cstddef>
-&gt; Large enough to hold the size of the largest possible array.&rdquo;</p>
+<p>Machine-dependent unsigned integral type.<br />
+Defined in <code>&lt;cstddef&gt;</code><br />
+Large enough to hold the size of the largest possible array.</p>
 
 <h4 id="4">4.</h4>
 
@@ -1098,8 +1137,8 @@ e.g.
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Function that converts an object&rsquo;s type.
-&gt; Used in combination with inheritance and runtime type identification.&rdquo;</p>
+<p>Function that converts an object&rsquo;s type.<br />
+Used in combination with inheritance and runtime type identification.</p>
 
   </div>
   <script>
@@ -1117,11 +1156,11 @@ e.g.
 <h3 id="quiz-20">Quiz 20</h3>
 
 <ol>
-<li>What is const_cast?</li>
-<li>What is reinterpret_cast?</li>
-<li>What is static_cast?</li>
-<li>What are integral promotions?</li>
-<li>What is an implicit conversion?</li>
+<li>What is <code>const_cast</code>?</li>
+<li>What is <code>reinterpret_cast</code>?</li>
+<li>What is <code>static_cast</code>?</li>
+<li>What are <em>integral promotions</em>?</li>
+<li>What is an <em>implicit conversion</em>?</li>
 </ol>
 
 <div>
@@ -1132,24 +1171,22 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<blockquote>
 <p>Function that converts a low-level const object to the corresponding nonconst type or vice versa.</p>
-</blockquote>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Interprets the contents of the operand as a different type.
-&gt; Inherently machine-dependent and dangerous.&rdquo;</p>
+<p>Interprets the contents of the operand as a different type.<br />
+Inherently machine-dependent and dangerous.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; An explicit request for a well-defined type conversion.
-&gt; Often used to override an implicit conversion the compiler would otherwise perform.&rdquo;</p>
+<p>An explicit request for a well-defined type conversion.<br />
+Often used to override an implicit conversion the compiler would otherwise perform.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Conversions that take a smaller integral type to its most closely related larger integral type.
-&gt; Operands of small integral types are always promoted, even in contexts where such conversions might not seem to be required.&rdquo;</p>
+<p>Conversions that take a smaller integral type to its most closely related larger integral type.<br />
+Operands of small integral types are always promoted, even in contexts where such conversions might not seem to be required.</p>
 
 <h4 id="5">5.</h4>
 

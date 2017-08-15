@@ -8,8 +8,8 @@
   <title>C&#43;&#43;, Part 3</title>
   <meta property="og:title" content="C&#43;&#43;, Part 3" />
   <meta name="twitter:title" content="C&#43;&#43;, Part 3" />
-  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a &ldquo;hash&rdquo;?   Show Answers  1. &ldquo;std::string codes[128]; &hellip; codes[&lsquo;a&rsquo;] = mapped_value; codes[&lsquo;b&rsquo;] = mapped_value; codes[&lsquo;c&rsquo;] = mapped_value; &hellip; mapped_value = codes[static_cast(map_from[n])];&rdquo;">
-  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a &ldquo;hash&rdquo;?   Show Answers  1. &ldquo;std::string codes[128]; &hellip; codes[&lsquo;a&rsquo;] = mapped_value; codes[&lsquo;b&rsquo;] = mapped_value; codes[&lsquo;c&rsquo;] = mapped_value; &hellip; mapped_value = codes[static_cast(map_from[n])];&rdquo;">
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a hash?   Show Answers  1. std::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // .">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an associative array? What is an associative container? What is a hash?   Show Answers  1. std::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // .">
   <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How might you store and retrieve character code mappings using strings? How many associative containers are provided in the standard library? What is an …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -192,9 +192,9 @@
 <ol>
 <li>How might you store and retrieve character code mappings using strings?</li>
 <li>How many associative containers are provided in the standard library?</li>
-<li>What is an associative array?</li>
-<li>What is an associative container?</li>
-<li>What is a &ldquo;hash&rdquo;?</li>
+<li>What is an <em>associative array</em>?</li>
+<li>What is an <em>associative container</em>?</li>
+<li>What is a <em>hash</em>?</li>
 </ol>
 
 <div>
@@ -205,43 +205,42 @@
   
   <h4 id="1">1.</h4>
 
-<p>&ldquo;std::string codes[128];
-&hellip;
-codes[&lsquo;a&rsquo;] = mapped_value;
-codes[&lsquo;b&rsquo;] = mapped_value;
-codes[&lsquo;c&rsquo;] = mapped_value;
-&hellip;
-mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
+<pre><code class="language-c++">std::string codes[128];
+// ...
+codes['a'] = mapped_value;
+codes['b'] = mapped_value;
+codes['c'] = mapped_value;
+// ...
+mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; 8
-&gt; Each is either a &ldquo;&ldquo;map&rdquo;&rdquo; or a &ldquo;&ldquo;set&rdquo;&ldquo;.
-    1) set
-    2) multiset
-    3) map
-    4) multimap
-    5) unordered_set
-    6) unordered_multiset
-    7) unordered_map
-    8) unordered_multimap&rdquo;</p>
+<p>8 - Each is either a <em>map</em> or a <em>set</em>:</p>
+
+<ol>
+<li>set</li>
+<li>multiset</li>
+<li>map</li>
+<li>multimap</li>
+<li>unordered_set</li>
+<li>unordered_multiset</li>
+<li>unordered_map</li>
+<li>unordered_multimap</li>
+</ol>
 
 <h4 id="3">3.</h4>
 
-<blockquote>
 <p>Elements indexed by key rather than positionally.</p>
-</blockquote>
 
 <h4 id="4">4.</h4>
 
-<blockquote>
 <p>Collection that supports efficient lookup by key.</p>
-</blockquote>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Library template.
-&gt; Used by unordered containers to manage position of their elements.&rdquo;</p>
+<p>Library template.<br />
+Used by unordered containers to manage position of their elements.</p>
 
   </div>
   <script>
@@ -259,11 +258,11 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
 <h3 id="quiz-2">Quiz 2</h3>
 
 <ol>
-<li>What is a &ldquo;key_type&rdquo;?</li>
-<li>What is a &ldquo;map&rdquo;?</li>
-<li>What is a &ldquo;mapped_type&rdquo;?</li>
-<li>What is a &ldquo;multimap&rdquo;?</li>
-<li>What is a &ldquo;multiset&rdquo;?</li>
+<li>What is a <code>key_type</code>?</li>
+<li>What is a <code>map</code>?</li>
+<li>What is a <code>mapped_type</code>?</li>
+<li>What is a <code>multimap</code>?</li>
+<li>What is a <code>multiset</code>?</li>
 </ol>
 
 <div>
@@ -274,32 +273,30 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
   
   <h4 id="1">1.</h4>
 
-<blockquote>
 <p>Type used and defined by associative containers.</p>
-</blockquote>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Class template.
-&gt; Each element must have a unique key.
-&gt; Dereferencing an iterator yields a &ldquo;&ldquo;pair&rdquo;&ldquo;.&rdquo;</p>
+<p>Associative container.<br />
+Class template.<br />
+Each element must have a unique key.<br />
+Dereferencing an iterator yields a <code>pair</code>.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Type defined by map types.
-&gt; Type of the values associated with the keys in a &ldquo;&ldquo;map&rdquo;&ldquo;.&rdquo;</p>
+<p>Type defined by map types.<br />
+Type of the values associated with the keys in a <code>map</code>.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Similar to map, except a given key may appear more than once.
-&gt; Doesn&rsquo;t support subscripting.&rdquo;</p>
+<p>Associative container.<br />
+Similar to map, except a given key may appear more than once.<br />
+Doesn&rsquo;t support subscripting.</p>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Similar to set, except a given key may appear more than once.&rdquo;</p>
+<p>Associative container.<br />
+Similar to set, except a given key may appear more than once.</p>
 
   </div>
   <script>
@@ -317,11 +314,11 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
 <h3 id="quiz-3">Quiz 3</h3>
 
 <ol>
-<li>What is a &ldquo;pair&rdquo;?</li>
-<li>What is a &ldquo;set&rdquo;?</li>
-<li>What is strict weak ordering?</li>
-<li>What is an unordered container?</li>
-<li>What is an &ldquo;unordered_map&rdquo;?</li>
+<li>What is a <code>pair</code>?</li>
+<li>What is a <code>set</code>?</li>
+<li>What is <em>strict weak ordering</em>?</li>
+<li>What is an <em>unordered</em> container?</li>
+<li>What is an <code>unordered_map</code>?</li>
 </ol>
 
 <div>
@@ -332,33 +329,36 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Type with two public data members:
-    1) first
-    2) second&rdquo;</p>
+<p>Type with two public data members:</p>
+
+<ol>
+<li>first</li>
+<li>second</li>
+</ol>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Holds keys.
-&gt; A given key may appear only once.
-&gt; &ldquo;&ldquo;key_type&rdquo;&rdquo; and &ldquo;&ldquo;value_type&rdquo;&rdquo; are the same.&rdquo;</p>
+<p>Associative container.<br />
+Holds keys.<br />
+A given key may appear only once.<br />
+<code>key_type</code> and <code>value_type</code> are the same.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Relationship among keys in associative container.
-&gt; Possible to compare any two and determine which is &lsquo;less&rsquo;, if not they&rsquo;re considered equal.&rdquo;</p>
+<p>Relationship among keys in associative container.<br />
+Possible to compare any two and determine which is &lsquo;less&rsquo;, if not they&rsquo;re considered equal.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Uses hashing rather than comparison operation on keys to store / access elements.
-&gt; Performance depends on hash function.&rdquo;</p>
+<p>Associative container.<br />
+Uses hashing rather than comparison operation on keys to store / access elements.<br />
+Performance depends on hash function.</p>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Elements are key-value pairs.
-&gt; Permits only one element per key.&rdquo;</p>
+<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Permits only one element per key.</p>
 
   </div>
   <script>
@@ -376,10 +376,10 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
 <h3 id="quiz-4">Quiz 4</h3>
 
 <ol>
-<li>What is an &ldquo;unordered_multimap&rdquo;?</li>
-<li>What is an &ldquo;unordered_multiset&rdquo;?</li>
-<li>What is an &ldquo;unordered_set&rdquo;?</li>
-<li>What is an &ldquo;allocator&rdquo;?</li>
+<li>What is an <code>unordered_multimap</code>?</li>
+<li>What is an <code>unordered_multiset</code>?</li>
+<li>What is an <code>unordered_set</code>?</li>
+<li>What is an <code>allocator</code>?</li>
 <li>Which companion functions are there to the allocator class?</li>
 </ol>
 
@@ -391,55 +391,56 @@ mapped_value = codes[static_cast<size_t>(map_from[n])];&rdquo;</p>
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Elements are key-value pairs.
-&gt; Allows multiple elements per key.&rdquo;</p>
+<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Allows multiple elements per key.</p>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Stores keys.
-&gt; Allows multiple elements per key.&rdquo;</p>
+<p>Associative container.<br />
+Stores keys.<br />
+Allows multiple elements per key.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Associative container.
-&gt; Stores keys.
-&gt; Permits only one element per key.&rdquo;</p>
+<p>Associative container.<br />
+Stores keys.<br />
+Permits only one element per key.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Library class.
-&gt; Defined in <memory>.
-&gt; Lets you separate allocation from construction.
-&gt; Sometimes you allocate a block of memory you plan to use to construct objects as needed. This way you pay the overhead of constructing objects only when you actually need to create them.
-&gt; Provides type-aware allocation of raw, &lsquo;unconstructed&rsquo; memory.
-&gt; Allocates memory that is appropriately sized and aligned to hold the objects.
-&gt; User must construct objects in order to use memory returned by &ldquo;&ldquo;allocate&rdquo;&ldquo;.
-&gt; User must call &ldquo;&ldquo;destroy&rdquo;&rdquo; on objects that were constructed in this memory before calling &ldquo;&ldquo;deallocate&rdquo;&ldquo;.
-e.g.
-    allocator<string> alloc;
-    auto const p = alloc.allocate(n);
-    auto q = p;
-    alloc.construct(q++);
-    alloc.construct(q++, 10, &lsquo;c&rsquo;);
-    alloc.construct(q++, &ldquo;&ldquo;hi!&rdquo;&ldquo;);
-    &hellip;
-    while (q != p)
-        alloc.destroy(&ndash;q);
-    alloc.dealloc(p, n);&rdquo;</p>
+<p>Library class.<br />
+Defined in <code>&lt;memory&gt;</code>.<br />
+Lets you separate allocation from construction.<br />
+Sometimes you allocate a block of memory you plan to use to construct objects as needed. This way you pay the overhead of constructing objects only when you actually need to create them.<br />
+Provides type-aware allocation of raw, &lsquo;unconstructed&rsquo; memory.<br />
+Allocates memory that is appropriately sized and aligned to hold the objects.<br />
+User must construct objects in order to use memory returned by <code>allocate</code>.<br />
+User must call <code>destroy</code> on objects that were constructed in this memory before calling <code>deallocate</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">allocator&lt;string&gt; alloc;
+auto const p = alloc.allocate(n);
+auto q = p;
+alloc.construct(q++);
+alloc.construct(q++, 10, 'c');
+alloc.construct(q++, &quot;hi!&quot;);
+//...
+while (q != p)
+    alloc.destroy(--q);
+alloc.dealloc(p, n);&quot;
+</code></pre>
 
 <h4 id="5">5.</h4>
 
-<p>&ldquo;1) uninitialized_copy
-    ~ Copies elements denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, into unconstructed, raw memory denoted by a third iterator.
-2) uninitialized_copy_n
-    ~ Copies &lsquo;n&rsquo; elements starting from &lsquo;begin&rsquo; iterator, into unconstructed, raw memory denoted by a second iterator.
-3) uninitialized_fill
-    ~ Constructs objects into raw memory denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, as a copy of a third parameter.
-4) uninitialized_fill_n
-    ~ Constructs &lsquo;n&rsquo; objects starting from &lsquo;begin&rsquo; iterator, which denotes unconstructed, raw memory large enough to hold the given number of objects.
-&gt; These functions construct elements in the destination, rather than assigning to them.&rdquo;</p>
+<ol>
+<li><code>uninitialized_copy</code> - Copies elements denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, into unconstructed, raw memory denoted by a third iterator.</li>
+<li><code>uninitialized_copy_n</code> - Copies &lsquo;n&rsquo; elements starting from &lsquo;begin&rsquo; iterator, into unconstructed, raw memory denoted by a second iterator.</li>
+<li><code>uninitialized_fill</code> - Constructs objects into raw memory denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, as a copy of a third parameter.</li>
+<li><code>uninitialized_fill_n</code> - Constructs &lsquo;n&rsquo; objects starting from &lsquo;begin&rsquo; iterator, which denotes unconstructed, raw memory large enough to hold the given number of objects.</li>
+</ol>
+
+<p>These functions construct elements in the destination, rather than assigning to them.</p>
 
   </div>
   <script>
@@ -458,20 +459,21 @@ e.g.
 
 <h4 id="1">1.</h4>
 
-<p>&ldquo;Using the two companion algorithms of the allocator class, implement the following:</p>
+<p>Using the two companion algorithms of the allocator class, implement the following:</p>
 
-<pre><code>1. allocate twice as many elements as variable 'vi' holds,
-2. construct elements (starting at the beginning of the allocated memory), as copies of elements in vi.
-3. initialise the remaining elements to 42.&quot;
-</code></pre>
+<ol>
+<li>allocate twice as many elements as variable &lsquo;vi&rsquo; holds,</li>
+<li>construct elements (starting at the beginning of the allocated memory), as copies of elements in vi.</li>
+<li>initialise the remaining elements to 42.</li>
+</ol>
 
 <h4 id="2">2.</h4>
 
-<p>What is a dangling pointer?</p>
+<p>What is a <em>dangling pointer</em>?</p>
 
 <h4 id="3">3.</h4>
 
-<p>What is a &lsquo;deleter&rsquo;?</p>
+<p>What is a <em>deleter</em>?</p>
 
 <h4 id="4">4.</h4>
 
@@ -479,9 +481,9 @@ e.g.
 
 <h4 id="5">5.</h4>
 
-<p>What is the free store?</p>
+<p>What is the <em>free store</em>?</p>
 
-<div>
+<p><div>
   
   <button type="button" onclick="showAnswers('q5')">Show Answers</button>
   <br/>
@@ -489,30 +491,29 @@ e.g.
   
   <h4 id="1">1.</h4>
 
-<p>&ldquo;auto p = alloc.allocate(vi.size() * 2);
+<pre><code class="language-c++">auto p = alloc.allocate(vi.size() * 2);
 auto q = unintialized_copy(vi.begin(), vi.end(), p);
-uninitialized_fill_n(q, vi.size(), 42);&rdquo;</p>
+uninitialized_fill_n(q, vi.size(), 42);
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Pointer that refers to memory that once had an object but no longer does.
-&gt; Difficult to debug.&rdquo;</p>
+<p>Pointer that refers to memory that once had an object but no longer does.<br />
+Difficult to debug.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Function passed to a smart pointer.
-&gt; Used in place of &lsquo;delete&rsquo;.&rdquo;</p>
+<p>Function passed to a smart pointer.<br />
+Used in place of &lsquo;delete&rsquo;.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Object is allocated on the free store.
-&gt; They exist until explicitly deleted or program terminates.&rdquo;</p>
+<p>Object is allocated on the free store.<br />
+They exist until explicitly deleted or program terminates.</p>
 
 <h4 id="5">5.</h4>
 
-<blockquote>
 <p>Memory pool available to a program to hold dynamically allocated objects.</p>
-</blockquote>
 
   </div>
   <script>
@@ -525,15 +526,15 @@ uninitialized_fill_n(q, vi.size(), 42);&rdquo;</p>
       }
     }
   </script>
-</div>
+</div></p>
 
 <h3 id="quiz-6">Quiz 6</h3>
 
 <ol>
-<li>What is &lsquo;placement new&rsquo;?</li>
-<li>What is a &ldquo;shared_ptr&rdquo;?</li>
-<li>What is a &ldquo;unique_ptr&rdquo;?</li>
-<li>What is a &ldquo;weak_ptr&rdquo;?</li>
+<li>What is <em>placement new</em>?</li>
+<li>What is a <code>shared_ptr</code>?</li>
+<li>What is a <code>unique_ptr</code>?</li>
+<li>What is a <code>weak_ptr</code>?</li>
 <li></li>
 </ol>
 
@@ -545,41 +546,45 @@ uninitialized_fill_n(q, vi.size(), 42);&rdquo;</p>
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Form of new that takes additional arguments.
-e.g.
-    new (nothrow) int;&rdquo;</p>
+<p>Form of new that takes additional arguments.<br />
+e.g.</p>
+
+<pre><code class="language-c++">new (nothrow) int;
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; Smart pointer.
-&gt; Shared ownership.
-&gt; Pointer deleted when last shared_ptr is destroyed.
-&gt; Uses a reference count.&rdquo;</p>
+<p>Smart pointer.<br />
+Shared ownership.<br />
+Pointer deleted when last <code>shared_ptr</code> is destroyed.<br />
+Uses a reference count.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Smart pointer.
-&gt; Single ownership.
-&gt; Object deleted when unique_ptr is destroyed.
-&gt; Cannot be directly copied or assigned.&rdquo;</p>
+<p>Smart pointer.<br />
+Single ownership.<br />
+Object deleted when unique_ptr is destroyed.<br />
+Cannot be directly copied or assigned.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Smart pointer.
-&gt; Points to object managed by &ldquo;&ldquo;shared_ptr&rdquo;&ldquo;.
-&gt; Not counted when &ldquo;&ldquo;shared_ptr&rdquo;&rdquo; deleted the object.
-&gt; Must call lock in order to access the object.
-e.g.
-    auto p = make_shared<int>(42);
-    weak_ptr<int> wp(p);
-    if (shared_ptr<int> np = wp.lock()) {
-        // np shares object with p
-    }&rdquo;</p>
+<p>Smart pointer.<br />
+Points to object managed by <code>shared_ptr</code>.<br />
+Not counted when <code>shared_ptr</code> deleted the object.<br />
+Must call lock in order to access the object.<br />
+e.g.</p>
+
+<pre><code class="language-c++">auto p = make_shared&lt;int&gt;(42);
+weak_ptr&lt;int&gt; wp(p);
+if (shared_ptr&lt;int&gt; np = wp.lock()) {
+    // np shares object with p
+}
+</code></pre>
 
 <h4 id="5">5.</h4>
 
-<p>&ldquo;When we use direct initialisation, we are asking the compiler to use ordinary function matching to select the constructor that best maches the arguments we provide.
-When we use copy initialisation, we are asking the compiler to copy the right-hand operand into the object being created, converting that operand if necessary.&rdquo;</p>
+<p>When we use direct initialisation, we are asking the compiler to use ordinary function matching to select the constructor that best maches the arguments we provide.<br />
+When we use copy initialisation, we are asking the compiler to copy the right-hand operand into the object being created, converting that operand if necessary.</p>
 
   </div>
   <script>
@@ -612,30 +617,33 @@ When we use copy initialisation, we are asking the compiler to copy the right-ha
   
   <h4 id="1">1.</h4>
 
-<p>&ldquo;Copy initialisation ordinarily uses the copy constructor.
-If a class has a move constructor, then copy initialisation sometimes uses that instead.&rdquo;</p>
+<p>Copy initialisation ordinarily uses the copy constructor.<br />
+If a class has a move constructor, then copy initialisation sometimes uses that instead.</p>
 
 <h4 id="2">2.</h4>
 
-<p>&rdquo;&gt; When defining a variable using an &lsquo;=&rsquo;.
-&gt; Passing an object as an argument to a parameter of nonreference type.
-&gt; Returning an object from a function that has a nonreference return type.
-&gt; Brace initialising the elements in an array or the members of an aggregate class.&rdquo;</p>
+<p>When defining a variable using an &lsquo;=&rsquo;.</p>
+
+<ul>
+<li>Passing an object as an argument to a parameter of nonreference type.<br /></li>
+<li>Returning an object from a function that has a nonreference return type.<br /></li>
+<li>Brace initialising the elements in an array or the members of an aggregate class.</li>
+</ul>
 
 <h4 id="3">3.</h4>
 
-<p>&ldquo;Library containers copy initialise their elements when you initialise the container or when calling insert of push.
-Elements created by emplace are direct initialised.&rdquo;</p>
+<p>Library containers copy initialise their elements when you initialise the container or when calling insert of push.<br />
+Elements created by emplace are direct initialised.</p>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; A constructor that can be called with a single argument defines an implicit conversion from the constructor&rsquo;s parameter type (x) to the class type (y).
-&gt; That is, you can use an &lsquo;x&rsquo; where an object of type &lsquo;y&rsquo; is expected.&rdquo;</p>
+<p>A constructor that can be called with a single argument defines an implicit conversion from the constructor&rsquo;s parameter type (x) to the class type (y).<br />
+That is, you can use an &lsquo;x&rsquo; where an object of type &lsquo;y&rsquo; is expected.</p>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; Decide whether the class needs a destructor. Often more obvious.
-&gt; If yes, it almost surely needs a copy constructor and copy-assignment operator as well.&rdquo;</p>
+<p>Decide whether the class needs a destructor. Often more obvious.<br />
+If yes, it almost surely needs a copy constructor and copy-assignment operator as well.</p>
 
   </div>
   <script>
@@ -654,9 +662,9 @@ Elements created by emplace are direct initialised.&rdquo;</p>
 
 <ol>
 <li>How do you prevent copies of a class being made?</li>
-<li>What is a deleted function?</li>
-<li>What is a type-specific swap function?</li>
-<li>What is ADL?</li>
+<li>What is a <em>deleted function</em>?</li>
+<li>What is a <em>type-specific swap function</em>?</li>
+<li>What is <em>ADL</em>?</li>
 <li>What is a type-specific swap function often used for?</li>
 </ol>
 
@@ -668,528 +676,67 @@ Elements created by emplace are direct initialised.&rdquo;</p>
   
   <h4 id="1">1.</h4>
 
-<p>&rdquo;&gt; Define the copy constructor and copy-assignment operator as deleted functions.
-e.g.
-    NoCopy(const NoCopy&amp;) = delete;
-    NoCopy&amp; operator=(const NoCopy&amp;) = delete;&rdquo;</p>
+<p>Define the copy constructor and copy-assignment operator as deleted functions.<br />
+e.g.</p>
+
+<pre><code class="language-c++">NoCopy(const NoCopy&amp;) = delete;
+NoCopy&amp; operator=(const NoCopy&amp;) = delete;
+</code></pre>
 
 <h4 id="2">2.</h4>
 
-<p>&ldquo;One that is declared by may not be used in any other way.
-Defined as deleted by following its parameter list with = delete.&rdquo;</p>
+<p>One that is declared by may not be used in any other way.<br />
+Defined as deleted by following its parameter list with = delete.</p>
 
 <h4 id="3">3.</h4>
 
-<p>&rdquo;&gt; Function written to swap the state of two objects of the same type.
-&gt; Never necessary, but can be an important optimisation for classes that allocate.
-&gt; Declare the swap function as a friend to give it access to the type&rsquo;s private data members.
-&gt; Because it exists to optimise our code, define swap as inline.
-&gt; A type-specific version of swap will be a better match that the one in std.
-&gt; If no type-specific version is defined then (assuming there is a using decl for swap in scope) calls to swap will use std::swap.
-&gt; Each call to swap should be unqualified i.e. not std::swap.
-e.g.
-class MyType {
+<p>Function written to swap the state of two objects of the same type.<br />
+Never necessary, but can be an important optimisation for classes that allocate.<br />
+Declare the swap function as a friend to give it access to the type&rsquo;s private data members.<br />
+Because it exists to optimise our code, define swap as inline.<br />
+A type-specific version of swap will be a better match that the one in std.<br />
+If no type-specific version is defined then (assuming there is a using decl for swap in scope) calls to swap will use <code>std::swap</code>.<br />
+Each call to swap should be unqualified i.e. not <code>std::swap</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">class MyType {
     friend void swap(MyType&amp;, MyType&amp;);
-    &hellip;
+    //...
 };
 inline void swap(MyType &amp;lhs, MyType &amp;rhs) {
     using std::swap;
     swap(lhs.member, rhs.member);
-    &hellip;
-}&rdquo;</p>
+    //...
+}
+</code></pre>
 
 <h4 id="4">4.</h4>
 
-<p>&rdquo;&gt; Argument-dependent lookup.
-&gt; aka &lsquo;Koenig lookup&rsquo;.
-&gt; The set of rules for looking up the unqualified function names in a function-call expressions.
-&gt; Makes it possible to use operators defined in a different namespace.
-e.g.
-    #include <iostream>
-    &hellip;
-    std::cout &lt;&lt; &ldquo;&ldquo;Test\n&rdquo;&ldquo;; // OK: operator&lt;&lt; is found in std because the left arg is in std.
-    std::cout &lt;&lt; endl; // ERROR: not in global ns, not a func call to endl() so ADL does not apply.
-    end(std::cout); // OK: func call, ADL examines std because of argument.
-    (endl)(std::cout); // ERROR: &lsquo;end&rsquo; not in global ns, sub-expression (endl) not a func call.&rdquo;</p>
+<p>Argument-dependent lookup. aka <em>Koenig lookup</em>.<br />
+The set of rules for looking up the unqualified function names in a function-call expressions.<br />
+Makes it possible to use operators defined in a different namespace.<br />
+e.g.</p>
+
+<pre><code class="language-c++">#include &lt;iostream&gt;
+//...
+std::cout &lt;&lt; &quot;Test\n&quot;;      // OK: operator&lt;&lt; is found in std because the left arg is in std.
+std::cout &lt;&lt; endl;          // ERROR: not in global ns, not a func call to endl() so ADL does not apply.
+end(std::cout);             // OK: func call, ADL examines std because of argument.
+(endl)(std::cout);          // ERROR: 'end' not in global ns, sub-expression (endl) not a func call.&quot;
+</code></pre>
 
 <h4 id="5">5.</h4>
 
-<p>&rdquo;&gt; To define the classes assignment operator.
-&gt; The operator uses a technique known as &lsquo;copy and swap&rsquo;.
-&gt; Swaps the left-hand operand with a copy of the right-hand operand.
-e.g.
-    MyType&amp; MyType::operator=(MyType rhs) {
-        swap(*this, rhs);
-        return *this;
-    } // &lsquo;rhs&rsquo; is destroyed, which deletes what was previously in &lsquo;this&rsquo;.&rdquo;</p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-9">Quiz 9</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
-  <br/>
-  <div id="q9" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-10">Quiz 10</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
-  <br/>
-  <div id="q10" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-11">Quiz 11</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
-  <br/>
-  <div id="q11" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-12">Quiz 12</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
-  <br/>
-  <div id="q12" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-13">Quiz 13</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
-  <br/>
-  <div id="q13" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-14">Quiz 14</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
-  <br/>
-  <div id="q14" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-15">Quiz 15</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
-  <br/>
-  <div id="q15" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-16">Quiz 16</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
-  <br/>
-  <div id="q16" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-17">Quiz 17</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
-  <br/>
-  <div id="q17" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-18">Quiz 18</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
-  <br/>
-  <div id="q18" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-19">Quiz 19</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
-  <br/>
-  <div id="q19" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-<h3 id="quiz-20">Quiz 20</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-
-<div>
-  
-  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
-  <br/>
-  <div id="q20" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
+<p>To define the classes assignment operator.<br />
+The operator uses a technique known as &lsquo;copy and swap&rsquo;.<br />
+Swaps the left-hand operand with a copy of the right-hand operand.<br />
+e.g.</p>
+
+<pre><code class="language-c++">MyType&amp; MyType::operator=(MyType rhs) {
+    swap(*this, rhs);
+    return *this;
+} // 'rhs' is destroyed, which deletes what was previously in 'this'.&quot;
+</code></pre>
 
   </div>
   <script>

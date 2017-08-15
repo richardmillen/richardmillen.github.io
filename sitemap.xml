@@ -135,7 +135,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/programming/</loc>
-    <lastmod>2017-06-28T11:26:56+01:00</lastmod>
+    <lastmod>2017-06-28T12:09:56+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -160,6 +160,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/unit-tests/</loc>
     <lastmod>2017-06-28T12:09:56+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/visual-c&#43;&#43;/</loc>
+    <lastmod>2017-06-28T11:39:26+01:00</lastmod>
     <priority>0</priority>
   </url>
   
