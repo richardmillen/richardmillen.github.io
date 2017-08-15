@@ -28,6 +28,16 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/questions/go-4/</loc>
+    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/go-3/</loc>
+    <lastmod>2017-06-28T13:25:43+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/go-2/</loc>
     <lastmod>2017-06-28T13:14:43+01:00</lastmod>
   </url>
@@ -134,14 +144,8 @@
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/go/</loc>
-    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://richardmillen.github.io/tags/golang/</loc>
-    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
+    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -164,7 +168,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/programming/</loc>
-    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
+    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   

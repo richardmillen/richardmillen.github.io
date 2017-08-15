@@ -62,6 +62,24 @@ The 25th percentile is also known as the first quartile (Q1),</description>
     </item>
     
     <item>
+      <title>Go Quiz, Part 4</title>
+      <link>https://richardmillen.github.io/questions/go-4/</link>
+      <pubDate>Wed, 28 Jun 2017 13:37:13 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-4/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &amp;lsquo;Reader&amp;rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 3</title>
+      <link>https://richardmillen.github.io/questions/go-3/</link>
+      <pubDate>Wed, 28 Jun 2017 13:25:43 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &amp;lt;expression&amp;gt; { case &amp;lt;value1&amp;gt;, &amp;lt;value2&amp;gt;, &amp;lt;value3&amp;gt;: // do stuff.</description>
+    </item>
+    
+    <item>
       <title>Go Quiz, Part 2</title>
       <link>https://richardmillen.github.io/questions/go-2/</link>
       <pubDate>Wed, 28 Jun 2017 13:14:43 +0100</pubDate>

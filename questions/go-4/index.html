@@ -5,20 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Golang</title>
-  <meta property="og:title" content="Golang" />
-  <meta name="twitter:title" content="Golang" />
+  <title>Go Quiz, Part 4</title>
+  <meta property="og:title" content="Go Quiz, Part 4" />
+  <meta name="twitter:title" content="Go Quiz, Part 4" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &lsquo;Reader&rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &lsquo;Reader&rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &lsquo;Reader&rsquo;? How do you create a channel of strings? …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://richardmillen.github.io/tags/golang/" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/go-4/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Richard Millen" />
 
   <meta name="generator" content="Hugo 0.25.1" />
-  <link rel="canonical" href="https://richardmillen.github.io/tags/golang/" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/go-4/" />
   <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -147,14 +150,26 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>#Golang</h1>
-              <hr class="small">
+            <div class="questions-heading">
+              <h1>Go Quiz, Part 4</h1>
+                
+                
             </div>
           </div>
         </div>
@@ -162,136 +177,168 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/go-4/">
-                <h2 class="post-title">Go Quiz, Part 4</h2>
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>How do you turn a delimited string into a slice of strings?</li>
+<li>How could you read and discard a &lsquo;Reader&rsquo;?</li>
+<li>How do you create a channel of strings?</li>
+<li>What is a tagless switch?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<pre><code class="language-go">items := strings.Split(s, sep)
+</code></pre>
+
+<h4 id="2">2.</h4>
+
+<pre><code class="language-go">n, err := io.Copy(ioutil.Discard, r)
+</code></pre>
+
+<h4 id="3">3.</h4>
+
+<pre><code class="language-go">make(chan string)
+</code></pre>
+
+<h4 id="4">4.</h4>
+
+<p>A switch statement without an operand.<br />
+e.g.</p>
+
+<pre><code class="language-go">switch {
+case x &gt; 0:
+    //...
+case x &lt; 0:
+    //...
+default:
     
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on 28 Jun 2017
-              </p>
-              <div class="post-entry">
-                
-                  ! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &lsquo;Reader&rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.
-                  <a href="https://richardmillen.github.io/questions/go-4/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/golang">Golang</a>&nbsp;
-                  
-                    #<a href="/tags/programming">Programming</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/go-3/">
-                <h2 class="post-title">Go Quiz, Part 3</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on 28 Jun 2017
-              </p>
-              <div class="post-entry">
-                
-                  ! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &lt;expression&gt; { case &lt;value1&gt;, &lt;value2&gt;, &lt;value3&gt;: // do stuff.
-                  <a href="https://richardmillen.github.io/questions/go-3/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/golang">Golang</a>&nbsp;
-                  
-                    #<a href="/tags/programming">Programming</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/go-2/">
-                <h2 class="post-title">Go Quiz, Part 2</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on 28 Jun 2017
-              </p>
-              <div class="post-entry">
-                
-                  ! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?
-                  <a href="https://richardmillen.github.io/questions/go-2/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/golang">Golang</a>&nbsp;
-                  
-                    #<a href="/tags/programming">Programming</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/go-1/">
-                <h2 class="post-title">Go Quiz, Part 1</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on 28 Jun 2017
-              </p>
-              <div class="post-entry">
-                
-                  ! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
-If a goroutine isn&rsquo;t ready to recieve the value it&rsquo;s thrown away.
-e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.
-                  <a href="https://richardmillen.github.io/questions/go-1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/programming">Programming</a>&nbsp;
-                  
-                    #<a href="/tags/golang">Golang</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-        </div>
+}
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<p>There is even a gotostatement, though it’s intended for machine-generated code, not regular use by programmers.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What is one important difference between pointers in a language like C and the Go implementation?</li>
+<li></li>
+<li>When must a local variable be heap allocated by the compiler?</li>
+<li>How do you install <em>WAS</em>?</li>
+<li></li>
+</ol>
+
+<p><div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>There is no pointer arithmetic.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Another way to create a variable is to use the built-in function <code>new</code>. The expression <code>new(T)</code> creates an unnamed variable of type <code>T</code>, initializes it to the <em>zero value</em> of <code>T</code>, and returns its address, which is a value of type <code>*T</code>.</p>
+
+<h4 id="3">3.</h4>
+
+<p>When it is referenced by a package-level variable when the enclosing block is exited.<br />
+e.g.</p>
+
+<pre><code class="language-go">var globalVar *int
+
+func foo() {
+    localVar := 1
+    globalVar = &amp;localVar
+}
+</code></pre>
+
+<p>We say <code>localVar</code> escapes from <code>foo</code>.</p>
+
+<h4 id="4">4.</h4>
+
+<ol>
+<li>With IIS on Vista and WS2008.</li>
+<li>By enabling two Windows Features:
+
+<ul>
+<li>Enable <code>Windows Process Activation Services</code>.</li>
+<li><em>Then</em> check <code>WCF Non-HTTP Activation</code></li>
+<li>Enable WCF HTTP Activation (to enable HTTP activation for WCF services).</li>
+</ul></li>
+</ol>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div></p>
+
+      </article>
+
+      <ul class="pager blog-pager">
         
-      </div>
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/go-3/" data-toggle="tooltip" data-placement="top" title="Go Quiz, Part 3">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/lexicon-1/" data-toggle="tooltip" data-placement="top" title="Lexicon Quiz">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
