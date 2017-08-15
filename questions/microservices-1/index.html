@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Microservices Quiz, Part 1</title>
+  <meta property="og:title" content="Microservices Quiz, Part 1" />
+  <meta name="twitter:title" content="Microservices Quiz, Part 1" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are the technical benefits of Microservices? What are the organisational benefits of Microservices? What are the business benefits of Microservice? What are some of the challenges of Microservices? What are the main differences between SOA and Microservices?   Show Answers  1. 2. 3. 4.  Technical Architecture Infrastructure &amp; operations  5.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are the technical benefits of Microservices? What are the organisational benefits of Microservices? What are the business benefits of Microservice? What are some of the challenges of Microservices? What are the main differences between SOA and Microservices?   Show Answers  1. 2. 3. 4.  Technical Architecture Infrastructure &amp; operations  5.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are the technical benefits of Microservices? What are the organisational benefits of Microservices? What are the business benefits of Microservice? …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/microservices-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/microservices-1/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>Microservices Quiz, Part 1</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>What are the technical benefits of Microservices?</li>
+<li>What are the organisational benefits of Microservices?</li>
+<li>What are the business benefits of Microservice?</li>
+<li>What are some of the challenges of Microservices?</li>
+<li>What are the main differences between SOA and Microservices?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<ul>
+<li>Technical</li>
+<li>Architecture</li>
+<li>Infrastructure &amp; operations</li>
+</ul>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What are some techniques to adjust an existing architecture to use Microservices?</li>
+<li>What are some strategies for growing Microservice based systems?</li>
+<li>How do you avoid the erosion of a Microservice?</li>
+<li>How should you test microservices?</li>
+<li>What is a nanoservice?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>What is the number one rule when deploying microservices?</li>
+<li>What are the principles of microservices?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Don&rsquo;t break downstream.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<ul>
+<li>Modeled around business domain.</li>
+<li>Culture of automation.</li>
+<li>Hide implementation details.
+
+<ul>
+<li>This includes sharing access to a database.</li>
+</ul></li>
+<li>Decentralise all the things.</li>
+<li>Deploy independently.</li>
+<li>Consumer first.</li>
+<li>Isolate failure.</li>
+<li>Highly observable.</li>
+</ul>
+
+<h4 id="3">3.</h4>
+
+<p>The unit of decomposition is the business domain.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Changes across service boundaries are expensive so should be avoided.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Hide your database(s).</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What are <em>circuit breakers</em>?</li>
+<li>How do you make services highly observable?</li>
+<li></li>
+<li>How do you ensure that the latest build of a service will not break any consumers?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>If a certain number of errors or timeouts happen, then requests stop being sent to downstream services.<br />
+It can allow downstream services to recover.<br />
+It allows consumers to fail fast.<br />
+Can also be used when deploying new versions of downstream services.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Aggregation of logs.<br />
+Aggregation of stats.<br />
+Use correlation id&rsquo;s to see messages flow through each endpoint.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Have a single way of deploying services in any given environment.<br />
+Abstract deployment of different technologies.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Consumer-driven contracts.<br />
+The consumer(s) write a test that defines their expectations of how the service will behave.<br />
+Run consumer tests as part of your pipeline.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Don&rsquo;t let changes build up, release as soon as you can and preferrably one service at a time.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li></li>
+<li>What is the circuit breaker pattern?</li>
+<li>What security design can work well for microservices?</li>
+<li>What type of transactions are typically used in service-based architectures rather than ACID-based transactions?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Consider service templates to make it easy to do the right thing.</p>
+
+<h4 id="2">2.</h4>
+
+<p>If a service is not responding in a timely manner, a software circuit breaker will be thrown so that consumers don&rsquo;t have to waste time waiting for timeout values to occur.<br />
+It can be implemented to reset itself when the service starts responding or becomes available.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Delegate authentication to a separate service and place responsibility of authorisation in the service itself.</p>
+
+<h4 id="4">4.</h4>
+
+<p><em>BASE</em> transactions.</p>
+
+<ul>
+<li>Basic Availability</li>
+<li>Soft state</li>
+<li>Eventual consistency</li>
+</ul>
+
+<h4 id="5">5.</h4>
+
+<p>Microservices architectures have a limited service taxonomy when it comes to service type classification, mostly consisting of two types:</p>
+
+<ul>
+<li>functional - accessed externally, generally not shared with any other service.</li>
+<li>infrastructure - not exposed to outside world, treated as private shared services, only available internally to other services.</li>
+</ul>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>What is a good approach to take when dealing with service granularity?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Start with services that are more coarse-grained than you might otherwise create, then break them apart as you learn how they are used.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Built on the concept of a share-as-little-as-possible architecture style.<br />
+Leverages a concept from domain-driven design called a bounded context.<br />
+This is the exact opposite to SOA.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Favour service choreography over service orchestration, primarily because of the lack of a centralised middleware component.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Should try to minimise amount of service choreography in your architecture, restricting interactions to those between functional services and infrastructure services.<br />
+Because microservices architecture is a share-as-little-as-possible architecture.</p>
+
+<h4 id="5">5.</h4>
+
+<p>If you find you need a lot of service choreography between functional services, chances are they&rsquo;re too fine-grained.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li></li>
+<li>Why do systems built on SOA tend to be slower than microservices and require more time and effort to develop, test, deploy and maintain?</li>
+<li></li>
+<li>Why is an API layer generally used?</li>
+<li>In what way does a microservices architecture support message enhancement and transformation?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Too much choreography can lead to high efferent coupling - the degree to which one component is dependent on other components to complete a single business request.</p>
+
+<h4 id="2">2.</h4>
+
+<p>SOA typically relies on multiple services (and service types) to complete a single business request.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Does not support the concept of messaging middleware.
+Supports the notion of an API layer in front of services.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Forms an abstraction layer so that consumers don&rsquo;t need to know locations of endpoints.<br />
+Allows you to change service granularity without impacting consumers.</p>
+
+<h4 id="5">5.</h4>
+
+<p>It doesn&rsquo;t because it doesn&rsquo;t use a messaging middleware.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>What is a fundamental principle within microservices that contributes to the simplicity of the archicture pattern?</li>
+<li></li>
+<li></li>
+<li></li>
+<li>Give a reason why microservices are ill-suited for large-scale complex business application environments.</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>The number of technology and architecture choices is generally limted to a few options.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Most microservices architectures usually rely on only two different remote-access protocols:</p>
+
+<ol>
+<li>REST</li>
+<li>Simple messaging e.g. JMS, MSMQ, AMQP etc.</li>
+</ol>
+
+<h4 id="3">3.</h4>
+
+<p>The remote access protocol in microservices is usually homogeneous.<br />
+One exception is the case in which services that rely on publish-and-subscribe broadcast capabilities might be message-based, whereas other services might be REST-based.</p>
+
+<h4 id="4">4.</h4>
+
+<p>The microservices pattern is better suited for smaller, well-partitioned web-based systems rather than large-scale enterprise-wide systems.</p>
+
+<h4 id="5">5.</h4>
+
+<p>The lack of a mediator.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li></li>
+<li>How does the microservices architecture attempt to simplify SOA?</li>
+<li>What is protocol-aware heterogeneous interoperability?</li>
+<li>How does the microservices architecture support contract decoupling?</li>
+<li>What role is analogous to the software architect according to Sam Newman in &lsquo;Building Microservices&rsquo;?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>In some cases the microservices pattern is a good initial architecture choice.<br />
+As the business grows more SOA-type capabilities such as request transformation, orchestration and heterogeneous system integration may be needed.<br />
+Of course, the opposite is also true.</p>
+
+<h4 id="2">2.</h4>
+
+<p>By reducing the number of choices for services integration.<br />
+REST and simple messaging are two of the most common remote-access protocols used.</p>
+
+<h4 id="3">3.</h4>
+
+<p>The architecture can support multiple types of remote access protocols, but the communication between consumer and service must be the same e.g. REST.</p>
+
+<h4 id="4">4.</h4>
+
+<p>It doesn&rsquo;t because it doesn&rsquo;t use a messaging middleware.</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Town planners.</p>
+</blockquote>
+
+<p>The city changes over time.<br />
+Looks at a multitude of sources of information, and then attempt to optimize the layout of a city to best suit the needs of the citizens today, taking into account future use.<br />
+Define city zones - you might designate part of your city as an industrial zone, and another part as a residential zone.<br />
+If you want to build a factory, it will need to be in an industrial zone.<br />
+Rather than worrying too much about what happens in one zone, the town planner will instead spend far more time working out how people and utilities move from one zone to another.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>As architects, we need to worry much less about what happens inside the zone than what happens between the zones.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Loose coupling<br />
+The whole point of a microservice is being able to make a change to one service and deploy it, without needing to change any other part of the system.</p>
+
+<h4 id="3">3.</h4>
+
+<p>We want to find boundaries within our problem domain that help ensure that related behavior is in one place, and that communicate with other boundaries as loosely as possible.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Prematurely decomposing a system into microservices can be costly, especially if you are new to the domain.</p>
+
+<h4 id="5">5.</h4>
+
+<p>When considering the boundaries of your microservices, first think in terms of the larger, coarser-grained contexts, and then subdivide along these nested contexts when you’re looking for the benefits of splitting out these seams.<br />
+Whether you choose the nested approach over the full separation approach should be based on your organizational structure.<br />
+If related contexts are managed by different teams, they probably deserve their status as top-level microservices. If, on the other hand, all of them are managed by one team, then the nested model makes more sense.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>If our systems are decomposed along the bounded contexts that represent our domain, the changes we want to make are more likely to be isolated to one, single microservice boundary. This reduces the number of places we need to make a change, and allows us to deploy that change quickly.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Due to the nature of mobile networks and devices, firing off requests and assuming things have worked (unless told otherwise) can ensure that the UI remains responsive even if the network is highly laggy.</p>
+
+<h4 id="3">3.</h4>
+
+<p>With an event-based collaboration, we invert things. Instead of a client initiating requests asking for things to be done, it instead says this thing happened and expects other parties to know what to do. We never tell anyone else what to do. Event-based systems by their nature are asynchronous. The smarts are more evenly distributed—that is, the business logic is not centralized into core brains, but instead pushed out more evenly to the various collaborators. Event-based collaboration is also highly decoupled. The client that emits an event doesn’t have any way of knowing who or what will react to it, which also means that you can add new subscribers to these events without the client ever needing to know.</p>
+
+<h4 id="4">4.</h4>
+
+<p>With a choreographed approach, we could instead just have the customer service emit an event in an asynchronous manner, saying Customer created. The email service, postal service, and loyalty points bank then just subscribe to these events and react accordingly, as in Figure 4-4. This approach is significantly more decoupled. If some other service needed to reach to the creation of a customer, it just needs to subscribe to the events and do its job when needed. The downside is that the explicit view of the business process we see in Figure 4-2 is now only implicitly reflected in our system</p>
+
+<h4 id="5">5.</h4>
+
+<p>This means additional work is needed to ensure that you can monitor and track that the right things have happened. For example, would you know if the loyalty points bank had a bug and for some reason didn’t set up the correct account? One approach I like for dealing with this is to build a monitoring system that explicitly matches the view of the business process in Figure 4-2, but then tracks what each of the services does as independent entities, letting you see odd exceptions mapped onto the more explicit process flow.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>What are some of the complexities when considering long-running async request/response?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Systems that tend more toward the choreographed approach are more loosely coupled, and are more flexible and amenable to change.
+You do need to do extra work to monitor and track the processes across system boundaries, however. I have found most heavily orchestrated implementations to be extremely brittle, with a higher cost of change.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Delay the implementation of proper persistence for the microservice, until the interface had stabilized enough.<br />
+It is too easy for the way we store domain entities in a backing store to overtly influence the models we send over the wire to collaborators.</p>
+
+<h4 id="3">3.</h4>
+
+<p>ATOM is a REST-compliant specification that defines semantics (among other things) for publishing feeds of resources.<br />
+A service could just publish an event to such a feed when the service changes.<br />
+Consumers just poll the feed, looking for changes.</p>
+
+<h4 id="4">4.</h4>
+
+<p>HTTP is not good at low latency</p>
+
+<h4 id="5">5.</h4>
+
+<p>We have to think about what to do when the response comes back. Does it come back to the same node that initiated the request? If so, what if that node is down? If not, do I need to store information somewhere so I can react accordingly?</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Specify a maximum retry limit for the job on the queue.</p>
+
+<h4 id="2">2.</h4>
+
+<p>You may need a way to view, and potentially replay, bad messages.<br />
+Implement a message hospital (or dead letter queue), where messages are sent if they fail. Plus a UI to view those messages and retry them if needed.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Avoid dumb, anemic services that are little more than CRUD wrappers.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Reactive extensions, often shortened to Rx, are a mechanism to compose the results of multiple calls together and run operations on them.<br />
+Rather than asking for some data, then performing operations on it, you observe the outcome of an operation (or set of operations) and react when something changes.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Don’t violate DRY within a microservice, but be relaxed about violating DRY across all services.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>A model for client libraries I like is the one for Amazon Web Services (AWS). The underlying SOAP or REST web service calls can be made directly, but everyone ends up using just one of the various software development kits (SDKs) that exist, which provide abstractions over the underlying API.<br />
+These SDKs, though, are written by the community or AWS people other than those who work on the API itself.</p>
+
+<h4 id="2">2.</h4>
+
+<p>The client libraries used by Netflix are as much (if not more) about ensuring reliability and scalability of their systems. The Netflix client libraries handle service discovery, failure modes, logging, and other aspects that aren’t actually about the nature of the service itself.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Make sure that the clients are in charge of when to upgrade their client libraries: we need to ensure we maintain the ability to release our services independently of each other.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Consider the example where we ask the email service to send an email when an order has been shipped. Now we could send in the request to the email service with the customer’s email address, name, and order details. However, if the email service is actually queuing up these requests, or pulling them from a queue, things could change in the meantime. It might make more sense to just send a URI for the Customer and Order resources, and let the email server go look them up when it is time to send the email.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Consider event-based collaboration. With events, we’re saying this happened, but we need to know what happened. If we’re receiving updates due to a Customer resource changing, for example, it could be valuable to us to know what the Customer looked like when the event occurred. As long as we also get a reference to the entity itself so we can look up its current state, then we can get the best of both worlds.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li></li>
+<li>What is one approach to handling the UI in a microservices architecture?</li>
+<li>What are BFFs?</li>
+<li></li>
+<li>What steps would you take to break a monolithic app into a microservices architecture?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>If you&rsquo;re consuming an XML file, then only take the elements you need, ignore anything you don&rsquo;t. Furthermore make the minimum assumptions about the structure of the XML you&rsquo;re consuming. Rather than use an XPath search like <code>/order-history/order-list/order</code> use <code>//order</code>.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Rather than having our UI make API calls and map everything back to UI controls, we could have our services provide parts of the UI directly, and then just pull these fragments in to create a UI.<br />
+Perhaps the team that looks after order management in the music shop serves up all the pages associated with order management.</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Backends for Frontends</p>
+</blockquote>
+
+<p>Like a server-side aggregation endpoint, or API gateway, except built to suit the particular frontend e.g. mobile, customer website, back office etc.<br />
+Should only contain behavior specific to delivering a particular user experience.</p>
+
+<h4 id="4">4.</h4>
+
+<p>I could see an organization adopting the approach of fragment-based assembly to create a website, but using a backends-for-frontends approach when it comes to its mobile application.</p>
+
+<h4 id="5">5.</h4>
+
+<p>We want to identify seams that can become service boundaries.<br />
+Bounded contexts make excellent seams.<br />
+We should identify the high-level bounded contexts that we think exist in our organization.<br />
+Try to understand what bounded contexts the monolith maps to.<br />
+e.g.</p>
+
+<ul>
+<li>Catalog - metadata about sale items</li>
+<li>Finance - reporting for accounts, payments, refunds etc.</li>
+<li>Warehouse - order dispatching / returns, inventory levels etc.</li>
+<li>Recommendation - recommendation system.</li>
+</ul>
+
+<p>Create packages representing these contexts.<br />
+Move the existing code into them.<br />
+Over time, we start to see what code fits well, and what code is left over and doesn’t really fit anywhere. This remaining code will often identify bounded contexts we might have missed&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li>what about cases where the same tables are used from multiple different bounded contexts?</li>
+<li>What about shared lookup tables e.g. country codes?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Our packages representing the bounded contexts in our organization should interact in the same way the real-life organizational groups in our domain interact.<br />
+If package A depends on code in package B when no such dependency exists in the real organisation then we can investigate and resolve it.</p>
+
+<h4 id="2">2.</h4>
+
+<p>We want to pull out the seam that is least depended on if we can.<br />
+View the various seams you have found as a directed acyclical graph of dependencies.</p>
+
+<h4 id="3">3.</h4>
+
+<p>We need to find seams in our databases too so we can split them out cleanly.<br />
+Look at the code itself and see which parts of it read to and write from the database.<br />
+Common practice is to have a repository layer.<br />
+Group our database access code into packages representing our bounded contexts. This may require splitting up the repository layer into several parts.<br />
+You also need to view the relationships between tables. This helps you understand the coupling between tables that may span what will eventually become service boundaries.</p>
+
+<h4 id="4">4.</h4>
+
+<p>e.g.</p>
+
+<ul>
+<li>At the end of each month we need to generate reports for various people in the organization so they can see how we’re doing.</li>
+<li>Our reporting code in the finance package will reach into the line item table (in the catalog package) to pull out the title for the SKU.</li>
+<li>May also have a foreign key constraint from the ledger to the line item table.</li>
+</ul>
+
+<p>Stop the finance code from reaching into the line item table.</p>
+
+<ul>
+<li>We’ll expose the data via an API call in the catalog package that the finance code can call.</li>
+<li>This API call will be the forerunner of a call we will make over the wire.</li>
+<li>We may well end up having to make two database calls to generate the report.</li>
+<li>How fast does your system need to be? How fast is it now?</li>
+<li>You can test its current performance and know what good performance looks like.</li>
+<li>The foreign key relationship is lost altogether and becomes a constraint we need to manage in our service rather than at the database level.</li>
+<li>Implement consistency check across services or else trigger actions to clean up related data.</li>
+<li>This is often not a technologist&rsquo;s choice to make.</li>
+</ul>
+
+<h4 id="5">5.</h4>
+
+<p>It could be in a property file deployed as part of the service, or perhaps just as an enumeration.<br />
+This leads to a potential consistency challenge.<br />
+It is far easier to push out changes to configuration files than alter live database tables.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li>How do you handle shared mutable data when splitting a monolith into a microservices architecture?</li>
+<li>How do you handle shared tables?</li>
+<li></li>
+<li>How might we handle data updates that would usually be performed within a single transactional boundary, but can&rsquo;t because the database has been split into separate contexts?</li>
+<li>What is an alternative to manually orchestrating compensating transactions?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>This is a domain concept that isn’t modeled in the code, and is in fact implicitly modeled in the database.<br />
+We need to make the current abstract concept concrete.<br />
+As a transient step, create a new package named after the concept.<br />
+Then use an API to expose the concept to other packages.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Leave in the same place in a generic table until it&rsquo;s clear that you have two (or more) separate concepts that could be stored differently. In which case:<br />
+Split the table into each different context.</p>
+
+<h4 id="3">3.</h4>
+
+<p>I recommend that you split out the database schema but keep the service together before splitting the application code out into separate microservices.<br />
+We’ll be potentially increasing the number of database calls to perform a single action.<br />
+We break transactional integrity when we move to two schemas.<br />
+By splitting the schemas out but keeping the application code together, we give ourselves the ability to revert our changes or continue to tweak things without impacting any consumers of our service.<br />
+Once we are satisfied that the DB separation makes sense, we can then think about splitting out the application code into separate services.</p>
+
+<h4 id="4">4.</h4>
+
+<p>We may decide to retry the insertion into the warehouse’s picking table at a later date. We could queue up this part of the operation in a queue or logfile, and try again later.</p>
+
+<ul>
+<li>This approach is especially useful with business operations that might be long-lived.</li>
+</ul>
+
+<p>Another option is to reject the entire operation.</p>
+
+<ul>
+<li>We have to issue a &lsquo;compensating transaction&rsquo;.</li>
+<li>Report back via the UI that the operation failed.</li>
+</ul>
+
+<p>What happens if our compensating transaction fails?</p>
+
+<ul>
+<li>You’d either need to retry the compensating transaction, or allow some backend process to clean up the inconsistency later on.</li>
+</ul>
+
+<h4 id="5">5.</h4>
+
+<p>Use a distributed transaction.
+They try to span multiple transactions within them, using some overall governing process called a transaction manager to orchestrate the various transactions.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li>What is the most common algorithm for handling distributed transactions?</li>
+<li>What are some of the problems with two-phase commits?</li>
+<li></li>
+<li>What approach should you take if you must maintain data consistency across transaction boundaries?</li>
+<li>How might you handle reporting on data in a microservices architecture?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Two-phase commit.<br />
+First comes the voting phase. This is where each participant (also called a cohort in this context) in the distributed transaction tells the transaction manager whether it thinks its local transaction can go ahead.<br />
+If the transaction manager gets a yes vote from all participants, then it tells them all to go ahead and perform their commits.<br />
+A single no vote is enough for the transaction manager to send out a rollback to all parties.</p>
+
+<h4 id="2">2.</h4>
+
+<p>If the transaction manager goes down, the pending transactions never complete.<br />
+If a cohort fails to respond during voting, everything blocks.<br />
+What happens if a commit fails after voting?<br />
+Pending transactions can hold locks on resources. Locks on resources can lead to contention, making scaling systems much more difficult.</p>
+
+<h4 id="3">3.</h4>
+
+<p>When you encounter business operations that currently occur within a single transaction, ask yourself if they really need to. Can they happen in different, local transactions, and rely on the concept of eventual consistency? These systems are much easier to build and scale than using distributed transactions.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Do everything you can to avoid splitting it up in the first place.<br />
+If you really need to go ahead with the split, think about moving from a purely technical view of the process (e.g., a database transaction) and actually create a concrete concept to represent the transaction itself.<br />
+This gives you a handle, or a hook, on which to run other operations like compensating transactions, and a way to monitor and manage these more complex concepts in your system.<br />
+For example, you might create the idea of an &ldquo;in-process-order&rdquo; that gives you a natural place to focus all logic around processing the order end to end (and dealing with exceptions).</p>
+
+<h4 id="5">5.</h4>
+
+<ul>
+<li>Pulling the required data from the source systems via API calls.
+
+<ul>
+<li>Breaks down rapidly with use cases that require larger volumes of data</li>
+</ul></li>
+<li>You could resolve this by exposing batch APIs to make reporting easier.</li>
+<li>Data pump - a standalone program that directly accesses the database of the service that is the source of data, and pumps it into a reporting database
+
+<ul>
+<li>Should be built and managed by the same team that manages the service.</li>
+<li>Have builds of the data pump created as an additional artifact as part of the build of the service itself</li>
+<li>Simple command-line program triggered via Cron.</li>
+</ul></li>
+<li>For those microservices that expose such event feeds, we have the option of writing our own event subscriber that pumps data into the reporting database
+
+<ul>
+<li>The coupling on the underlying database of the source microservice is now avoided.</li>
+<li>It is also easier to consider this being managed by a separate group from the team looking after the microservice itself.</li>
+<li>All the required information must be broadcast as events, and it may not scale as well as a data pump for larger volumes of data
+Backup data pump.</li>
+<li>Same as data pump, but runs on backups.</li>
+<li>See Netflix open source project using Hadoop on Cassandra called Aegisthus.</li>
+</ul></li>
+</ul>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li>What, if any are the downsides of cloning a monilithic database for users to report on?</li>
+<li></li>
+<li>What are CRC cards?</li>
+<li></li>
+<li>What are the downsides of verifying and building all services in response to commits to a single service?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>The schema of the database is now effectively a shared API between the running monolithic services and any reporting system. So a change in schema has to be carefully managed. In reality, this is another impediment that reduces the chances of anyone wanting to take on the task of making and coordinating such a change.<br />
+We have limited options as to how the database can be optimized for either use case, besides some vendor specific capabilities.</p>
+
+<ul>
+<li>We cannot structure the data differently to make reporting faster if that change in data structure has a bad impact on the running system.</li>
+<li>What often happens is that the schema either ends up being great for one use case and lousy for the other, or else becomes the lowest common denominator, great for neither purpose.</li>
+</ul>
+
+<p>What if our application data is better modeled as a graph, document store, or column-oriented?</p>
+
+<h4 id="2">2.</h4>
+
+<p>I promote the need to make small, incremental changes, but one of the key drivers is to understand the impact of each alteration we make and change course if required.<br />
+Must embrace the fact that we will make mistakes.<br />
+We should understand how best to mitigate the costs of those mistakes.<br />
+try to make mistakes where the impact will be lowest.<br />
+Sketch out your proposed design. See what happens when you run use cases across what you think your service boundaries will be.<br />
+e.g.</p>
+
+<blockquote>
+<p>Imagine what happens when a customer searches for a record, registers with the website, or purchases an album. What calls get made? Do you start seeing odd circular references? Do you see two services that are overly chatty, which might indicate they should be one thing?</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>Class-Responsibility-Collaboration cards.<br />
+You write on one index card the name of the class, what its responsibilities are, and who it collaborates with.</p>
+
+<h4 id="4">4.</h4>
+
+<p>When working through a proposed design, for each service I list its responsibilities in terms of the capabilities it provides, with the collaborators specified in the diagram.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Takes more time.</p>
+
+<p>What artifacts should or shouldn&rsquo;t be deployed? Do I now need to deploy all the build services to push my small change into production?<br />
+We really want to avoid deploying everything together.<br />
+If my one-line change to the user service breaks the build, no other changes can be made to the other services until that break is fixed.<br />
+If you have multiple teams all sharing the build, who is in charge?</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>What is configuration drift?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>With well-defined structure, you can easily map the builds to certain parts of the source tree. In general, I am not a fan of this approach, as this model can be a mixed blessing. On the one hand, my check-in/check-out process can be simpler as I have only one repository to worry about. On the other hand, it becomes very easy to get into the habit of checking in source code for multiple services at once, which can make it equally easy to slip into making changes that couple services together. I would greatly prefer this approach, however, over having a single build for multiple services.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Have a single CI build per microservice, to allow us to quickly make and validate a change prior to deployment into production.<br />
+Each microservice has its own source code repository, mapped to its own CI build.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Create what is known as a build pipeline. One stage for the faster tests, one for the slower tests.</p>
+
+<h4 id="4">4.</h4>
+
+<p>When a team is starting out with a new project, especially a greenfield one where they are working with a blank sheet of paper, it is quite likely that there will be a large amount of churn in terms of working out where the service boundaries lie. This is a good reason, in fact, for keeping your initial services on the larger side until your understanding of the domain stabilizes.<br />
+Changes across service boundaries are more likely, and what is in or not in a given service is likely to change frequently. During this period, having all services in a single build to reduce the cost of cross-service changes may make sense.<br />
+In this case you need to buy into releasing all the services as a bundle.<br />
+As service APIs stabilize, start moving them out into their own builds.<br />
+If after some time you are unable to get stability in service boundaries in order to properly separate them, merge them back into a more monolithic service (albeit retaining modular separation within the boundary) and give yourself time to get to grips with the domain.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Someone comes along, logs into the box, and changes things independently of what is in source control.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/google-test-1/" data-toggle="tooltip" data-placement="top" title="Google Test Quiz">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/microservices-2/" data-toggle="tooltip" data-placement="top" title="Microservices Quiz, Part 2">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

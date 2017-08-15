@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Microservices Quiz, Part 2</title>
+  <meta property="og:title" content="Microservices Quiz, Part 2" />
+  <meta name="twitter:title" content="Microservices Quiz, Part 2" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are immutable servers?   if we have some configuration for our service that does change from one environment to another, how should we handle this as part of our deployment process? What are some of the downsides of running more than one service on a single host?">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are immutable servers?   if we have some configuration for our service that does change from one environment to another, how should we handle this as part of our deployment process? What are some of the downsides of running more than one service on a single host?">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are immutable servers?   if we have some configuration for our service that does change from one environment to another, how should we handle this as …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/microservices-2/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/microservices-2/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>Microservices Quiz, Part 2</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>What are immutable servers?</li>
+<li></li>
+<li></li>
+<li>if we have some configuration for our service that does change from one environment to another, how should we handle this as part of our deployment process?</li>
+<li>What are some of the downsides of running more than one service on a single host?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Any change, no matter how small, has to go through a build pipeline in order to create a new machine.<br />
+You can implement this pattern without using image-based deployments, but it is also a logical extension of using images as artifacts.</p>
+
+<h4 id="2">2.</h4>
+
+<p>This balance, between production-like environments and fast feedback, won’t be static. Keep an eye on the bugs you find further downstream and your feedback times, and adjust this balance as required.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Configuration that changes from one environment to another should be kept to an absolute minimum.</p>
+
+<h4 id="4">4.</h4>
+
+<ul>
+<li>One option is to build one artifact per environment, with configuration inside the artifact itself.
+
+<ul>
+<li>This is problematic.</li>
+<li>If my Customer-Service-Test artifact passes the tests, but it’s the Customer-Service-Prod artifact that I actually deploy, can I be sure that I have verified the software that actually ends up in production?</li>
+</ul></li>
+<li>A better approach is to create one single artifact, and manage configuration separately.
+
+<ul>
+<li>This could be a properties file that exists for each environment, or different parameters passed in to an install process.</li>
+<li>Another popular option, especially when dealing with a larger number of microservices, is to use a dedicated system for providing configuration</li>
+</ul></li>
+</ul>
+
+<h4 id="5">5.</h4>
+
+<p>First, it can make monitoring more difficult. For example, when tracking CPU<br />
+Side effects can also be hard to avoid.<br />
+Impact analysis of host failures more complex as well<br />
+Deployment of services can be somewhat more complex too, as ensuring one deployment doesn’t affect another leads to additional headaches.<br />
+If services for different teams are installed on the same host, who gets to configure the host for their services?<br />
+Can limit our deployment artifact options. Image-based deployments are out, as are immutable servers unless you tie multiple different services together in a single artifact<br />
+Efforts to target scaling to the service most in need of it can be complicated.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What are some of the advantages of running one service per host?</li>
+<li></li>
+<li></li>
+<li>how do we handle faking the downstream collaborators in service tests?</li>
+<li>Having made a change to a single service, what are some of the problems with running end-to-end tests in a microservices architecture?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Avoid side effects of multiple hosts living on a single host, making monitoring and remediation much simpler.<br />
+We have potentially reduced our single points of failure. An outage to one host should impact only a single service.<br />
+More easily scale one service independent from others,<br />
+Deal with security concerns more easily by focusing our attention only on the service and host that requires it.</p>
+
+<h4 id="2">2.</h4>
+
+<p>If you can’t embrace this model yet (single service per host), I won’t say microservices aren’t for you. But I would suggest that you look to move toward this model over time as a way of reducing the complexity that a microservice architecture can bring.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Embracing a culture of automation is key if you want to keep the complexities of microservice architectures in check.</p>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+<p>Which version of the other services should we use?<br />
+What if there is a new version queued up to go live?<br />
+What about the end-to-end tests that the other services run?</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>Having made a change to a single service, how could we go about running end-to-end tests in a microservices architecture?</li>
+<li></li>
+<li>What approach can work to deciding what should have integration and end-to-end tests?</li>
+<li>What is one of the key problems we are trying to address when we use the integration tests? How can we achieve our objective(s)?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>By having multiple pipelines fan in to a single, end-to-end test stage.<br />
+Whenever a new build of one of our services is triggered, we run our end-to-end tests</p>
+
+<h4 id="2">2.</h4>
+
+<p>The best balance I have found is to treat the end-to-end test suite as a shared codebase, but with joint ownership. Teams are free to check in to this suite, but the ownership of the health of the suite has to be shared between the teams developing the services themselves. If you want to make extensive use of end-to-end tests with multiple teams I think this approach is essential</p>
+
+<h4 id="3">3.</h4>
+
+<p>Focus on a small number of core journeys to test for the whole system.<br />
+Any functionality not covered in these core journeys needs to be covered in tests that analyze services in isolation from each other.<br />
+These journeys need to be mutually agreed upon, and jointly owned.<br />
+high-value interactions and very few in number.</p>
+
+<h4 id="4">4.</h4>
+
+<p>We are trying to ensure that when we deploy a new service to production, our changes won’t break consumers.<br />
+We can do this without requiring testing against the real consumer is by using a consumer-driven contract (CDC).<br />
+If done right, these CDCs should be run as part of the CI build of the producer.<br />
+these tests need to be run only against a single producer in isolation, so can be faster and more reliable than the end-to-end tests they might replace.</p>
+
+<h4 id="5">5.</h4>
+
+<p>In agile, stories are often referred to as a placeholder for a conversation. CDCs are just like that.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li>What is blue/green deployment?</li>
+<li>What is required to implement blue/green deployment?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>I have learned that most of them over time remove the need entirely for end-to-end tests in favor of tools like CDCs and improved monitoring. But they do not necessarily throw those tests away. They end up using many of those end-to-end journey tests to monitor the production system using a technique called semantic monitoring</p>
+
+<h4 id="2">2.</h4>
+
+<p>You can view running end-to-end tests prior to production deployment as training wheels. While you are learning how CDCs work, and improving your production monitoring and deployment techniques, these end-to-end tests may form a useful safety net, where you are trading off cycle time for decreased risk. But as you improve those other areas, you can start to reduce your reliance on end-to-end tests to the point where they are no longer needed.</p>
+
+<h4 id="3">3.</h4>
+
+<p>The single command-line command you use to deploy any given microservices should run smoke tests automatically.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; we have two copies of our software deployed at a time, but only one version of it is receiving real requests.
+e.g.
+In production, we have v123 of the customer service live. We want to deploy a new version, v456. We deploy this alongside v123, but do not direct any traffic to it. Instead, we perform some testing in situ against the newly deployed version. Once the tests have worked, we direct the production load to the new v456 version of the customer service. It is common to keep the old version around for a short period of time, allowing for a fast fallback if you detect any errors.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; You need to be able to direct production traffic to different hosts (or collections of hosts). You could do this by changing DNS entries, or updating load-balancing configuration.
+&gt; You need to be able to provision enough hosts to have both versions of the microservice running at once.
+&gt; The entire process can be completely automated, with either the full roll-out or revert happening without any human intervention.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What is canary releasing?</li>
+<li>What should you monitor in a single service, single server environment?</li>
+<li>What should you monitor in a single service, multiple server (distributed via a load balancer) environment?</li>
+<li>What should you monitor in a multiple service, multiple server (distributed via a load balancer) environment?</li>
+<li>What is the secret to metric tracking across multiple services?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Verifying our newly deployed software by directing amounts of production traffic against the system to see if it performs as expected.
+&gt; If the new release is bad, you get to revert quickly. If it is good, you can push increasing amounts of traffic through the new version.
+&gt; Some teams are able to shadow production traffic and direct it to their canary.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; The host itself; CPU, memory etc.
+    ~ setup an alert for when they go out of bounds.
+&gt; Server logs.
+&gt; At a bare minimum, monitoring the response time of the service is a good idea.
+    ~ either from a web server fronting your service, or perhaps from the service itself.
+&gt; If we get very advanced, we might want to track the number of errors we are reporting.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; we want to aggregate them up, and still be able to drill down. Nagios lets us group our hosts like this.
+&gt; we can use tools like ssh-multiplexers, which allow us to run the same commands on multiple hosts.
+&gt; For tasks like response time tracking, we can get some of the aggregation for free by tracking at the load balancer itself.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; SSH-multiplexing to retrieve logs probably isn’t going to cut it now
+&gt; use specialized subsystems to grab our logs and make them available centrally.
+    ~ e.g. logstash, which can parse multiple logfile formats and can send them to downstream systems
+&gt; Kibana is an ElasticSearch-backed system for viewing logs&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Gather metrics about how your system behaves over a long-enough period of time that clear patterns emerge.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>What tool is useful in tracking metrics across multiple services?</li>
+<li></li>
+<li>What basic metrics should your services expose, if any?</li>
+<li>Should your services expose more than just basic metrics? If yes, then what?</li>
+<li>What is synthetic transaction?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Graphite
+&gt; It exposes a very simple API and allows you to send metrics in real time.
+&gt; It then allows you to query those metrics to produce charts and other displays to see what is happening.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>key benefit of understanding your trends is when it comes to capacity planning. Are we reaching our limit? How long until we need more hosts?</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; at bare minimum, for a web service you should probably expose metrics like response times and error rates
+&gt; you should really go further than this.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; For example, our accounts service may want to expose the number of times customers view their past orders, or your web shop might want to capture how much money has been made during the last day.
+&gt; there is an old adage that 80% of software features are never used.
+&gt; we are getting better than ever at reacting to how our users are using our system to work out how to improve it.
+&gt; we can never know what data will be useful.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; A fake system event used to track the health of the system.
+    ~ Often called synthetic monitoring.
+e.g.
+Every minute or so, we had Nagios run a command-line job that inserted a fake event into one of our queues. Our system picked it up and ran all the various calculations just like any other job, except the results appeared in the junk book, which was used only for testing. If a re-pricing wasn’t seen within a given time, Nagios reported this as an issue.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li></li>
+<li>How might you implement semantic monitoring?</li>
+<li>What are correlation IDs?</li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; The use of synthetic transactions to perform semantic monitoring like this to be a far better indicator of issues in systems than alerting on the lower-level metrics.
+&gt; They don’t replace the need for the lower-level metrics, though
+    ~ we’ll still want that detail when we need to find out why our semantic monitoring is reporting a problem.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; look at the tests we have that test a given service end to end, or even our whole system end to end, we have much of what we need to implement semantic monitoring.
+&gt; Our system already exposes the hooks needed to launch the test and check the result. So why not just run a subset of these tests, on an ongoing basis, as a way of monitoring our system?
+&gt; We could have a set of fake users we use in production with a known set of data.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; When the first call is made, you generate a GUID for the call. This is then passed along to all subsequent calls.
+&gt; Each service must know to pass on the correlation ID&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Needing to handle tasks like consistently passing through correlation IDs can be a strong argument for the use of thin shared client wrapper libraries.
+&gt; If you do decide to create an in-house client library to make things like this work out of the box, do make sure you keep it very thin and not tied to any particular producing service. For example, if you are using HTTP as the underlying protocol for communication, just wrap a standard HTTP client library, adding in code to make sure you propogate the correlation IDs in the headers.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Cascading failures caused by such things as losing network connectivity between services can be mitigated by using synthetic monitoring.
+&gt; If we just looked at the health of the individual service, we wouldn’t know there is a problem.
+&gt; for example, to mimic a customer searching for a song
+&gt; But we’d also need to report on the fact that one service cannot see another in order to determine the cause of the problem.
+&gt; Therefore, monitoring the integration points between systems is key. Each service instance should track and expose the health of its downstream dependencies, from the database to other collaborating services. You should also allow this information to be aggregated to give you a rolled-up picture. You’ll want to see the response time of the downstream calls, and also detect if it is erroring.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; monitoring is one area where standardization is incredibly important.
+&gt; you need to view the system in a holistic way.
+&gt; try to write your logs out in a standard format.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>you may want to have a list of standard names for your metrics too; it would be very annoying for one service to have a metric called ResponseTime, and another to have one called RspTimeSecs</p>
+
+<h4 id="3">3.</h4>
+
+<p>why not provide preconfigured virtual machine images with logstash and collectd ready to go, along with application libraries that let you talk to Graphite really easily?</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; What our people want to see and react to right now is different than what they need when drilling down. So, for the type of person who will be looking at this data, consider the following:
+    ~ What they need to know right now
+    ~ What they might want later
+    ~ How they like to consume data
+&gt; Alert on the things they need to know right now. Create big visible displays with this information that sit in the corner of the room.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Authorization is the mechanism by which we map from a principal to the action we are allowing her to do.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li></li>
+<li>which is the reigning SSO implementation in the enterprise space?</li>
+<li></li>
+<li>Which type of identity provider to Google provide?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>A common approach to authentication and authorization is to use some sort of single sign-on (SSO) solution.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; SAML
+&gt; SOAP-based standard, and is known for being fairly complex to work with despite the libraries and tooling available to support it.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>When a principal tries to access a resource (like a web-based interface), she is directed to authenticate with an identity provider. This may ask her to provide a username and password, or might use something more advanced like two-factor authentication. Once the identity provider is satisfied that the principal has been authenticated, it gives information to the service provider, allowing it to decide whether to grant her access to the resource.</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>OpenID Connect.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<p>For enterprises, though, it is common to have your own identity provider, which may be linked to your company’s directory service. A directory service could be something like the Lightweight Directory Access Protocol (LDAP) or Active Directory.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li></li>
+<li>What options are available for enterprises who wish to use an OpenID Connect provider?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>OpenID Connect is a standard that has emerged as a specific implementation of OAuth 2.0, based on the way Google and others handle SSO. It uses simpler REST calls, and in my opinion is likely to make inroads into enterprises due to its improved ease of use. Its biggest stumbling block right now is the lack of identity providers that support it.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; OpenAM
+&gt; Gluu&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>Growth of OpenID Connect may be limited to those situations where people are happy using a public identity provider.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Rather than having each service manage handshaking with your identity provider, you can use a gateway to act as a proxy, sitting between your services and the outside world.
+&gt; The idea is that we can centralize the behavior for redirecting the user and perform the handshake in only one place.
+&gt; If you go the gateway route, make sure your developers can launch their services behind one without too much work.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>HTTP Basic Authentication should normally be used over HTTPS.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;traffic sent via SSL cannot be cached by reverse proxies.
+This means that if you need to cache traffic, it will have to be done either inside the server or inside the client. You can fix this by having a load balancer terminate the SSL traffic, and having the cache sit behind the load balancer.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>If you are already using SAML or OpenID Connect as your authentication and authorization scheme, you could just use that for service-to-service interactions too. If you’re using a gateway, you’ll need to route all in-network traffic via the gateway too, but if each service is handling the integration itself, this approach should just work out of the box. The advantage here is that you’re making use of existing infrastructure, and get to centralize all your service access controls in a central directory server. We’d still need to route this over HTTPS if we wanted to avoid man-in-the-middle attacks.</p>
+
+<h4 id="3">3.</h4>
+
+<p>if you are going to create service accounts, try to keep their use narrow. So consider each microservice having its own set of credentials.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Another approach to confirm the identity of a client is to make use of capabilities in Transport Layer Security (TLS), the successor to SSL, in the form of client certificates. Here, each client has an X.509 certificate installed that is used to establish a link between client and server. The server can verify the authenticity of the client certificate, providing strong guarantees that the client is valid.
+&gt; The operational challenges here in certificate management are even more onerous than with just using server-side certificates.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;An alternative approach, as used extensively by Amazon’s S3 APIs for AWS and in parts of the OAuth specification, is to use a hash-based messaging code (HMAC) to sign the request.
+With HMAC the body request along with a private key is hashed, and the resulting hash is sent along with the request. The server then uses its own copy of the private key and the request body to re-create the hash. If it matches, it allows the request. The nice thing here is that if a man in the middle messes with the request, then the hash won’t match and the server knows the request has been tampered with.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li>What are the downsides of using an HMAC?</li>
+<li>What are API keys?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; both the client and server need a shared secret that needs to be communicated somehow.
+&gt; this is a pattern, not a standard, and thus there are divergent ways of implementing it.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Allow a service to identify who is making a call, and place limits on what they can do.
+&gt; All public APIs from services like Twitter, Google, Flickr, and AWS make use of API keys.
+&gt; Often the limits go beyond simply giving access to a resource, and can extend to actions like rate-limiting specific callers to protect quality of service for other people.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Using API keys to handle your own microservice-to-microservice approach
+&gt; Some systems use a single API key that is shared, and use an approach similar to HMAC as just described. A more common approach is to use a public and private key pair. Typically, you’ll manage keys centrally, just as we would manage identities of people centrally. The gateway model is very popular in this space.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Some API systems allow you to bridge API keys to existing directory services. This would allow you to issue API keys to principals (representing people or systems) in your organization, and control the lifecycle of those keys in the same way you’d manage their normal credentials. This opens up the possibility of allowing access to your services in different ways but keeping the same source of truth—for example, using SAML to authenticate humans for SSO, and using API keys for service-to-service communication</p>
+
+<h4 id="5">5.</h4>
+
+<p>Responding very slowly is one of the worst failure modes you can experience. If a system is just not there, you find out pretty quickly. When it’s just slow, you end up waiting around for a while before giving up.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Netflix also takes a more aggressive approach, by writing programs that cause failure and running them in production on a daily basis.
+&gt; The most famous of these programs is the Chaos Monkey, which during certain hours of the day will turn off random machines. Knowing that this can and will happen in production means that the developers who create the systems really have to be prepared for it.
+&gt; The Chaos Monkey is just one part of Netflix’s Simian Army of failure bots. The Chaos Gorilla is used to take out an entire availability center (the AWS equivalent of a data center), whereas the Latency Monkey simulates slow network connectivity between machines. Netflix has made these tools available under an open source license.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; While the circuit breaker is blown, you have some options.
+    ~ One is to queue up the requests and retry them later on.
+    ~ Propagate an error up the call chain, or a more subtle degrading of functionality.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>If we have this mechanism in place (as with the circuit breakers in our home), we could use them manually to make it safer to do our work. For example, if we wanted to take a microservice down as part of routine maintenance, we could manually blow all the circuit breakers of the dependent systems so they fail fast while the microservice is offline. Once it’s back, we can reset the circuit breakers and everything should go back to normal.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; There are lots of different bulkheads we can consider. Returning to my own experience, we actually missed the chance to implement a bulkhead. We should have used different connection pools for each downstream connection. That way, if one connection pool gets exhausted, the other connections aren’t impacted
+&gt; Separation of concerns can also be a way to implement bulkheads. By teasing apart functionality into separate microservices, we reduce the chance of an outage in one area affecting another.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>I’d recommend mandating circuit breakers for all your synchronous downstream calls.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li>What are some of the benefits of isolation between services?</li>
+<li>In what way are idempotent service operations useful?</li>
+<li>How is it possible to make an operation idempotent that otherwise wouldn&rsquo;t be?</li>
+<li>How might scaling impact the way in which services are split?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>In many ways, bulkheads are the most important of these three patterns. Timeouts and circuit breakers help you free up resources when they are becoming constrained, but bulkheads can ensure they don’t become constrained in the first place. Hystrix allows you, for example, to implement bulkheads that actually reject requests in certain conditions to ensure that resources don’t become even more saturated; this is known as load shedding. Sometimes rejecting a request is the best way to stop an important system from becoming overwhelmed</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; The more one service depends on another being up, the more the health of one impacts the ability of the other to do its job.
+&gt; upstream services are less likely to be affected by outages, planned or unplanned.
+&gt; much less coordination is needed between service owners.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>when we want to replay messages that we aren’t sure have been processed, a common way of recovering from error.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; By providing a little more unique information.
+&gt; This mechanism works just as well with event-based collaboration, and can be especially useful if you have multiple instances of the same type of service subscribing to events.
+&gt; By processing the events in an idempotent manner, we ensure this won’t cause us any issues if two workers process the same message.
+e.g.
+    <credit>
+        <amount>100</amount>
+        <account>1234</account>
+        <reason>
+            **** <purchase>9876</purchase> ****
+        </reason>
+    </credit>&ldquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; By separating critical from non-critical services.
+e.g.
+in the case of a finance/accounts service, separate query/report generation part (noncritical), which places a significant load on the system, from core customer financial record processing (critical).&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li></li>
+<li>What types of services do worker-based systems work well for?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; When you need your service to be resilient, you want to avoid single points of failure.
+&gt; Have multiple hosts running your microservice instance, sitting behind a load balancer&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; works well for peaky load, where you can spin up additional instances on demand to match the load coming in.
+&gt; Well suited to batch work or asynchronous jobs.
+e.g.
+image thumbnail processing, sending email, generating reports.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>With worker-based systems, although the workers themselves don’t need to be that reliable, the system that contains the work to be done does. You could handle this by running a persistent message broker, for example, or perhaps a system like Zookeeper.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Many services are read-mostly.
+&gt; scaling for reads is much easier than scaling for writes.
+&gt; One approach is caching of data.
+&gt; Another model is to make use of read replicas.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;For example, I might choose to handle and process commands as events, perhaps just storing the list of commands in a data store (a process known as event sourcing). My query model could query an event store and create projections from stored events to assemble the state of domain objects, or could just pick up a feed from the command part of the system to update a different type of store. In many ways, we get the same benefits of read replicas that we discussed earlier, without the requirement that the backing store for the replicas be the same as the data store used to handle data modifications.
+This form of separation allows for different types of scaling. The command and query parts of our system could live in different services, or on different hardware, and could make use of radically different types of data store.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;Caching is a commonly used performance optimization whereby the previous result of some operation is stored, so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.
+More often than not, caching is about eliminating needless round-trips to databases or other services to serve results faster. Used well, it can yield huge performance benefits.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>Whether you decide to use HTTP as an interservice protocol, caching at the client and reducing the need for round-trips to the client is well worth it. If you decide to pick a different protocol, understand when and how you can provide hints to the client to help it understand how long it can cache for.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Although you’ll find yourself using caching for reads more often, there are some use cases where caching for writes make sense. For example, if you make use of a write-behind cache, you can write to a local cache, and at some later point the data will be flushed to a downstream source, probably the canonical source of data. This can be useful when you have bursts of writes, or when there is a good chance that the same data will be written multiple times. When used to buffer and potentially batch writes, write-behind caches can be a useful further performance optimization.
+&gt; With a write-behind cache, if the buffered writes are suitably persistent, even if the downstream service is unavailable we could queue up the writes and send them through when it is available again.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Caching can be used to implement resiliency in case of failure. With client-side caching, if the downstream service is unavailable, the client could decide to simply use cached but potentially stale data. We could also use something like a reverse proxy to serve up stale data.</p>
+
+<h4 id="5">5.</h4>
+
+<p>A technique I saw used at the Guardian, and subsequently elsewhere, was to crawl the existing live site periodically to generate a static version of the website that could be served in the event of an outage. Although this crawled version wasn’t as fresh as the cached content served from the live system, in a pinch it could ensure that a version of the site would get displayed.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li></li>
+<li>Why use service discovery?</li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>With a normal cache, if a request results in a cache miss, the request goes on to the origin to fetch the fresh data with the caller blocking, waiting on the result.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Obviously to know where services are running.
+&gt; Perhaps you want to know what is running in a given environment so you know what you should be monitoring.
+&gt; To make it easy for developers in your organization to know what APIs are available.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>I have seen a convention-based domain template work well. For example, we might have a template defined as <servicename>-<environment>.musiccorp.com, giving us entries like accounts-uat.musiccorp.com or accounts-dev.musiccorp.com.</p>
+
+<h4 id="4">4.</h4>
+
+<p>I would suggest finding ways to make each decision small in scope; that way, if you get it wrong, you only impact a small part of your system.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/microservices-1/" data-toggle="tooltip" data-placement="top" title="Microservices Quiz, Part 1">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/centos-1/" data-toggle="tooltip" data-placement="top" title="CentOS Quiz">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

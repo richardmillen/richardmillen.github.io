@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>ZeroMQ Quiz, Part 1</title>
+  <meta property="og:title" content="ZeroMQ Quiz, Part 1" />
+  <meta name="twitter:title" content="ZeroMQ Quiz, Part 1" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Give an example of load balancing. Give an example of fair queuing. What is the slow joiner problem? What must you do when you use a SUB socket? What happens if you don&rsquo;t set any subscriptions on a SUB socket?">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Give an example of load balancing. Give an example of fair queuing. What is the slow joiner problem? What must you do when you use a SUB socket? What happens if you don&rsquo;t set any subscriptions on a SUB socket?">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Give an example of load balancing. Give an example of fair …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/zeromq-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/zeromq-1/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>ZeroMQ Quiz, Part 1</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<p>This page contains questions &amp; answers based on the <a href="http://zguide.zeromq.org/page:all">ZeroMQ Guide</a> written by Pieter Hintjens.</p>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>Give an example of <em>load balancing</em>.</li>
+<li>Give an example of <em>fair queuing</em>.</li>
+<li>What is the <em>slow joiner</em> problem?</li>
+<li>What <em>must</em> you do when you use a <code>SUB</code> socket?</li>
+<li>What happens if you don&rsquo;t set any subscriptions on a <code>SUB</code> socket?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>The <em>ventilator</em> uses a <code>PUSH</code> socket to evenly distribute tasks to workers.</p>
+
+<h4 id="2">2.</h4>
+
+<p>The <em>sink</em> uses a <code>PULL</code> socket to collect results from workers evenly.</p>
+
+<h4 id="3">3.</h4>
+
+<p>As a client connects, the server may already be sending messages out.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Set a subscription.</p>
+
+<pre><code class="language-c++">
+socket_t::setsockopt(ZMQ_SUBSCRIBE, filter, strlen(filter));
+
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<p>You won&rsquo;t get any messages.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>Is the PUB-SUB socket pair synchronous, or asynchronous?</li>
+<li>What will happen if you send a message to a SUB socket?</li>
+<li>How would you listen to multiple publishers?</li>
+<li>What will happen to messages sent by a publisher with no subscribers?</li>
+<li>What will happen if there is a slow subscriber connected over TCP?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Asynchronous.</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Trying to send a message to a SUB socket will cause an error.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>A subscriber can connect to more than one publisher, using one connect call each time.<br />
+Data will then arrive and be interleaved (&ldquo;fair-queued&rdquo;) so that no single publisher drowns out the others.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>If a publisher has no connected subscribers, then it will simply drop all messages.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Messages will queue up on the publisher.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>Where is filtering performed over a PUB-SUB connection?</li>
+<li>Where is filtering performed over a PUB-SUB connection using EPGM?</li>
+<li>What steps do you need to take when static linking to libzmq.lib on Windows?</li>
+<li>How do you install ZeroMQ for Python?</li>
+<li>What is meant by stable and dynamic parts of an architecture?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Filtering happens at the publisher side when using a connected protocol (tcp:// or ipc://).</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Using the <code>epgm://</code> protocol, filtering happens at the subscriber side.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<ul>
+<li>ZMQ_STATIC must be defined.</li>
+<li>Include these libraries as linker input:-
+
+<ul>
+<li>Ws2_32.lib</li>
+<li>Rpcrt4.lib</li>
+<li>Iphlpapi.lib</li>
+</ul></li>
+</ul>
+
+<h4 id="4">4.</h4>
+
+<p>I used Anaconda:</p>
+
+<pre><code class="language-bash">
+conda install pyzmq
+
+</code></pre>
+
+<h4 id="5">5.</h4>
+
+<p>We know beforehand that the <em>stable</em> parts are guaranteed to be there at runtime, while the <em>dynamic</em> parts aren&rsquo;t.</p>
+
+<blockquote>
+<p>In a parallel pipeline architecture we say that the ventilator and sink are stable parts of our architecture and the workers are dynamic parts of it.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What&rsquo;s the first thing you must do before creating a socket?</li>
+<li>What is a context and what does it do?</li>
+<li>What are <em>inproc</em> sockets?</li>
+<li></li>
+<li>What can cause <code>zmq_ctx_destroy()</code> to hang?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>You should create and use exactly one context in your process.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>It represents a single instance of ZeroMQ.<br />
+A container for all sockets in a single process.<br />
+Acts as the transport for &lsquo;inproc&rsquo; sockets.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>They&rsquo;re the fastest way to connect threads in one process.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>If you&rsquo;re using the fork() system call, do <code>zmq_ctx_new()</code> after the fork and at the beginning of the child process code.<br />
+In general, you want to do interesting (ZeroMQ) stuff in the children, and boring process management in the parent.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<ol>
+<li>If you leave any sockets open, the zmq_ctx_destroy() function will hang forever.</li>
+<li>Even if you close all sockets, zmq_ctx_destroy() will by default wait forever if there are pending connects or sends unless you set the LINGER to zero on those sockets before closing them.</li>
+</ol>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What should you do if you&rsquo;re opening and closing a lot of sockets?</li>
+<li>When are socket handles freed?</li>
+<li>Can sockets be used by multiple threads?</li>
+<li>What is the proper way to make a clean exit in a multithreaded application?</li>
+<li>What are some of the key design decisions of any reusable messaging layer?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>If you are opening and closing a lot of sockets, that&rsquo;s probably a sign that you need to redesign your application.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<p>By calling <code>zmq_close()</code>.</p>
+
+<blockquote>
+<p>In some cases socket handles won&rsquo;t be freed until you destroy the context.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<ul>
+<li>No.</li>
+<li>The <em>context</em> is thread-safe, but sockets aren&rsquo;t.</li>
+</ul>
+
+<blockquote>
+<p>Do not try to use the same socket from multiple threads.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p><em>n.b. A good language binding will do this automatically for you.</em></p>
+
+<blockquote>
+<p>Shut down each socket that has ongoing requests.<br />
+The proper way is to set a low LINGER value (1 second), and then close the socket. Language bindings should do this automatically when you destory a context.<br />
+Destroy the context.<br />
+This will cause any blocking receives or polls or sends in attached threads (i.e., which share the same context) to return with an error.<br />
+Catch that error, and then set linger on, and close sockets in that thread, and exit.<br />
+The zmq_ctx_destroy in the main thread will block until all sockets it knows about are safely closed.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>How to handle I/O. Blocking or Non-blocking?<br />
+How to handle dynamic components. Mandate that servers cannot disappear? Connections between servers? Reconnect every few seconds?<br />
+Representing a message. Framing data for easy read/writes, safe from buffer overflows, efficient for small messages, yet adequate for large videos etc.<br />
+Handling undeliverable messages. Waiting for component to come back online. Discard? Database? Memory queue?<br />
+Where to store message queues. Slow readers and build ups.<br />
+Lost messages. Wait for fresh data? Request resend? Build reliability layer? What if the layer crashes?<br />
+Different network transport. Multicast instead of TCP unicast? IPv6?<br />
+Message routing. Single message to multiple peers? Replies back to original requester?<br />
+Language APIs. For another language. Re-implement wire-level protocol or repackage a library?<br />
+Different architectures. Represent data. Enforce an encoding for data types?<br />
+Network errors. Wait and retry? Ignore silently? Abort?</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>What is a major limitation of blocking I/O?</li>
+<li>What approach should applications take when choosing or designing the messaging layer and communications?</li>
+<li>What is AMQP?</li>
+<li>What are some downsides of adding a message broker to an application?</li>
+<li>When might a broker-centric setup be suitable?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>It doesn&rsquo;t scale well.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>An application should use a generic messaging layer and an explicitly documented wire level protocol.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>In 2006, iMatix designed AMQP (Advanced Message Queuing Protocol).</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Adding broker-based messaging would mean adding an additional big box, and a new single point of failure.<br />
+A broker rapidly becomes a bottleneck and a new risk to manage.<br />
+If the software supports it, we can add a second, third, and fourth broker and make some failover scheme. People do this. It creates more moving pieces, more complexity, and more things to break.<br />
+A broker-centric setup needs its own operations team.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>It is only worth doing for large applications with many moving pieces, built by several teams of people over several years.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li>What are some of the high-level aims of ZeroMQ?</li>
+<li>What is ZeroMQ designed to achieve?</li>
+<li>What should the structure of your application be when using ZeroMQ?</li>
+<li>What benefits does the <em>socket</em> abstraction provide?</li>
+<li>What are the four stages of a socket&rsquo;s life?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Does the job of messaging, but does it in such a simple and cheap way that it can work in any application, with close to zero cost.<br />
+A library which you just link, without any other dependencies.<br />
+No additional moving pieces.<br />
+Run on any OS.<br />
+Work with any programming language.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Handles I/O asynchronously, using lock-free data structures, so concurrent applications need no locks, semaphores or other wait states.<br />
+Components can come and go dynamically and ZeroMQ will automatically reconnect.<br />
+Queues messages automatically when needed. It does this intelligently, pushing messages as close as possible to the receiver before queuing them.<br />
+It has ways of dealing with over-full queues (called &ldquo;&ldquo;high water mark&rdquo;&ldquo;). When a queue is full, ZeroMQ automatically blocks senders, or throws away messages.<br />
+Applications talk to each other over arbitrary transports: TCP, multicast, in-process, inter-process.<br />
+Handles slow/blocked readers safely.<br />
+Lets you route messages using a variety of patterns.<br />
+Lets you create proxies to queue, forward, or capture messages with a single call. Proxies can reduce the interconnection complexity of a network.<br />
+Delivers whole messages exactly as they were sent.<br />
+Does not impose any format on messages. When you want to represent data you choose some other product on top, such as msgpack, Google&rsquo;s protocol buffers etc.<br />
+Handles network errors intelligently, by retrying automatically in cases where it makes sense.<br />
+Reduces your carbon footprint.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<ul>
+<li>A central message processing loop,</li>
+<li>One or more message processing tasks,</li>
+<li>Tasks map to <em>nodes</em>,</li>
+<li>Abstraction of transports means it scales without needing code changes.</li>
+</ul>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Your code, talking to a socket, can then handle any number of connections across whatever network protocols are around, without change.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<ol>
+<li>Creating and destroying.<br /></li>
+<li>Configuring sockets by setting options on them and checking them if necessary.<br /></li>
+<li>Plugging sockets into the network topology by creating ZeroMQ connections to and from them.<br /></li>
+<li>Using the sockets to carry data by writing and receiving messages on them.</li>
+</ol>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>Who is responsible for managing sockets and messages in an application?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>In ZeroMQ, all your sockets are belong to us, but messages are things you actually own in your code.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>As soon as the client node does <code>zmq_connect()</code>, the connection exists and that node can start to write messages to the socket.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>A server node can bind to many endpoints (that is, a combination of protocol and address) and it can do this using a single socket.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>With most transports, you cannot bind to the same endpoint twice, unlike for example in UDP.<br />
+The ipc transport does, however, let one process bind to an endpoint already used by a first process. It&rsquo;s meant to allow a process to recover after a crash.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>ZeroMQ sockets carry messages, like UDP, rather than a stream of bytes as TCP does. A ZeroMQ message is length-specified binary data.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li>How do sockets do I/O?</li>
+<li></li>
+<li>What should you consider using multicast?</li>
+<li>What is the <code>inproc</code> transport?</li>
+<li>What limitation does the <code>inproc</code> transport have compared to <code>tcp</code> and <code>ipc</code>?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>ZeroMQ sockets do their I/O in a background thread. This means that messages arrive in local input queues and are sent from local output queues, no matter what your application is busy doing.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>ZeroMQ sockets have one-to-N routing behavior built-in, according to the socket type.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Don&rsquo;t use multicast unless you know that your fan-out ratios will make 1-to-N unicast impossible.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>The inter-thread transport, inproc, is a connected signaling transport. It is much faster than tcp or ipc.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>The server must issue a bind before any client issues a connect.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li>What does it mean when we say that ZeroMQ is not a neutral carrier?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>It imposes a framing on the transport protocols it uses. This framing is not compatible with existing protocols.<br />
+For example, compare an HTTP request and a ZeroMQ request, both over TCP/IP.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th align="center">HTTP</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">GET /index.html</td>
+<td align="center">13</td>
+<td align="center">0</td>
+<td align="center">13</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">ZeroMQ</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">H</td>
+<td align="center">E</td>
+<td align="center">L</td>
+<td align="center">L</td>
+<td align="center">O</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>The HTTP request uses CR-LF as its simplest framing delimiter, whereas ZeroMQ uses a length-specified frame.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Since v3.3, ZeroMQ has a socket option called <code>ZMQ_ROUTER_RAW</code> that lets you read and write data without the ZeroMQ framing.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>One I/O thread (for all sockets) is sufficient for all but the most extreme applications.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>The general rule of thumb is to allow one I/O thread per gigabyte of data in or out per second.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>You can map nodes to threads, processes, or physical nodes.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li>How do ZeroMQ sockets handle disconnections?</li>
+<li>Where are messages queued?</li>
+<li>How are messages routed and queued?</li>
+<li>What are the socket combinations that are valid for a connect-bind pair?</li>
+<li>What must you look out for when using a ROUTER socket to receive messages from a REQ socket?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>It automatically reconnects to peers as they come and go.</p>
+</blockquote>
+
+<p><strong>TODO: Find out which socket types do/n&rsquo;t do this.</strong></p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>It queues messages at both sender and receiver, as needed.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>It routes and queues messages according to precise recipes called <em>patterns</em>.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>PUB and SUB<br />
+REQ and REP<br />
+REQ and ROUTER<br />
+DEALER and REP<br />
+DEALER and ROUTER<br />
+DEALER and DEALER<br />
+ROUTER and ROUTER<br />
+PUSH and PULL<br />
+PAIR and PAIR</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>REQ inserts an extra null frame</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li></li>
+<li>How do you send the same message (zmq_msg_t) more than once in C?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>DEALER and REP (take care, REP assumes a null frame)</p>
+
+<h4 id="2">2.</h4>
+
+<p>Create a second message, initialize it using zmq_msg_init(), and then use zmq_msg_copy() to create a copy of the first message. This does not copy the data but copies a reference. You can then send the message twice (or more, if you create more copies) and the message will only be finally destroyed when the last copy is sent or closed.</p>
+
+<h4 id="3">3.</h4>
+
+<p>ZeroMQ supports multipart messages, which let you send or receive a list of frames as a single on-the-wire message.</p>
+
+<h4 id="4">4.</h4>
+
+<p>A frame is a length-specified block of data. The length can be zero upwards.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Multipart messages are quite simply series of frames with a &ldquo;&ldquo;more&rdquo;&rdquo; bit set to one, followed by one with that bit set to zero.
+&gt; The ZeroMQ API then lets you write messages with a &ldquo;&ldquo;more&rdquo;&rdquo; flag and when you read messages, it lets you check if there&rsquo;s &ldquo;&ldquo;more&rdquo;&ldquo;.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li>What are the differences between a message and a frame?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; A message can be one or more parts.
+&gt; These parts are also called &ldquo;&ldquo;frames&rdquo;&ldquo;.
+&gt; Each part is a zmq_msg_t object.
+&gt; You send and receive each part separately, in the low-level API.
+&gt; Higher-level APIs provide wrappers to send entire multipart messages.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>You may send zero-length messages, e.g., for sending a signal</p>
+
+<h4 id="3">3.</h4>
+
+<p>ZeroMQ guarantees to deliver all the parts (one or more) for a message, or none of them.</p>
+
+<h4 id="4">4.</h4>
+
+<p>ZeroMQ does not send the message (single or multipart) right away, but at some indeterminate later time. A multipart message must therefore fit in memory.</p>
+
+<h4 id="5">5.</h4>
+
+<p>A message (single or multipart) must fit in memory. If you want to send files of arbitrary sizes, you should break them into pieces and send each piece as separate single-part messages. Using multipart data will not reduce memory consumption.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li>What if we want to read from multiple endpoints at the same time?</li>
+<li>How do you read a socket without waiting for a message?</li>
+<li>How do you read from multiple sockets?</li>
+<li>How do you send the frames in a multipart message?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>You must call zmq_msg_close() when finished with a received message, in languages that don&rsquo;t automatically destroy objects when a scope closes. You don&rsquo;t call this method after sending a message.</p>
+
+<h4 id="2">2.</h4>
+
+<p>The simplest way is to connect one socket to all the endpoints and get ZeroMQ to do the fan-in for us. This is legal if the remote endpoints are in the same pattern, but it would be wrong to connect a PULL socket to a PUB endpoint.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Call zmq_recv &copy; / socket_t::recv (C++) with ZMQ_DONTWAIT.
+e.g.
+    zmq::message_t message;
+    if (reader.recv(&amp;message, ZMQ_DONTWAIT))
+    {
+        // do work
+    }&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Use zmq_poll &copy; / zmq::poll (C++).
+e.g.
+    zmq::socket_t r1, r2;
+    &hellip;
+    zmq::pollitem_t items[] =
+    {
+        { r1, 0, ZMQ_POLLIN, 0 },
+        { r2, 0, ZMQ_POLLIN, 0 }
+    };
+    while (true)
+    {
+        zmq::message_t message;
+        zmq::poll(&amp;items, 2, -1);
+        if (items[0].revents &amp; ZMQ_POLLIN)
+        {
+            r1.recv(&amp;message);
+            // do work
+        }
+        if (items[1].revents &amp; ZMQ_POLLIN)
+        &hellip;&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&ldquo;C e.g.
+    zmq_msg_send(&amp;message, socket, ZMQ_SNDMORE);
+    zmq_msg_send(&amp;message, socket, ZMQ_SNDMORE);
+    zmq_msg_send(&amp;message, socket, 0);&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li>How do you receive the frames of a multipart message?</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;C e.g.
+    while (1)
+    {
+        zmq_msg_t message;
+        zmq_msg_init(&amp;message);
+        zmq_msg_recv(&amp;message, socket, 0);
+        // process frame&hellip;
+        zmq_msg_close (&amp;message);
+        if (!zmq_msg_more(&amp;message))
+            break;&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>When you send a multipart message, the first part (and all following parts) are only actually sent on the wire when you send the final part.</p>
+
+<h4 id="3">3.</h4>
+
+<p>If you are using zmq_poll(), when you receive the first part of a multipart message, all the rest has also arrived.</p>
+
+<h4 id="4">4.</h4>
+
+<p>You will receive all parts of a multipart message, or none at all.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Each part of a message is a separate zmq_msg item.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li>What is the industry term used for message-aware network infrastructure such as service-oriented brokers?</li>
+<li>Name the types of intermediation that can be built using ZeroMQ.</li>
+<li></li>
+<li>If all networks eventually get large enough to need intermediaries, why don&rsquo;t we simply have a message broker in place for all applications?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>There is no way to cancel a partially sent message, except by closing the socket.</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>intermediation.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; proxies
+&gt; queues
+&gt; forwarders
+&gt; device
+&gt; brokers&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>Intermediation is extremely common in the real world and is why our societies and economies are filled with intermediaries who have no other real function than to reduce the complexity and scaling costs of larger networks. Real-world intermediaries are typically called wholesalers, distributors, managers, and so on.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; It&rsquo;s a fair compromise.
+&gt; Just always use a star topology.
+&gt; Forget about performance.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li>How might you solve the &lsquo;dynamic discovery problem&rsquo; in a PUB-SUB architecture?</li>
+<li>What is the main use case for XSUB-XPUB?</li>
+<li>What is a simple yet naive way to connect multiple clients to multiple servers?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Message brokers are greedy things; in their role as central intermediaries, they become too complex, too stateful, and eventually a problem.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Think of intermediaries as simple stateless message switches.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Add a pub-sub proxy in the &ldquo;&ldquo;middle&rdquo;&rdquo; of the network.
+&gt; The proxy opens an XSUB socket, an XPUB socket, and binds each to well-known IP addresses and ports.
+&gt; All other processes connect to the proxy.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; For use by a PUB-SUB proxy.
+&gt; XSUB and XPUB are exactly like SUB and PUB except they expose subscriptions as special messages.
+&gt; The proxy has to forward subscription messages from subscriber side to publisher side, by reading them from the XPUB socket and writing them to the XSUB socket.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Connect each client socket to multiple service endpoints.
+&gt; The REQ socket will then distribute requests among these services.
+&gt; But each client has to know the service topology. Adding more servers requires all clients to be restarted.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li>What is the most flexible way to connect multiple clients to multiple servers?</li>
+<li></li>
+<li></li>
+<li>What is a bridge?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Use a message queuing broker.
+&gt; Binds to two endpoints, a frontend for clients and a backend for services.
+&gt; REQ talks to ROUTER and DEALER talks to REP.
+&gt; Uses zmq_poll() to monitor these two sockets for activity, shuttling messages between its two sockets.
+&gt; It doesn&rsquo;t need to explicitly manage queuing as ZeroMQ does that on each socket.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>Too many static pieces are like liquid concrete: knowledge is distributed and the more static pieces you have, the more effort it is to change the topology.</p>
+
+<h4 id="3">3.</h4>
+
+<p>Two sockets called DEALER and ROUTER let you do nonblocking request-response.</p>
+
+<h4 id="4">4.</h4>
+
+<p>A bridge is a small application that speaks one protocol at one socket, and converts to/from a second protocol at another socket.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Processes, we believe, should be as vulnerable as possible to internal errors, and as robust as possible against external attacks and errors.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li>There are two main exceptional conditions that you should handle as nonfatal. What are they?</li>
+<li>What can you share between threads?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;1) When your code receives a message with the ZMQ_DONTWAIT option and there is no waiting data, ZeroMQ will return -1 and set errno to EAGAIN.
+2) When one thread calls zmq_ctx_destroy(), and other threads are still doing blocking work, the zmq_ctx_destroy() call closes the context and all blocking calls exit with -1, and errno set to ETERM.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; ZeroMQ contexts.
+&gt; Create one ZeroMQ context at the start of your process, and pass that to all threads that you want to connect via inproc sockets.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>Stay away from the classic concurrency mechanisms like as mutexes, critical sections, semaphores, etc. These are an anti-pattern in ZeroMQ applications.</p>
+
+<h4 id="4">4.</h4>
+
+<p>Use &lsquo;attached&rsquo; threads to create structure within your multithreaded application, and connect these to their parent threads using PAIR sockets over inproc. The pattern is: bind parent socket, then create child thread which connects its socket.</p>
+
+<h4 id="5">5.</h4>
+
+<p>Use &lsquo;detached&rsquo; threads to simulate independent tasks, with their own contexts. Connect these over tcp. Later you can move these to stand-alone processes without changing the code significantly.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>Why use PAIR sockets rather than ROUTER / DEALER sockets?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Don&rsquo;t share ZeroMQ sockets between threads.</p>
+
+<h4 id="2">2.</h4>
+
+<p>ZeroMQ sockets are not threadsafe.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; If you use inproc and socket pairs, you are building a tightly-bound application.
+&gt; This pattern is not scalable out to processes.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>The other design pattern is a loosely bound application, where threads have their own context and communicate over ipc or tcp. You can easily break loosely bound threads into separate processes.</p>
+
+<h4 id="5">5.</h4>
+
+<p>PAIR has the advantage of refusing more than one connection; the pair is exclusive.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/tdd-1/" data-toggle="tooltip" data-placement="top" title="TDD Quiz">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/zeromq-2/" data-toggle="tooltip" data-placement="top" title="ZeroMQ Quiz, Part 2">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

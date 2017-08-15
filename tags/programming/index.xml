@@ -7,47 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Wed, 28 Jun 2017 13:37:13 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 15 Aug 2017 13:18:38 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Go Quiz, Part 4</title>
-      <link>https://richardmillen.github.io/questions/go-4/</link>
-      <pubDate>Wed, 28 Jun 2017 13:37:13 +0100</pubDate>
+      <title>Go Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/go-1/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-4/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &amp;lsquo;Reader&amp;rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.</description>
-    </item>
-    
-    <item>
-      <title>Go Quiz, Part 3</title>
-      <link>https://richardmillen.github.io/questions/go-3/</link>
-      <pubDate>Wed, 28 Jun 2017 13:25:43 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-3/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &amp;lt;expression&amp;gt; { case &amp;lt;value1&amp;gt;, &amp;lt;value2&amp;gt;, &amp;lt;value3&amp;gt;: // do stuff.</description>
+      <guid>https://richardmillen.github.io/questions/go-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
+If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
+e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
     </item>
     
     <item>
       <title>Go Quiz, Part 2</title>
       <link>https://richardmillen.github.io/questions/go-2/</link>
-      <pubDate>Wed, 28 Jun 2017 13:14:43 +0100</pubDate>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/questions/go-2/</guid>
       <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?</description>
     </item>
     
     <item>
-      <title>Go Quiz, Part 1</title>
-      <link>https://richardmillen.github.io/questions/go-1/</link>
-      <pubDate>Wed, 28 Jun 2017 13:03:38 +0100</pubDate>
+      <title>Go Quiz, Part 3</title>
+      <link>https://richardmillen.github.io/questions/go-3/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-1/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
-If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
-e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
+      <guid>https://richardmillen.github.io/questions/go-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &amp;lt;expression&amp;gt; { case &amp;lt;value1&amp;gt;, &amp;lt;value2&amp;gt;, &amp;lt;value3&amp;gt;: // do stuff.</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 4</title>
+      <link>https://richardmillen.github.io/questions/go-4/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-4/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &amp;lsquo;Reader&amp;rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.</description>
     </item>
     
     <item>

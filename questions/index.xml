@@ -7,10 +7,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Mon, 14 Aug 2017 17:33:29 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 15 Aug 2017 13:18:38 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/questions/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/go-1/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
+If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
+e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/go-2/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 3</title>
+      <link>https://richardmillen.github.io/questions/go-3/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &amp;lt;expression&amp;gt; { case &amp;lt;value1&amp;gt;, &amp;lt;value2&amp;gt;, &amp;lt;value3&amp;gt;: // do stuff.</description>
+    </item>
+    
+    <item>
+      <title>Go Quiz, Part 4</title>
+      <link>https://richardmillen.github.io/questions/go-4/</link>
+      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/go-4/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &amp;lsquo;Reader&amp;rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.</description>
+    </item>
     
     <item>
       <title>French (Advanced) Quiz, Part 2</title>
@@ -62,41 +100,45 @@ The 25th percentile is also known as the first quartile (Q1),</description>
     </item>
     
     <item>
-      <title>Go Quiz, Part 4</title>
-      <link>https://richardmillen.github.io/questions/go-4/</link>
-      <pubDate>Wed, 28 Jun 2017 13:37:13 +0100</pubDate>
+      <title>ZeroMQ Quiz, Part 3</title>
+      <link>https://richardmillen.github.io/questions/zeromq-3/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:33 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-4/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you turn a delimited string into a slice of strings? How could you read and discard a &amp;lsquo;Reader&amp;rsquo;? How do you create a channel of strings? What is a tagless switch?    Show Answers  1. items := strings.Split(s, sep)  2. n, err := io.</description>
+      <guid>https://richardmillen.github.io/questions/zeromq-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &amp;lsquo;the cost of serialisation&amp;rsquo;? What are some examples of simple self-describing structured encodings?</description>
     </item>
     
     <item>
-      <title>Go Quiz, Part 3</title>
-      <link>https://richardmillen.github.io/questions/go-3/</link>
-      <pubDate>Wed, 28 Jun 2017 13:25:43 +0100</pubDate>
+      <title>ZeroMQ Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/zeromq-2/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:31 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-3/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  How do you declare condition with a multi-value case? What is the name given to a reference-type variable? What type of receiver do you use for a reference type? What does a header value contain? What types are reference types in Go?   Show Answers  1. switch &amp;lt;expression&amp;gt; { case &amp;lt;value1&amp;gt;, &amp;lt;value2&amp;gt;, &amp;lt;value3&amp;gt;: // do stuff.</description>
+      <guid>https://richardmillen.github.io/questions/zeromq-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Why not use ROUTER instead of PAIR sockets? Why use PAIR sockets rather than PUB / SUB sockets?      Show Answers  1. &amp;rdquo;&amp;gt; ROUTER wraps your message in an &amp;ldquo;&amp;ldquo;envelope&amp;rdquo;&amp;ldquo;, meaning a zero-size signal message turns into a multipart message.</description>
     </item>
     
     <item>
-      <title>Go Quiz, Part 2</title>
-      <link>https://richardmillen.github.io/questions/go-2/</link>
-      <pubDate>Wed, 28 Jun 2017 13:14:43 +0100</pubDate>
+      <title>ZeroMQ Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/zeromq-1/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:27 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-2/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  Which package provides support for synchronizing goroutines? What value is a reference type variable set to by default and what must be done before it can be used? What is a WaitGroup and how is one declared and used? What is a slice and how is one declared? How do you iterate over a slice?</description>
+      <guid>https://richardmillen.github.io/questions/zeromq-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Give an example of load balancing. Give an example of fair queuing. What is the slow joiner problem? What must you do when you use a SUB socket? What happens if you don&amp;rsquo;t set any subscriptions on a SUB socket?</description>
     </item>
     
     <item>
-      <title>Go Quiz, Part 1</title>
-      <link>https://richardmillen.github.io/questions/go-1/</link>
-      <pubDate>Wed, 28 Jun 2017 13:03:38 +0100</pubDate>
+      <title>TDD Quiz</title>
+      <link>https://richardmillen.github.io/questions/tdd-1/</link>
+      <pubDate>Wed, 28 Jun 2017 14:44:35 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/go-1/</guid>
-      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1      What&amp;rsquo;s the best way to pass an array to a function?   Show Answers  1. The runtime sends os.Signal events in a nonblocking way.
-If a goroutine isn&amp;rsquo;t ready to recieve the value it&amp;rsquo;s thrown away.
-e.g. If the user hits Ctrl+C repeatedly, the program will receive the event only when a buffer is available in the channel and all other events will be thrown away.</description>
+      <guid>https://richardmillen.github.io/questions/tdd-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1         Show Answers  1. Outside of perhaps explaining a &amp;ldquo;why,&amp;rdquo; if you need a comment to explain your test, it stinks.
+2. Test-drive new behavior into your system in quite small increments.
+3. Test Behavior, Not Methods
+4. Each test should represent the smallest meaningful increment you can think of.</description>
     </item>
     
     <item>
@@ -110,6 +152,15 @@ Their memory allocation models are different. A struct is a value type and its i
     </item>
     
     <item>
+      <title>Unit Testing Quiz</title>
+      <link>https://richardmillen.github.io/questions/unit-testing-1/</link>
+      <pubDate>Wed, 28 Jun 2017 12:57:42 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/unit-testing-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1         Show Answers  1. &amp;rdquo;&amp;gt; If you find yourself seeking esoteric mock tool features frequently, stop and take a look at your design. &amp;gt; Are you testing a method that’s doing too much? &amp;gt; Can you restructure your design in a manner so that you don’t need such complex mocking?</description>
+    </item>
+    
+    <item>
       <title>CentOS Quiz</title>
       <link>https://richardmillen.github.io/questions/centos-1/</link>
       <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
@@ -117,6 +168,24 @@ Their memory allocation models are different. A struct is a value type and its i
       <guid>https://richardmillen.github.io/questions/centos-1/</guid>
       <description>Below are some short quizes about the CentOS operation system.
 Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to stop the OpenSSH service? If SSH is used, which insecure services should be disabled? What is the default system-wide SSH client configuration file? How may it be overriden?   Show Answers  1. /etc/ssh/sshd_config</description>
+    </item>
+    
+    <item>
+      <title>Microservices Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/microservices-2/</link>
+      <pubDate>Wed, 28 Jun 2017 12:45:25 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/microservices-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are immutable servers?   if we have some configuration for our service that does change from one environment to another, how should we handle this as part of our deployment process? What are some of the downsides of running more than one service on a single host?</description>
+    </item>
+    
+    <item>
+      <title>Microservices Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/microservices-1/</link>
+      <pubDate>Wed, 28 Jun 2017 12:35:11 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/microservices-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are the technical benefits of Microservices? What are the organisational benefits of Microservices? What are the business benefits of Microservice? What are some of the challenges of Microservices? What are the main differences between SOA and Microservices?   Show Answers  1. 2. 3. 4.  Technical Architecture Infrastructure &amp;amp; operations  5.</description>
     </item>
     
     <item>

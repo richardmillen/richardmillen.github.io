@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>ZeroMQ Quiz, Part 3</title>
+  <meta property="og:title" content="ZeroMQ Quiz, Part 3" />
+  <meta name="twitter:title" content="ZeroMQ Quiz, Part 3" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;? What are some examples of simple self-describing structured encodings?">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;? What are some examples of simple self-describing structured encodings?">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  What aspects of control vs data flow when designing a …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/zeromq-3/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/zeromq-3/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>ZeroMQ Quiz, Part 3</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<p>This page contains questions &amp; answers based on the <a href="http://zguide.zeromq.org/page:all">ZeroMQ Guide</a> written by Pieter Hintjens.</p>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>What aspects of control vs data flow when designing a protocol?</li>
+<li>What aspect of messaging is important when talking about performance?</li>
+<li>What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;?</li>
+<li>What are some examples of simple self-describing structured encodings?</li>
+<li>What is the &lsquo;Cheap&rsquo; part of a protocol?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Control dialogue tends to last a short time, involing few messages.
+&gt; The data flow could last for hours or days, involing billions of messages.
+&gt; Control is where &ldquo;&ldquo;normal&rdquo;&rdquo; errors happen e.g. not authenticated, not found, censored etc.
+&gt; Errors during data flow are exceptional (disk full, server crashed).
+&gt; Control is where things will change over time, with new options, parameters etc.
+&gt; The data flow barely changes because the semantics of a resource are fairly constant over time.
+&gt; Control dialogue is akin to REQ-REP. Data flow is essentially one-way asynchronous flow.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Data flows.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Data flows.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; XML
+&gt; JSON
+&gt; HTTP-style headers&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Control messaging encoding.
+&gt; Uses any encoding that has a simple, standard parser for it in the target language.
+&gt; Uses straight request-reply model, where each reply has a success/failure reply.
+&gt; It doesn&rsquo;t try to be fast.
+&gt; Shouldn&rsquo;t crash, or leak memory.
+&gt; Should be highly tolerant.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li>What is the &lsquo;Nasty&rsquo; part of a protocol?</li>
+<li>What is the only thing that matters when design the &lsquo;Nasty&rsquo; part of a protocol?</li>
+<li>How does the &lsquo;Cheap or Nasty&rsquo; pattern simplify error handling?</li>
+<li>What is the simplest and most widely used serialisation format for 0MQ apps?</li>
+<li>What should you do when using 0MQ&rsquo;s own multipart framing as a serialisation format?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Carries minimal info that barely changes.
+&gt; Asynchronous, terse, silent and inflexible.
+&gt; Ultra-fast to parse.
+&gt; Possibly impossible to extend / experiement with.
+&gt; Hand-optimised binary layout.
+&gt; Pure asynchronous model, without acknowledgements, or &lsquo;credit-based flow control&rsquo;.
+&gt; Rejects anything it doesn&rsquo;t like.
+&gt; Zero memory allocs.
+&gt; Never crashes.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Performance.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Synchronous control commands:
+    ~ Errors are normal.
+    ~ Each request has a response.
+&gt; Asynchronous data commands:
+    ~ Errors are exceptional.
+    ~ Bad commands are either discarded silently, or cause disconnect.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>ZeroMQ&rsquo;s own multi-part framing.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Split messages into a &lsquo;Cheap&rsquo; part and a &lsquo;Nasty&rsquo; part, using framing to separate them.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li>Give an example of how you might separate the &lsquo;Cheap&rsquo; from the &lsquo;Nasty&rsquo; when using 0MQ&rsquo;s own multipart framing.</li>
+<li></li>
+<li>How does a &lsquo;Cheap&rsquo; serialisation language enable experimentation?</li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&ldquo;Frame 0: <short protocol name and major.minor version>
+Frame 1: command header (for intermediaries).
+Frame 2: command body (for the application).&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>These [XML, JSON, HTTP-style headers] are all pretty equivalent as long as you don&rsquo;t go overboard with validating parsers, schemas, and other &ldquo;trust us, this is all for your own good&rdquo; nonsense.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Ignore any elements/attributes/headers that you don&rsquo;t recognize.
+&gt; Simple to write generic parsers that thunk a command to/from a hash table.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>If your universe is a scripting language, then go for JSON. If you are aiming to build protocols for wider system use, keep things simple for C developers and stick to HTTPstyle headers.</p>
+
+<h4 id="5">5.</h4>
+
+<p>the assumption that all messages are equal in some way can corrupt your protocol design</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li>Why are IDLs like msgpack or protobufs not necessarily a good idea?</li>
+<li>How might you relate the value of manual control for high-end professional users to some real world examples?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>Cheap or Nasty isn&rsquo;t only about serialization strategies, it&rsquo;s also about synchronous versus asynchronous, error handling and the cost of change.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Most performance problems in messagebased applications can be solved by (a) improving the application itself and (b) handoptimizing the highvolume data flows.</p>
+
+<h4 id="3">3.</h4>
+
+<p>To hand-optimize your most critical data flows, you need to cheat; to learn exploit facts about your data, something general purpose serializers cannot do.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; In most practical cases they win you little over a serialisation language backed by decent specifications written by hand or machine-generated.
+&gt; Technical debt; an extra dependency.
+&gt; Quite possibly, worse overall performance tha if you used Cheap or Nasty.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; The best cards, cameras and espresso machines have manual controls.
+&gt; That level of on-the-spot fine tuning often makes the difference between world class success and second best.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li></li>
+<li>What is the basic process you follow when writing an efficient &lsquo;Nasty&rsquo; codec?</li>
+<li>What are some of the techniques you can use to improve your codecs?</li>
+<li>How can you use state to improve codec compression?</li>
+<li>How does knowing your data enable to improve codec performance?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>When you are really, truly concerned about the speed of serialization and/or the size of the result (often these contradict each other), you need handwritten binary serialization.</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Build representative data sets and test apps for stress testing.
+&gt; Write a first dumb version.
+&gt; Test, measure, improve and repeat.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; <em>Use a profiler</em>.
+&gt; Eliminate memory allocations.
+&gt; Test on different platforms.
+&gt; Use state to improve compression.
+&gt; Know your data.
+&gt; Be ready to break rules.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Because you&rsquo;re almost certainly sending the same kinds of data many times.
+&gt; There will be redundancy between instances of data.
+&gt; You can detec these and use that to compress; a short value that means &ldquo;&ldquo;same as last time&rdquo;&ldquo;.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; The best compression techniques require knowing about the data.
+&gt; e.g. Methods of compressing a word list, video and a stream of stock market data area all different.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li>How might breaking rules improve codec performance?</li>
+<li>What is GSL?</li>
+<li>What are the advantages of model-oriented code generation?</li>
+<li>What are the disadvantages of model-oriented code generation?</li>
+<li>What is a potential problem you&rsquo;ll find when using ephemeral ports? What is a possible solution?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Not using big-endian network byte order because the vast majority of platforms (x86, Android, iOS) use little-endian.
+&gt; n.b. ARM uses bi-endian.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; You can create nearperfect abstractions that map to your real world.
+    ~ This would be impossible without the freedom to tune and change the model in any way.
+&gt; Perfect models quickly and cheaply.
+&gt; Generate any text output from a single model.
+    ~ Documentation.
+    ~ Source code.
+    ~ Test tools.
+&gt; Generate perfect output because it&rsquo;s cheap to improve your code generators.
+&gt; Single source combining specification and semantics.
+&gt; Leverage small team to massive size i.e. massive output for relatively small team size.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Don&rsquo;t overuse. Keep it simple. Don&rsquo;t get too meta.
+&gt; Introduce gradually.
+&gt; Put generated code into repositories.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; ZeroMQ tries to re-establish a broken connection.
+&gt; If node A stops, its peers will retry to connect.
+&gt; If a new B node appears on the same port, all the peers will connect to it and continue as if its node A.
+&gt; One solution would be to select a random port each time, which at least reduces the risk of hitting a just-freed port.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<p><a href="http://zguide.zeromq.org/page:all#Disconnected-Reliability-Titanic-Pattern">http://zguide.zeromq.org/page:all#Disconnected-Reliability-Titanic-Pattern</a></p>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<h4 id="2">2.</h4>
+
+<h4 id="3">3.</h4>
+
+<h4 id="4">4.</h4>
+
+<h4 id="5">5.</h4>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/zeromq-2/" data-toggle="tooltip" data-placement="top" title="ZeroMQ Quiz, Part 2">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/lexicon-1/" data-toggle="tooltip" data-placement="top" title="Lexicon Quiz">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

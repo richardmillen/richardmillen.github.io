@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microservices on Richard Millen</title>
+    <link>https://richardmillen.github.io/tags/microservices/</link>
+    <description>Recent content in Microservices on Richard Millen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
+    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
+    <lastBuildDate>Wed, 28 Jun 2017 12:45:25 +0100</lastBuildDate>
+    
+	<atom:link href="https://richardmillen.github.io/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microservices Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/microservices-2/</link>
+      <pubDate>Wed, 28 Jun 2017 12:45:25 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/microservices-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are immutable servers?   if we have some configuration for our service that does change from one environment to another, how should we handle this as part of our deployment process? What are some of the downsides of running more than one service on a single host?</description>
+    </item>
+    
+    <item>
+      <title>Microservices Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/microservices-1/</link>
+      <pubDate>Wed, 28 Jun 2017 12:35:11 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/microservices-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! Quiz 1  What are the technical benefits of Microservices? What are the organisational benefits of Microservices? What are the business benefits of Microservice? What are some of the challenges of Microservices? What are the main differences between SOA and Microservices?   Show Answers  1. 2. 3. 4.  Technical Architecture Infrastructure &amp;amp; operations  5.</description>
+    </item>
+    
+  </channel>
+</rss>

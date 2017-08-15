@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>ZeroMQ Quiz, Part 2</title>
+  <meta property="og:title" content="ZeroMQ Quiz, Part 2" />
+  <meta name="twitter:title" content="ZeroMQ Quiz, Part 2" />
+  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Why not use ROUTER instead of PAIR sockets? Why use PAIR sockets rather than PUB / SUB sockets?      Show Answers  1. &rdquo;&gt; ROUTER wraps your message in an &ldquo;&ldquo;envelope&rdquo;&ldquo;, meaning a zero-size signal message turns into a multipart message.">
+  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Why not use ROUTER instead of PAIR sockets? Why use PAIR sockets rather than PUB / SUB sockets?      Show Answers  1. &rdquo;&gt; ROUTER wraps your message in an &ldquo;&ldquo;envelope&rdquo;&ldquo;, meaning a zero-size signal message turns into a multipart message.">
+  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Why not use ROUTER instead of PAIR sockets? Why use PAIR …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/zeromq-2/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/zeromq-2/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="questions-heading">
+              <h1>ZeroMQ Quiz, Part 2</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+
+<p>This page contains questions &amp; answers based on the <a href="http://zguide.zeromq.org/page:all">ZeroMQ Guide</a> written by Pieter Hintjens.</p>
+
+<h3 id="quiz-1">Quiz 1</h3>
+
+<ol>
+<li>Why not use ROUTER instead of PAIR sockets?</li>
+<li>Why use PAIR sockets rather than PUB / SUB sockets?</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
+  <br/>
+  <div id="q1" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; ROUTER wraps your message in an &ldquo;&ldquo;envelope&rdquo;&ldquo;, meaning a zero-size signal message turns into a multipart message.
+&gt; If you don&rsquo;t care about the data and treat anything as a valid signal, and if you don&rsquo;t read more than once from the socket, that won&rsquo;t matter. If, however, you decide to send real data, you will suddenly find ROUTER providing you with &ldquo;&ldquo;wrong&rdquo;&rdquo; messages.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>Either would work, but the SUB socket would need an empty subscription.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>PAIR makes the best choice for coordination between pairs of threads.</p>
+
+<h4 id="4">4.</h4>
+
+<p>You should think about using zero-copy in the specific case where you are sending large blocks of memory (thousands of bytes), at a high frequency.</p>
+
+<h4 id="5">5.</h4>
+
+<p>you can send multiple buffers coming from different sources as individual message frames. Send each field as a length-delimited frame. To the application, it looks like a series of send and receive calls. But internally, the multiple parts get written to the network and read back with single system calls, so it&rsquo;s very efficient.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-2">Quiz 2</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li>What is flow control?</li>
+<li>What is a high-water mark?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
+  <br/>
+  <div id="q2" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; In the pub-sub pattern, we can split the key into a separate message frame that we call an envelope.
+    ~ Frame 1: Key (Envelope)
+    ~ Frame 2: Data (Message)
+&gt; Delimits keys from data so that the prefix match doesn&rsquo;t accidentally match data.
+&gt; The publisher sends one message with the &lsquo;more&rsquo; bit set; the key, and another containing the body.
+&gt; The subscriber receives twice; once for the key, once for the body.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; If you subscribe to multiple publishers and you want to know their address so that you can send them data via another socket (and this is a typical use case), create a three-part message.
+    ~ Frame 1: Subscription key
+    ~ Frame 2: Publisher address
+    ~ Frame 3: Message body&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>If node A is unable to respond due to garbage collection, or CPU overload, node B tells C to stop, who relays the message to D and so on.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Defines the capacity of 0MQ&rsquo;s internal pipes.
+&gt; Each connection out of a socket or into a socket has its own pipe, and HWM for sending, and/or receiving, depending on the socket type.
+&gt; Limits on the size of buffers, and then when we reach those limits, to take some sensible action. In some cases (not for a subway system, though), the answer is to throw away messages. In others, the best strategy is to wait.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Some sockets (PUB, PUSH) only have send buffers. Some (SUB, PULL, REQ, REP) only have receive buffers. Some (DEALER, ROUTER, PAIR) have both send and receive buffers.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-3">Quiz 3</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
+  <br/>
+  <div id="q3" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>PUB and ROUTER sockets will drop data if they reach their HWM, while other socket types will block.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Over the inproc transport, the sender and receiver share the same buffers, so the real HWM is the sum of the HWM set by both sides.</p>
+
+<h4 id="3">3.</h4>
+
+<p>the HWMs are not exact; while you may get up to 1,000 messages by default, the real buffer size may be much lower (as little as half), due to the way libzmq implements its queues.</p>
+
+<h4 id="4">4.</h4>
+
+<p>If you&rsquo;re using ROUTER sockets, in general setting the ZMQ_ROUTER_MANDATORY option on ROUTER sockets is a good idea</p>
+
+<h4 id="5">5.</h4>
+
+<p>reply envelope formally consists of zero or more reply addresses, followed by an empty frame (the envelope delimiter), followed by the message body (zero or more frames).</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-4">Quiz 4</h3>
+
+<ol>
+<li>What happens when you send &ldquo;Hello&rdquo; through a REQ socket.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
+  <br/>
+  <div id="q4" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; The REQ socket creates the simplest possible reply envelope, which has no addresses, just an empty delimiter frame and the message frame containing the &ldquo;&ldquo;Hello&rdquo;&rdquo; string.
+&gt; The REP socket strips off the envelope, up to and including the delimiter frame, saves the whole envelope, and passes the &ldquo;&ldquo;Hello&rdquo;&rdquo; string up the application.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>The ROUTER socket, unlike other sockets, tracks every connection it has, and tells the caller about these. The way it tells the caller is to stick the connection identity in front of each message received. An identity, sometimes called an address, is just a binary string with no meaning except &ldquo;this is a unique handle to the connection&rdquo;. Then, when you send a message via a ROUTER socket, you first send an identity frame.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; When receiving messages a ZMQ_ROUTER socket shall prepend a message part containing the identity of the originating peer to the message before passing it to the application.
+&gt; ZeroMQ v3.0 and later generate a 5 byte identity by default (0 + a random 32bit integer).&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>ROUTER proxies have some impact on network performance, but only when you use multiple proxy hops, which is rare.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; The ROUTER socket invents a random identity for each connection with which it works.
+&gt; Internally, this means the ROUTER socket keeps a hash table where it can search for an identity and find the TCP connection for the originating socket.
+e.g.
+    ~ Frame 1: Connection identity
+    ~ Frame 2: Empty delimiter
+    ~ Frame 3: Message body
+&gt; When it receives a reply it then strips off the identity, finds the associated connection and sends the remaining frames to the originator.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-5">Quiz 5</h3>
+
+<ol>
+<li>What is the core part of the proxy loop?</li>
+<li>What is sent from the DEALER socket of a proxy?</li>
+<li>How does a REP socket work?</li>
+<li>How does a DEALER socket work in a proxy?</li>
+<li>How does a REQ socket work?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
+  <br/>
+  <div id="q5" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>Read from one frame, write to another.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; The three frames passed from the ROUTER to the DEALER:
+    1) connection id
+    2) empty delimiter
+    3) message body&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; It saves the message envelope, passing the body to the application.
+&gt; It then wraps the reply with the saved envelope.
+&gt; It can only deal with one request-reply exchange at a time, which is why if you try to read multiple requests or send multiple replies without sticking to a strict recv-send cycle, it gives an error.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>It forwards the entire message envelope, then returns the entire message envelope (at least 3 frames) to the ROUTER socket.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Sends two frames:
+    ~ Frame 1: Empty delimiter
+    ~ Frame 2: Message body
+&gt; Receives reply, checking that the first frame is the empty delimiter.
+&gt; Discards the empty frame and returns the body to the application.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-6">Quiz 6</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
+  <br/>
+  <div id="q6" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>The use cases for strict request-reply or extended request-reply are somewhat limited. For one thing, there&rsquo;s no easy way to recover from common failures like the server crashing due to buggy application code.</p>
+
+<h4 id="2">2.</h4>
+
+<p>Each time ROUTER gives you a message, it tells you what peer that came from, as an identity.</p>
+
+<h4 id="3">3.</h4>
+
+<p>ROUTER will route messages asynchronously to any peer connected to it, if you prefix the identity as the first frame of the message.</p>
+
+<h4 id="4">4.</h4>
+
+<p>REQ &amp; REP sockets are synchronous.</p>
+
+<h4 id="5">5.</h4>
+
+<p>If you connect a REQ socket to multiple peers, requests are distributed to and replies expected from each peer one turn at a time.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-7">Quiz 7</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>What happens when you replace the REQ client with a DEALER?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
+  <br/>
+  <div id="q7" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>If you connect a REP socket to multiple peers, requests are read from peers in fair fashion, and replies are always sent to the same peer that made the last request.</p>
+
+<h4 id="2">2.</h4>
+
+<p>DEALER sockets distribute sent messages among all connections, and fair-queue received messages from all connections.</p>
+
+<h4 id="3">3.</h4>
+
+<p>ROUTER &amp; DEALER sockets are asynchronous.</p>
+
+<h4 id="4">4.</h4>
+
+<p>A REP server cannot talk to a REQ client that hasn&rsquo;t first sent it a request. Technically, it&rsquo;s not even possible, and the API also returns an EFSM error if you try it.</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>This gives us an asynchronous client that can talk to multiple REP servers.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-8">Quiz 8</h3>
+
+<ol>
+<li>Is it possible to use a DEALER socket to talk to a REP socket?</li>
+<li>What happens when you replace a REP with a ROUTER socket?</li>
+<li>In which ways is it possible to use ROUTER?</li>
+<li>What happens if you swap out both REQ and REP with DEALER and ROUTER?</li>
+<li>What must you do in order to replace REQ-REP with DEALER-ROUTER?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
+  <br/>
+  <div id="q8" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Yes.
+&gt; We must accurately emulate the envelope that the REQ socket would have sent, or the REP socket will discard the message as invalid.
+    ~ Send an empty delimiter frame (envelope), with the MORE flag set.
+    ~ Send the message body.
+&gt; And for replies:
+    ~ If the first frame isn&rsquo;t empty w/ MORE flag set then discard the whole message.
+    ~ Pass the next frame to the application.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>This gives us an asynchronous server that can talk to multiple REQ clients at the same time.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; As a proxy that switches messages between frontend and backend sockets.
+    ~ The ROUTER simply reads all frames, including the artificial identity frame, and passes them on blindly.
+&gt; As an application that reads the message and acts on it.
+    ~ The ROUTER must know the format of the reply envelope it&rsquo;s being sent. As the other peer is a REQ socket, the ROUTER gets the identity frame, an empty frame, and then the data frame.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; You get the most powerful socket combination: DEALER talking to ROUTER.
+&gt; Asynchronous clients and servers.
+&gt; &ldquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Become a protocol designer.
+&gt; At the very least you must decide whether you wish to emulate the REQ/REP reply envelope.
+&gt; It depends on whether you actually need to send replies or not.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-9">Quiz 9</h3>
+
+<ol>
+<li>Under what circumstances can you swap a REP with a DEALER?</li>
+<li>What happens when you replace a REP with a DEALER?</li>
+<li>What is the cost of replacing a REP with a DEALER?</li>
+<li></li>
+<li>What does &lsquo;setting the socket identity&rsquo; mean?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
+  <br/>
+  <div id="q9" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>If the DEALER is talking to one and only one peer.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>The worker can go full asynchronous, sending any number of replies back.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>You have to manage the reply envelopes yourself, and get them right, or nothing at all will work.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>The side which we expect to &ldquo;be there&rdquo; binds: it&rsquo;ll be a server, a broker, a publisher, a collector. The side that &ldquo;comes and goes&rdquo; connects: it&rsquo;ll be clients and workers. Remembering this will help you design better ZeroMQ architectures.</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>Forcing the ROUTER socket to use a logical address in place of its identity.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-10">Quiz 10</h3>
+
+<ol>
+<li>How do you set the identity of a socket?</li>
+<li>What does a ROUTER socket do if it can&rsquo;t send a message?</li>
+<li></li>
+<li>Explain how the post office analogy relates to round robin routing and how it can be solved.</li>
+<li>How does the ROUTER broker with REQ workers pattern work?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
+  <br/>
+  <div id="q10" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Before binding / connecting, the peer application sets the ZMQ_IDENTITY option of its DEALER or ROUTER socket.
+&gt; (Usually) the peer connects to the already-bound ROUTER socket.
+&gt; At connection time, the peer socket tells the router socket, &ldquo;&ldquo;please use this identity for this connection&rdquo;&ldquo;.
+&gt; The ROUTER socket now provides this logical address to the application as a prefix identity frame for any messages coming in from that peer.
+&gt; The ROUTER also expects the logical address as the prefix identity frame for any outgoing messages.
+e.g.
+    zmq_setsockopt (socket, ZMQ_IDENTITY, &ldquo;&ldquo;PEER2&rdquo;&ldquo;, 5);
+    zmq_connect(&hellip;);&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; They drop them silently by default.
+&gt; If the ZMQ_ROUTER_MANDATORY socket option is set, then a EHOSTUNREACH error will be raised.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>Round robin routing becomes inefficient if tasks do not all roughly take the same time.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; If you have one queue per counter, and you have some people buying stamps (a fast, simple transaction), and some people opening new accounts (a very slow transaction), then you will find stamp buyers getting unfairly stuck in queues.
+&gt; The solution is to create a single queue so that even if one or two counters get stuck with slow work, other counters will continue to serve clients on a first-come, first-serve basis.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; The broker binds to an address.
+&gt; Each worker connects to the broker.
+&gt; Each worker sends a REQ &ldquo;&ldquo;ready&rdquo;&rdquo; message as soon as it&rsquo;s not working.
+&gt; Meanwhile the ROUTER is receiving.
+&gt; The worker&rsquo;s &ldquo;&ldquo;ready&rdquo;&rdquo; message enters the ROUTER socket&rsquo;s queue.
+&gt; The broker then manually reads the three message frames:
+    ~ identity.
+    ~ empty separator.
+    ~ data.
+&gt; The broker sends the work via a REP message containing the identity in the first frame of the message envelope.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-11">Quiz 11</h3>
+
+<ol>
+<li>In what ways does a DEALER socket differ from a REQ socket?</li>
+<li>What is the reason for the empty envelope delimiter frame of a REQ message?</li>
+<li></li>
+<li>How does the load balancing broker pattern work?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
+  <br/>
+  <div id="q11" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; A REQ sends an empty envelope delimiter frame, a DEALER does not.
+&gt; A REQ follows a strict send-receive flow, a DEALER is fully asynchronous.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>it&rsquo;s to allow multihop extended requests that terminate in a REP socket, which uses that delimiter to split off the reply envelope so it can hand the data frames to its application.</p>
+
+<h4 id="3">3.</h4>
+
+<p>If we never need to pass the message along to a REP socket, we can simply drop the empty delimiter frame at both sides, which makes things simpler. This is usually the design I use for pure DEALER to ROUTER protocols.</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; The broker binds a frontend ROUTER socket and a backend ROUTER socket.
+    ~ The frontend receives messages from clients.
+    ~ The backend receives REQ messages from workers, notifying the broker when they&rsquo;re ready.
+&gt; One or more REQ workers connect to the broker, optionally setting their identities. Each sends a &ldquo;&ldquo;ready&rdquo;&rdquo; REQ message to the broker, then waits to receive work via the REP message.
+&gt; One or more REQ clients connect to the broker, optionally setting their identities.
+&gt; Each client follows a standard REQ-REP pattern.
+&gt; Each worker receives each frame of the REP message until it reaches the empty envelope delimiter frame e.g:
+    ~ client id
+    ~ empty
+&gt; The worker then reads the data frame, does work, then sends a new &ldquo;&ldquo;OK&rdquo;&rdquo; REQ message containing the original envelope to the broker backend.
+&gt; The broker polls the backend. Polls frontend if workers available.
+&gt; If broker receives from backend, adds the next available worker identity to a queue.
+    ~ Then reads empty frame and if NOT a &ldquo;&ldquo;ready&rdquo;&rdquo; message then it&rsquo;s the client id to reply to, so reads data and REP&rsquo;s <client id>;<empty>;<data>.
+&gt; If frontend, reads REQ envelope and &lsquo;proxies&rsquo; a message to the backend:
+    ~ identity of worker[0] in queue.
+    ~ empty.
+    ~ client identity.
+    ~ empty.
+    ~ data.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>Note that when polling multiple sockets, you shouldn&rsquo;t use if,else as more than one socket could contain messages.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-12">Quiz 12</h3>
+
+<ol>
+<li>What is the advantage of using the REQ-ROUTER pattern rather than REP-ROUTER?</li>
+<li></li>
+<li>What must you use if you want to send multiple replies?</li>
+<li></li>
+<li>What must you do in order to properly manage client state in a stateful asynchronous server?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
+  <br/>
+  <div id="q12" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; REP-ROUTER provides basic &lsquo;round robin&rsquo; load balancing.
+&gt; REQ-ROUTER provides proper load balancing.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>you can reuse and extend the load balancing algorithm with variations based on the information the worker provides in its initial &ldquo;ready&rdquo; message. For example, workers might start up and do a performance self test, then tell the broker how fast they are. The broker can then choose the fastest available worker rather than the oldest.</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>An asynchronous socket e.g. DEALER.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>When you build servers that maintain stateful conversations with clients, you will run into a classic problem. If the server keeps some state per client, and clients keep coming and going, eventually it will run out of resources.</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Do heartbeating from client to server.
+&gt; Store state using the client identity as key.
+&gt; Detect a stopped heartbeat and destroy any state it&rsquo;s holding for that client.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-13">Quiz 13</h3>
+
+<ol>
+<li>Describe cross-connected brokers in a federation model, including limitations and use cases.</li>
+<li></li>
+<li>Describe cross-connected brokers in a &lsquo;peering&rsquo; model.</li>
+<li>In a server where state change occurs at unpredictable intervals, how might you send updates to peers at regular intervals?</li>
+<li>What can a client do if a REQ-REP server crashes?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
+  <br/>
+  <div id="q13" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; The simplest interconnect between load balancing brokers.
+&gt; Brokers simulate clients and workers for each other.
+&gt; The broker connects it&rsquo;s own frontend to the other broker&rsquo;s backend socket.
+&gt; When there are no workers available in the cluster, tell the other broker &ldquo;&ldquo;ready&rdquo;&ldquo;, and accept one job from it.
+&gt; If the broker emulates a lock-step client and worker, it is by definition also going to be lock-step, and if it has lots of available workers they won&rsquo;t be used.
+&gt; The federation model is perfect for other kinds of routing, especially service-oriented architectures (SOAs), which route by service name and proximity rather than load balancing or round robin.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>It is legal to both bind a socket to an endpoint and connect it to other endpoints.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Brokers are explicitly aware of each other and talk over privileged channels.
+&gt; Every broker opens a PUB socket and publishes state information.
+&gt; Every broker opens a SUB socket and connects it to the PUB socket of every other broker.
+&gt; Each broker has two ROUTER sockets; one for receiving tasks and one for delegating tasks. If only one ROUTER socket is used then more information must be included in the message envelope.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Using PUB-SUB, create a child thread and open an intermediary socket in that thread, sending irregular state updates to that child thread from the parent thread, and allowing the child thread to conflate them into regular outgoing messages.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>If the server dies (while processing a request), the client can figure that out because it won&rsquo;t get an answer back. Then it can give up in a huff, wait and try again later, find another server, and so on.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-14">Quiz 14</h3>
+
+<ol>
+<li>How could a crashed PUB-SUB client recover?</li>
+<li></li>
+<li>How might you deal with a crashed worker in a &lsquo;Pipeline&rsquo;?</li>
+<li>How might you deal with a crashed ventilator or collector in a &lsquo;Pipeline&rsquo;?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
+  <br/>
+  <div id="q14" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<blockquote>
+<p>The client can contact the server out-of-band, e.g., via request-reply, and ask, &ldquo;please resend everything I missed&rdquo;.</p>
+</blockquote>
+
+<h4 id="2">2.</h4>
+
+<p>Subscribers can also self-verify that they&rsquo;re not running too slowly, and take action (e.g., warn the operator and die) if they are.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; The ventilator doesn&rsquo;t know about it.
+&gt; The downstream collector can detect that one task didn&rsquo;t get done, and send a message back to the ventilator saying, &ldquo;&ldquo;hey, resend task 324!&rdquo;&ldquo;&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<blockquote>
+<p>Whatever upstream client originally sent the work batch can get tired of waiting and resend the whole lot.</p>
+</blockquote>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>The only case where you can really trust the basic request-reply pattern is between two threads in the same process where there&rsquo;s no network or separate server process to die.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-15">Quiz 15</h3>
+
+<ol>
+<li>What use case(s) are common for multiple clients talking directly to a single server? What critical failures need to be handled?</li>
+<li>What use case(s) are common for multiple clients talking to a broker proxy that distributes work to multiple workers? What critical failures need to be handled?</li>
+<li>What use case(s) are common for multiple clients talking to multiple servers with no intermediary proxies? What critical failures need to be handled?</li>
+<li>What is the &lsquo;Lazy Pirate&rsquo; pattern? When should/n&rsquo;t it be used?</li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
+  <br/>
+  <div id="q15" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; A single well-known server to which clients need to talk.
+&gt; Server crashes and restarts, and network disconnects.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Service-oriented transaction processing.
+&gt; Worker crashes and restarts, worker busy looping, worker overload, queue crashes and restarts, and network disconnects.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Distributed services such as name resolution.
+&gt; Service crashes and restarts, service busy looping, service overload, and network disconnects.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Rather than doing a blocking receive, we:
+    ~ Poll the REQ socket and receive from it only when it&rsquo;s sure a reply has arrived.
+    ~ Resend a request, if no reply has arrived within a timeout period.
+        + anything other than a strict send/receive cycle will cause an error, so&hellip;
+        + pretty good brute force solution is to close and reopen the REQ socket after an error.
+    ~ Abandon the transaction if there is still no reply after several requests.
+&gt; Handling failures only at the client works when we have a set of clients talking to a single server.
+&gt; Con: doesn&rsquo;t failover to backup or alternate servers.
+    ~ Because the application code in servers is usually the biggest source of failures in any architecture, depending on a single server is not a great idea.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<blockquote>
+<p>The REQ socket implements a small finite-state machine to enforce the send/receive ping-pong, and so the error code is called &ldquo;EFSM&rdquo;.</p>
+</blockquote>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-16">Quiz 16</h3>
+
+<ol>
+<li>What is the &lsquo;Simple Pirate&rsquo; pattern?</li>
+<li>What common characteristic do workers have in all the &lsquo;Pirate&rsquo; patterns?</li>
+<li>What is the &lsquo;Paranoid Pirate&rsquo; pattern?</li>
+<li>What problems are caused when an application does no heartbeating?</li>
+<li>How might a SUB socket detect when a PUB server has died? What problems could you encounter?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
+  <br/>
+  <div id="q16" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Extends the Lazy Pirate pattern with a queue proxy that lets us talk, transparently, to multiple &ldquo;&ldquo;worker&rdquo;&rdquo; servers.
+&gt; Workers can come and go without clients knowing anything about it.
+&gt; Simple topology with only one real weakness, namely the central queue itself.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<blockquote>
+<p>They&rsquo;re stateless.</p>
+</blockquote>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Extends the Simple Pirate pattern (which extends the Lazy Pirate pattern) with heartbeating from the queue to worker so that the worker can detect when the queue has gone away.
+&gt; The queue does not detect worker failure, so if a worker dies while idle, the queue can&rsquo;t remove it from its worker queue until the queue sends it a request.
+&gt; In order for the queue to detect when a worker dies, we do heartbeating from worker to queue.
+&gt; Each worker uses a DEALER socket rather than REQ.
+&gt; Each worker uses a reconnect strategy similar to the Lazy Pirate client, with two major differences:
+    1. It does an exponential back-off
+    2. Retries indefinitely.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; A ROUTER socket tracks peers. A they disconnect and reconnect, the application will leak memory and get slower.
+&gt; A SUB or DEALER socket won&rsquo;t know if there&rsquo;s no data or that the other end has died.
+&gt; Acts as a &ldquo;&ldquo;keep-alive&rdquo;&rdquo; in cases where silent TCP connections will die (some firewalls can be unkind to silent connections).&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; PUB socket could send &ldquo;&ldquo;I&rsquo;m alive&rdquo;&rdquo; messages to their subscribers when there is no real data to send.
+&gt; Furthermore, you can send heartbeats progressively slower and slower, esp. if network activity / battery is an issue.
+&gt; It can be inaccurate when sending large amounts of data as heartbeats will be delayed behind that data causing false timeout and disconnections due to network congestion.
+&gt; Some peers will want very aggressive heartbeating in order to detect faults rapidly. And some will want very relaxed heartbeating.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-17">Quiz 17</h3>
+
+<ol>
+<li>What issue can occur when sending heartbeats from a PUSH or DEALER socket to its peers?</li>
+<li>What are ping-pong heartbeats?</li>
+<li></li>
+<li>What is &lsquo;liveness&rsquo;?</li>
+<li>What are some tips for building heartbeating?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
+  <br/>
+  <div id="q17" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; PUSH and DEALER sockets will queue messages for disappeared recipients.
+&gt; So if you send heartbeats to a dead peer and it comes back, it will get all the heartbeats you sent, which can be thousands.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; One peer sends a ping command to the other, which replies with a pong.
+&gt; Neither command has a payload.
+&gt; Because client/server roles can be arbitrary, usually either peer can send a ping and expect a pong in response.
+&gt; Because timeouts depend on network topologies known best to dynamic clients, it&rsquo;s usually the client that pings the server.
+&gt; Works for all ROUTER-based brokers.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<blockquote>
+<p>Always treat any incoming data as a heartbeat, whether or not the sender optimizes out heartbeats.</p>
+</blockquote>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; How many heartbeats we can still miss before deciding a peer is dead.
+&gt; It starts at &lsquo;n&rsquo; (typically 3-5) and we decrement it each time we miss a heartbeat.
+&gt; If the liveness reaches zero, we consider the peer dead and destroy the socket, create a new one and reconnect.
+&gt; To avoid opening/closing too many sockets, wait for an interval before reconnecting, doubling it each time until it reaches a maximum e.g. 32 seconds.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Poll, or use a reactor as the core of the application&rsquo;s main task.
+&gt; Start with the heartbeating between peers, simulate failures, then build the message flow.
+&gt; Use simple tracing, 0mq dump facilities and number your messages incrementally so you can see if there are gaps.
+&gt; Allow heartbeating to be configurable and usually negotiated between peers.
+&gt; If different peers have different heartbeats, the poll timeout should be the lowest of these.
+&gt; Do heartbeating on the same socket you use for messages, so they act as a keep-alive to stop the connection from going stale.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-18">Quiz 18</h3>
+
+<ol>
+<li></li>
+<li></li>
+<li>What is the &lsquo;Majordomo&rsquo; pattern?</li>
+<li></li>
+<li></li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
+  <br/>
+  <div id="q18" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; To guarantee interoperability, we need a kind of contract, a &ldquo;&ldquo;protocol&rdquo;&ldquo;.
+&gt; Lack of contracts is a sure sign of a disposable application.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; Turning a pattern into a real protocol requires:
+    ~ An RFC that specifies at least enough to act as the basis for arguments.
+    ~ A protocol version number in the READY command (or equivalent).
+    ~ Use of distinct message types (if more than one is required); a message structure that includes a message type.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; It extends and improves on Paranoid Pirate pattern:
+    ~ it adds a &ldquo;&ldquo;service name&rdquo;&rdquo; to requests that the client sends
+    ~ workers to register for specific services.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>This is how we should design complex architectures: start by writing down the contracts, and only then write software to implement them.</p>
+
+<h4 id="5">5.</h4>
+
+<p>The APIs are single-threaded. This means, for example, that the worker won&rsquo;t send heartbeats in the background. Happily, this is exactly what we want: if the worker application gets stuck, heartbeats will stop and the broker will stop sending requests to the worker.</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-19">Quiz 19</h3>
+
+<ol>
+<li>What would happen to the workers if the broker dies and comes back up in the Majordomo pattern?</li>
+<li></li>
+<li>What would be required in order for a Majordomo client to properly reconnect after a broker crash?</li>
+<li>What is MMI?</li>
+<li>What must you do when a server application is not idempotent?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
+  <br/>
+  <div id="q19" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; The worker must re-register itself using one of the following approaches:-
+    ~ The worker monitors the connection using heartbeats, and if it decides the broker is dead, it closes its socket and starts afresh with a new socket.
+    ~ The broker challenges unknown workers when it gets a heartbeat from the worker and asks them to re-register. This would require protocol support.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>router socket: if you send a message with the address of a peer that&rsquo;s not yet connected, the message gets discarded.</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; A number on every request and a matching number on every reply, which would ideally require a change to the protocol to enforce.
+&gt; Tracking and holding onto all outstanding requests in the client API, i.e., those for which no reply has yet been received.
+&gt; In case of failover, for the client API to resend all outstanding requests to the broker.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; Majordomo Management Interface.
+&gt; When a client requests a service that starts with mmi., instead of routing this to a worker, it&rsquo;s handled internally.
+&gt; Includes service discovery; the broker returns &ldquo;&ldquo;200&rdquo;&rdquo; (OK) or &ldquo;&ldquo;404&rdquo;&rdquo; (Not found)&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Think more carefully about when exactly they might crash.
+&gt; If the server dies while sending its reply, that&rsquo;s a problem, because as far as it&rsquo;s concerned, it has done its work.
+&gt; The client must stamp every request with a unique client identifier and a unique message number.
+&gt; The server, before sending back a reply, stores it using the combination of client ID and message number as a key.
+&gt; The server, when getting a request from a given client, first checks whether it has a reply for that client ID and message number. If so, it does not process the request, but just resends the reply.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+<h3 id="quiz-20">Quiz 20</h3>
+
+<ol>
+<li>What are the downsides to brokers storing messages on disk?</li>
+<li>What is the one sane use case for rust-based reliability?</li>
+<li>What is the &lsquo;Titanic&rsquo; pattern?</li>
+<li>What is the &lsquo;Cheap or Nasty&rsquo; pattern?</li>
+<li>What tends to happen when you design a protocol without separating control from data?</li>
+</ol>
+
+<div>
+  
+  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
+  <br/>
+  <div id="q20" style="display: none;">
+  
+  <h4 id="1">1.</h4>
+
+<p>&rdquo;&gt; Rust brings a whole set of problems, from slow performance to additional pieces that you have to manage
+&gt; The Lazy Pirate client performs surprisingly well. It works across a whole range of architectures.
+&gt; The beauty of the Pirate patterns in general is their simplicity. They won&rsquo;t crash.
+&gt; If you&rsquo;re worried about the hardware, you can move to a peer-to-peer pattern that has no broker at all.&rdquo;</p>
+
+<h4 id="2">2.</h4>
+
+<p>&rdquo;&gt; An asynchronous disconnected network.
+&gt; Think of email as the analogy.
+&gt; Clients and workers are only sporadically connected.&rdquo;</p>
+
+<h4 id="3">3.</h4>
+
+<p>&rdquo;&gt; Write messages to disk to ensure they never get lost.
+&gt; For sporadic clients and workers.
+&gt; Fire-and-forget reliability in a specialized worker, rather than in the broker.&rdquo;</p>
+
+<h4 id="4">4.</h4>
+
+<p>&rdquo;&gt; How you can often split your work into two aspects or layers and solve them separately.
+&gt; Many protocols mix a low-volume chatty part for control and a high-volume asynchronous part for data.
+&gt; Encode control using &lsquo;cheap&rsquo; and encode data using &lsquo;nasty&rsquo;.
+&gt; It isn&rsquo;t a universal pattern.
+&gt; It also may not be parts of the same protocol, but separate protocols layered, one layered on top of the other.
+&gt; Simplifies error handling.&rdquo;</p>
+
+<h4 id="5">5.</h4>
+
+<p>&rdquo;&gt; Bad protocols.
+&gt; The trade-offs in the two cases are almost totally opposed.
+&gt; This is especially true for high performance vs extensibility vs good error checking.&rdquo;</p>
+
+  </div>
+  <script>
+    function showAnswers(divId) {
+      var x = document.getElementById(divId);
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/questions/zeromq-1/" data-toggle="tooltip" data-placement="top" title="ZeroMQ Quiz, Part 1">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/questions/zeromq-3/" data-toggle="tooltip" data-placement="top" title="ZeroMQ Quiz, Part 3">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+

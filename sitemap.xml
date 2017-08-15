@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://richardmillen.github.io/questions/go-1/</loc>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/go-2/</loc>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/go-3/</loc>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/go-4/</loc>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/french-adv-2/</loc>
     <lastmod>2017-08-14T17:33:29+01:00</lastmod>
   </url>
@@ -28,23 +48,23 @@
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/go-4/</loc>
-    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
+    <loc>https://richardmillen.github.io/questions/zeromq-3/</loc>
+    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/go-3/</loc>
-    <lastmod>2017-06-28T13:25:43+01:00</lastmod>
+    <loc>https://richardmillen.github.io/questions/zeromq-2/</loc>
+    <lastmod>2017-06-28T16:16:31+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/go-2/</loc>
-    <lastmod>2017-06-28T13:14:43+01:00</lastmod>
+    <loc>https://richardmillen.github.io/questions/zeromq-1/</loc>
+    <lastmod>2017-06-28T16:16:27+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/go-1/</loc>
-    <lastmod>2017-06-28T13:03:38+01:00</lastmod>
+    <loc>https://richardmillen.github.io/questions/tdd-1/</loc>
+    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
   </url>
   
   <url>
@@ -53,8 +73,23 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/questions/unit-testing-1/</loc>
+    <lastmod>2017-06-28T12:57:42+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/centos-1/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/microservices-2/</loc>
+    <lastmod>2017-06-28T12:45:25+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/microservices-1/</loc>
+    <lastmod>2017-06-28T12:35:11+01:00</lastmod>
   </url>
   
   <url>
@@ -89,7 +124,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/</loc>
-    <lastmod>2017-08-14T17:33:29+01:00</lastmod>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
   </url>
   
   <url>
@@ -116,7 +151,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2017-06-28T12:09:56+01:00</lastmod>
+    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,6 +163,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/centos/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/distributed-computing/</loc>
+    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,13 +186,19 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/golang/</loc>
-    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/linux/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/microservices/</loc>
+    <lastmod>2017-06-28T12:45:25+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -168,13 +215,13 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/programming/</loc>
-    <lastmod>2017-06-28T13:37:13+01:00</lastmod>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/questions/</loc>
-    <lastmod>2017-08-14T17:33:29+01:00</lastmod>
+    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -187,6 +234,18 @@
   <url>
     <loc>https://richardmillen.github.io/tags/</loc>
     <lastmod>2017-06-28T13:00:58+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/tdd/</loc>
+    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/unit-testing/</loc>
+    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -205,6 +264,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/vocabulary/</loc>
     <lastmod>2017-06-28T17:22:29+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/zeromq/</loc>
+    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   

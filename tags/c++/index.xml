@@ -7,10 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Wed, 28 Jun 2017 12:09:56 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jun 2017 16:16:33 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ZeroMQ Quiz, Part 3</title>
+      <link>https://richardmillen.github.io/questions/zeromq-3/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:33 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/zeromq-3/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &amp;lsquo;the cost of serialisation&amp;rsquo;? What are some examples of simple self-describing structured encodings?</description>
+    </item>
+    
+    <item>
+      <title>ZeroMQ Quiz, Part 2</title>
+      <link>https://richardmillen.github.io/questions/zeromq-2/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:31 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/zeromq-2/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Why not use ROUTER instead of PAIR sockets? Why use PAIR sockets rather than PUB / SUB sockets?      Show Answers  1. &amp;rdquo;&amp;gt; ROUTER wraps your message in an &amp;ldquo;&amp;ldquo;envelope&amp;rdquo;&amp;ldquo;, meaning a zero-size signal message turns into a multipart message.</description>
+    </item>
+    
+    <item>
+      <title>ZeroMQ Quiz, Part 1</title>
+      <link>https://richardmillen.github.io/questions/zeromq-1/</link>
+      <pubDate>Wed, 28 Jun 2017 16:16:27 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/zeromq-1/</guid>
+      <description>! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp;amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
+Quiz 1  Give an example of load balancing. Give an example of fair queuing. What is the slow joiner problem? What must you do when you use a SUB socket? What happens if you don&amp;rsquo;t set any subscriptions on a SUB socket?</description>
+    </item>
     
     <item>
       <title>Google Test Quiz</title>
