@@ -111,6 +111,12 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/tags/english/</loc>
+    <lastmod>2017-06-28T17:22:29+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/tags/linux/</loc>
     <lastmod>2017-06-28T12:55:19+01:00</lastmod>
     <priority>0</priority>
@@ -154,6 +160,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/unit-tests/</loc>
     <lastmod>2017-06-28T12:09:56+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/vocabulary/</loc>
+    <lastmod>2017-06-28T17:22:29+01:00</lastmod>
     <priority>0</priority>
   </url>
   
