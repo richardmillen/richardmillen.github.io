@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Wed, 28 Jun 2017 12:55:19 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Aug 2017 10:35:47 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +15,14 @@
     <item>
       <title>CentOS Quiz</title>
       <link>https://richardmillen.github.io/questions/centos-1/</link>
-      <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
+      <pubDate>Wed, 16 Aug 2017 10:35:47 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/questions/centos-1/</guid>
-      <description>Below are some short quizes about the CentOS operation system.
-Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to stop the OpenSSH service? If SSH is used, which insecure services should be disabled? What is the default system-wide SSH client configuration file? How may it be overriden?   Show Answers  1. /etc/ssh/sshd_config</description>
+      <description>1 Which configuration file does the OpenSSH daemon use?
+Show Answer/etc/ssh/sshd_config
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What command is used to start the OpenSSH service?
+Show Answer/sbin/service sshd start
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.</description>
     </item>
     
   </channel>

@@ -3,156 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://richardmillen.github.io/questions/go-1/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/go-2/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/go-3/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/go-4/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/french-adv-2/</loc>
-    <lastmod>2017-08-14T17:33:29+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://richardmillen.github.io/questions/french-adv-1/</loc>
-    <lastmod>2017-08-14T16:30:10+01:00</lastmod>
+    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/questions/climate-1/</loc>
-    <lastmod>2017-06-28T18:03:50+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/electricity-1/</loc>
-    <lastmod>2017-06-28T17:46:54+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/lexicon-1/</loc>
-    <lastmod>2017-06-28T17:22:29+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-3/</loc>
-    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-2/</loc>
-    <lastmod>2017-06-28T16:16:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-1/</loc>
-    <lastmod>2017-06-28T16:16:27+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/tdd-1/</loc>
-    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/csharp-1/</loc>
-    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/unit-testing-1/</loc>
-    <lastmod>2017-06-28T12:57:42+01:00</lastmod>
+    <lastmod>2017-08-16T10:44:40+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/questions/centos-1/</loc>
-    <lastmod>2017-06-28T12:55:19+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/microservices-2/</loc>
-    <lastmod>2017-06-28T12:45:25+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/microservices-1/</loc>
-    <lastmod>2017-06-28T12:35:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/google-test-1/</loc>
-    <lastmod>2017-06-28T12:09:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/cplusplus-3/</loc>
-    <lastmod>2017-06-28T12:01:25+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/cplusplus-2/</loc>
-    <lastmod>2017-06-28T11:39:26+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/cplusplus-1/</loc>
-    <lastmod>2017-06-28T11:26:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/linux-1/</loc>
-    <lastmod>2017-06-28T11:18:21+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/questions/docker-1/</loc>
-    <lastmod>2017-06-28T11:06:00+01:00</lastmod>
+    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/.net/</loc>
-    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/bash/</loc>
-    <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/page/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/c#/</loc>
-    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -162,43 +39,31 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/centos/</loc>
-    <lastmod>2017-06-28T12:55:19+01:00</lastmod>
+    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/distributed-computing/</loc>
-    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
+    <loc>https://richardmillen.github.io/tags/climate/</loc>
+    <lastmod>2017-08-16T10:44:40+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/electronics/</loc>
-    <lastmod>2017-06-28T17:46:54+01:00</lastmod>
+    <loc>https://richardmillen.github.io/tags/french/</loc>
+    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/english/</loc>
-    <lastmod>2017-06-28T17:22:29+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/golang/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
+    <loc>https://richardmillen.github.io/tags/languages/</loc>
+    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/linux/</loc>
-    <lastmod>2017-06-28T12:55:19+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/microservices/</loc>
-    <lastmod>2017-06-28T12:45:25+01:00</lastmod>
+    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -208,68 +73,20 @@
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/physics/</loc>
-    <lastmod>2017-06-28T17:46:54+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/programming/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://richardmillen.github.io/questions/</loc>
-    <lastmod>2017-08-15T13:18:38+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/science/</loc>
-    <lastmod>2017-06-28T17:46:54+01:00</lastmod>
+    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/</loc>
-    <lastmod>2017-06-28T13:00:58+01:00</lastmod>
+    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/tags/tdd/</loc>
-    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/unit-testing/</loc>
-    <lastmod>2017-06-28T14:44:35+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/unit-tests/</loc>
-    <lastmod>2017-06-28T12:09:56+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/visual-c&#43;&#43;/</loc>
-    <lastmod>2017-06-28T11:39:26+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/vocabulary/</loc>
-    <lastmod>2017-06-28T17:22:29+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://richardmillen.github.io/tags/zeromq/</loc>
-    <lastmod>2017-06-28T16:16:33+01:00</lastmod>
+    <loc>https://richardmillen.github.io/tags/weather/</loc>
+    <lastmod>2017-08-16T10:44:40+01:00</lastmod>
     <priority>0</priority>
   </url>
   

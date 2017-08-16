@@ -7,188 +7,71 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Wed, 28 Jun 2017 13:00:58 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Aug 2017 10:35:47 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>.Net</title>
-      <link>https://richardmillen.github.io/tags/.net/</link>
-      <pubDate>Wed, 28 Jun 2017 13:00:58 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bash</title>
       <link>https://richardmillen.github.io/tags/bash/</link>
-      <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
+      <pubDate>Wed, 16 Aug 2017 10:35:47 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C#</title>
-      <link>https://richardmillen.github.io/tags/c#/</link>
-      <pubDate>Wed, 28 Jun 2017 13:00:58 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://richardmillen.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Wed, 28 Jun 2017 16:16:33 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Centos</title>
       <link>https://richardmillen.github.io/tags/centos/</link>
-      <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
+      <pubDate>Wed, 16 Aug 2017 10:35:47 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Distributed Computing</title>
-      <link>https://richardmillen.github.io/tags/distributed-computing/</link>
-      <pubDate>Wed, 28 Jun 2017 16:16:33 +0100</pubDate>
+      <title>Climate</title>
+      <link>https://richardmillen.github.io/tags/climate/</link>
+      <pubDate>Wed, 16 Aug 2017 10:44:40 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/distributed-computing/</guid>
+      <guid>https://richardmillen.github.io/tags/climate/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Electronics</title>
-      <link>https://richardmillen.github.io/tags/electronics/</link>
-      <pubDate>Wed, 28 Jun 2017 17:46:54 +0100</pubDate>
+      <title>French</title>
+      <link>https://richardmillen.github.io/tags/french/</link>
+      <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/electronics/</guid>
+      <guid>https://richardmillen.github.io/tags/french/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>English</title>
-      <link>https://richardmillen.github.io/tags/english/</link>
-      <pubDate>Wed, 28 Jun 2017 17:22:29 +0100</pubDate>
+      <title>Languages</title>
+      <link>https://richardmillen.github.io/tags/languages/</link>
+      <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://richardmillen.github.io/tags/golang/</link>
-      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/golang/</guid>
+      <guid>https://richardmillen.github.io/tags/languages/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
       <link>https://richardmillen.github.io/tags/linux/</link>
-      <pubDate>Wed, 28 Jun 2017 12:55:19 +0100</pubDate>
+      <pubDate>Wed, 16 Aug 2017 10:35:47 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Microservices</title>
-      <link>https://richardmillen.github.io/tags/microservices/</link>
-      <pubDate>Wed, 28 Jun 2017 12:45:25 +0100</pubDate>
+      <title>Weather</title>
+      <link>https://richardmillen.github.io/tags/weather/</link>
+      <pubDate>Wed, 16 Aug 2017 10:44:40 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/microservices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Physics</title>
-      <link>https://richardmillen.github.io/tags/physics/</link>
-      <pubDate>Wed, 28 Jun 2017 17:46:54 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://richardmillen.github.io/tags/programming/</link>
-      <pubDate>Tue, 15 Aug 2017 13:18:38 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Science</title>
-      <link>https://richardmillen.github.io/tags/science/</link>
-      <pubDate>Wed, 28 Jun 2017 17:46:54 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tdd</title>
-      <link>https://richardmillen.github.io/tags/tdd/</link>
-      <pubDate>Wed, 28 Jun 2017 14:44:35 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/tdd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unit Testing</title>
-      <link>https://richardmillen.github.io/tags/unit-testing/</link>
-      <pubDate>Wed, 28 Jun 2017 14:44:35 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/unit-testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unit Tests</title>
-      <link>https://richardmillen.github.io/tags/unit-tests/</link>
-      <pubDate>Wed, 28 Jun 2017 12:09:56 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/unit-tests/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Visual C&#43;&#43;</title>
-      <link>https://richardmillen.github.io/tags/visual-c&#43;&#43;/</link>
-      <pubDate>Wed, 28 Jun 2017 11:39:26 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/visual-c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vocabulary</title>
-      <link>https://richardmillen.github.io/tags/vocabulary/</link>
-      <pubDate>Wed, 28 Jun 2017 17:22:29 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/vocabulary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Zeromq</title>
-      <link>https://richardmillen.github.io/tags/zeromq/</link>
-      <pubDate>Wed, 28 Jun 2017 16:16:33 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/tags/zeromq/</guid>
+      <guid>https://richardmillen.github.io/tags/weather/</guid>
       <description></description>
     </item>
     

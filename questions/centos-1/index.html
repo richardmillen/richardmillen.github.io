@@ -8,12 +8,19 @@
   <title>CentOS Quiz</title>
   <meta property="og:title" content="CentOS Quiz" />
   <meta name="twitter:title" content="CentOS Quiz" />
-  <meta name="description" content="Below are some short quizes about the CentOS operation system.
-Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to stop the OpenSSH service? If SSH is used, which insecure services should be disabled? What is the default system-wide SSH client configuration file? How may it be overriden?   Show Answers  1. /etc/ssh/sshd_config">
-  <meta property="og:description" content="Below are some short quizes about the CentOS operation system.
-Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to stop the OpenSSH service? If SSH is used, which insecure services should be disabled? What is the default system-wide SSH client configuration file? How may it be overriden?   Show Answers  1. /etc/ssh/sshd_config">
-  <meta name="twitter:description" content="Below are some short quizes about the CentOS operation system.
-Quiz 1  Which configuration file does the OpenSSH daemon use? What command is used to start the OpenSSH service? What command is used to …">
+  <meta name="description" content="1 Which configuration file does the OpenSSH daemon use?
+Show Answer/etc/ssh/sshd_config
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What command is used to start the OpenSSH service?
+Show Answer/sbin/service sshd start
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
+  <meta property="og:description" content="1 Which configuration file does the OpenSSH daemon use?
+Show Answer/etc/ssh/sshd_config
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What command is used to start the OpenSSH service?
+Show Answer/sbin/service sshd start
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
+  <meta name="twitter:description" content="1 Which configuration file does the OpenSSH daemon use?
+Show Answer/etc/ssh/sshd_config
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) { …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -188,180 +195,379 @@ Quiz 1  Which configuration file does the OpenSSH daemon use? What command is us
       <article role="main" class="blog-post">
         
 
-<p>Below are some short quizes about the CentOS operation system.</p>
+<h2 id="1">1</h2>
 
-<h3 id="quiz-1">Quiz 1</h3>
-
-<ol>
-<li>Which configuration file does the OpenSSH daemon use?</li>
-<li>What command is used to start the OpenSSH service?</li>
-<li>What command is used to stop the OpenSSH service?</li>
-<li>If SSH is used, which insecure services should be disabled?</li>
-<li>What is the default system-wide SSH client configuration file? How may it be overriden?</li>
-</ol>
+<p>Which configuration file does the OpenSSH daemon use?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
-  <br/>
-  <div id="q1" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q1')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q1" style="display: none;">
+	
+	<p><code>/etc/ssh/sshd_config</code></p>
 
-<p><code>/etc/ssh/sshd_config</code></p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="2">2.</h4>
+<h2 id="2">2</h2>
 
-<p><code>/sbin/service sshd start</code></p>
+<p>What command is used to start the OpenSSH service?</p>
 
-<h4 id="3">3.</h4>
+<div>
+	
+	<button type="button" onclick="showAnswer('q2')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q2" style="display: none;">
+	
+	<p><code>/sbin/service sshd start</code></p>
 
-<p><code>/sbin/service sshd stop</code></p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="4">4.</h4>
+<h2 id="3">3</h2>
 
-<ul>
+<p>What command is used to stop the OpenSSH service?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q3')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q3" style="display: none;">
+	
+	<p><code>/sbin/service sshd stop</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="4">4</h2>
+
+<p>If SSH is used, which insecure services should be disabled?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q4')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q4" style="display: none;">
+	
+	<ul>
 <li>telnet</li>
 <li>rsh</li>
 <li>rlogin</li>
 <li>vsftpd</li>
 </ul>
 
-<h4 id="5">5.</h4>
-
-<blockquote>
-<p>/etc/ssh/ssh_config<br />
-~/.ssh/config</p>
-</blockquote>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-2">Quiz 2</h3>
+<h2 id="5">5</h2>
 
-<ol>
-<li>Where are the authorised public keys of SSH clients held?</li>
-<li>How is it possible to transfer a local file to a remote system over a secure, encrypted connection?</li>
-<li>How is it possible to transfer a remote file to the local system over a secure, encrypted connection?</li>
-<li>How is it possible to transfer the contents of a local directory to a remote system over a secure, encrypted connection?</li>
-<li>What command do you use to generate an RSA key pair for SSH?</li>
-</ol>
+<p>What is the default system-wide SSH client configuration file?<br />
+How may it be overridden?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
-  <br/>
-  <div id="q2" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q5')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q5" style="display: none;">
+	
+	<p><code>/etc/ssh/ssh_config</code><br />
+<code>~/.ssh/config</code></p>
 
-<p><code>~/.ssh/authorized_keys</code></p>
-
-<h4 id="2">2.</h4>
-
-<p><code>scp &lt;local-file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote-file&gt;</code></p>
-
-<h4 id="3">3.</h4>
-
-<p><code>scp &lt;user&gt;@&lt;server&gt;:&lt;remote-file&gt; &lt;local-file&gt;</code></p>
-
-<h4 id="4">4.</h4>
-
-<p><code>scp &lt;local-path&gt;/* &lt;user&gt;@&lt;server&gt;:&lt;remote-path&gt;/</code></p>
-
-<h4 id="5">5.</h4>
-
-<p><code>ssh-keygen -t rsa</code></p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-3">Quiz 3</h3>
+<h2 id="6">6</h2>
 
-<ol>
-<li>What command do you use to generate a DSA key pair for SSH?</li>
-<li>What user setups must be done to allow access to a remote system over SSH?</li>
-<li>How do you get the local ip address of a machine?</li>
-<li>How do you find out which packages will provide a feature or file?</li>
-</ol>
+<p>Where are the authorised public keys of SSH clients held?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
-  <br/>
-  <div id="q3" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q6')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q6" style="display: none;">
+	
+	<p><code>~/.ssh/authorized_keys</code></p>
 
-<p><code>ssh-keygen -t dsa</code></p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="2">2.</h4>
+<h2 id="7">7</h2>
 
-<pre><code class="language-bash">chmod 755 ~/.ssh
+<p>How is it possible to transfer a local file to a remote system over a secure, encrypted connection?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q7')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q7" style="display: none;">
+	
+	<p><code>scp &lt;local-file&gt; &lt;user&gt;@&lt;server&gt;:&lt;remote-file&gt;</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="8">8</h2>
+
+<p>How is it possible to transfer a remote file to the local system over a secure, encrypted connection?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q8')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q8" style="display: none;">
+	
+	<p><code>scp &lt;user&gt;@&lt;server&gt;:&lt;remote-file&gt; &lt;local-file&gt;</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="9">9</h2>
+
+<p>How is it possible to transfer the contents of a local directory to a remote system over a secure, encrypted connection?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q9')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q9" style="display: none;">
+	
+	<p><code>scp &lt;local-path&gt;/* &lt;user&gt;@&lt;server&gt;:&lt;remote-path&gt;/</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="10">10</h2>
+
+<p>What command do you use to generate an RSA key pair for SSH?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q10')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q10" style="display: none;">
+	
+	<p><code>ssh-keygen -t rsa</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="11">11</h2>
+
+<p>What command do you use to generate a DSA key pair for SSH?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q11')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q11" style="display: none;">
+	
+	<p><code>ssh-keygen -t dsa</code></p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="12">12</h2>
+
+<p>What user setups must be done to allow access to a remote system over SSH?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q12')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q12" style="display: none;">
+	
+	<pre><code class="language-bash">chmod 755 ~/.ssh
 cat ~/.ssh/&lt;key-file&gt;.pub &gt;&gt; ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/authorized_keys
 </code></pre>
 
-<h4 id="3">3.</h4>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<p><code>hostname -I</code></p>
+<h2 id="13">13</h2>
 
-<p>OR</p>
+<p>How do you get the local ip address of a machine?</p>
 
-<p><code>ip addr</code></p>
+<div>
+	
+	<button type="button" onclick="showAnswer('q13')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q13" style="display: none;">
+	
+	<p>There are a few options:</p>
 
-<p>OR</p>
+<pre><code class="language-bash">hostname -I
+ip addr
+ifconfig
+</code></pre>
 
-<p><code>ifconfig</code></p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="4">4.</h4>
+<h2 id="14">14</h2>
 
-<p><code>yum provides &lt;feature&gt;</code></p>
+<p>How do you find out which packages will provide a feature or file?</p>
 
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+<div>
+	
+	<button type="button" onclick="showAnswer('q14')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q14" style="display: none;">
+	
+	<pre><code class="language-bash">yum provides &lt;feature&gt;
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
       </article>
 
       <ul class="pager blog-pager">
         
-          <li class="previous">
-            <a href="https://richardmillen.github.io/questions/microservices-2/" data-toggle="tooltip" data-placement="top" title="Microservices Quiz, Part 2">&larr; Previous Post</a>
-          </li>
-        
         
           <li class="next">
-            <a href="https://richardmillen.github.io/questions/unit-testing-1/" data-toggle="tooltip" data-placement="top" title="Unit Testing Quiz">Next Post &rarr;</a>
+            <a href="https://richardmillen.github.io/questions/climate-1/" data-toggle="tooltip" data-placement="top" title="Climate Quiz">Next Post &rarr;</a>
           </li>
         
       </ul>
