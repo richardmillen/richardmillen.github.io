@@ -18,9 +18,9 @@
       <pubDate>Tue, 22 Aug 2017 15:22:34 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/questions/tdd-1/</guid>
-      <description>Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset.
-1 Show AnswerOutside of perhaps explaining a &amp;ldquo;why,&amp;rdquo; if you need a comment to explain your test, it stinks.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerTest-drive new behavior into your system in quite small increments.</description>
+      <description>1 Show AnswerOutside of perhaps explaining a &amp;ldquo;why,&amp;rdquo; if you need a comment to explain your test, it stinks.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerTest-drive new behavior into your system in quite small increments.
+function showAnswer(divId) {var x = document.</description>
     </item>
     
     <item>
