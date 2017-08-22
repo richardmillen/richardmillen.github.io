@@ -7,10 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
     <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Tue, 22 Aug 2017 15:04:13 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Aug 2017 15:49:38 +0100</lastBuildDate>
     
 	<atom:link href="https://richardmillen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computing Quiz</title>
+      <link>https://richardmillen.github.io/questions/computing-1/</link>
+      <pubDate>Tue, 22 Aug 2017 15:49:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/computing-1/</guid>
+      <description>1 The more hosts the hypervisor manages, the more resources it needs.
+Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What is vertical scaling?
+Show Answer e.g. Getting a bigger box with faster CPU and better I/O can often improve latency and throughput, allowing you to process more work in less time.</description>
+    </item>
+    
+    <item>
+      <title>French Advanced Quiz #2</title>
+      <link>https://richardmillen.github.io/questions/french-adv-2/</link>
+      <pubDate>Tue, 22 Aug 2017 15:33:09 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/french-adv-2/</guid>
+      <description>This quiz is based on the French Advanced course by Michel Thomas.
+1 Give some examples of re verbs.
+Show Answeravoir, savoir, voir, pouvoir, devoir.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 &amp;ldquo;To put&amp;rdquo;
+Show Answermettre (put money in the meter)
+function showAnswer(divId) {var x = document.</description>
+    </item>
+    
+    <item>
+      <title>Test-Driven Development Quiz</title>
+      <link>https://richardmillen.github.io/questions/tdd-1/</link>
+      <pubDate>Tue, 22 Aug 2017 15:22:34 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/tdd-1/</guid>
+      <description>Lorem ipsum dolor sit amet, et velit nihil nullam vim, id vim tacimates praesent repudiandae, qui et consul diceret fuisset.
+1 Show AnswerOutside of perhaps explaining a &amp;ldquo;why,&amp;rdquo; if you need a comment to explain your test, it stinks.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerTest-drive new behavior into your system in quite small increments.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing Quiz</title>
+      <link>https://richardmillen.github.io/questions/unit-testing-1/</link>
+      <pubDate>Tue, 22 Aug 2017 15:15:40 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/questions/unit-testing-1/</guid>
+      <description>1 Show Answer If you find yourself seeking esoteric mock tool features frequently, stop and take a look at your design.
+Are you testing a method that’s doing too much?
+Can you restructure your design in a manner so that you don’t need such complex mocking?
+ function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.</description>
+    </item>
     
     <item>
       <title>ØMQ Quiz #3</title>
@@ -90,11 +138,12 @@ It is crucially important that the left-hand operand is destroyed and the right-
       <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/questions/french-adv-1/</guid>
-      <description>This quiz contains 100 questions and is based on the French Advanced course by Michel Thomas.
+      <description>This quiz is based on the French Advanced course by Michel Thomas.
 1 &amp;ldquo;I want it now&amp;rdquo;
 Show Answerje le veux maintenant
 function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 &amp;ldquo;I don&amp;rsquo;t want them&amp;rdquo;
-Show Answerje ne les veux pas</description>
+Show Answerje ne les veux pas
+function showAnswer(divId) {var x = document.</description>
     </item>
     
     <item>

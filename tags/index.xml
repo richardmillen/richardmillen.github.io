@@ -76,6 +76,15 @@
     </item>
     
     <item>
+      <title>Computing</title>
+      <link>https://richardmillen.github.io/tags/computing/</link>
+      <pubDate>Tue, 22 Aug 2017 15:49:38 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/tags/computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Distributed Computing</title>
       <link>https://richardmillen.github.io/tags/distributed-computing/</link>
       <pubDate>Tue, 22 Aug 2017 15:04:13 +0100</pubDate>
@@ -87,7 +96,7 @@
     <item>
       <title>French</title>
       <link>https://richardmillen.github.io/tags/french/</link>
-      <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
+      <pubDate>Tue, 22 Aug 2017 15:33:09 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/french/</guid>
       <description></description>
@@ -96,7 +105,7 @@
     <item>
       <title>Languages</title>
       <link>https://richardmillen.github.io/tags/languages/</link>
-      <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
+      <pubDate>Tue, 22 Aug 2017 15:33:09 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/languages/</guid>
       <description></description>
@@ -114,7 +123,7 @@
     <item>
       <title>Programming</title>
       <link>https://richardmillen.github.io/tags/programming/</link>
-      <pubDate>Tue, 22 Aug 2017 13:02:48 +0100</pubDate>
+      <pubDate>Tue, 22 Aug 2017 15:22:34 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/programming/</guid>
       <description></description>
@@ -126,6 +135,24 @@
       <pubDate>Tue, 22 Aug 2017 14:14:52 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
       <guid>https://richardmillen.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tdd</title>
+      <link>https://richardmillen.github.io/tags/tdd/</link>
+      <pubDate>Tue, 22 Aug 2017 15:22:34 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unit Tests</title>
+      <link>https://richardmillen.github.io/tags/unit-tests/</link>
+      <pubDate>Tue, 22 Aug 2017 15:22:34 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/tags/unit-tests/</guid>
       <description></description>
     </item>
     
