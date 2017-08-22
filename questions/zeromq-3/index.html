@@ -5,15 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>ZeroMQ Quiz, Part 3</title>
-  <meta property="og:title" content="ZeroMQ Quiz, Part 3" />
-  <meta name="twitter:title" content="ZeroMQ Quiz, Part 3" />
-  <meta name="description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
-Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;? What are some examples of simple self-describing structured encodings?">
-  <meta property="og:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
-Quiz 1  What aspects of control vs data flow when designing a protocol? What aspect of messaging is important when talking about performance? What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;? What are some examples of simple self-describing structured encodings?">
-  <meta name="twitter:description" content="! W O R K ~ I N ~ P R O G R E S S ! This page contains questions &amp; answers based on the ZeroMQ Guide written by Pieter Hintjens.
-Quiz 1  What aspects of control vs data flow when designing a …">
+  <title>ØMQ Quiz #3</title>
+  <meta property="og:title" content="ØMQ Quiz #3" />
+  <meta name="twitter:title" content="ØMQ Quiz #3" />
+  <meta name="description" content="This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 What aspects of control vs data flow when designing a protocol?
+Show Answer Control dialogue tends to last a short time, involing few messages.
+The data flow could last for hours or days, involing billions of messages.
+Control is where &ldquo;normal&rdquo; errors happen e.g. not authenticated, not found, censored etc.
+Errors during data flow are exceptional (disk full, server crashed).">
+  <meta property="og:description" content="This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 What aspects of control vs data flow when designing a protocol?
+Show Answer Control dialogue tends to last a short time, involing few messages.
+The data flow could last for hours or days, involing billions of messages.
+Control is where &ldquo;normal&rdquo; errors happen e.g. not authenticated, not found, censored etc.
+Errors during data flow are exceptional (disk full, server crashed).">
+  <meta name="twitter:description" content="This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 What aspects of control vs data flow when designing a protocol?
+Show Answer Control dialogue tends to last a short time, …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -170,7 +179,7 @@ Quiz 1  What aspects of control vs data flow when designing a …">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="questions-heading">
-              <h1>ZeroMQ Quiz, Part 3</h1>
+              <h1>ØMQ Quiz #3</h1>
                 
                 
             </div>
@@ -188,915 +197,2396 @@ Quiz 1  What aspects of control vs data flow when designing a …">
       <article role="main" class="blog-post">
         
 
-<h1 id="w-o-r-k-i-n-p-r-o-g-r-e-s-s">! W O R K ~ I N ~ P R O G R E S S !</h1>
+<p>This quiz is based on the <a href="http://zguide.zeromq.org/page:all">ZeroMQ Guide</a> written by Pieter Hintjens.</p>
 
-<p>This page contains questions &amp; answers based on the <a href="http://zguide.zeromq.org/page:all">ZeroMQ Guide</a> written by Pieter Hintjens.</p>
+<h2 id="1">1</h2>
 
-<h3 id="quiz-1">Quiz 1</h3>
-
-<ol>
-<li>What aspects of control vs data flow when designing a protocol?</li>
-<li>What aspect of messaging is important when talking about performance?</li>
-<li>What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;?</li>
-<li>What are some examples of simple self-describing structured encodings?</li>
-<li>What is the &lsquo;Cheap&rsquo; part of a protocol?</li>
-</ol>
+<p>What aspects of control vs data flow when designing a protocol?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q1')">Show Answers</button>
-  <br/>
-  <div id="q1" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<p>&rdquo;&gt; Control dialogue tends to last a short time, involing few messages.
-&gt; The data flow could last for hours or days, involing billions of messages.
-&gt; Control is where &ldquo;&ldquo;normal&rdquo;&rdquo; errors happen e.g. not authenticated, not found, censored etc.
-&gt; Errors during data flow are exceptional (disk full, server crashed).
-&gt; Control is where things will change over time, with new options, parameters etc.
-&gt; The data flow barely changes because the semantics of a resource are fairly constant over time.
-&gt; Control dialogue is akin to REQ-REP. Data flow is essentially one-way asynchronous flow.&rdquo;</p>
-
-<h4 id="2">2.</h4>
-
-<blockquote>
-<p>Data flows.</p>
+	
+	<button type="button" onclick="showAnswer('q1')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q1" style="display: none;">
+	
+	<blockquote>
+<p>Control dialogue tends to last a short time, involing few messages.<br />
+The data flow could last for hours or days, involing billions of messages.<br />
+Control is where &ldquo;normal&rdquo; errors happen e.g. not authenticated, not found, censored etc.<br />
+Errors during data flow are exceptional (disk full, server crashed).<br />
+Control is where things will change over time, with new options, parameters etc.<br />
+The data flow barely changes because the semantics of a resource are fairly constant over time.<br />
+Control dialogue is akin to REQ-REP. Data flow is essentially one-way asynchronous flow.</p>
 </blockquote>
 
-<h4 id="3">3.</h4>
-
-<blockquote>
-<p>Data flows.</p>
-</blockquote>
-
-<h4 id="4">4.</h4>
-
-<p>&rdquo;&gt; XML
-&gt; JSON
-&gt; HTTP-style headers&rdquo;</p>
-
-<h4 id="5">5.</h4>
-
-<p>&rdquo;&gt; Control messaging encoding.
-&gt; Uses any encoding that has a simple, standard parser for it in the target language.
-&gt; Uses straight request-reply model, where each reply has a success/failure reply.
-&gt; It doesn&rsquo;t try to be fast.
-&gt; Shouldn&rsquo;t crash, or leak memory.
-&gt; Should be highly tolerant.&rdquo;</p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-2">Quiz 2</h3>
+<h2 id="2">2</h2>
 
-<ol>
-<li>What is the &lsquo;Nasty&rsquo; part of a protocol?</li>
-<li>What is the only thing that matters when design the &lsquo;Nasty&rsquo; part of a protocol?</li>
-<li>How does the &lsquo;Cheap or Nasty&rsquo; pattern simplify error handling?</li>
-<li>What is the simplest and most widely used serialisation format for 0MQ apps?</li>
-<li>What should you do when using 0MQ&rsquo;s own multipart framing as a serialisation format?</li>
-</ol>
+<p>What aspect of messaging is important when talking about performance?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q2')">Show Answers</button>
-  <br/>
-  <div id="q2" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q2')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q2" style="display: none;">
+	
+	<blockquote>
+<p>Data flows.</p>
+</blockquote>
 
-<p>&rdquo;&gt; Carries minimal info that barely changes.
-&gt; Asynchronous, terse, silent and inflexible.
-&gt; Ultra-fast to parse.
-&gt; Possibly impossible to extend / experiement with.
-&gt; Hand-optimised binary layout.
-&gt; Pure asynchronous model, without acknowledgements, or &lsquo;credit-based flow control&rsquo;.
-&gt; Rejects anything it doesn&rsquo;t like.
-&gt; Zero memory allocs.
-&gt; Never crashes.&rdquo;</p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="2">2.</h4>
+<h2 id="3">3</h2>
 
-<blockquote>
+<p>What aspect of messaging is affected by &lsquo;the cost of serialisation&rsquo;?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q3')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q3" style="display: none;">
+	
+	<blockquote>
+<p>Data flows.</p>
+</blockquote>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="4">4</h2>
+
+<p>What are some examples of simple self-describing structured encodings?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q4')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q4" style="display: none;">
+	
+	<blockquote>
+<p>XML
+JSON
+HTTP-style headers</p>
+</blockquote>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="5">5</h2>
+
+<p>What is the &lsquo;Cheap&rsquo; part of a protocol?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q5')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q5" style="display: none;">
+	
+	<blockquote>
+<p>Control messaging encoding.<br />
+Uses any encoding that has a simple, standard parser for it in the target language.<br />
+Uses straight request-reply model, where each reply has a success/failure reply.<br />
+It doesn&rsquo;t try to be fast.<br />
+Shouldn&rsquo;t crash, or leak memory.<br />
+Should be highly tolerant.</p>
+</blockquote>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="6">6</h2>
+
+<p>What is the &lsquo;Nasty&rsquo; part of a protocol?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q6')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q6" style="display: none;">
+	
+	<blockquote>
+<p>Carries minimal info that barely changes.<br />
+Asynchronous, terse, silent and inflexible.<br />
+Ultra-fast to parse.<br />
+Possibly impossible to extend / experiement with.<br />
+Hand-optimised binary layout.<br />
+Pure asynchronous model, without acknowledgements, or &lsquo;credit-based flow control&rsquo;.<br />
+Rejects anything it doesn&rsquo;t like.<br />
+Zero memory allocs.<br />
+Never crashes.</p>
+</blockquote>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="7">7</h2>
+
+<p>What is the only thing that matters when design the &lsquo;Nasty&rsquo; part of a protocol?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q7')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q7" style="display: none;">
+	
+	<blockquote>
 <p>Performance.</p>
 </blockquote>
 
-<h4 id="3">3.</h4>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<p>&rdquo;&gt; Synchronous control commands:
-    ~ Errors are normal.
-    ~ Each request has a response.
-&gt; Asynchronous data commands:
-    ~ Errors are exceptional.
-    ~ Bad commands are either discarded silently, or cause disconnect.&rdquo;</p>
+<h2 id="8">8</h2>
 
-<h4 id="4">4.</h4>
+<p>How does the &lsquo;Cheap or Nasty&rsquo; pattern simplify error handling?</p>
 
-<blockquote>
+<div>
+	
+	<button type="button" onclick="showAnswer('q8')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q8" style="display: none;">
+	
+	<ul>
+<li>Synchronous control commands:
+
+<ul>
+<li>Errors are normal.</li>
+<li>Each request has a response.</li>
+</ul></li>
+<li>Asynchronous data commands:
+
+<ul>
+<li>Errors are exceptional.</li>
+<li>Bad commands are either discarded silently, or cause disconnect.</li>
+</ul></li>
+</ul>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="9">9</h2>
+
+<p>What is the simplest and most widely used serialisation format for 0MQ apps?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q9')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q9" style="display: none;">
+	
+	<blockquote>
 <p>ZeroMQ&rsquo;s own multi-part framing.</p>
 </blockquote>
 
-<h4 id="5">5.</h4>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<blockquote>
+<h2 id="10">10</h2>
+
+<p>What should you do when using 0MQ&rsquo;s own multipart framing as a serialisation format?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q10')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q10" style="display: none;">
+	
+	<blockquote>
 <p>Split messages into a &lsquo;Cheap&rsquo; part and a &lsquo;Nasty&rsquo; part, using framing to separate them.</p>
 </blockquote>
 
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-3">Quiz 3</h3>
+<h2 id="11">11</h2>
 
-<ol>
-<li>Give an example of how you might separate the &lsquo;Cheap&rsquo; from the &lsquo;Nasty&rsquo; when using 0MQ&rsquo;s own multipart framing.</li>
-<li></li>
-<li>How does a &lsquo;Cheap&rsquo; serialisation language enable experimentation?</li>
-<li></li>
-<li></li>
-</ol>
+<p>Give an example of how you might separate the &lsquo;Cheap&rsquo; from the &lsquo;Nasty&rsquo; when using 0MQ&rsquo;s own multipart framing.</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q3')">Show Answers</button>
-  <br/>
-  <div id="q3" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q11')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q11" style="display: none;">
+	
+	<ul>
+<li>Frame 0: short protocol name and major.minor version</li>
+<li>Frame 1: command header (for intermediaries).</li>
+<li>Frame 2: command body (for the application).</li>
+</ul>
 
-<p>&ldquo;Frame 0: <short protocol name and major.minor version>
-Frame 1: command header (for intermediaries).
-Frame 2: command body (for the application).&rdquo;</p>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="2">2.</h4>
+<h2 id="12">12</h2>
 
-<p>These [XML, JSON, HTTP-style headers] are all pretty equivalent as long as you don&rsquo;t go overboard with validating parsers, schemas, and other &ldquo;trust us, this is all for your own good&rdquo; nonsense.</p>
+<div>
+	
+	<button type="button" onclick="showAnswer('q12')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q12" style="display: none;">
+	
+	<p>These [XML, JSON, HTTP-style headers] are all pretty equivalent as long as you don&rsquo;t go overboard with validating parsers, schemas, and other &ldquo;trust us, this is all for your own good&rdquo; nonsense.</p>
 
-<h4 id="3">3.</h4>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<p>&rdquo;&gt; Ignore any elements/attributes/headers that you don&rsquo;t recognize.
-&gt; Simple to write generic parsers that thunk a command to/from a hash table.&rdquo;</p>
+<h2 id="13">13</h2>
 
-<h4 id="4">4.</h4>
+<p>How does a &lsquo;Cheap&rsquo; serialisation language enable experimentation?</p>
 
-<p>If your universe is a scripting language, then go for JSON. If you are aiming to build protocols for wider system use, keep things simple for C developers and stick to HTTPstyle headers.</p>
+<div>
+	
+	<button type="button" onclick="showAnswer('q13')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q13" style="display: none;">
+	
+	<blockquote>
+<p>Ignore any elements/attributes/headers that you don&rsquo;t recognize.
+Simple to write generic parsers that thunk a command to/from a hash table.</p>
+</blockquote>
 
-<h4 id="5">5.</h4>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
+<h2 id="14">14</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q14')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q14" style="display: none;">
+	
+	<p>If your universe is a scripting language, then go for JSON. If you are aiming to build protocols for wider system use, keep things simple for C developers and stick to HTTPstyle headers.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="15">15</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q15')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q15" style="display: none;">
+	
+	<blockquote>
 <p>the assumption that all messages are equal in some way can corrupt your protocol design</p>
+</blockquote>
 
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-4">Quiz 4</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li>Why are IDLs like msgpack or protobufs not necessarily a good idea?</li>
-<li>How might you relate the value of manual control for high-end professional users to some real world examples?</li>
-</ol>
+<h2 id="16">16</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q4')">Show Answers</button>
-  <br/>
-  <div id="q4" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q16')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q16" style="display: none;">
+	
+	<p>Cheap or Nasty isn&rsquo;t only about serialization strategies, it&rsquo;s also about synchronous versus asynchronous, error handling and the cost of change.</p>
 
-<p>Cheap or Nasty isn&rsquo;t only about serialization strategies, it&rsquo;s also about synchronous versus asynchronous, error handling and the cost of change.</p>
-
-<h4 id="2">2.</h4>
-
-<p>Most performance problems in messagebased applications can be solved by (a) improving the application itself and (b) handoptimizing the highvolume data flows.</p>
-
-<h4 id="3">3.</h4>
-
-<p>To hand-optimize your most critical data flows, you need to cheat; to learn exploit facts about your data, something general purpose serializers cannot do.</p>
-
-<h4 id="4">4.</h4>
-
-<p>&rdquo;&gt; In most practical cases they win you little over a serialisation language backed by decent specifications written by hand or machine-generated.
-&gt; Technical debt; an extra dependency.
-&gt; Quite possibly, worse overall performance tha if you used Cheap or Nasty.&rdquo;</p>
-
-<h4 id="5">5.</h4>
-
-<p>&rdquo;&gt; The best cards, cameras and espresso machines have manual controls.
-&gt; That level of on-the-spot fine tuning often makes the difference between world class success and second best.&rdquo;</p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-5">Quiz 5</h3>
-
-<ol>
-<li></li>
-<li>What is the basic process you follow when writing an efficient &lsquo;Nasty&rsquo; codec?</li>
-<li>What are some of the techniques you can use to improve your codecs?</li>
-<li>How can you use state to improve codec compression?</li>
-<li>How does knowing your data enable to improve codec performance?</li>
-</ol>
+<h2 id="17">17</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q5')">Show Answers</button>
-  <br/>
-  <div id="q5" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q17')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q17" style="display: none;">
+	
+	<p>Most performance problems in messagebased applications can be solved by (a) improving the application itself and (b) handoptimizing the highvolume data flows.</p>
 
-<p>When you are really, truly concerned about the speed of serialization and/or the size of the result (often these contradict each other), you need handwritten binary serialization.</p>
-
-<h4 id="2">2.</h4>
-
-<p>&rdquo;&gt; Build representative data sets and test apps for stress testing.
-&gt; Write a first dumb version.
-&gt; Test, measure, improve and repeat.&rdquo;</p>
-
-<h4 id="3">3.</h4>
-
-<p>&rdquo;&gt; <em>Use a profiler</em>.
-&gt; Eliminate memory allocations.
-&gt; Test on different platforms.
-&gt; Use state to improve compression.
-&gt; Know your data.
-&gt; Be ready to break rules.&rdquo;</p>
-
-<h4 id="4">4.</h4>
-
-<p>&rdquo;&gt; Because you&rsquo;re almost certainly sending the same kinds of data many times.
-&gt; There will be redundancy between instances of data.
-&gt; You can detec these and use that to compress; a short value that means &ldquo;&ldquo;same as last time&rdquo;&ldquo;.&rdquo;</p>
-
-<h4 id="5">5.</h4>
-
-<p>&rdquo;&gt; The best compression techniques require knowing about the data.
-&gt; e.g. Methods of compressing a word list, video and a stream of stock market data area all different.&rdquo;</p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-6">Quiz 6</h3>
-
-<ol>
-<li>How might breaking rules improve codec performance?</li>
-<li>What is GSL?</li>
-<li>What are the advantages of model-oriented code generation?</li>
-<li>What are the disadvantages of model-oriented code generation?</li>
-<li>What is a potential problem you&rsquo;ll find when using ephemeral ports? What is a possible solution?</li>
-</ol>
+<h2 id="18">18</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q6')">Show Answers</button>
-  <br/>
-  <div id="q6" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q18')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q18" style="display: none;">
+	
+	<p>To hand-optimize your most critical data flows, you need to cheat; to learn exploit facts about your data, something general purpose serializers cannot do.</p>
 
-<p>&rdquo;&gt; Not using big-endian network byte order because the vast majority of platforms (x86, Android, iOS) use little-endian.
-&gt; n.b. ARM uses bi-endian.&rdquo;</p>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<p>&rdquo;&gt; You can create nearperfect abstractions that map to your real world.
-    ~ This would be impossible without the freedom to tune and change the model in any way.
-&gt; Perfect models quickly and cheaply.
-&gt; Generate any text output from a single model.
-    ~ Documentation.
-    ~ Source code.
-    ~ Test tools.
-&gt; Generate perfect output because it&rsquo;s cheap to improve your code generators.
-&gt; Single source combining specification and semantics.
-&gt; Leverage small team to massive size i.e. massive output for relatively small team size.&rdquo;</p>
-
-<h4 id="4">4.</h4>
-
-<p>&rdquo;&gt; Don&rsquo;t overuse. Keep it simple. Don&rsquo;t get too meta.
-&gt; Introduce gradually.
-&gt; Put generated code into repositories.&rdquo;</p>
-
-<h4 id="5">5.</h4>
-
-<p>&rdquo;&gt; ZeroMQ tries to re-establish a broken connection.
-&gt; If node A stops, its peers will retry to connect.
-&gt; If a new B node appears on the same port, all the peers will connect to it and continue as if its node A.
-&gt; One solution would be to select a random port each time, which at least reduces the risk of hitting a just-freed port.&rdquo;</p>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<p><a href="http://zguide.zeromq.org/page:all#Disconnected-Reliability-Titanic-Pattern">http://zguide.zeromq.org/page:all#Disconnected-Reliability-Titanic-Pattern</a></p>
+<h2 id="19">19</h2>
 
-<h3 id="quiz-7">Quiz 7</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>Why are IDLs like msgpack or protobufs not necessarily a good idea?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q7')">Show Answers</button>
-  <br/>
-  <div id="q7" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q19')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q19" style="display: none;">
+	
+	<blockquote>
+<p>In most practical cases they win you little over a serialisation language backed by decent specifications written by hand or machine-generated.<br />
+Technical debt; an extra dependency.<br />
+Quite possibly, worse overall performance tha if you used Cheap or Nasty.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-8">Quiz 8</h3>
+<h2 id="20">20</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>How might you relate the value of manual control for high-end professional users to some real world examples?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q8')">Show Answers</button>
-  <br/>
-  <div id="q8" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q20')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q20" style="display: none;">
+	
+	<blockquote>
+<p>The best cards, cameras and espresso machines have manual controls.<br />
+That level of on-the-spot fine tuning often makes the difference between world class success and second best.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-9">Quiz 9</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<h2 id="21">21</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q9')">Show Answers</button>
-  <br/>
-  <div id="q9" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q21')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q21" style="display: none;">
+	
+	<p>When you are really, truly concerned about the speed of serialization and/or the size of the result (often these contradict each other), you need handwritten binary serialization.</p>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-10">Quiz 10</h3>
+<h2 id="22">22</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What is the basic process you follow when writing an efficient &lsquo;Nasty&rsquo; codec?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q10')">Show Answers</button>
-  <br/>
-  <div id="q10" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q22')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q22" style="display: none;">
+	
+	<blockquote>
+<p>Build representative data sets and test apps for stress testing.
+Write a first dumb version.
+Test, measure, improve and repeat.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-11">Quiz 11</h3>
+<h2 id="23">23</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What are some of the techniques you can use to improve your codecs?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q11')">Show Answers</button>
-  <br/>
-  <div id="q11" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q23')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q23" style="display: none;">
+	
+	<ul>
+<li><em>Use a profiler</em>.<br /></li>
+<li>Eliminate memory allocations.<br /></li>
+<li>Test on different platforms.</li>
+<li>Use state to improve compression.</li>
+<li>Know your data.</li>
+<li>Be ready to break rules.</li>
+</ul>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-12">Quiz 12</h3>
+<h2 id="24">24</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>How can you use state to improve codec compression?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q12')">Show Answers</button>
-  <br/>
-  <div id="q12" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q24')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q24" style="display: none;">
+	
+	<blockquote>
+<p>Because you&rsquo;re almost certainly sending the same kinds of data many times.<br />
+There will be redundancy between instances of data.<br />
+You can detec these and use that to compress; a short value that means &ldquo;same as last time&rdquo;.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-13">Quiz 13</h3>
+<h2 id="25">25</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>How does knowing your data enable to improve codec performance?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q13')">Show Answers</button>
-  <br/>
-  <div id="q13" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q25')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q25" style="display: none;">
+	
+	<blockquote>
+<p>The best compression techniques require knowing about the data.<br />
+e.g. Methods of compressing a word list, video and a stream of stock market data area all different.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-14">Quiz 14</h3>
+<h2 id="26">26</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>How might breaking rules improve codec performance?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q14')">Show Answers</button>
-  <br/>
-  <div id="q14" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q26')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q26" style="display: none;">
+	
+	<blockquote>
+<p>Not using big-endian network byte order because the vast majority of platforms (x86, Android, iOS) use little-endian.<br />
+n.b. ARM uses bi-endian.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-15">Quiz 15</h3>
+<h2 id="27">27</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What is GSL?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q15')">Show Answers</button>
-  <br/>
-  <div id="q15" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	
+	<button type="button" onclick="showAnswer('q27')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q27" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-16">Quiz 16</h3>
+<h2 id="28">28</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What are the advantages of model-oriented code generation?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q16')">Show Answers</button>
-  <br/>
-  <div id="q16" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q28')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q28" style="display: none;">
+	
+	<ul>
+<li>You can create nearperfect abstractions that map to your real world.
 
-<h4 id="2">2.</h4>
+<ul>
+<li>This would be impossible without the freedom to tune and change the model in any way.</li>
+</ul></li>
+<li>Perfect models quickly and cheaply.</li>
+<li>Generate any text output from a single model.
 
-<h4 id="3">3.</h4>
+<ul>
+<li>Documentation.</li>
+<li>Source code.</li>
+<li>Test tools.</li>
+</ul></li>
+<li>Generate perfect output because it&rsquo;s cheap to improve your code generators.</li>
+<li>Single source combining specification and semantics.</li>
+<li>Leverage small team to massive size i.e. massive output for relatively small team size.</li>
+</ul>
 
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-17">Quiz 17</h3>
+<h2 id="29">29</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What are the disadvantages of model-oriented code generation?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q17')">Show Answers</button>
-  <br/>
-  <div id="q17" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q29')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q29" style="display: none;">
+	
+	<blockquote>
+<p>Don&rsquo;t overuse. Keep it simple. Don&rsquo;t get too meta.<br />
+Introduce gradually.<br />
+Put generated code into repositories.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-18">Quiz 18</h3>
+<h2 id="30">30</h2>
 
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<p>What is a potential problem you&rsquo;ll find when using ephemeral ports? What is a possible solution?</p>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q18')">Show Answers</button>
-  <br/>
-  <div id="q18" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q30')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q30" style="display: none;">
+	
+	<blockquote>
+<p>ZeroMQ tries to re-establish a broken connection.<br />
+If node A stops, its peers will retry to connect.<br />
+If a new B node appears on the same port, all the peers will connect to it and continue as if its node A.<br />
+One solution would be to select a random port each time, which at least reduces the risk of hitting a just-freed port.</p>
+</blockquote>
 
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-19">Quiz 19</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<h2 id="31">31</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q19')">Show Answers</button>
-  <br/>
-  <div id="q19" style="display: none;">
-  
-  <h4 id="1">1.</h4>
-
-<h4 id="2">2.</h4>
-
-<h4 id="3">3.</h4>
-
-<h4 id="4">4.</h4>
-
-<h4 id="5">5.</h4>
-
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+	
+	<button type="button" onclick="showAnswer('q31')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q31" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
-<h3 id="quiz-20">Quiz 20</h3>
-
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
+<h2 id="32">32</h2>
 
 <div>
-  
-  <button type="button" onclick="showAnswers('q20')">Show Answers</button>
-  <br/>
-  <div id="q20" style="display: none;">
-  
-  <h4 id="1">1.</h4>
+	
+	<button type="button" onclick="showAnswer('q32')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q32" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="2">2.</h4>
+<h2 id="33">33</h2>
 
-<h4 id="3">3.</h4>
+<div>
+	
+	<button type="button" onclick="showAnswer('q33')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q33" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-<h4 id="4">4.</h4>
+<h2 id="34">34</h2>
 
-<h4 id="5">5.</h4>
+<div>
+	
+	<button type="button" onclick="showAnswer('q34')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q34" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
 
-  </div>
-  <script>
-    function showAnswers(divId) {
-      var x = document.getElementById(divId);
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script>
+<h2 id="35">35</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q35')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q35" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="36">36</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q36')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q36" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="37">37</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q37')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q37" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="38">38</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q38')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q38" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="39">39</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q39')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q39" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="40">40</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q40')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q40" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="41">41</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q41')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q41" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="42">42</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q42')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q42" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="43">43</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q43')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q43" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="44">44</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q44')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q44" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="45">45</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q45')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q45" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="46">46</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q46')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q46" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="47">47</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q47')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q47" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="48">48</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q48')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q48" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="49">49</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q49')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q49" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="50">50</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q50')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q50" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="51">51</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q51')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q51" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="52">52</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q52')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q52" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="53">53</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q53')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q53" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="54">54</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q54')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q54" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="55">55</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q55')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q55" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="56">56</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q56')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q56" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="57">57</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q57')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q57" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="58">58</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q58')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q58" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="59">59</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q59')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q59" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="60">60</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q60')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q60" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="61">61</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q61')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q61" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="62">62</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q62')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q62" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="63">63</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q63')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q63" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="64">64</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q64')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q64" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="65">65</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q65')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q65" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="66">66</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q66')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q66" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="67">67</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q67')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q67" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="68">68</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q68')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q68" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="69">69</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q69')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q69" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="70">70</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q70')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q70" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="71">71</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q71')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q71" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="72">72</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q72')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q72" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="73">73</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q73')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q73" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="74">74</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q74')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q74" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="75">75</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q75')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q75" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="76">76</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q76')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q76" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="77">77</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q77')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q77" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="78">78</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q78')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q78" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="79">79</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q79')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q79" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="80">80</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q80')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q80" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="81">81</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q81')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q81" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="82">82</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q82')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q82" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="83">83</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q83')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q83" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="84">84</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q84')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q84" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="85">85</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q85')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q85" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="86">86</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q86')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q86" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="87">87</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q87')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q87" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="88">88</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q88')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q88" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="89">89</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q89')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q89" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="90">90</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q90')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q90" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="91">91</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q91')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q91" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="92">92</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q92')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q92" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="93">93</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q93')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q93" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="94">94</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q94')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q94" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="95">95</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q95')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q95" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="96">96</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q96')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q96" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="97">97</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q97')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q97" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="98">98</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q98')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q98" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="99">99</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q99')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q99" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="100">100</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q100')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q100" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
 </div>
 
       </article>
@@ -1104,13 +2594,9 @@ Frame 2: command body (for the application).&rdquo;</p>
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://richardmillen.github.io/questions/zeromq-2/" data-toggle="tooltip" data-placement="top" title="ZeroMQ Quiz, Part 2">&larr; Previous Post</a>
+            <a href="https://richardmillen.github.io/questions/zeromq-2/" data-toggle="tooltip" data-placement="top" title="ØMQ Quiz #2">&larr; Previous Post</a>
           </li>
         
-        
-          <li class="next">
-            <a href="https://richardmillen.github.io/questions/lexicon-1/" data-toggle="tooltip" data-placement="top" title="Lexicon Quiz">Next Post &rarr;</a>
-          </li>
         
       </ul>
 

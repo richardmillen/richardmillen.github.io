@@ -170,6 +170,218 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/zeromq-3/">
+                <h2 class="post-title">ØMQ Quiz #3</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 What aspects of control vs data flow when designing a protocol?
+Show Answer Control dialogue tends to last a short time, involing few messages.
+The data flow could last for hours or days, involing billions of messages.
+Control is where &ldquo;normal&rdquo; errors happen e.g. not authenticated, not found, censored etc.
+Errors during data flow are exceptional (disk full, server crashed).
+                  <a href="https://richardmillen.github.io/questions/zeromq-3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/zeromq">ZeroMQ</a>&nbsp;
+                  
+                    #<a href="/tags/distributed-computing">Distributed Computing</a>&nbsp;
+                  
+                    #<a href="/tags/c">C</a>&nbsp;
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/zeromq-2/">
+                <h2 class="post-title">ØMQ Quiz #2</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 Why not use ROUTER instead of PAIR sockets?
+Show Answer ROUTER wraps your message in an &ldquo;envelope&rdquo;, meaning a zero-size signal message turns into a multipart message.
+If you don&rsquo;t care about the data and treat anything as a valid signal, and if you don&rsquo;t read more than once from the socket, that won&rsquo;t matter.
+                  <a href="https://richardmillen.github.io/questions/zeromq-2/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/zeromq">ZeroMQ</a>&nbsp;
+                  
+                    #<a href="/tags/distributed-computing">Distributed Computing</a>&nbsp;
+                  
+                    #<a href="/tags/c">C</a>&nbsp;
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/zeromq-1/">
+                <h2 class="post-title">ØMQ Quiz #1</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 Give an example of load balancing.
+Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.style.display = 'block';} else {x.style.display = 'none';}} 2 Give an example of fair queuing.
+                  <a href="https://richardmillen.github.io/questions/zeromq-1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/zeromq">ZeroMQ</a>&nbsp;
+                  
+                    #<a href="/tags/distributed-computing">Distributed Computing</a>&nbsp;
+                  
+                    #<a href="/tags/c">C</a>&nbsp;
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                    #<a href="/tags/python">Python</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/cpp-3/">
+                <h2 class="post-title">C&#43;&#43; Quiz #3</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes['a'] = mapped_value; codes['b'] = mapped_value; codes['c'] = mapped_value; // ... mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.style.display = 'block';} else {x.style.display = 'none';}} 2 How many associative containers are provided in the standard library?
+                  <a href="https://richardmillen.github.io/questions/cpp-3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                    #<a href="/tags/programming">Programming</a>&nbsp;
+                  
+                    #<a href="/tags/visual-c&#43;&#43;">Visual C&#43;&#43;</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/cpp-2/">
+                <h2 class="post-title">C&#43;&#43; Quiz #2</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  1 What is an lvalue?
+Show AnswerAn expression that yields an object or function.
+A nonconst lvalue that denotes an object may be the left-hand operand of assignment.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.style.display = 'block';} else {x.style.display = 'none';}} 2 What is an rvalue?
+Show AnswerExpression that yields a value but not the associated location, if any, of that value
+                  <a href="https://richardmillen.github.io/questions/cpp-2/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                    #<a href="/tags/programming">Programming</a>&nbsp;
+                  
+                    #<a href="/tags/visual-c&#43;&#43;">Visual C&#43;&#43;</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/cpp-1/">
+                <h2 class="post-title">C&#43;&#43; Quiz #1</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 22 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  1 Explain why you might want to define your own type-specific swap function?
+Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.style.display = 'block';} else {x.style.display = 'none';}} 2 Show AnswerValuelike copy-assignment operator.
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.
+                  <a href="https://richardmillen.github.io/questions/cpp-1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/c&#43;&#43;">C&#43;&#43;</a>&nbsp;
+                  
+                    #<a href="/tags/programming">Programming</a>&nbsp;
+                  
+                    #<a href="/tags/visual-c&#43;&#43;">Visual C&#43;&#43;</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
               <a href="https://richardmillen.github.io/questions/french-adv-1/">
                 <h2 class="post-title">French Advanced Quiz #1</h2>
     
@@ -196,6 +408,38 @@
                     #<a href="/tags/french">French</a>&nbsp;
                   
                     #<a href="/tags/languages">Languages</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://richardmillen.github.io/questions/csharp-1/">
+                <h2 class="post-title">C# Quiz</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on 16 Aug 2017
+              </p>
+              <div class="post-entry">
+                
+                  1 What are the differences between structs and classes?
+Show AnswerUnlike in C++, the default access level for both is private.
+Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.
+                  <a href="https://richardmillen.github.io/questions/csharp-1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/c">C#</a>&nbsp;
+                  
+                    #<a href="/tags/.net">.NET</a>&nbsp;
                   
                 </span>
               

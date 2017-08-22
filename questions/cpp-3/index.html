@@ -5,31 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>C# Quiz</title>
-  <meta property="og:title" content="C# Quiz" />
-  <meta name="twitter:title" content="C# Quiz" />
-  <meta name="description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
-  <meta property="og:description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
-  <meta name="twitter:description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value …">
+  <title>C&#43;&#43; Quiz #3</title>
+  <meta property="og:title" content="C&#43;&#43; Quiz #3" />
+  <meta name="twitter:title" content="C&#43;&#43; Quiz #3" />
+  <meta name="description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // ... mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 How many associative containers are provided in the standard library?">
+  <meta property="og:description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // ... mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 How many associative containers are provided in the standard library?">
+  <meta name="twitter:description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://richardmillen.github.io/questions/csharp-1/" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/cpp-3/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Richard Millen" />
 
   <meta name="generator" content="Hugo 0.25.1" />
-  <link rel="canonical" href="https://richardmillen.github.io/questions/csharp-1/" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/cpp-3/" />
   <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -175,7 +170,7 @@ Their memory allocation models are different. A struct is a value …">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="questions-heading">
-              <h1>C# Quiz</h1>
+              <h1>C&#43;&#43; Quiz #3</h1>
                 
                 
             </div>
@@ -195,7 +190,7 @@ Their memory allocation models are different. A struct is a value …">
 
 <h2 id="1">1</h2>
 
-<p>What are the differences between structs and classes?</p>
+<p>How might you store and retrieve character code mappings using strings?</p>
 
 <div>
 	
@@ -203,8 +198,14 @@ Their memory allocation models are different. A struct is a value …">
 	<br/>
 	<div id="q1" style="display: none;">
 	
-	<p>Unlike in C++, the default access level for both is private.<br />
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.</p>
+	<pre><code class="language-c++">std::string codes[128];
+// ...
+codes['a'] = mapped_value;
+codes['b'] = mapped_value;
+codes['c'] = mapped_value;
+// ...
+mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];
+</code></pre>
 
 	</div>
 	<script>
@@ -221,7 +222,7 @@ Their memory allocation models are different. A struct is a value type and its i
 
 <h2 id="2">2</h2>
 
-<p>What is the best way to implement a thread-safe singleton?</p>
+<p>How many associative containers are provided in the standard library?</p>
 
 <div>
 	
@@ -229,20 +230,18 @@ Their memory allocation models are different. A struct is a value type and its i
 	<br/>
 	<div id="q2" style="display: none;">
 	
-	<pre><code class="language-csharp">public class Singleton {
-    Singleton() {
-    }
-    public static Singleton Instance {
-    get {
-         return Nested.Instance;
-    }
-    class Nested {
-         static Nested() {
-         }
-         internal static readonly Singleton instance = new Singleton();
-    }
-}
-</code></pre>
+	<p>8 - Each is either a <em>map</em> or a <em>set</em>:</p>
+
+<ol>
+<li>set</li>
+<li>multiset</li>
+<li>map</li>
+<li>multimap</li>
+<li>unordered_set</li>
+<li>unordered_multiset</li>
+<li>unordered_map</li>
+<li>unordered_multimap</li>
+</ol>
 
 	</div>
 	<script>
@@ -259,7 +258,7 @@ Their memory allocation models are different. A struct is a value type and its i
 
 <h2 id="3">3</h2>
 
-<p>How does the ProgId attribute affect COM interop class registration?</p>
+<p>What is an <em>associative array</em>?</p>
 
 <div>
 	
@@ -267,10 +266,7 @@ Their memory allocation models are different. A struct is a value type and its i
 	<br/>
 	<div id="q3" style="display: none;">
 	
-	<p>The value of the progid attribute determines the registry key name in HKCR.<br />
-The namespace/class name combination determines the default value of said key.<br />
-Late binding (CreateObject etc.) uses the key name.<br />
-Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
+	<p>Elements indexed by key rather than positionally.</p>
 
 	</div>
 	<script>
@@ -287,7 +283,7 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="4">4</h2>
 
-<p>When and how is a finalizer invoked?</p>
+<p>What is an <em>associative container</em>?</p>
 
 <div>
 	
@@ -295,7 +291,7 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q4" style="display: none;">
 	
-	<p>It&rsquo;s invoked by the garbage collector, the time is unknown to the programmer.</p>
+	<p>Collection that supports efficient lookup by key.</p>
 
 	</div>
 	<script>
@@ -312,7 +308,7 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="5">5</h2>
 
-<p>What is a static constructor?</p>
+<p>What is a <em>hash</em>?</p>
 
 <div>
 	
@@ -320,7 +316,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q5" style="display: none;">
 	
-	<p>It is invoked automatically when its type is executed by the runtime for the first time and is only invoked once.</p>
+	<p>Library template.<br />
+Used by unordered containers to manage position of their elements.</p>
 
 	</div>
 	<script>
@@ -337,13 +334,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="6">6</h2>
 
+<p>What is a <code>key_type</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q6')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q6" style="display: none;">
 	
-	
+	<p>Type used and defined by associative containers.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -359,13 +359,19 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="7">7</h2>
 
+<p>What is a <code>map</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q7')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q7" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Class template.<br />
+Each element must have a unique key.<br />
+Dereferencing an iterator yields a <code>pair</code>.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -381,13 +387,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="8">8</h2>
 
+<p>What is a <code>mapped_type</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q8')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q8" style="display: none;">
 	
-	
+	<p>Type defined by map types.<br />
+Type of the values associated with the keys in a <code>map</code>.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -403,13 +413,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="9">9</h2>
 
+<p>What is a <code>multimap</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q9')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q9" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Similar to map, except a given key may appear more than once.<br />
+Doesn&rsquo;t support subscripting.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -425,13 +440,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="10">10</h2>
 
+<p>What is a <code>multiset</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q10')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q10" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Similar to set, except a given key may appear more than once.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -447,13 +466,21 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="11">11</h2>
 
+<p>What is a <code>pair</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q11')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q11" style="display: none;">
 	
-	
+	<p>Type with two public data members:</p>
+
+<ol>
+<li>first</li>
+<li>second</li>
+</ol>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -469,13 +496,19 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="12">12</h2>
 
+<p>What is a <code>set</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q12')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q12" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Holds keys.<br />
+A given key may appear only once.<br />
+<code>key_type</code> and <code>value_type</code> are the same.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -491,13 +524,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="13">13</h2>
 
+<p>What is <em>strict weak ordering</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q13')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q13" style="display: none;">
 	
-	
+	<p>Relationship among keys in associative container.<br />
+Possible to compare any two and determine which is &lsquo;less&rsquo;, if not they&rsquo;re considered equal.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -513,13 +550,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="14">14</h2>
 
+<p>What is an <em>unordered</em> container?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q14')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q14" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Uses hashing rather than comparison operation on keys to store / access elements.<br />
+Performance depends on hash function.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -535,13 +577,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="15">15</h2>
 
+<p>What is an <code>unordered_map</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q15')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q15" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Permits only one element per key.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -557,13 +604,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="16">16</h2>
 
+<p>What is an <code>unordered_multimap</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q16')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q16" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Allows multiple elements per key.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -579,13 +631,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="17">17</h2>
 
+<p>What is an <code>unordered_multiset</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q17')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q17" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Stores keys.<br />
+Allows multiple elements per key.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -601,13 +658,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="18">18</h2>
 
+<p>What is an <code>unordered_set</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q18')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q18" style="display: none;">
 	
-	
+	<p>Associative container.<br />
+Stores keys.<br />
+Permits only one element per key.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -623,13 +685,36 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="19">19</h2>
 
+<p>What is an <code>allocator</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q19')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q19" style="display: none;">
 	
-	
+	<p>Library class.<br />
+Defined in <code>&lt;memory&gt;</code>.<br />
+Lets you separate allocation from construction.<br />
+Sometimes you allocate a block of memory you plan to use to construct objects as needed. This way you pay the overhead of constructing objects only when you actually need to create them.<br />
+Provides type-aware allocation of raw, &lsquo;unconstructed&rsquo; memory.<br />
+Allocates memory that is appropriately sized and aligned to hold the objects.<br />
+User must construct objects in order to use memory returned by <code>allocate</code>.<br />
+User must call <code>destroy</code> on objects that were constructed in this memory before calling <code>deallocate</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">allocator&lt;string&gt; alloc;
+auto const p = alloc.allocate(n);
+auto q = p;
+alloc.construct(q++);
+alloc.construct(q++, 10, 'c');
+alloc.construct(q++, &quot;hi!&quot;);
+//...
+while (q != p)
+    alloc.destroy(--q);
+alloc.dealloc(p, n);&quot;
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -645,13 +730,23 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="20">20</h2>
 
+<p>Which companion functions are there to the allocator class?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q20')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q20" style="display: none;">
 	
-	
+	<ol>
+<li><code>uninitialized_copy</code> - Copies elements denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, into unconstructed, raw memory denoted by a third iterator.</li>
+<li><code>uninitialized_copy_n</code> - Copies &lsquo;n&rsquo; elements starting from &lsquo;begin&rsquo; iterator, into unconstructed, raw memory denoted by a second iterator.</li>
+<li><code>uninitialized_fill</code> - Constructs objects into raw memory denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, as a copy of a third parameter.</li>
+<li><code>uninitialized_fill_n</code> - Constructs &lsquo;n&rsquo; objects starting from &lsquo;begin&rsquo; iterator, which denotes unconstructed, raw memory large enough to hold the given number of objects.</li>
+</ol>
+
+<p>These functions construct elements in the destination, rather than assigning to them.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -667,13 +762,25 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="21">21</h2>
 
+<p>Using the two companion algorithms of the allocator class, implement the following:</p>
+
+<ol>
+<li>allocate twice as many elements as variable &lsquo;vi&rsquo; holds,</li>
+<li>construct elements (starting at the beginning of the allocated memory), as copies of elements in vi.</li>
+<li>initialise the remaining elements to 42.</li>
+</ol>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q21')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q21" style="display: none;">
 	
-	
+	<pre><code class="language-c++">auto p = alloc.allocate(vi.size() * 2);
+auto q = unintialized_copy(vi.begin(), vi.end(), p);
+uninitialized_fill_n(q, vi.size(), 42);
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -689,13 +796,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="22">22</h2>
 
+<p>What is a <em>dangling pointer</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q22')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q22" style="display: none;">
 	
-	
+	<p>Pointer that refers to memory that once had an object but no longer does.<br />
+Difficult to debug.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -711,13 +822,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="23">23</h2>
 
+<p>What is a <em>deleter</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q23')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q23" style="display: none;">
 	
-	
+	<p>Function passed to a smart pointer.<br />
+Used in place of &lsquo;delete&rsquo;.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -733,13 +848,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="24">24</h2>
 
+<p>What does dynamically allocated mean?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q24')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q24" style="display: none;">
 	
-	
+	<p>Object is allocated on the free store.<br />
+They exist until explicitly deleted or program terminates.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -755,13 +874,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="25">25</h2>
 
+<p>What is the <em>free store</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q25')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q25" style="display: none;">
 	
-	
+	<p>Memory pool available to a program to hold dynamically allocated objects.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -777,13 +899,20 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="26">26</h2>
 
+<p>What is <em>placement new</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q26')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q26" style="display: none;">
 	
-	
+	<p>Form of new that takes additional arguments.<br />
+e.g.</p>
+
+<pre><code class="language-c++">new (nothrow) int;
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -799,13 +928,19 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="27">27</h2>
 
+<p>What is a <code>shared_ptr</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q27')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q27" style="display: none;">
 	
-	
+	<p>Smart pointer.<br />
+Shared ownership.<br />
+Pointer deleted when last <code>shared_ptr</code> is destroyed.<br />
+Uses a reference count.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -821,13 +956,19 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="28">28</h2>
 
+<p>What is a <code>unique_ptr</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q28')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q28" style="display: none;">
 	
-	
+	<p>Smart pointer.<br />
+Single ownership.<br />
+Object deleted when unique_ptr is destroyed.<br />
+Cannot be directly copied or assigned.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -843,13 +984,27 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="29">29</h2>
 
+<p>What is a <code>weak_ptr</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q29')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q29" style="display: none;">
 	
-	
+	<p>Smart pointer.<br />
+Points to object managed by <code>shared_ptr</code>.<br />
+Not counted when <code>shared_ptr</code> deleted the object.<br />
+Must call lock in order to access the object.<br />
+e.g.</p>
+
+<pre><code class="language-c++">auto p = make_shared&lt;int&gt;(42);
+weak_ptr&lt;int&gt; wp(p);
+if (shared_ptr&lt;int&gt; np = wp.lock()) {
+    // np shares object with p
+}
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -871,7 +1026,9 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q30" style="display: none;">
 	
-	
+	<p>When we use direct initialisation, we are asking the compiler to use ordinary function matching to select the constructor that best maches the arguments we provide.<br />
+When we use copy initialisation, we are asking the compiler to copy the right-hand operand into the object being created, converting that operand if necessary.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -893,7 +1050,9 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q31" style="display: none;">
 	
-	
+	<p>Copy initialisation ordinarily uses the copy constructor.<br />
+If a class has a move constructor, then copy initialisation sometimes uses that instead.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -909,13 +1068,22 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="32">32</h2>
 
+<p>When does copy initialisation occur?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q32')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q32" style="display: none;">
 	
-	
+	<p>When defining a variable using an &lsquo;=&rsquo;.</p>
+
+<ul>
+<li>Passing an object as an argument to a parameter of nonreference type.<br /></li>
+<li>Returning an object from a function that has a nonreference return type.<br /></li>
+<li>Brace initialising the elements in an array or the members of an aggregate class.</li>
+</ul>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -937,7 +1105,9 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q33" style="display: none;">
 	
-	
+	<p>Library containers copy initialise their elements when you initialise the container or when calling insert of push.<br />
+Elements created by emplace are direct initialised.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -959,7 +1129,9 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q34" style="display: none;">
 	
-	
+	<p>A constructor that can be called with a single argument defines an implicit conversion from the constructor&rsquo;s parameter type (x) to the class type (y).<br />
+That is, you can use an &lsquo;x&rsquo; where an object of type &lsquo;y&rsquo; is expected.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -975,13 +1147,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="35">35</h2>
 
+<p>What rule of thumb can be used when deciding whether a class needs to define its own versions of the copy-control members?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q35')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q35" style="display: none;">
 	
-	
+	<p>Decide whether the class needs a destructor. Often more obvious.<br />
+If yes, it almost surely needs a copy constructor and copy-assignment operator as well.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -997,13 +1173,21 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="36">36</h2>
 
+<p>How do you prevent copies of a class being made?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q36')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q36" style="display: none;">
 	
-	
+	<p>Define the copy constructor and copy-assignment operator as deleted functions.<br />
+e.g.</p>
+
+<pre><code class="language-c++">NoCopy(const NoCopy&amp;) = delete;
+NoCopy&amp; operator=(const NoCopy&amp;) = delete;
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1019,13 +1203,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="37">37</h2>
 
+<p>What is a <em>deleted function</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q37')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q37" style="display: none;">
 	
-	
+	<p>One that is declared by may not be used in any other way.<br />
+Defined as deleted by following its parameter list with = delete.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1041,13 +1229,34 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="38">38</h2>
 
+<p>What is a <em>type-specific swap function</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q38')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q38" style="display: none;">
 	
-	
+	<p>Function written to swap the state of two objects of the same type.<br />
+Never necessary, but can be an important optimisation for classes that allocate.<br />
+Declare the swap function as a friend to give it access to the type&rsquo;s private data members.<br />
+Because it exists to optimise our code, define swap as inline.<br />
+A type-specific version of swap will be a better match that the one in std.<br />
+If no type-specific version is defined then (assuming there is a using decl for swap in scope) calls to swap will use <code>std::swap</code>.<br />
+Each call to swap should be unqualified i.e. not <code>std::swap</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">class MyType {
+    friend void swap(MyType&amp;, MyType&amp;);
+    //...
+};
+inline void swap(MyType &amp;lhs, MyType &amp;rhs) {
+    using std::swap;
+    swap(lhs.member, rhs.member);
+    //...
+}
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1063,13 +1272,27 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="39">39</h2>
 
+<p>What is <em>ADL</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q39')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q39" style="display: none;">
 	
-	
+	<p>Argument-dependent lookup. aka <em>Koenig lookup</em>.<br />
+The set of rules for looking up the unqualified function names in a function-call expressions.<br />
+Makes it possible to use operators defined in a different namespace.<br />
+e.g.</p>
+
+<pre><code class="language-c++">#include &lt;iostream&gt;
+//...
+std::cout &lt;&lt; &quot;Test\n&quot;;      // OK: operator&lt;&lt; is found in std because the left arg is in std.
+std::cout &lt;&lt; endl;          // ERROR: not in global ns, not a func call to endl() so ADL does not apply.
+end(std::cout);             // OK: func call, ADL examines std because of argument.
+(endl)(std::cout);          // ERROR: 'end' not in global ns, sub-expression (endl) not a func call.
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1085,13 +1308,25 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="40">40</h2>
 
+<p>What is a type-specific swap function often used for?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q40')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q40" style="display: none;">
 	
-	
+	<p>To define the classes assignment operator.<br />
+The operator uses a technique known as &lsquo;copy and swap&rsquo;.<br />
+Swaps the left-hand operand with a copy of the right-hand operand.<br />
+e.g.</p>
+
+<pre><code class="language-c++">MyType&amp; MyType::operator=(MyType rhs) {
+    swap(*this, rhs);
+    return *this;
+} // 'rhs' is destroyed, which deletes what was previously in 'this'.&quot;
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2430,12 +2665,12 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://richardmillen.github.io/questions/climate-1/" data-toggle="tooltip" data-placement="top" title="Climate Quiz">&larr; Previous Post</a>
+            <a href="https://richardmillen.github.io/questions/cpp-2/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43; Quiz #2">&larr; Previous Post</a>
           </li>
         
         
           <li class="next">
-            <a href="https://richardmillen.github.io/questions/french-adv-1/" data-toggle="tooltip" data-placement="top" title="French Advanced Quiz #1">Next Post &rarr;</a>
+            <a href="https://richardmillen.github.io/questions/zeromq-1/" data-toggle="tooltip" data-placement="top" title="ØMQ Quiz #1">Next Post &rarr;</a>
           </li>
         
       </ul>

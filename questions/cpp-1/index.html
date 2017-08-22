@@ -5,31 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>C# Quiz</title>
-  <meta property="og:title" content="C# Quiz" />
-  <meta name="twitter:title" content="C# Quiz" />
-  <meta name="description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
-  <meta property="og:description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.">
-  <meta name="twitter:description" content="1 What are the differences between structs and classes?
-Show AnswerUnlike in C&#43;&#43;, the default access level for both is private.
-Their memory allocation models are different. A struct is a value …">
+  <title>C&#43;&#43; Quiz #1</title>
+  <meta property="og:title" content="C&#43;&#43; Quiz #1" />
+  <meta name="twitter:title" content="C&#43;&#43; Quiz #1" />
+  <meta name="description" content="1 Explain why you might want to define your own type-specific swap function?
+Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerValuelike copy-assignment operator.
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta property="og:description" content="1 Explain why you might want to define your own type-specific swap function?
+Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerValuelike copy-assignment operator.
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.">
+  <meta name="twitter:description" content="1 Explain why you might want to define your own type-specific swap function?
+Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) { …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://richardmillen.github.io/questions/csharp-1/" />
+  <meta property="og:url" content="https://richardmillen.github.io/questions/cpp-1/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Richard Millen" />
 
   <meta name="generator" content="Hugo 0.25.1" />
-  <link rel="canonical" href="https://richardmillen.github.io/questions/csharp-1/" />
+  <link rel="canonical" href="https://richardmillen.github.io/questions/cpp-1/" />
   <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -175,7 +172,7 @@ Their memory allocation models are different. A struct is a value …">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="questions-heading">
-              <h1>C# Quiz</h1>
+              <h1>C&#43;&#43; Quiz #1</h1>
                 
                 
             </div>
@@ -195,7 +192,7 @@ Their memory allocation models are different. A struct is a value …">
 
 <h2 id="1">1</h2>
 
-<p>What are the differences between structs and classes?</p>
+<p>Explain why you might want to define your own type-specific swap function?</p>
 
 <div>
 	
@@ -203,9 +200,7 @@ Their memory allocation models are different. A struct is a value …">
 	<br/>
 	<div id="q1" style="display: none;">
 	
-	<p>Unlike in C++, the default access level for both is private.<br />
-Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.</p>
-
+	
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -221,26 +216,23 @@ Their memory allocation models are different. A struct is a value type and its i
 
 <h2 id="2">2</h2>
 
-<p>What is the best way to implement a thread-safe singleton?</p>
-
 <div>
 	
 	<button type="button" onclick="showAnswer('q2')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q2" style="display: none;">
 	
-	<pre><code class="language-csharp">public class Singleton {
-    Singleton() {
-    }
-    public static Singleton Instance {
-    get {
-         return Nested.Instance;
-    }
-    class Nested {
-         static Nested() {
-         }
-         internal static readonly Singleton instance = new Singleton();
-    }
+	<p>Valuelike copy-assignment operator.<br />
+It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.<br />
+When possible, we should write our assignment operators so that they will leave the left-hand operand in a sensible state should an exception occur.<br />
+e.g.</p>
+
+<pre><code class="language-c++">MyType&amp; MyType::operator=(const MyType &amp;rhs) {
+    auto newp = new string(*rhs.ps);
+    delete ps;
+    ps = newp;
+    i = rhs.i;
+    return *this;
 }
 </code></pre>
 
@@ -259,18 +251,20 @@ Their memory allocation models are different. A struct is a value type and its i
 
 <h2 id="3">3</h2>
 
-<p>How does the ProgId attribute affect COM interop class registration?</p>
-
 <div>
 	
 	<button type="button" onclick="showAnswer('q3')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q3" style="display: none;">
 	
-	<p>The value of the progid attribute determines the registry key name in HKCR.<br />
-The namespace/class name combination determines the default value of said key.<br />
-Late binding (CreateObject etc.) uses the key name.<br />
-Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
+	<p>When we initialise a variable using =, we are asking the compiler to copy initialise the object by copying the initialiser on the right-hand side into the object being created.<br />
+When we omit the =, we use direct initialisation.<br />
+e.g.</p>
+
+<pre><code class="language-c++">string s1 = &quot;hello&quot;;    // copy initialisation
+string s2(&quot;hello&quot;);     // direct initialisation
+string s3(10, 'c');     // direct initialisation
+</code></pre>
 
 	</div>
 	<script>
@@ -287,15 +281,13 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="4">4</h2>
 
-<p>When and how is a finalizer invoked?</p>
-
 <div>
 	
 	<button type="button" onclick="showAnswer('q4')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q4" style="display: none;">
 	
-	<p>It&rsquo;s invoked by the garbage collector, the time is unknown to the programmer.</p>
+	<p>Cannot initialise a built-in array from another array.</p>
 
 	</div>
 	<script>
@@ -312,15 +304,13 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="5">5</h2>
 
-<p>What is a static constructor?</p>
-
 <div>
 	
 	<button type="button" onclick="showAnswer('q5')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q5" style="display: none;">
 	
-	<p>It is invoked automatically when its type is executed by the runtime for the first time and is only invoked once.</p>
+	<p>Cannot initialise a built-in array from a vector.</p>
 
 	</div>
 	<script>
@@ -343,7 +333,13 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q6" style="display: none;">
 	
-	
+	<p>We can use an array to initialise a vector.<br />
+e.g.</p>
+
+<pre><code class="language-c++">int arr[] = {0, 1, 2, 3, 4, 5};
+vector&lt;int&gt; ivec(begin(arr), end(arr));
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -365,7 +361,13 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q7" style="display: none;">
 	
-	
+	<p>Arithmetic operators are left associative, which means operators at the same precedence group left to right:</p>
+
+<ul>
+<li>Because of precedence, the expression 3+4*5 is 23, not 35.</li>
+<li>Because of associativity, the expression 20-15-3 is 2, not 8.</li>
+</ul>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -387,7 +389,40 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q8" style="display: none;">
 	
-	
+	<p>C++ library defines several exception classes used to report problems in the standard library, also intended to be used by the client. Defined in headers:-</p>
+
+<ul>
+<li><code>&lt;exception&gt;</code>
+
+<ul>
+<li>exception - no additional info.</li>
+</ul></li>
+<li><code>&lt;stdexcept&gt;</code>
+
+<ul>
+<li><code>exception</code> - most general.</li>
+<li><code>runtime_error</code> - problem detectable only at runtime.</li>
+<li><code>range_error</code> - outside the meaningful range of values.</li>
+<li><code>overflow_error</code> - computation overflowed.</li>
+<li><code>underflow_error</code> - computation underflowed.</li>
+<li><code>logic_error</code> - error in logic of program.</li>
+<li><code>domain_error</code> - argument for which no result exists.</li>
+<li><code>invalid_argument</code> - inappropriate argument.</li>
+<li><code>length_error</code> - attempt to create object large than max size for type.</li>
+<li><code>out_of_range</code> - value outside valid range.</li>
+</ul></li>
+<li><code>&lt;new&gt;</code>
+
+<ul>
+<li><code>bad_alloc</code></li>
+</ul></li>
+<li><code>&lt;type_info&gt;</code>
+
+<ul>
+<li><code>bad_cast</code></li>
+</ul></li>
+</ul>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -409,7 +444,15 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q9" style="display: none;">
 	
-	
+	<p>Standard library convention for managing array arguments is to pass pointers to first and one past last element.<br />
+e.g.</p>
+
+<pre><code class="language-c++">void print(const int *beg, const int *end) {
+    while (beg != end)
+        cout &lt;&lt; *beg++ &lt;&lt; endl;
+}
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -431,7 +474,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q10" style="display: none;">
 	
-	
+	<p>The form of a function that returns a pointer to an array is:</p>
+
+<pre><code class="language-c++">type (*function(parameter_list))[dimension]
+</code></pre>
+
+<p>e.g.</p>
+
+<pre><code class="language-c++">int arr[10];
+int *p1[10];
+int (*p2)[10] = &amp;arr;
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -453,7 +507,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q11" style="display: none;">
 	
-	
+	<p>If we know the array(s) to which our function can return a pointer, we can use decltype to declare the return type.<br />
+decltype does not automatically convert an array to its corresponding pointer type.<br />
+The type returned by decltype is an array, to which we must add a * to indicate that arrPtr returns a pointer.<br />
+e.g.</p>
+
+<pre><code class="language-c++">int odd[] = {1, 3, 5, 7};
+int even[] = {0, 2, 4, 6};
+decltype(odd) *arrPtr(int i) {
+    return (i % d) ? &amp;odd : &amp;even;
+}
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -475,7 +540,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q12" style="display: none;">
 	
-	
+	<p>The sequential containers (except array) define a member named &lsquo;assign&rsquo; that lets us assign from a different but compatible type, or assign from a subsequence of a container.<br />
+Replaces all elements in the left-hand container with (copies of) the elements specified by its arguments.<br />
+e.g.</p>
+
+<pre><code class="language-c++">list&lt;string&gt; names;
+vector&lt;const char*&gt; oldstyle;
+names = oldstyle; // error
+names.assign(oldstyle.cbegin(), oldstyle.cend());
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -497,7 +571,15 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q13" style="display: none;">
 	
-	
+	<p>The swap operation exchanges the contents of two containers of the same type.<br />
+With exception of arrays, guaranteed to be fast as the elements themselves are not swapped; internal data structures are.<br />
+e.g.</p>
+
+<pre><code class="language-c++">vector&lt;string&gt; svec1(10);
+vector&lt;string&gt; svec2(24);
+swap(svec1, svec2);
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -512,6 +594,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="14">14</h2>
+
+<p>What is a <code>recursive_mutex</code>?</p>
 
 <div>
 	
@@ -535,6 +619,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="15">15</h2>
 
+<p>What is a <code>timed_mutex</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q15')"><img src="" alt="" />Show Answer</button>
@@ -556,6 +642,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="16">16</h2>
+
+<p>What is a <code>recursive_timed_mutex</code>?</p>
 
 <div>
 	
@@ -585,7 +673,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q17" style="display: none;">
 	
-	
+	<p>It is not necessary to explicitly close a file (<code>std::ofstream</code> supports <em>RAII</em>)</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -600,6 +689,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="18">18</h2>
+
+<p>What does the <code>make_shared</code> function do?</p>
 
 <div>
 	
@@ -629,7 +720,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q19" style="display: none;">
 	
-	
+	<p>The compiler cannot inline a virtual function</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -644,6 +736,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="20">20</h2>
+
+<p>When should a parameter be marked as <code>const</code>?</p>
 
 <div>
 	
@@ -666,6 +760,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="21">21</h2>
+
+<p>What are the differences if const is placed before or after an asterisk?</p>
 
 <div>
 	
@@ -695,7 +791,9 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 	<br/>
 	<div id="q22" style="display: none;">
 	
-	
+	<p>Go to <code>project properties/Configuration Properties/Linker/Optimization</code> and set <code>References</code> setting to <code>Keep Unreferenced Data (/OPT:NOREF)</code>.<br />
+This will keep Visual C++ linker from discarding individual symbols generated by your tests from the final executable.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -710,6 +808,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="23">23</h2>
+
+<p>What are move semantics?</p>
 
 <div>
 	
@@ -733,6 +833,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="24">24</h2>
 
+<p>What is perfect forwarding?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q24')"><img src="" alt="" />Show Answer</button>
@@ -754,6 +856,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="25">25</h2>
+
+<p>What is constexpr?</p>
 
 <div>
 	
@@ -777,6 +881,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="26">26</h2>
 
+<p>How many ways are there to initialize a primitive data type in C++ and what are they?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q26')"><img src="" alt="" />Show Answer</button>
@@ -798,6 +904,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="27">27</h2>
+
+<p>Why should you declare a destructor as virtual?</p>
 
 <div>
 	
@@ -821,6 +929,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="28">28</h2>
 
+<p>What does it mean that C++ supports <em>overloading</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q28')"><img src="" alt="" />Show Answer</button>
@@ -842,6 +952,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="29">29</h2>
+
+<p>What are examples of overloading in C++?</p>
 
 <div>
 	
@@ -865,6 +977,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="30">30</h2>
 
+<p>What is <em>name mangling</em> in C++ and why is it used?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q30')"><img src="" alt="" />Show Answer</button>
@@ -886,6 +1000,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="31">31</h2>
+
+<p>What is an <em>abstract base class</em>?</p>
 
 <div>
 	
@@ -909,6 +1025,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="32">32</h2>
 
+<p>What is <em>RTTI</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q32')"><img src="" alt="" />Show Answer</button>
@@ -930,6 +1048,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="33">33</h2>
+
+<p>How can you access a variable that is <em>hidden</em> by another variable of the same name?</p>
 
 <div>
 	
@@ -953,6 +1073,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="34">34</h2>
 
+<p>What is a namespace and how is it used.</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q34')"><img src="" alt="" />Show Answer</button>
@@ -974,6 +1096,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="35">35</h2>
+
+<p>What are the differences between a class and a struct in C++, and how does this compare to C?</p>
 
 <div>
 	
@@ -997,6 +1121,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="36">36</h2>
 
+<p>What are templates? How are they used?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q36')"><img src="" alt="" />Show Answer</button>
@@ -1018,6 +1144,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="37">37</h2>
+
+<p>What is a <em>copy constructor</em> and when is it used, especially in comparison to the equal operator.</p>
 
 <div>
 	
@@ -1041,6 +1169,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="38">38</h2>
 
+<p>What is the difference between a <em>shallow</em> and a <em>deep</em> copy?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q38')"><img src="" alt="" />Show Answer</button>
@@ -1062,6 +1192,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="39">39</h2>
+
+<p>What is the <code>const</code> operator and how is it used?</p>
 
 <div>
 	
@@ -1085,6 +1217,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="40">40</h2>
 
+<p>What are the differences between passing by reference, passing by value, and passing by pointer in C++?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q40')"><img src="" alt="" />Show Answer</button>
@@ -1106,6 +1240,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="41">41</h2>
+
+<p>When is it a good idea to return a value by reference in C++? When is it not?</p>
 
 <div>
 	
@@ -1129,6 +1265,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="42">42</h2>
 
+<p>What is the difference between a variable created on the stack and one created on the heap?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q42')"><img src="" alt="" />Show Answer</button>
@@ -1150,6 +1288,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="43">43</h2>
+
+<p>How do you free memory allocated dynamically for an array? What are the implications of just using <code>delete</code>?</p>
 
 <div>
 	
@@ -1173,6 +1313,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="44">44</h2>
 
+<p>What is <em>multiple inheritance</em>? When should it be used?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q44')"><img src="" alt="" />Show Answer</button>
@@ -1194,6 +1336,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="45">45</h2>
+
+<p>What is a <em>pure virtual function</em>?</p>
 
 <div>
 	
@@ -1217,6 +1361,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="46">46</h2>
 
+<p>What does the keyword volatile do?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q46')"><img src="" alt="" />Show Answer</button>
@@ -1238,6 +1384,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="47">47</h2>
+
+<p>What is the STL?</p>
 
 <div>
 	
@@ -1261,6 +1409,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="48">48</h2>
 
+<p>What is a Vector?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q48')"><img src="" alt="" />Show Answer</button>
@@ -1282,6 +1432,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="49">49</h2>
+
+<p>What is contained in the <code>&lt;algorithms&gt;</code> header?</p>
 
 <div>
 	
@@ -1305,6 +1457,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="50">50</h2>
 
+<p>What is the difference between <code>#include &lt;iostream.h&gt;</code> and <code>#include &lt;iostream&gt;</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q50')"><img src="" alt="" />Show Answer</button>
@@ -1326,6 +1480,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="51">51</h2>
+
+<p>What&rsquo;s the difference between <code>++i</code> and <code>i++</code>?</p>
 
 <div>
 	
@@ -1349,6 +1505,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="52">52</h2>
 
+<p>What is <em>short circuit evaluation</em>? How can it be used? Why can is be dangerous?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q52')"><img src="" alt="" />Show Answer</button>
@@ -1370,6 +1528,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="53">53</h2>
+
+<p>What is the <code>,</code> operator?</p>
 
 <div>
 	
@@ -1393,6 +1553,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="54">54</h2>
 
+<p>What is the only ternary operator? How is it used?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q54')"><img src="" alt="" />Show Answer</button>
@@ -1414,6 +1576,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="55">55</h2>
+
+<p>What is the use of a <code>const</code> member function and how can it be used?</p>
 
 <div>
 	
@@ -1437,6 +1601,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="56">56</h2>
 
+<p>How is try/catch used in C++?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q56')"><img src="" alt="" />Show Answer</button>
@@ -1458,6 +1624,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="57">57</h2>
+
+<p>Why should you never throw an exception in a destructor?</p>
 
 <div>
 	
@@ -1481,6 +1649,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="58">58</h2>
 
+<p>What is the <code>explicit</code> keyword?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q58')"><img src="" alt="" />Show Answer</button>
@@ -1502,6 +1672,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="59">59</h2>
+
+<p>What is the proper way to perform a cast in C++?</p>
 
 <div>
 	
@@ -1525,6 +1697,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="60">60</h2>
 
+<p>What does <code>inline</code> do?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q60')"><img src="" alt="" />Show Answer</button>
@@ -1546,6 +1720,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="61">61</h2>
+
+<p>What is an iterator?</p>
 
 <div>
 	
@@ -1569,6 +1745,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="62">62</h2>
 
+<p>What is GCC?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q62')"><img src="" alt="" />Show Answer</button>
@@ -1590,6 +1768,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="63">63</h2>
+
+<p>What is Clang?</p>
 
 <div>
 	
@@ -1613,6 +1793,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="64">64</h2>
 
+<p>What is <code>difference_type</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q64')"><img src="" alt="" />Show Answer</button>
@@ -1634,6 +1816,8 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 </div>
 
 <h2 id="65">65</h2>
+
+<p>What is a <em>predicate</em>?</p>
 
 <div>
 	
@@ -1657,13 +1841,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="66">66</h2>
 
+<p>What is <em>auto linking</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q66')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q66" style="display: none;">
 	
-	
+	<p>Special code in header files detects your compiler options and uses that information to encode the name of the correct library into your object files; the linker selects the library with that name from the directories you&rsquo;ve told it to search.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1679,13 +1866,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="67">67</h2>
 
+<p>What is a <em>binary predicate</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q67')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q67" style="display: none;">
 	
-	
+	<p>Predicate that takes two parameters.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1701,13 +1891,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="68">68</h2>
 
+<p>What is a <code>back_inserter</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q68')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q68" style="display: none;">
 	
-	
+	<p>Iterator adapter.<br />
+Takes a reference to a container and generates an insert iterator that uses push_back to add elements.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1723,13 +1917,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="69">69</h2>
 
+<p>What is the <code>bind</code> function?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q69')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q69" style="display: none;">
 	
-	
+	<p>Library function.<br />
+Defined in <code>&lt;functional&gt;</code><br />
+Binds one or more arguments to a callable expression.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1745,13 +1944,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="70">70</h2>
 
+<p>Why should you be cautious when working with iterators while adding or removing elements from a container?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q70')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q70" style="display: none;">
 	
-	
+	<p>Container operations that add/remove elements can invalidate iterators, pointers or references to elements.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1767,13 +1969,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="71">71</h2>
 
+<p>What is an io buffer?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q71')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q71" style="display: none;">
 	
-	
+	<p>Used by the io facilities to store input or output and read or write the buffer independently from actions in the program.<br />
+Output buffers can be explicitly flushed to force the buffer to be written.<br />
+By default, reading cin flushes cout. cout is also flushed when the program ends normally.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1789,13 +1996,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="72">72</h2>
 
+<p>What is <code>clog</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q72')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q72" style="display: none;">
 	
-	
+	<p><code>ostream</code> object tied to the standard error.<br />
+Buffered by default.<br />
+Usually used to write to a log file.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1811,13 +2023,20 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="73">73</h2>
 
+<p>What is an alias declaration?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q73')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q73" style="display: none;">
 	
-	
+	<p>Defines a synonym for another type.<br />
+e.g.</p>
+
+<pre><code class="language-c++">using name = type
+</code></pre>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1833,13 +2052,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="74">74</h2>
 
+<p>What does <em>low-level const</em> mean?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q74')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q74" style="display: none;">
 	
-	
+	<p>A <code>const</code> that is not top-level; integral to the type and are never ignored.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1855,13 +2077,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="75">75</h2>
 
+<p>What does <em>top-level const</em> mean?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q75')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q75" style="display: none;">
 	
-	
+	<p>The const that specifies that an object may not be changed.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1877,13 +2102,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="76">76</h2>
 
+<p>What is <code>nullptr</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q76')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q76" style="display: none;">
 	
-	
+	<p>Literal constant that denotes the null pointer.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1899,13 +2127,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="77">77</h2>
 
+<p>What is <code>constexpr</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q77')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q77" style="display: none;">
 	
-	
+	<p>Variable that represents a constant expression.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1921,13 +2152,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="78">78</h2>
 
+<p>What is <code>decltype</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q78')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q78" style="display: none;">
 	
-	
+	<p>Type specifier that deduces the type of a variable or an expression.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1943,13 +2177,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="79">79</h2>
 
+<p>What is a const pointer?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q79')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q79" style="display: none;">
 	
-	
+	<p>Pointer that is <code>const</code>.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1965,13 +2202,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="80">80</h2>
 
+<p>What is a const reference?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q80')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q80" style="display: none;">
 	
-	
+	<p>Colloquial synonym for reference to <code>const</code>.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -1987,13 +2227,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="81">81</h2>
 
+<p>What is a pointer to <code>const</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q81')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q81" style="display: none;">
 	
-	
+	<p>Pointer that can hold address of a const object.<br />
+May not be used to change the value of the object to which it points.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2009,13 +2253,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="82">82</h2>
 
+<p>What is a reference to <code>const</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q82')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q82" style="display: none;">
 	
-	
+	<p>Reference that may not change the value of the object to which it refers.<br />
+May be bound to a const object, a nonconst object, or the result of an expression.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2031,13 +2279,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="83">83</h2>
 
+<p>What is a <em>temporary</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q83')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q83" style="display: none;">
 	
-	
+	<p>Unnamed object created by the compiler while evaluating an expression.<br />
+Exists until the end of the largest expression that encloses the expression for which it was created.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2053,13 +2305,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="84">84</h2>
 
+<p>What does <code>void*</code> mean?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q84')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q84" style="display: none;">
 	
-	
+	<p>Pointer type that can point to any nonconst type.<br />
+May not be dereferenced.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2075,13 +2331,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="85">85</h2>
 
+<p>What does the <code>typedef</code> statement do?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q85')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q85" style="display: none;">
 	
-	
+	<p>Defines an alias for another type.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2097,13 +2356,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="86">86</h2>
 
+<p>What is the <code>begin()</code> function?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q86')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q86" style="display: none;">
 	
-	
+	<p>Member of string and vector stl types.<br />
+Returns an iterator to the first element.<br />
+Also a free-standing library function that takes an array and returns a pointer to the first element.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2119,13 +2383,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="87">87</h2>
 
+<p>What is <em>copy initialisation</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q87')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q87" style="display: none;">
 	
-	
+	<p>Form of initialisation that uses an <code>=</code>.<br />
+The newly created object is a copy of the given initialiser.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2141,13 +2409,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="88">88</h2>
 
+<p>What is <em>direct initialisation</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q88')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q88" style="display: none;">
 	
-	
+	<p>Form of initialisation that does not include an <code>=</code></p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2163,13 +2434,20 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="89">89</h2>
 
+<p>Explain the <code>getline()</code> function.</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q89')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q89" style="display: none;">
 	
-	
+	<p>Defined in <code>&lt;string&gt;</code>.<br />
+Takes an istream an a string.<br />
+Reads the stream up to the next newline, storing what it read into the string.<br />
+Returns the istream.<br />
+The newline is read and discarded.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2185,13 +2463,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="90">90</h2>
 
+<p>What is an <em>off-the-end</em> iterator?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q90')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q90" style="display: none;">
 	
-	
+	<p>Returned by <code>end()</code>.<br />
+Refers to a nonexistent element on past the end of a container.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2207,13 +2489,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="91">91</h2>
 
+<p>What is <code>ptrdiff_t</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q91')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q91" style="display: none;">
 	
-	
+	<p>Machine-dependent signed integral type.<br />
+Defined in <code>&lt;cstddef&gt;</code><br />
+Large enough to hold the difference between two pointers into the largest possible array.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2229,13 +2516,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="92">92</h2>
 
+<p>What is a <em>range for</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q92')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q92" style="display: none;">
 	
-	
+	<p>Control statement that iterates through a collection of values.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2251,13 +2541,18 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="93">93</h2>
 
+<p>What is <code>size_t</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q93')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q93" style="display: none;">
 	
-	
+	<p>Machine-dependent unsigned integral type.<br />
+Defined in <code>&lt;cstddef&gt;</code><br />
+Large enough to hold the size of the largest possible array.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2273,13 +2568,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="94">94</h2>
 
+<p>What is <code>size_type</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q94')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q94" style="display: none;">
 	
-	
+	<p>Unsigned type defined by string or vector.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2295,13 +2593,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="95">95</h2>
 
+<p>What is <code>dynamic_cast</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q95')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q95" style="display: none;">
 	
-	
+	<p>Function that converts an object&rsquo;s type.<br />
+Used in combination with inheritance and runtime type identification.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2317,13 +2619,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="96">96</h2>
 
+<p>What is <code>const_cast</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q96')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q96" style="display: none;">
 	
-	
+	<p>Function that converts a low-level const object to the corresponding nonconst type or vice versa.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2339,13 +2644,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="97">97</h2>
 
+<p>What is <code>reinterpret_cast</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q97')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q97" style="display: none;">
 	
-	
+	<p>Interprets the contents of the operand as a different type.<br />
+Inherently machine-dependent and dangerous.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2361,13 +2670,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="98">98</h2>
 
+<p>What is <code>static_cast</code>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q98')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q98" style="display: none;">
 	
-	
+	<p>An explicit request for a well-defined type conversion.<br />
+Often used to override an implicit conversion the compiler would otherwise perform.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2383,13 +2696,17 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="99">99</h2>
 
+<p>What are <em>integral promotions</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q99')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q99" style="display: none;">
 	
-	
+	<p>Conversions that take a smaller integral type to its most closely related larger integral type.<br />
+Operands of small integral types are always promoted, even in contexts where such conversions might not seem to be required.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2405,13 +2722,16 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
 
 <h2 id="100">100</h2>
 
+<p>What is an <em>implicit conversion</em>?</p>
+
 <div>
 	
 	<button type="button" onclick="showAnswer('q100')"><img src="" alt="" />Show Answer</button>
 	<br/>
 	<div id="q100" style="display: none;">
 	
-	
+	<p>Automatically generated by the compiler if an appropriate conversion exists.</p>
+
 	</div>
 	<script>
 	  function showAnswer(divId) {
@@ -2430,12 +2750,12 @@ Early binding (New&rsquo;ing etc.) uses the default value of the key.</p>
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://richardmillen.github.io/questions/climate-1/" data-toggle="tooltip" data-placement="top" title="Climate Quiz">&larr; Previous Post</a>
+            <a href="https://richardmillen.github.io/questions/french-adv-1/" data-toggle="tooltip" data-placement="top" title="French Advanced Quiz #1">&larr; Previous Post</a>
           </li>
         
         
           <li class="next">
-            <a href="https://richardmillen.github.io/questions/french-adv-1/" data-toggle="tooltip" data-placement="top" title="French Advanced Quiz #1">Next Post &rarr;</a>
+            <a href="https://richardmillen.github.io/questions/cpp-2/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43; Quiz #2">Next Post &rarr;</a>
           </li>
         
       </ul>

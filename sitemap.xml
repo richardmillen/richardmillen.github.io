@@ -3,8 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://richardmillen.github.io/questions/zeromq-3/</loc>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/zeromq-2/</loc>
+    <lastmod>2017-08-22T14:35:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/zeromq-1/</loc>
+    <lastmod>2017-08-22T14:14:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/cpp-3/</loc>
+    <lastmod>2017-08-22T13:02:48+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/cpp-2/</loc>
+    <lastmod>2017-08-22T13:02:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/cpp-1/</loc>
+    <lastmod>2017-08-22T12:43:47+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/french-adv-1/</loc>
     <lastmod>2017-08-16T11:05:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/questions/csharp-1/</loc>
+    <lastmod>2017-08-16T11:03:11+01:00</lastmod>
   </url>
   
   <url>
@@ -19,7 +54,13 @@
   
   <url>
     <loc>https://richardmillen.github.io/</loc>
-    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/.net/</loc>
+    <lastmod>2017-08-16T11:03:11+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -30,6 +71,24 @@
   
   <url>
     <loc>https://richardmillen.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/c/</loc>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/c#/</loc>
+    <lastmod>2017-08-16T11:03:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -46,6 +105,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/climate/</loc>
     <lastmod>2017-08-16T10:44:40+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/distributed-computing/</loc>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -73,20 +138,44 @@
   </url>
   
   <url>
+    <loc>https://richardmillen.github.io/tags/programming/</loc>
+    <lastmod>2017-08-22T13:02:48+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/python/</loc>
+    <lastmod>2017-08-22T14:14:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/questions/</loc>
-    <lastmod>2017-08-16T11:05:40+01:00</lastmod>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/</loc>
-    <lastmod>2017-08-16T10:35:47+01:00</lastmod>
+    <lastmod>2017-08-16T11:03:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/visual-c&#43;&#43;/</loc>
+    <lastmod>2017-08-22T13:02:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/weather/</loc>
     <lastmod>2017-08-16T10:44:40+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/zeromq/</loc>
+    <lastmod>2017-08-22T15:04:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
