@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://richardmillen.github.io/cheat-sheet/vim/</loc>
+    <lastmod>2017-10-19T09:42:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://richardmillen.github.io/question/computing-1/</loc>
     <lastmod>2017-08-22T15:49:38+01:00</lastmod>
   </url>
@@ -79,7 +84,7 @@
   
   <url>
     <loc>https://richardmillen.github.io/</loc>
-    <lastmod>2017-08-22T15:49:38+01:00</lastmod>
+    <lastmod>2017-10-19T09:42:56+01:00</lastmod>
   </url>
   
   <url>
@@ -124,6 +129,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/centos/</loc>
     <lastmod>2017-08-16T10:35:47+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/cheat-sheet/</loc>
+    <lastmod>2017-10-19T09:42:56+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -201,6 +212,12 @@
   <url>
     <loc>https://richardmillen.github.io/tags/unit-tests/</loc>
     <lastmod>2017-08-22T15:22:34+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/tags/vim/</loc>
+    <lastmod>2017-10-19T09:42:56+01:00</lastmod>
     <priority>0</priority>
   </url>
   
