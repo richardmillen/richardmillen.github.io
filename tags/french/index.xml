@@ -1,57 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>French on Richard Millen</title>
-    <link>https://richardmillen.github.io/tags/french/</link>
-    <description>Recent content in French on Richard Millen</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
-    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
-    <lastBuildDate>Tue, 22 Aug 2017 15:46:57 +0100</lastBuildDate>
-    
-	<atom:link href="https://richardmillen.github.io/tags/french/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>French Advanced Quiz #3</title>
-      <link>https://richardmillen.github.io/question/french-adv-3/</link>
-      <pubDate>Tue, 22 Aug 2017 15:46:57 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/question/french-adv-3/</guid>
-      <description>This quiz is based on the French Advanced course by Michel Thomas.
-1 &amp;ldquo;They are waiting for you&amp;rdquo;
-Show Answerils vous attendent
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What are the three rules for sounding consonants in verbs?
-Show Answer THEY &amp;hellip; - DO always sound the consonant .</description>
-    </item>
-    
-    <item>
-      <title>French Advanced Quiz #2</title>
-      <link>https://richardmillen.github.io/question/french-adv-2/</link>
-      <pubDate>Tue, 22 Aug 2017 15:33:09 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/question/french-adv-2/</guid>
-      <description>This quiz is based on the French Advanced course by Michel Thomas.
-1 Give some examples of re verbs.
-Show Answeravoir, savoir, voir, pouvoir, devoir.
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 &amp;ldquo;To put&amp;rdquo;
-Show Answermettre (put money in the meter)
-function showAnswer(divId) {var x = document.</description>
-    </item>
-    
-    <item>
-      <title>French Advanced Quiz #1</title>
-      <link>https://richardmillen.github.io/question/french-adv-1/</link>
-      <pubDate>Wed, 16 Aug 2017 11:05:40 +0100</pubDate>
-      <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/question/french-adv-1/</guid>
-      <description>This quiz is based on the French Advanced course by Michel Thomas.
-1 &amp;ldquo;I want it now&amp;rdquo;
-Show Answerje le veux maintenant
-function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 &amp;ldquo;I don&amp;rsquo;t want them&amp;rdquo;
-Show Answerje ne les veux pas
-function showAnswer(divId) {var x = document.</description>
-    </item>
-    
-  </channel>
-</rss>
