@@ -14,10 +14,10 @@
     
     <item>
       <title>Computing Quiz</title>
-      <link>https://richardmillen.github.io/questions/computing-1/</link>
+      <link>https://richardmillen.github.io/question/computing-1/</link>
       <pubDate>Tue, 22 Aug 2017 15:49:38 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/computing-1/</guid>
+      <guid>https://richardmillen.github.io/question/computing-1/</guid>
       <description>1 The more hosts the hypervisor manages, the more resources it needs.
 Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 What is vertical scaling?
 Show Answer e.g. Getting a bigger box with faster CPU and better I/O can often improve latency and throughput, allowing you to process more work in less time.</description>

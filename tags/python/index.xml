@@ -14,10 +14,10 @@
     
     <item>
       <title>ØMQ Quiz #1</title>
-      <link>https://richardmillen.github.io/questions/zeromq-1/</link>
+      <link>https://richardmillen.github.io/question/zeromq-1/</link>
       <pubDate>Tue, 22 Aug 2017 14:14:52 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-1/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-1/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 Give an example of load balancing.
 Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.

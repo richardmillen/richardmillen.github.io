@@ -14,10 +14,10 @@
     
     <item>
       <title>ØMQ Quiz #3</title>
-      <link>https://richardmillen.github.io/questions/zeromq-3/</link>
+      <link>https://richardmillen.github.io/question/zeromq-3/</link>
       <pubDate>Tue, 22 Aug 2017 15:04:13 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-3/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-3/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 What aspects of control vs data flow when designing a protocol?
 Show Answer Control dialogue tends to last a short time, involing few messages.
@@ -28,10 +28,10 @@ Errors during data flow are exceptional (disk full, server crashed).</descriptio
     
     <item>
       <title>ØMQ Quiz #2</title>
-      <link>https://richardmillen.github.io/questions/zeromq-2/</link>
+      <link>https://richardmillen.github.io/question/zeromq-2/</link>
       <pubDate>Tue, 22 Aug 2017 14:35:30 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-2/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-2/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 Why not use ROUTER instead of PAIR sockets?
 Show Answer ROUTER wraps your message in an &amp;ldquo;envelope&amp;rdquo;, meaning a zero-size signal message turns into a multipart message.
@@ -40,10 +40,10 @@ If you don&amp;rsquo;t care about the data and treat anything as a valid signal,
     
     <item>
       <title>ØMQ Quiz #1</title>
-      <link>https://richardmillen.github.io/questions/zeromq-1/</link>
+      <link>https://richardmillen.github.io/question/zeromq-1/</link>
       <pubDate>Tue, 22 Aug 2017 14:14:52 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-1/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-1/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 Give an example of load balancing.
 Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.

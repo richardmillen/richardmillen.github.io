@@ -14,10 +14,10 @@
     
     <item>
       <title>ØMQ Quiz #3</title>
-      <link>https://richardmillen.github.io/questions/zeromq-3/</link>
+      <link>https://richardmillen.github.io/question/zeromq-3/</link>
       <pubDate>Tue, 22 Aug 2017 15:04:13 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-3/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-3/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 What aspects of control vs data flow when designing a protocol?
 Show Answer Control dialogue tends to last a short time, involing few messages.
@@ -28,10 +28,10 @@ Errors during data flow are exceptional (disk full, server crashed).</descriptio
     
     <item>
       <title>ØMQ Quiz #2</title>
-      <link>https://richardmillen.github.io/questions/zeromq-2/</link>
+      <link>https://richardmillen.github.io/question/zeromq-2/</link>
       <pubDate>Tue, 22 Aug 2017 14:35:30 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-2/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-2/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 Why not use ROUTER instead of PAIR sockets?
 Show Answer ROUTER wraps your message in an &amp;ldquo;envelope&amp;rdquo;, meaning a zero-size signal message turns into a multipart message.
@@ -40,10 +40,10 @@ If you don&amp;rsquo;t care about the data and treat anything as a valid signal,
     
     <item>
       <title>ØMQ Quiz #1</title>
-      <link>https://richardmillen.github.io/questions/zeromq-1/</link>
+      <link>https://richardmillen.github.io/question/zeromq-1/</link>
       <pubDate>Tue, 22 Aug 2017 14:14:52 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/zeromq-1/</guid>
+      <guid>https://richardmillen.github.io/question/zeromq-1/</guid>
       <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
 1 Give an example of load balancing.
 Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.
@@ -52,20 +52,20 @@ If you don&amp;rsquo;t care about the data and treat anything as a valid signal,
     
     <item>
       <title>C&#43;&#43; Quiz #3</title>
-      <link>https://richardmillen.github.io/questions/cpp-3/</link>
+      <link>https://richardmillen.github.io/question/cpp-3/</link>
       <pubDate>Tue, 22 Aug 2017 13:02:48 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/cpp-3/</guid>
+      <guid>https://richardmillen.github.io/question/cpp-3/</guid>
       <description>1 How might you store and retrieve character code mappings using strings?
 Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // ... mapped_value = codes[static_cast&amp;lt;size_t&amp;gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 How many associative containers are provided in the standard library?</description>
     </item>
     
     <item>
       <title>C&#43;&#43; Quiz #2</title>
-      <link>https://richardmillen.github.io/questions/cpp-2/</link>
+      <link>https://richardmillen.github.io/question/cpp-2/</link>
       <pubDate>Tue, 22 Aug 2017 13:02:44 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/cpp-2/</guid>
+      <guid>https://richardmillen.github.io/question/cpp-2/</guid>
       <description>1 What is an lvalue?
 Show AnswerAn expression that yields an object or function.
 A nonconst lvalue that denotes an object may be the left-hand operand of assignment.
@@ -75,10 +75,10 @@ A nonconst lvalue that denotes an object may be the left-hand operand of assignm
     
     <item>
       <title>C&#43;&#43; Quiz #1</title>
-      <link>https://richardmillen.github.io/questions/cpp-1/</link>
+      <link>https://richardmillen.github.io/question/cpp-1/</link>
       <pubDate>Tue, 22 Aug 2017 12:43:47 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/cpp-1/</guid>
+      <guid>https://richardmillen.github.io/question/cpp-1/</guid>
       <description>1 Explain why you might want to define your own type-specific swap function?
 Show Answerfunction showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Show AnswerValuelike copy-assignment operator.
 It is crucially important that the left-hand operand is destroyed and the right-hand operand is copied in a sequence that is correct even if an object is assigned to itself.</description>

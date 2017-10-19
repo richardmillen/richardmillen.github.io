@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Richard Millen" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.30.1" />
   <link rel="canonical" href="https://richardmillen.github.io/tags/c/" />
   <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -113,7 +113,13 @@
         
           
             <li>
-              <a title="Q&amp;A" href="/questions">Q&amp;A</a>
+              <a title="Cheat Sheets" href="/cheat-sheet">Cheat Sheets</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Questions" href="/question">Questions</a>
             </li>
           
         
@@ -170,7 +176,7 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/zeromq-3/">
+              <a href="https://richardmillen.github.io/question/zeromq-3/">
                 <h2 class="post-title">ØMQ Quiz #3</h2>
     
                 
@@ -187,7 +193,7 @@
 The data flow could last for hours or days, involing billions of messages.
 Control is where &ldquo;normal&rdquo; errors happen e.g. not authenticated, not found, censored etc.
 Errors during data flow are exceptional (disk full, server crashed).
-                  <a href="https://richardmillen.github.io/questions/zeromq-3/" class="post-read-more">[Read More]</a>
+                  <a href="https://richardmillen.github.io/question/zeromq-3/" class="post-read-more">[Read More]</a>
                 
               </div>
     
@@ -210,7 +216,7 @@ Errors during data flow are exceptional (disk full, server crashed).
             </article>
           
             <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/zeromq-2/">
+              <a href="https://richardmillen.github.io/question/zeromq-2/">
                 <h2 class="post-title">ØMQ Quiz #2</h2>
     
                 
@@ -225,7 +231,7 @@ Errors during data flow are exceptional (disk full, server crashed).
 1 Why not use ROUTER instead of PAIR sockets?
 Show Answer ROUTER wraps your message in an &ldquo;envelope&rdquo;, meaning a zero-size signal message turns into a multipart message.
 If you don&rsquo;t care about the data and treat anything as a valid signal, and if you don&rsquo;t read more than once from the socket, that won&rsquo;t matter.
-                  <a href="https://richardmillen.github.io/questions/zeromq-2/" class="post-read-more">[Read More]</a>
+                  <a href="https://richardmillen.github.io/question/zeromq-2/" class="post-read-more">[Read More]</a>
                 
               </div>
     
@@ -248,7 +254,7 @@ If you don&rsquo;t care about the data and treat anything as a valid signal, and
             </article>
           
             <article class="post-preview">
-              <a href="https://richardmillen.github.io/questions/zeromq-1/">
+              <a href="https://richardmillen.github.io/question/zeromq-1/">
                 <h2 class="post-title">ØMQ Quiz #1</h2>
     
                 
@@ -263,7 +269,7 @@ If you don&rsquo;t care about the data and treat anything as a valid signal, and
 1 Give an example of load balancing.
 Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.
 function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === 'none') {x.style.display = 'block';} else {x.style.display = 'none';}} 2 Give an example of fair queuing.
-                  <a href="https://richardmillen.github.io/questions/zeromq-1/" class="post-read-more">[Read More]</a>
+                  <a href="https://richardmillen.github.io/question/zeromq-1/" class="post-read-more">[Read More]</a>
                 
               </div>
     
@@ -362,7 +368,7 @@ If you don&rsquo;t care about the data and treat anything as a valid signal, and
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.30.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

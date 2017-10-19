@@ -14,10 +14,10 @@
     
     <item>
       <title>C# Quiz</title>
-      <link>https://richardmillen.github.io/questions/csharp-1/</link>
+      <link>https://richardmillen.github.io/question/csharp-1/</link>
       <pubDate>Wed, 16 Aug 2017 11:03:11 +0100</pubDate>
       <author>mail@richardmillen.com (Richard Millen)</author>
-      <guid>https://richardmillen.github.io/questions/csharp-1/</guid>
+      <guid>https://richardmillen.github.io/question/csharp-1/</guid>
       <description>1 What are the differences between structs and classes?
 Show AnswerUnlike in C++, the default access level for both is private.
 Their memory allocation models are different. A struct is a value type and its instances are created on the stack. A class is a reference type and its instances are created on the heap.

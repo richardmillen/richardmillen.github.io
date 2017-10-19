@@ -3,72 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://richardmillen.github.io/questions/computing-1/</loc>
+    <loc>https://richardmillen.github.io/question/computing-1/</loc>
     <lastmod>2017-08-22T15:49:38+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/french-adv-2/</loc>
+    <loc>https://richardmillen.github.io/question/french-adv-3/</loc>
+    <lastmod>2017-08-22T15:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://richardmillen.github.io/question/french-adv-2/</loc>
     <lastmod>2017-08-22T15:33:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/tdd-1/</loc>
+    <loc>https://richardmillen.github.io/question/tdd-1/</loc>
     <lastmod>2017-08-22T15:22:34+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/unit-testing-1/</loc>
+    <loc>https://richardmillen.github.io/question/unit-testing-1/</loc>
     <lastmod>2017-08-22T15:15:40+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-3/</loc>
+    <loc>https://richardmillen.github.io/question/zeromq-3/</loc>
     <lastmod>2017-08-22T15:04:13+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-2/</loc>
+    <loc>https://richardmillen.github.io/question/zeromq-2/</loc>
     <lastmod>2017-08-22T14:35:30+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/zeromq-1/</loc>
+    <loc>https://richardmillen.github.io/question/zeromq-1/</loc>
     <lastmod>2017-08-22T14:14:52+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/cpp-3/</loc>
+    <loc>https://richardmillen.github.io/question/cpp-3/</loc>
     <lastmod>2017-08-22T13:02:48+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/cpp-2/</loc>
+    <loc>https://richardmillen.github.io/question/cpp-2/</loc>
     <lastmod>2017-08-22T13:02:44+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/cpp-1/</loc>
+    <loc>https://richardmillen.github.io/question/cpp-1/</loc>
     <lastmod>2017-08-22T12:43:47+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/french-adv-1/</loc>
+    <loc>https://richardmillen.github.io/question/french-adv-1/</loc>
     <lastmod>2017-08-16T11:05:40+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/csharp-1/</loc>
+    <loc>https://richardmillen.github.io/question/csharp-1/</loc>
     <lastmod>2017-08-16T11:03:11+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/climate-1/</loc>
+    <loc>https://richardmillen.github.io/question/climate-1/</loc>
     <lastmod>2017-08-16T10:44:40+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/centos-1/</loc>
+    <loc>https://richardmillen.github.io/question/centos-1/</loc>
     <lastmod>2017-08-16T10:35:47+01:00</lastmod>
   </url>
   
@@ -142,13 +147,13 @@
   
   <url>
     <loc>https://richardmillen.github.io/tags/french/</loc>
-    <lastmod>2017-08-22T15:33:09+01:00</lastmod>
+    <lastmod>2017-08-22T15:46:57+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://richardmillen.github.io/tags/languages/</loc>
-    <lastmod>2017-08-22T15:33:09+01:00</lastmod>
+    <lastmod>2017-08-22T15:46:57+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +181,7 @@
   </url>
   
   <url>
-    <loc>https://richardmillen.github.io/questions/</loc>
+    <loc>https://richardmillen.github.io/question/</loc>
     <lastmod>2017-08-22T15:49:38+01:00</lastmod>
     <priority>0</priority>
   </url>
