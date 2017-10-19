@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zeromq on Richard Millen</title>
+    <link>https://richardmillen.github.io/tags/zeromq/</link>
+    <description>Recent content in Zeromq on Richard Millen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>mail@richardmillen.com (Richard Millen)</managingEditor>
+    <webMaster>mail@richardmillen.com (Richard Millen)</webMaster>
+    <lastBuildDate>Tue, 22 Aug 2017 15:04:13 +0100</lastBuildDate>
+    
+	<atom:link href="https://richardmillen.github.io/tags/zeromq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ØMQ Quiz #3</title>
+      <link>https://richardmillen.github.io/question/zeromq-3/</link>
+      <pubDate>Tue, 22 Aug 2017 15:04:13 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/question/zeromq-3/</guid>
+      <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 What aspects of control vs data flow when designing a protocol?
+Show Answer Control dialogue tends to last a short time, involing few messages.
+The data flow could last for hours or days, involing billions of messages.
+Control is where &amp;ldquo;normal&amp;rdquo; errors happen e.g. not authenticated, not found, censored etc.
+Errors during data flow are exceptional (disk full, server crashed).</description>
+    </item>
+    
+    <item>
+      <title>ØMQ Quiz #2</title>
+      <link>https://richardmillen.github.io/question/zeromq-2/</link>
+      <pubDate>Tue, 22 Aug 2017 14:35:30 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/question/zeromq-2/</guid>
+      <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 Why not use ROUTER instead of PAIR sockets?
+Show Answer ROUTER wraps your message in an &amp;ldquo;envelope&amp;rdquo;, meaning a zero-size signal message turns into a multipart message.
+If you don&amp;rsquo;t care about the data and treat anything as a valid signal, and if you don&amp;rsquo;t read more than once from the socket, that won&amp;rsquo;t matter.</description>
+    </item>
+    
+    <item>
+      <title>ØMQ Quiz #1</title>
+      <link>https://richardmillen.github.io/question/zeromq-1/</link>
+      <pubDate>Tue, 22 Aug 2017 14:14:52 +0100</pubDate>
+      <author>mail@richardmillen.com (Richard Millen)</author>
+      <guid>https://richardmillen.github.io/question/zeromq-1/</guid>
+      <description>This quiz is based on the ZeroMQ Guide written by Pieter Hintjens.
+1 Give an example of load balancing.
+Show AnswerThe ventilator uses a PUSH socket to evenly distribute tasks to workers.
+function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 Give an example of fair queuing.</description>
+    </item>
+    
+  </channel>
+</rss>

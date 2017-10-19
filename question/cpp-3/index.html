@@ -1,0 +1,2786 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>C&#43;&#43; Quiz #3</title>
+  <meta property="og:title" content="C&#43;&#43; Quiz #3" />
+  <meta name="twitter:title" content="C&#43;&#43; Quiz #3" />
+  <meta name="description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // ... mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 How many associative containers are provided in the standard library?">
+  <meta property="og:description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; // ... mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];  function showAnswer(divId) {var x = document.getElementById(divId);if (x.style.display === &#39;none&#39;) {x.style.display = &#39;block&#39;;} else {x.style.display = &#39;none&#39;;}} 2 How many associative containers are provided in the standard library?">
+  <meta name="twitter:description" content="1 How might you store and retrieve character code mappings using strings?
+Show Answerstd::string codes[128]; // ... codes[&#39;a&#39;] = mapped_value; codes[&#39;b&#39;] = mapped_value; codes[&#39;c&#39;] = mapped_value; …">
+  <meta name="author" content="Richard Millen"/>
+  <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://richardmillen.github.io/question/cpp-3/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard Millen" />
+
+  <meta name="generator" content="Hugo 0.30.1" />
+  <link rel="canonical" href="https://richardmillen.github.io/question/cpp-3/" />
+  <link rel="alternate" href="https://richardmillen.github.io/index.xml" type="application/rss+xml" title="Richard Millen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://richardmillen.github.io/css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://richardmillen.github.io">Richard Millen</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Posts" href="/post">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Cheat Sheets" href="/cheat-sheet">Cheat Sheets</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Questions" href="/question">Questions</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Richard Millen" href="https://richardmillen.github.io">
+            <img class="avatar-img" src="https://richardmillen.github.io/img/avatar-icon.png" alt="Richard Millen" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="question-heading">
+              <h1>C&#43;&#43; Quiz #3</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="1">1</h2>
+
+<p>How might you store and retrieve character code mappings using strings?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q1')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q1" style="display: none;">
+	
+	<pre><code class="language-c++">std::string codes[128];
+// ...
+codes['a'] = mapped_value;
+codes['b'] = mapped_value;
+codes['c'] = mapped_value;
+// ...
+mapped_value = codes[static_cast&lt;size_t&gt;(map_from[n])];
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="2">2</h2>
+
+<p>How many associative containers are provided in the standard library?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q2')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q2" style="display: none;">
+	
+	<p>8 - Each is either a <em>map</em> or a <em>set</em>:</p>
+
+<ol>
+<li>set</li>
+<li>multiset</li>
+<li>map</li>
+<li>multimap</li>
+<li>unordered_set</li>
+<li>unordered_multiset</li>
+<li>unordered_map</li>
+<li>unordered_multimap</li>
+</ol>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="3">3</h2>
+
+<p>What is an <em>associative array</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q3')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q3" style="display: none;">
+	
+	<p>Elements indexed by key rather than positionally.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="4">4</h2>
+
+<p>What is an <em>associative container</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q4')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q4" style="display: none;">
+	
+	<p>Collection that supports efficient lookup by key.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="5">5</h2>
+
+<p>What is a <em>hash</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q5')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q5" style="display: none;">
+	
+	<p>Library template.<br />
+Used by unordered containers to manage position of their elements.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="6">6</h2>
+
+<p>What is a <code>key_type</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q6')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q6" style="display: none;">
+	
+	<p>Type used and defined by associative containers.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="7">7</h2>
+
+<p>What is a <code>map</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q7')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q7" style="display: none;">
+	
+	<p>Associative container.<br />
+Class template.<br />
+Each element must have a unique key.<br />
+Dereferencing an iterator yields a <code>pair</code>.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="8">8</h2>
+
+<p>What is a <code>mapped_type</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q8')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q8" style="display: none;">
+	
+	<p>Type defined by map types.<br />
+Type of the values associated with the keys in a <code>map</code>.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="9">9</h2>
+
+<p>What is a <code>multimap</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q9')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q9" style="display: none;">
+	
+	<p>Associative container.<br />
+Similar to map, except a given key may appear more than once.<br />
+Doesn&rsquo;t support subscripting.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="10">10</h2>
+
+<p>What is a <code>multiset</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q10')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q10" style="display: none;">
+	
+	<p>Associative container.<br />
+Similar to set, except a given key may appear more than once.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="11">11</h2>
+
+<p>What is a <code>pair</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q11')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q11" style="display: none;">
+	
+	<p>Type with two public data members:</p>
+
+<ol>
+<li>first</li>
+<li>second</li>
+</ol>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="12">12</h2>
+
+<p>What is a <code>set</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q12')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q12" style="display: none;">
+	
+	<p>Associative container.<br />
+Holds keys.<br />
+A given key may appear only once.<br />
+<code>key_type</code> and <code>value_type</code> are the same.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="13">13</h2>
+
+<p>What is <em>strict weak ordering</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q13')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q13" style="display: none;">
+	
+	<p>Relationship among keys in associative container.<br />
+Possible to compare any two and determine which is &lsquo;less&rsquo;, if not they&rsquo;re considered equal.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="14">14</h2>
+
+<p>What is an <em>unordered</em> container?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q14')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q14" style="display: none;">
+	
+	<p>Associative container.<br />
+Uses hashing rather than comparison operation on keys to store / access elements.<br />
+Performance depends on hash function.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="15">15</h2>
+
+<p>What is an <code>unordered_map</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q15')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q15" style="display: none;">
+	
+	<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Permits only one element per key.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="16">16</h2>
+
+<p>What is an <code>unordered_multimap</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q16')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q16" style="display: none;">
+	
+	<p>Associative container.<br />
+Elements are key-value pairs.<br />
+Allows multiple elements per key.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="17">17</h2>
+
+<p>What is an <code>unordered_multiset</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q17')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q17" style="display: none;">
+	
+	<p>Associative container.<br />
+Stores keys.<br />
+Allows multiple elements per key.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="18">18</h2>
+
+<p>What is an <code>unordered_set</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q18')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q18" style="display: none;">
+	
+	<p>Associative container.<br />
+Stores keys.<br />
+Permits only one element per key.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="19">19</h2>
+
+<p>What is an <code>allocator</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q19')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q19" style="display: none;">
+	
+	<p>Library class.<br />
+Defined in <code>&lt;memory&gt;</code>.<br />
+Lets you separate allocation from construction.<br />
+Sometimes you allocate a block of memory you plan to use to construct objects as needed. This way you pay the overhead of constructing objects only when you actually need to create them.<br />
+Provides type-aware allocation of raw, &lsquo;unconstructed&rsquo; memory.<br />
+Allocates memory that is appropriately sized and aligned to hold the objects.<br />
+User must construct objects in order to use memory returned by <code>allocate</code>.<br />
+User must call <code>destroy</code> on objects that were constructed in this memory before calling <code>deallocate</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">allocator&lt;string&gt; alloc;
+auto const p = alloc.allocate(n);
+auto q = p;
+alloc.construct(q++);
+alloc.construct(q++, 10, 'c');
+alloc.construct(q++, &quot;hi!&quot;);
+//...
+while (q != p)
+    alloc.destroy(--q);
+alloc.dealloc(p, n);&quot;
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="20">20</h2>
+
+<p>Which companion functions are there to the allocator class?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q20')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q20" style="display: none;">
+	
+	<ol>
+<li><code>uninitialized_copy</code> - Copies elements denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, into unconstructed, raw memory denoted by a third iterator.</li>
+<li><code>uninitialized_copy_n</code> - Copies &lsquo;n&rsquo; elements starting from &lsquo;begin&rsquo; iterator, into unconstructed, raw memory denoted by a second iterator.</li>
+<li><code>uninitialized_fill</code> - Constructs objects into raw memory denoted by &lsquo;begin&rsquo; and &lsquo;end&rsquo; iterators, as a copy of a third parameter.</li>
+<li><code>uninitialized_fill_n</code> - Constructs &lsquo;n&rsquo; objects starting from &lsquo;begin&rsquo; iterator, which denotes unconstructed, raw memory large enough to hold the given number of objects.</li>
+</ol>
+
+<p>These functions construct elements in the destination, rather than assigning to them.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="21">21</h2>
+
+<p>Using the two companion algorithms of the allocator class, implement the following:</p>
+
+<ol>
+<li>allocate twice as many elements as variable &lsquo;vi&rsquo; holds,</li>
+<li>construct elements (starting at the beginning of the allocated memory), as copies of elements in vi.</li>
+<li>initialise the remaining elements to 42.</li>
+</ol>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q21')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q21" style="display: none;">
+	
+	<pre><code class="language-c++">auto p = alloc.allocate(vi.size() * 2);
+auto q = unintialized_copy(vi.begin(), vi.end(), p);
+uninitialized_fill_n(q, vi.size(), 42);
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="22">22</h2>
+
+<p>What is a <em>dangling pointer</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q22')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q22" style="display: none;">
+	
+	<p>Pointer that refers to memory that once had an object but no longer does.<br />
+Difficult to debug.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="23">23</h2>
+
+<p>What is a <em>deleter</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q23')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q23" style="display: none;">
+	
+	<p>Function passed to a smart pointer.<br />
+Used in place of &lsquo;delete&rsquo;.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="24">24</h2>
+
+<p>What does dynamically allocated mean?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q24')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q24" style="display: none;">
+	
+	<p>Object is allocated on the free store.<br />
+They exist until explicitly deleted or program terminates.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="25">25</h2>
+
+<p>What is the <em>free store</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q25')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q25" style="display: none;">
+	
+	<p>Memory pool available to a program to hold dynamically allocated objects.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="26">26</h2>
+
+<p>What is <em>placement new</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q26')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q26" style="display: none;">
+	
+	<p>Form of new that takes additional arguments.<br />
+e.g.</p>
+
+<pre><code class="language-c++">new (nothrow) int;
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="27">27</h2>
+
+<p>What is a <code>shared_ptr</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q27')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q27" style="display: none;">
+	
+	<p>Smart pointer.<br />
+Shared ownership.<br />
+Pointer deleted when last <code>shared_ptr</code> is destroyed.<br />
+Uses a reference count.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="28">28</h2>
+
+<p>What is a <code>unique_ptr</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q28')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q28" style="display: none;">
+	
+	<p>Smart pointer.<br />
+Single ownership.<br />
+Object deleted when unique_ptr is destroyed.<br />
+Cannot be directly copied or assigned.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="29">29</h2>
+
+<p>What is a <code>weak_ptr</code>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q29')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q29" style="display: none;">
+	
+	<p>Smart pointer.<br />
+Points to object managed by <code>shared_ptr</code>.<br />
+Not counted when <code>shared_ptr</code> deleted the object.<br />
+Must call lock in order to access the object.<br />
+e.g.</p>
+
+<pre><code class="language-c++">auto p = make_shared&lt;int&gt;(42);
+weak_ptr&lt;int&gt; wp(p);
+if (shared_ptr&lt;int&gt; np = wp.lock()) {
+    // np shares object with p
+}
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="30">30</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q30')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q30" style="display: none;">
+	
+	<p>When we use direct initialisation, we are asking the compiler to use ordinary function matching to select the constructor that best maches the arguments we provide.<br />
+When we use copy initialisation, we are asking the compiler to copy the right-hand operand into the object being created, converting that operand if necessary.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="31">31</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q31')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q31" style="display: none;">
+	
+	<p>Copy initialisation ordinarily uses the copy constructor.<br />
+If a class has a move constructor, then copy initialisation sometimes uses that instead.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="32">32</h2>
+
+<p>When does copy initialisation occur?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q32')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q32" style="display: none;">
+	
+	<p>When defining a variable using an &lsquo;=&rsquo;.</p>
+
+<ul>
+<li>Passing an object as an argument to a parameter of nonreference type.<br /></li>
+<li>Returning an object from a function that has a nonreference return type.<br /></li>
+<li>Brace initialising the elements in an array or the members of an aggregate class.</li>
+</ul>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="33">33</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q33')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q33" style="display: none;">
+	
+	<p>Library containers copy initialise their elements when you initialise the container or when calling insert of push.<br />
+Elements created by emplace are direct initialised.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="34">34</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q34')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q34" style="display: none;">
+	
+	<p>A constructor that can be called with a single argument defines an implicit conversion from the constructor&rsquo;s parameter type (x) to the class type (y).<br />
+That is, you can use an &lsquo;x&rsquo; where an object of type &lsquo;y&rsquo; is expected.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="35">35</h2>
+
+<p>What rule of thumb can be used when deciding whether a class needs to define its own versions of the copy-control members?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q35')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q35" style="display: none;">
+	
+	<p>Decide whether the class needs a destructor. Often more obvious.<br />
+If yes, it almost surely needs a copy constructor and copy-assignment operator as well.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="36">36</h2>
+
+<p>How do you prevent copies of a class being made?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q36')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q36" style="display: none;">
+	
+	<p>Define the copy constructor and copy-assignment operator as deleted functions.<br />
+e.g.</p>
+
+<pre><code class="language-c++">NoCopy(const NoCopy&amp;) = delete;
+NoCopy&amp; operator=(const NoCopy&amp;) = delete;
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="37">37</h2>
+
+<p>What is a <em>deleted function</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q37')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q37" style="display: none;">
+	
+	<p>One that is declared by may not be used in any other way.<br />
+Defined as deleted by following its parameter list with = delete.</p>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="38">38</h2>
+
+<p>What is a <em>type-specific swap function</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q38')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q38" style="display: none;">
+	
+	<p>Function written to swap the state of two objects of the same type.<br />
+Never necessary, but can be an important optimisation for classes that allocate.<br />
+Declare the swap function as a friend to give it access to the type&rsquo;s private data members.<br />
+Because it exists to optimise our code, define swap as inline.<br />
+A type-specific version of swap will be a better match that the one in std.<br />
+If no type-specific version is defined then (assuming there is a using decl for swap in scope) calls to swap will use <code>std::swap</code>.<br />
+Each call to swap should be unqualified i.e. not <code>std::swap</code>.<br />
+e.g.</p>
+
+<pre><code class="language-c++">class MyType {
+    friend void swap(MyType&amp;, MyType&amp;);
+    //...
+};
+inline void swap(MyType &amp;lhs, MyType &amp;rhs) {
+    using std::swap;
+    swap(lhs.member, rhs.member);
+    //...
+}
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="39">39</h2>
+
+<p>What is <em>ADL</em>?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q39')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q39" style="display: none;">
+	
+	<p>Argument-dependent lookup. aka <em>Koenig lookup</em>.<br />
+The set of rules for looking up the unqualified function names in a function-call expressions.<br />
+Makes it possible to use operators defined in a different namespace.<br />
+e.g.</p>
+
+<pre><code class="language-c++">#include &lt;iostream&gt;
+//...
+std::cout &lt;&lt; &quot;Test\n&quot;;      // OK: operator&lt;&lt; is found in std because the left arg is in std.
+std::cout &lt;&lt; endl;          // ERROR: not in global ns, not a func call to endl() so ADL does not apply.
+end(std::cout);             // OK: func call, ADL examines std because of argument.
+(endl)(std::cout);          // ERROR: 'end' not in global ns, sub-expression (endl) not a func call.
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="40">40</h2>
+
+<p>What is a type-specific swap function often used for?</p>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q40')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q40" style="display: none;">
+	
+	<p>To define the classes assignment operator.<br />
+The operator uses a technique known as &lsquo;copy and swap&rsquo;.<br />
+Swaps the left-hand operand with a copy of the right-hand operand.<br />
+e.g.</p>
+
+<pre><code class="language-c++">MyType&amp; MyType::operator=(MyType rhs) {
+    swap(*this, rhs);
+    return *this;
+} // 'rhs' is destroyed, which deletes what was previously in 'this'.&quot;
+</code></pre>
+
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="41">41</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q41')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q41" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="42">42</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q42')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q42" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="43">43</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q43')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q43" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="44">44</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q44')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q44" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="45">45</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q45')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q45" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="46">46</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q46')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q46" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="47">47</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q47')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q47" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="48">48</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q48')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q48" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="49">49</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q49')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q49" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="50">50</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q50')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q50" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="51">51</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q51')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q51" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="52">52</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q52')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q52" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="53">53</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q53')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q53" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="54">54</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q54')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q54" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="55">55</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q55')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q55" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="56">56</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q56')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q56" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="57">57</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q57')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q57" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="58">58</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q58')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q58" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="59">59</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q59')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q59" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="60">60</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q60')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q60" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="61">61</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q61')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q61" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="62">62</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q62')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q62" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="63">63</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q63')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q63" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="64">64</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q64')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q64" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="65">65</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q65')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q65" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="66">66</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q66')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q66" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="67">67</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q67')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q67" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="68">68</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q68')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q68" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="69">69</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q69')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q69" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="70">70</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q70')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q70" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="71">71</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q71')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q71" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="72">72</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q72')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q72" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="73">73</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q73')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q73" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="74">74</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q74')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q74" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="75">75</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q75')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q75" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="76">76</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q76')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q76" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="77">77</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q77')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q77" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="78">78</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q78')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q78" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="79">79</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q79')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q79" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="80">80</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q80')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q80" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="81">81</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q81')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q81" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="82">82</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q82')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q82" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="83">83</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q83')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q83" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="84">84</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q84')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q84" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="85">85</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q85')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q85" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="86">86</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q86')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q86" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="87">87</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q87')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q87" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="88">88</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q88')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q88" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="89">89</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q89')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q89" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="90">90</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q90')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q90" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="91">91</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q91')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q91" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="92">92</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q92')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q92" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="93">93</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q93')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q93" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="94">94</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q94')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q94" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="95">95</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q95')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q95" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="96">96</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q96')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q96" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="97">97</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q97')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q97" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="98">98</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q98')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q98" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="99">99</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q99')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q99" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+<h2 id="100">100</h2>
+
+<div>
+	
+	<button type="button" onclick="showAnswer('q100')"><img src="" alt="" />Show Answer</button>
+	<br/>
+	<div id="q100" style="display: none;">
+	
+	
+	</div>
+	<script>
+	  function showAnswer(divId) {
+			var x = document.getElementById(divId);
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+	  }
+	</script>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://richardmillen.github.io/question/cpp-2/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43; Quiz #2">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://richardmillen.github.io/question/zeromq-1/" data-toggle="tooltip" data-placement="top" title="ØMQ Quiz #1">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:mail@richardmillen.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/richardmillen.co.uk" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/richardmillen" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4492867/richard-millen" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCIqZ2TujNT_Bo1DTqa_6mNA" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://richardmillen.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Richard Millen
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://richardmillen.github.io">Richard Millen</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.30.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://richardmillen.github.io/js/main.js"></script>
+<script src="https://richardmillen.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+  </body>
+</html>
+
