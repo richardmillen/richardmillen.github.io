@@ -8,9 +8,9 @@
   <title>VIM Cheat Sheet</title>
   <meta property="og:title" content="VIM Cheat Sheet" />
   <meta name="twitter:title" content="VIM Cheat Sheet" />
-  <meta name="description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W &#43; or - inc.">
-  <meta property="og:description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W &#43; or - inc.">
-  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file …">
+  <meta name="description" content="Multiple Files Buffers    Command Info     set hidden hide buffers when abandoned   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W &#43; or - inc.">
+  <meta property="og:description" content="Multiple Files Buffers    Command Info     set hidden hide buffers when abandoned   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W &#43; or - inc.">
+  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     set hidden hide buffers when abandoned   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -205,6 +205,11 @@
 
 <tbody>
 <tr>
+<td align="left"><code>set hidden</code></td>
+<td align="left">hide buffers when abandoned</td>
+</tr>
+
+<tr>
 <td align="left"><code>:e foo</code> or <code>:edit foo</code></td>
 <td align="left">edit a file in a new buffer</td>
 </tr>
@@ -221,32 +226,32 @@
 
 <tr>
 <td align="left"><code>:bn</code> or <code>:bnext</code></td>
-<td align="left">go to the next buffer</td>
+<td align="left">switch to the next buffer</td>
 </tr>
 
 <tr>
 <td align="left"><code>:bp</code> or <code>:bprev</code></td>
-<td align="left">go to the previous buffer</td>
+<td align="left">switch to the previous buffer</td>
 </tr>
 
 <tr>
 <td align="left"><code>:b4</code></td>
-<td align="left">go to buffer number 4</td>
+<td align="left">switch to buffer number 4</td>
 </tr>
 
 <tr>
 <td align="left"><code>:bf</code></td>
-<td align="left">go to first buffer</td>
+<td align="left">switch to first buffer</td>
 </tr>
 
 <tr>
 <td align="left"><code>:bl</code></td>
-<td align="left">go to last buffer</td>
+<td align="left">switch to last buffer</td>
 </tr>
 
 <tr>
 <td align="left"><code>:b foo&lt;TAB&gt;</code></td>
-<td align="left">go to buffer <code>foo</code></td>
+<td align="left">switch to buffer <code>foo</code></td>
 </tr>
 
 <tr>
@@ -257,11 +262,6 @@
 <tr>
 <td align="left"><code>:ls</code> or <code>:buffers</code></td>
 <td align="left">list all open buffers</td>
-</tr>
-
-<tr>
-<td align="left"><code>set hidden</code></td>
-<td align="left">hide buffers when abandoned</td>
 </tr>
 </tbody>
 </table>
@@ -398,6 +398,99 @@
 <tr>
 <td align="left"><code>:tabnew</code> or <code>:tabnew file</code></td>
 <td align="left">open a file in a new tab</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="search">Search</h2>
+
+<h3 id="search-replace">Search &amp; Replace</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:set hlsearch</code></td>
+<td align="left">highlight all future search matches</td>
+</tr>
+
+<tr>
+<td align="left"><code>:noh</code> or <code>:nohlsearch</code></td>
+<td align="left">turn off search highlighting</td>
+</tr>
+
+<tr>
+<td align="left"><code>/pattern</code></td>
+<td align="left">search for pattern</td>
+</tr>
+
+<tr>
+<td align="left"><code>?pattern</code></td>
+<td align="left">search backward for pattern</td>
+</tr>
+
+<tr>
+<td align="left"><code>\vpattern</code></td>
+<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
+</tr>
+
+<tr>
+<td align="left"><code>n</code></td>
+<td align="left">repeat search in same direction</td>
+</tr>
+
+<tr>
+<td align="left"><code>N</code></td>
+<td align="left">repeat search in opposite direction</td>
+</tr>
+
+<tr>
+<td align="left"><code>:%s/old/new/g</code></td>
+<td align="left">replace all old with new throughout file</td>
+</tr>
+
+<tr>
+<td align="left"><code>:%s/old/new/gc</code></td>
+<td align="left">replace all old with new throughout file with confirmations</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="search-in-multiple-files">Search in multiple files</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:vimgrep /pattern/ {file}</code></td>
+<td align="left">search for pattern in multiple files e.g. <code>:vimgrep /foo/ **/*</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>:cn</code></td>
+<td align="left">jump to the next match</td>
+</tr>
+
+<tr>
+<td align="left"><code>:cp</code></td>
+<td align="left">jump to the previous match</td>
+</tr>
+
+<tr>
+<td align="left"><code>:copen</code></td>
+<td align="left">open a window containing the list of matches</td>
 </tr>
 </tbody>
 </table>
@@ -918,94 +1011,6 @@
 <tr>
 <td align="left"><code>~</code></td>
 <td align="left">switch case</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="search">Search</h2>
-
-<h3 id="search-replace">Search &amp; Replace</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left">Command</th>
-<th align="left">Info</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>/pattern</code></td>
-<td align="left">search for pattern</td>
-</tr>
-
-<tr>
-<td align="left"><code>?pattern</code></td>
-<td align="left">search backward for pattern</td>
-</tr>
-
-<tr>
-<td align="left"><code>\vpattern</code></td>
-<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
-</tr>
-
-<tr>
-<td align="left"><code>n</code></td>
-<td align="left">repeat search in same direction</td>
-</tr>
-
-<tr>
-<td align="left"><code>N</code></td>
-<td align="left">repeat search in opposite direction</td>
-</tr>
-
-<tr>
-<td align="left"><code>:%s/old/new/g</code></td>
-<td align="left">replace all old with new throughout file</td>
-</tr>
-
-<tr>
-<td align="left"><code>:%s/old/new/gc</code></td>
-<td align="left">replace all old with new throughout file with confirmations</td>
-</tr>
-
-<tr>
-<td align="left"><code>:noh</code></td>
-<td align="left">remove highlighting of search matches</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="search-in-multiple-files">Search in multiple files</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left">Command</th>
-<th align="left">Info</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>:vimgrep /pattern/ {file}</code></td>
-<td align="left">search for pattern in multiple files e.g. <code>:vimgrep /foo/ **/*</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>:cn</code></td>
-<td align="left">jump to the next match</td>
-</tr>
-
-<tr>
-<td align="left"><code>:cp</code></td>
-<td align="left">jump to the previous match</td>
-</tr>
-
-<tr>
-<td align="left"><code>:copen</code></td>
-<td align="left">open a window containing the list of matches</td>
 </tr>
 </tbody>
 </table>
