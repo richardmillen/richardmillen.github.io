@@ -8,9 +8,9 @@
   <title>VIM Cheat Sheet</title>
   <meta property="og:title" content="VIM Cheat Sheet" />
   <meta name="twitter:title" content="VIM Cheat Sheet" />
-  <meta name="description" content="Cursor    Move Jump Other     h - move cursor left w - jump forwards to the start of a word gg - go to the first line of the document   j - move cursor down W - jump forwards to the start of a word (words can contain punctuation) G - go to the last line of the document   k - move cursor up e - jump forwards to the end of a word 5G - go to line 5   l - move cursor right E - jump forwards to the end of a word (words can contain punctuation) ; - repeat previous f, t, F or T movement   H - move to top of screen b - jump backwards to the start of a word , - repeat previous f, t, F or T movement, backwards   M - move to middle of screen B - jump backwards to the start of a word (words can contain punctuation) zz - center cursor on screen   L - move to bottom of screen % - move to matching character (default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; - use :h matchpairs in vim for more info) Ctrl &#43; b - move back one full screen    0 - jump to the start of the line Ctrl &#43; f - move forward one full screen    ^ - jump to the first non-blank character of the line Ctrl &#43; d - move forward 1&frasl;2 a screen    $ - jump to the end of the line Ctrl &#43; u - move back 1&frasl;2 a screen    g_ - jump to the last non-blank character of the line     fx - jump to next occurrence of character x     tx - jump to before next occurrence of character x     Fx - jump to previous occurence of character x     Tx - jump to after previous occurence of character x     } - jump to next paragraph (or function/block, when editing code)     { - jump to previous paragraph (or function/block, when editing code)     Insert Mode    Inserting / Appending Text Editing Cut &amp; Paste     i - insert before the cursor r - replace a single character yy - yank (copy) a line   I - insert at the beginning of the line J - join line below to the current one with one space in between 2yy - yank (copy) 2 lines   a - insert (append) after the cursor gJ - join line below to the current one without space in between yw - yank (copy) the characters of the word from the cursor position to the start of the next word   A - insert (append) at the end of the line cc - change (replace) entire line y$ - yank (copy) to end of line   o - append (open) a new line below the current line cw - change (replace) to the end of the word p - put (paste) the clipboard after cursor   O - append (open) a new line above the current line c$ - change (replace) to the end of the line P - put (paste) before cursor   ea - insert (append) at the end of the word s - delete character and substitute text dd - delete (cut) a line   Esc - exit insert mode S - delete line and substitute text (same as cc) 2dd - delete (cut) 2 lines    xp - transpose two letters (delete and paste) dw - delete (cut) the characters of the word from the cursor position to the start of the next word    u - undo D - delete (cut) to the end of the line    Ctrl &#43; r - redo d$ - delete (cut) to the end of the line    .">
-  <meta property="og:description" content="Cursor    Move Jump Other     h - move cursor left w - jump forwards to the start of a word gg - go to the first line of the document   j - move cursor down W - jump forwards to the start of a word (words can contain punctuation) G - go to the last line of the document   k - move cursor up e - jump forwards to the end of a word 5G - go to line 5   l - move cursor right E - jump forwards to the end of a word (words can contain punctuation) ; - repeat previous f, t, F or T movement   H - move to top of screen b - jump backwards to the start of a word , - repeat previous f, t, F or T movement, backwards   M - move to middle of screen B - jump backwards to the start of a word (words can contain punctuation) zz - center cursor on screen   L - move to bottom of screen % - move to matching character (default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; - use :h matchpairs in vim for more info) Ctrl &#43; b - move back one full screen    0 - jump to the start of the line Ctrl &#43; f - move forward one full screen    ^ - jump to the first non-blank character of the line Ctrl &#43; d - move forward 1&frasl;2 a screen    $ - jump to the end of the line Ctrl &#43; u - move back 1&frasl;2 a screen    g_ - jump to the last non-blank character of the line     fx - jump to next occurrence of character x     tx - jump to before next occurrence of character x     Fx - jump to previous occurence of character x     Tx - jump to after previous occurence of character x     } - jump to next paragraph (or function/block, when editing code)     { - jump to previous paragraph (or function/block, when editing code)     Insert Mode    Inserting / Appending Text Editing Cut &amp; Paste     i - insert before the cursor r - replace a single character yy - yank (copy) a line   I - insert at the beginning of the line J - join line below to the current one with one space in between 2yy - yank (copy) 2 lines   a - insert (append) after the cursor gJ - join line below to the current one without space in between yw - yank (copy) the characters of the word from the cursor position to the start of the next word   A - insert (append) at the end of the line cc - change (replace) entire line y$ - yank (copy) to end of line   o - append (open) a new line below the current line cw - change (replace) to the end of the word p - put (paste) the clipboard after cursor   O - append (open) a new line above the current line c$ - change (replace) to the end of the line P - put (paste) before cursor   ea - insert (append) at the end of the word s - delete character and substitute text dd - delete (cut) a line   Esc - exit insert mode S - delete line and substitute text (same as cc) 2dd - delete (cut) 2 lines    xp - transpose two letters (delete and paste) dw - delete (cut) the characters of the word from the cursor position to the start of the next word    u - undo D - delete (cut) to the end of the line    Ctrl &#43; r - redo d$ - delete (cut) to the end of the line    .">
-  <meta name="twitter:description" content="Cursor    Move Jump Other     h - move cursor left w - jump forwards to the start of a word gg - go to the first line of the document   j - move cursor down W - jump forwards to the start of a word …">
+  <meta name="description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo (with tab completion)   :bd delete a buffer (close a file)   :ls list all open buffers    Windows    Command Info     :sp file open a file in a new buffer and split window   :vsp file open a file in a new buffer and vertically split window   Ctrl &#43; ws split window   Ctrl &#43; ww switch windows   Ctrl &#43; wq quit a window   Ctrl &#43; wv split window vertically   Ctrl &#43; wh move cursor to the left window (vertical split)   Ctrl &#43; wl move cursor to the right window (vertical split)   Ctrl &#43; wj move cursor to the window below (horizontal split)   Ctrl &#43; wk move cursor to the window above (horizontal split)    Tabs    Command Info     :tabmove # move current tab to the #th position (indexed from 0)   Ctrl &#43; wT move the current split window into its own tab   gt or :tabnext or :tabn move to the next tab   gT or :tabprev or :tabp move to the previous tab   #gt move to tab number #   :tabclose or :tabc close the current tab and all its windows   :tabonly or :tabo close all tabs except for the current one   :tabdo command run the command on all tabs (e.">
+  <meta property="og:description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo (with tab completion)   :bd delete a buffer (close a file)   :ls list all open buffers    Windows    Command Info     :sp file open a file in a new buffer and split window   :vsp file open a file in a new buffer and vertically split window   Ctrl &#43; ws split window   Ctrl &#43; ww switch windows   Ctrl &#43; wq quit a window   Ctrl &#43; wv split window vertically   Ctrl &#43; wh move cursor to the left window (vertical split)   Ctrl &#43; wl move cursor to the right window (vertical split)   Ctrl &#43; wj move cursor to the window below (horizontal split)   Ctrl &#43; wk move cursor to the window above (horizontal split)    Tabs    Command Info     :tabmove # move current tab to the #th position (indexed from 0)   Ctrl &#43; wT move the current split window into its own tab   gt or :tabnext or :tabn move to the next tab   gT or :tabprev or :tabp move to the previous tab   #gt move to tab number #   :tabclose or :tabc close the current tab and all its windows   :tabonly or :tabo close all tabs except for the current one   :tabdo command run the command on all tabs (e.">
+  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -190,6 +190,187 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
+
+<h2 id="multiple-files">Multiple Files</h2>
+
+<h3 id="buffers">Buffers</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:e file</code></td>
+<td align="left">edit a file in a new buffer</td>
+</tr>
+
+<tr>
+<td align="left"><code>:bn</code> or <code>:bnext</code></td>
+<td align="left">go to the next buffer</td>
+</tr>
+
+<tr>
+<td align="left"><code>:bp</code> or <code>:bprev</code></td>
+<td align="left">go to the previous buffer</td>
+</tr>
+
+<tr>
+<td align="left"><code>:b4</code></td>
+<td align="left">go to buffer number 4</td>
+</tr>
+
+<tr>
+<td align="left"><code>:bf</code></td>
+<td align="left">go to first buffer</td>
+</tr>
+
+<tr>
+<td align="left"><code>:bl</code></td>
+<td align="left">go to last buffer</td>
+</tr>
+
+<tr>
+<td align="left"><code>:b foo&lt;TAB&gt;</code></td>
+<td align="left">go to buffer <code>foo</code> <em>(with tab completion)</em></td>
+</tr>
+
+<tr>
+<td align="left"><code>:bd</code></td>
+<td align="left">delete a buffer (close a file)</td>
+</tr>
+
+<tr>
+<td align="left"><code>:ls</code></td>
+<td align="left">list all open buffers</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="windows">Windows</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:sp file</code></td>
+<td align="left">open a file in a new buffer and split window</td>
+</tr>
+
+<tr>
+<td align="left"><code>:vsp file</code></td>
+<td align="left">open a file in a new buffer and vertically split window</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + ws</code></td>
+<td align="left">split window</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + ww</code></td>
+<td align="left">switch windows</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wq</code></td>
+<td align="left">quit a window</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wv</code></td>
+<td align="left">split window vertically</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wh</code></td>
+<td align="left">move cursor to the left window (vertical split)</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wl</code></td>
+<td align="left">move cursor to the right window (vertical split)</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wj</code></td>
+<td align="left">move cursor to the window below (horizontal split)</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wk</code></td>
+<td align="left">move cursor to the window above (horizontal split)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="tabs">Tabs</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:tabmove #</code></td>
+<td align="left">move current tab to the #th position (indexed from 0)</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + wT</code></td>
+<td align="left">move the current split window into its own tab</td>
+</tr>
+
+<tr>
+<td align="left"><code>gt</code> or <code>:tabnext</code> or <code>:tabn</code></td>
+<td align="left">move to the next tab</td>
+</tr>
+
+<tr>
+<td align="left"><code>gT</code> or <code>:tabprev</code> or <code>:tabp</code></td>
+<td align="left">move to the previous tab</td>
+</tr>
+
+<tr>
+<td align="left"><code>#gt</code></td>
+<td align="left">move to tab number #</td>
+</tr>
+
+<tr>
+<td align="left"><code>:tabclose</code> or <code>:tabc</code></td>
+<td align="left">close the current tab and all its windows</td>
+</tr>
+
+<tr>
+<td align="left"><code>:tabonly</code> or <code>:tabo</code></td>
+<td align="left">close all tabs except for the current one</td>
+</tr>
+
+<tr>
+<td align="left"><code>:tabdo command</code></td>
+<td align="left">run the command on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</td>
+</tr>
+
+<tr>
+<td align="left"><code>:tabnew</code> or <code>:tabnew file</code></td>
+<td align="left">open a file in a new tab</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="cursor">Cursor</h2>
 
@@ -514,80 +695,6 @@
 </tbody>
 </table>
 
-<h2 id="multiple-files">Multiple Files</h2>
-
-<table>
-<thead>
-<tr>
-<th align="left">Buffers</th>
-<th align="left">Windows</th>
-<th align="left">Tabs</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>:e file</code> - edit a file in a new buffer</td>
-<td align="left"><code>:sp file</code> - open a file in a new buffer and split window</td>
-<td align="left"><code>:tabmove #</code> - move current tab to the #th position (indexed from 0)</td>
-</tr>
-
-<tr>
-<td align="left"><code>:bn</code> or <code>:bnext</code> - go to the next buffer</td>
-<td align="left"><code>:vsp file</code> - open a file in a new buffer and vertically split window</td>
-<td align="left"><code>Ctrl + wT</code> - move the current split window into its own tab</td>
-</tr>
-
-<tr>
-<td align="left"><code>:bp</code> or <code>:bprev</code> - go to the previous buffer</td>
-<td align="left"><code>Ctrl + ws</code> - split window</td>
-<td align="left"><code>gt</code> or <code>:tabnext</code> or <code>:tabn</code> - move to the next tab</td>
-</tr>
-
-<tr>
-<td align="left"><code>:b4</code> - go to buffer number 4</td>
-<td align="left"><code>Ctrl + ww</code> - switch windows</td>
-<td align="left"><code>gT</code> or <code>:tabprev</code> or <code>:tabp</code> - move to the previous tab</td>
-</tr>
-
-<tr>
-<td align="left"><code>:bf</code> - go to first buffer</td>
-<td align="left"><code>Ctrl + wq</code> - quit a window</td>
-<td align="left"><code>#gt</code> - move to tab number #</td>
-</tr>
-
-<tr>
-<td align="left"><code>:bl</code> - go to last buffer</td>
-<td align="left"><code>Ctrl + wv</code> - split window vertically</td>
-<td align="left"><code>:tabclose</code> or <code>:tabc</code> - close the current tab and all its windows</td>
-</tr>
-
-<tr>
-<td align="left"><code>:b foo&lt;TAB&gt;</code> - go to buffer <code>foo</code> <em>(with tab completion)</em></td>
-<td align="left"><code>Ctrl + wh</code> - move cursor to the left window (vertical split)</td>
-<td align="left"><code>:tabonly</code> or <code>:tabo</code> - close all tabs except for the current one</td>
-</tr>
-
-<tr>
-<td align="left"><code>:bd</code> - delete a buffer (close a file)</td>
-<td align="left"><code>Ctrl + wl</code> - move cursor to the right window (vertical split)</td>
-<td align="left"><code>:tabdo</code> command - run the command on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</td>
-</tr>
-
-<tr>
-<td align="left"><code>:ls</code> - list all open buffers</td>
-<td align="left"><code>Ctrl + wj</code> - move cursor to the window below (horizontal split)</td>
-<td align="left"><code>:tabnew</code> or <code>:tabnew file</code> - open a file in a new tab</td>
-</tr>
-
-<tr>
-<td align="left"></td>
-<td align="left"><code>Ctrl + wk</code> - move cursor to the window above (horizontal split)</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
 <h2 id="productivity">Productivity</h2>
 
 <table>
@@ -738,7 +845,7 @@
 
 <p><em><a href="https://stackoverflow.com/questions/16082991/vim-switching-between-files-rapidly-using-vanilla-vim-no-plugins">TODO: switching between files rapidly using vanilla vim</a></em></p>
 
-<h3 id="buffers">Buffers</h3>
+<h3 id="buffers-1">Buffers</h3>
 
 <table>
 <thead>
