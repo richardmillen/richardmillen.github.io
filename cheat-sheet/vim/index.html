@@ -362,7 +362,7 @@
 
 <tr>
 <td align="left"><code>:tabdo command</code></td>
-<td align="left">run the command on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</td>
+<td align="left">run the command on all tabs (e.g. <code>:tabdo q</code></td>
 </tr>
 
 <tr>
@@ -374,404 +374,787 @@
 
 <h2 id="cursor">Cursor</h2>
 
+<h3 id="move">Move</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Move</th>
-<th align="left">Jump</th>
-<th align="left">Other</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>h</code> - move cursor left</td>
-<td align="left"><code>w</code> - jump forwards to the start of a word</td>
-<td align="left"><code>gg</code> - go to the first line of the document</td>
+<td align="left"><code>h</code></td>
+<td align="left">move cursor left</td>
 </tr>
 
 <tr>
-<td align="left"><code>j</code> - move cursor down</td>
-<td align="left"><code>W</code> - jump forwards to the start of a word (words can contain punctuation)</td>
-<td align="left"><code>G</code> - go to the last line of the document</td>
+<td align="left"><code>j</code></td>
+<td align="left">move cursor down</td>
 </tr>
 
 <tr>
-<td align="left"><code>k</code> - move cursor up</td>
-<td align="left"><code>e</code> - jump forwards to the end of a word</td>
-<td align="left"><code>5G</code> - go to line 5</td>
+<td align="left"><code>k</code></td>
+<td align="left">move cursor up</td>
 </tr>
 
 <tr>
-<td align="left"><code>l</code> - move cursor right</td>
-<td align="left"><code>E</code> - jump forwards to the end of a word (words can contain punctuation)</td>
-<td align="left"><code>;</code> - repeat previous f, t, F or T movement</td>
+<td align="left"><code>l</code></td>
+<td align="left">move cursor right</td>
 </tr>
 
 <tr>
-<td align="left"><code>H</code> - move to top of screen</td>
-<td align="left"><code>b</code> - jump backwards to the start of a word</td>
-<td align="left"><code>,</code> - repeat previous f, t, F or T movement, backwards</td>
+<td align="left"><code>H</code></td>
+<td align="left">move to top of screen</td>
 </tr>
 
 <tr>
-<td align="left"><code>M</code> - move to middle of screen</td>
-<td align="left"><code>B</code> - jump backwards to the start of a word (words can contain punctuation)</td>
-<td align="left"><code>zz</code> - center cursor on screen</td>
+<td align="left"><code>M</code></td>
+<td align="left">move to middle of screen</td>
 </tr>
 
 <tr>
-<td align="left"><code>L</code> - move to bottom of screen</td>
-<td align="left"><code>%</code> - move to matching character (default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; - use :h matchpairs in vim for more info)</td>
-<td align="left"><code>Ctrl + b</code> - move back one full screen</td>
+<td align="left"><code>L</code></td>
+<td align="left">move to bottom of screen</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="jump">Jump</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>w</code></td>
+<td align="left">jump forwards to the start of a word</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>0</code> - jump to the start of the line</td>
-<td align="left"><code>Ctrl + f</code> - move forward one full screen</td>
+<td align="left"><code>W</code></td>
+<td align="left">jump forwards to the start of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>^</code> - jump to the first non-blank character of the line</td>
-<td align="left"><code>Ctrl + d</code> - move forward <sup>1</sup>&frasl;<sub>2</sub> a screen</td>
+<td align="left"><code>e</code></td>
+<td align="left">jump forwards to the end of a word</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>$</code> - jump to the end of the line</td>
-<td align="left"><code>Ctrl + u</code> - move back <sup>1</sup>&frasl;<sub>2</sub> a screen</td>
+<td align="left"><code>E</code></td>
+<td align="left">jump forwards to the end of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>g_</code> - jump to the last non-blank character of the line</td>
-<td align="left"></td>
+<td align="left"><code>b</code></td>
+<td align="left">jump backwards to the start of a word</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>fx</code> - jump to next occurrence of character x</td>
-<td align="left"></td>
+<td align="left"><code>B</code></td>
+<td align="left">jump backwards to the start of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>tx</code> - jump to before next occurrence of character x</td>
-<td align="left"></td>
+<td align="left"><code>%</code></td>
+<td align="left">move to matching character (default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; - use :h matchpairs in vim for more info)</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>Fx</code> - jump to previous occurence of character x</td>
-<td align="left"></td>
+<td align="left"><code>0</code></td>
+<td align="left">jump to the start of the line</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>Tx</code> - jump to after previous occurence of character x</td>
-<td align="left"></td>
+<td align="left"><code>^</code></td>
+<td align="left">jump to the first non-blank character of the line</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>}</code> - jump to next paragraph (or function/block, when editing code)</td>
-<td align="left"></td>
+<td align="left"><code>$</code></td>
+<td align="left">jump to the end of the line</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>{</code> - jump to previous paragraph (or function/block, when editing code)</td>
-<td align="left"></td>
+<td align="left"><code>g_</code></td>
+<td align="left">jump to the last non-blank character of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>fx</code></td>
+<td align="left">jump to next occurrence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>tx</code></td>
+<td align="left">jump to before next occurrence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>Fx</code></td>
+<td align="left">jump to previous occurence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>Tx</code></td>
+<td align="left">jump to after previous occurence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>}</code></td>
+<td align="left">jump to next paragraph (or function/block, when editing code)</td>
+</tr>
+
+<tr>
+<td align="left"><code>{</code></td>
+<td align="left">jump to previous paragraph (or function/block, when editing code)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="other">Other</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>gg</code></td>
+<td align="left">go to the first line of the document</td>
+</tr>
+
+<tr>
+<td align="left"><code>G</code></td>
+<td align="left">go to the last line of the document</td>
+</tr>
+
+<tr>
+<td align="left"><code>5G</code></td>
+<td align="left">go to line 5</td>
+</tr>
+
+<tr>
+<td align="left"><code>;</code></td>
+<td align="left">repeat previous f, t, F or T movement</td>
+</tr>
+
+<tr>
+<td align="left"><code>,</code></td>
+<td align="left">repeat previous f, t, F or T movement, backwards</td>
+</tr>
+
+<tr>
+<td align="left"><code>zz</code></td>
+<td align="left">center cursor on screen</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + b</code></td>
+<td align="left">move back one full screen</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + f</code></td>
+<td align="left">move forward one full screen</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + d</code></td>
+<td align="left">move forward <sup>1</sup>&frasl;<sub>2</sub> a screen</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + u</code></td>
+<td align="left">move back <sup>1</sup>&frasl;<sub>2</sub> a screen</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="insert-mode">Insert Mode</h2>
 
+<h3 id="inserting-appending-text">Inserting &amp; Appending Text</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Inserting / Appending Text</th>
-<th align="left">Editing</th>
-<th align="left">Cut &amp; Paste</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>i</code> - insert before the cursor</td>
-<td align="left"><code>r</code> - replace a single character</td>
-<td align="left"><code>yy</code> - yank (copy) a line</td>
+<td align="left"><code>i</code></td>
+<td align="left">insert before the cursor</td>
 </tr>
 
 <tr>
-<td align="left"><code>I</code> - insert at the beginning of the line</td>
-<td align="left"><code>J</code> - join line below to the current one with one space in between</td>
-<td align="left"><code>2yy</code> - yank (copy) 2 lines</td>
+<td align="left"><code>I</code></td>
+<td align="left">insert at the beginning of the line</td>
 </tr>
 
 <tr>
-<td align="left"><code>a</code> - insert (append) after the cursor</td>
-<td align="left"><code>gJ</code> - join line below to the current one without space in between</td>
-<td align="left"><code>yw</code> - yank (copy) the characters of the word from the cursor position to the start of the next word</td>
+<td align="left"><code>a</code></td>
+<td align="left">insert (append) after the cursor</td>
 </tr>
 
 <tr>
-<td align="left"><code>A</code> - insert (append) at the end of the line</td>
-<td align="left"><code>cc</code> - change (replace) entire line</td>
-<td align="left"><code>y$</code> - yank (copy) to end of line</td>
+<td align="left"><code>A</code></td>
+<td align="left">insert (append) at the end of the line</td>
 </tr>
 
 <tr>
-<td align="left"><code>o</code> - append (open) a new line below the current line</td>
-<td align="left"><code>cw</code> - change (replace) to the end of the word</td>
-<td align="left"><code>p</code> - put (paste) the clipboard after cursor</td>
+<td align="left"><code>o</code></td>
+<td align="left">append (open) a new line below the current line</td>
 </tr>
 
 <tr>
-<td align="left"><code>O</code> - append (open) a new line above the current line</td>
-<td align="left"><code>c$</code> - change (replace) to the end of the line</td>
-<td align="left"><code>P</code> - put (paste) before cursor</td>
+<td align="left"><code>O</code></td>
+<td align="left">append (open) a new line above the current line</td>
 </tr>
 
 <tr>
-<td align="left"><code>ea</code> - insert (append) at the end of the word</td>
-<td align="left"><code>s</code> - delete character and substitute text</td>
-<td align="left"><code>dd</code> - delete (cut) a line</td>
+<td align="left"><code>ea</code></td>
+<td align="left">insert (append) at the end of the word</td>
 </tr>
 
 <tr>
-<td align="left"><code>Esc</code> - exit insert mode</td>
-<td align="left"><code>S</code> - delete line and substitute text (same as cc)</td>
-<td align="left"><code>2dd</code> - delete (cut) 2 lines</td>
+<td align="left"><code>Esc</code></td>
+<td align="left">exit insert mode</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="editing">Editing</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>r</code></td>
+<td align="left">replace a single character</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>xp</code> - transpose two letters (delete and paste)</td>
-<td align="left"><code>dw</code> - delete (cut) the characters of the word from the cursor position to the start of the next word</td>
+<td align="left"><code>J</code></td>
+<td align="left">join line below to the current one with one space in between</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>u</code> - undo</td>
-<td align="left"><code>D</code> - delete (cut) to the end of the line</td>
+<td align="left"><code>gJ</code></td>
+<td align="left">join line below to the current one without space in between</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>Ctrl + r</code> - redo</td>
-<td align="left"><code>d$</code> - delete (cut) to the end of the line</td>
+<td align="left"><code>cc</code></td>
+<td align="left">change (replace) entire line</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>.</code> - repeat last command</td>
-<td align="left"><code>x</code> - delete (cut) character</td>
+<td align="left"><code>cw</code></td>
+<td align="left">change (replace) to the end of the word</td>
+</tr>
+
+<tr>
+<td align="left"><code>c$</code></td>
+<td align="left">change (replace) to the end of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>s</code></td>
+<td align="left">delete character and substitute text</td>
+</tr>
+
+<tr>
+<td align="left"><code>S</code></td>
+<td align="left">delete line and substitute text (same as cc)</td>
+</tr>
+
+<tr>
+<td align="left"><code>xp</code></td>
+<td align="left">transpose two letters (delete and paste)</td>
+</tr>
+
+<tr>
+<td align="left"><code>u</code></td>
+<td align="left">undo</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + r</code></td>
+<td align="left">redo</td>
+</tr>
+
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left">repeat last command</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="cut-paste">Cut &amp; Paste</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>yy</code></td>
+<td align="left">yank (copy) a line</td>
+</tr>
+
+<tr>
+<td align="left"><code>2yy</code></td>
+<td align="left">yank (copy) 2 lines</td>
+</tr>
+
+<tr>
+<td align="left"><code>yw</code></td>
+<td align="left">yank (copy) the characters of the word from the cursor position to the start of the next word</td>
+</tr>
+
+<tr>
+<td align="left"><code>y$</code></td>
+<td align="left">yank (copy) to end of line</td>
+</tr>
+
+<tr>
+<td align="left"><code>p</code></td>
+<td align="left">put (paste) the clipboard after cursor</td>
+</tr>
+
+<tr>
+<td align="left"><code>P</code></td>
+<td align="left">put (paste) before cursor</td>
+</tr>
+
+<tr>
+<td align="left"><code>dd</code></td>
+<td align="left">delete (cut) a line</td>
+</tr>
+
+<tr>
+<td align="left"><code>2dd</code></td>
+<td align="left">delete (cut) 2 lines</td>
+</tr>
+
+<tr>
+<td align="left"><code>dw</code></td>
+<td align="left">delete (cut) the characters of the word from the cursor position to the start of the next word</td>
+</tr>
+
+<tr>
+<td align="left"><code>D</code></td>
+<td align="left">delete (cut) to the end of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>d$</code></td>
+<td align="left">delete (cut) to the end of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>x</code></td>
+<td align="left">delete (cut) character</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="visual-mode">Visual Mode</h2>
 
+<h3 id="marking-text">Marking Text</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Marking Text</th>
-<th align="left">Visual Commands</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>v</code> - start visual mode, mark lines, then do a command (like y-yank)</td>
-<td align="left"><code>&gt;</code> - shift text right</td>
+<td align="left"><code>v</code></td>
+<td align="left">start visual mode, mark lines, then do a command (like y-yank)</td>
 </tr>
 
 <tr>
-<td align="left"><code>V</code> - start linewise visual mode</td>
-<td align="left"><code>&lt;</code> - shift text left</td>
+<td align="left"><code>V</code></td>
+<td align="left">start linewise visual mode</td>
 </tr>
 
 <tr>
-<td align="left"><code>o</code> - move to other end of marked area</td>
-<td align="left"><code>y</code> - yank (copy) marked text</td>
+<td align="left"><code>o</code></td>
+<td align="left">move to other end of marked area</td>
 </tr>
 
 <tr>
-<td align="left"><code>Ctrl + v</code> - start visual block mode</td>
-<td align="left"><code>d</code> - delete marked text</td>
+<td align="left"><code>Ctrl + v</code></td>
+<td align="left">start visual block mode</td>
 </tr>
 
 <tr>
-<td align="left"><code>O</code> - move to other corner of block</td>
-<td align="left"><code>~</code> - switch case</td>
+<td align="left"><code>O</code></td>
+<td align="left">move to other corner of block</td>
 </tr>
 
 <tr>
-<td align="left"><code>aw</code> - mark a word</td>
-<td align="left"></td>
+<td align="left"><code>aw</code></td>
+<td align="left">mark a word</td>
 </tr>
 
 <tr>
-<td align="left"><code>ab</code> - a block with ()</td>
-<td align="left"></td>
+<td align="left"><code>ab</code></td>
+<td align="left">a block with ()</td>
 </tr>
 
 <tr>
-<td align="left"><code>aB</code> - a block with {}</td>
-<td align="left"></td>
+<td align="left"><code>aB</code></td>
+<td align="left">a block with {}</td>
 </tr>
 
 <tr>
-<td align="left"><code>ib</code> - inner block with ()</td>
-<td align="left"></td>
+<td align="left"><code>ib</code></td>
+<td align="left">inner block with ()</td>
 </tr>
 
 <tr>
-<td align="left"><code>iB</code> - inner block with {}</td>
-<td align="left"></td>
+<td align="left"><code>iB</code></td>
+<td align="left">inner block with {}</td>
 </tr>
 
 <tr>
-<td align="left"><code>Esc</code> - exit visual mode</td>
-<td align="left"></td>
+<td align="left"><code>Esc</code></td>
+<td align="left">exit visual mode</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="visual-commands">Visual Commands</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">shift text right</td>
+</tr>
+
+<tr>
+<td align="left"><code>&lt;</code></td>
+<td align="left">shift text left</td>
+</tr>
+
+<tr>
+<td align="left"><code>y</code></td>
+<td align="left">yank (copy) marked text</td>
+</tr>
+
+<tr>
+<td align="left"><code>d</code></td>
+<td align="left">delete marked text</td>
+</tr>
+
+<tr>
+<td align="left"><code>~</code></td>
+<td align="left">switch case</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="search">Search</h2>
 
+<h3 id="search-replace">Search &amp; Replace</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Search &amp; Replace</th>
-<th align="left">Search in multiple files</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>/pattern</code> - search for pattern</td>
-<td align="left"><code>:vimgrep /pattern/ {file}</code> - search for pattern in multiple files e.g. <code>:vimgrep /foo/ **/*</code></td>
+<td align="left"><code>/pattern</code></td>
+<td align="left">search for pattern</td>
 </tr>
 
 <tr>
-<td align="left"><code>?pattern</code> - search backward for pattern</td>
-<td align="left"><code>:cn</code> - jump to the next match</td>
+<td align="left"><code>?pattern</code></td>
+<td align="left">search backward for pattern</td>
 </tr>
 
 <tr>
-<td align="left"><code>\vpattern</code> - &lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
-<td align="left"><code>:cp</code> - jump to the previous match</td>
+<td align="left"><code>\vpattern</code></td>
+<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
 </tr>
 
 <tr>
-<td align="left"><code>n</code> - repeat search in same direction</td>
-<td align="left"><code>:copen</code> - open a window containing the list of matches</td>
+<td align="left"><code>n</code></td>
+<td align="left">repeat search in same direction</td>
 </tr>
 
 <tr>
-<td align="left"><code>N</code> - repeat search in opposite direction</td>
-<td align="left"></td>
+<td align="left"><code>N</code></td>
+<td align="left">repeat search in opposite direction</td>
 </tr>
 
 <tr>
-<td align="left"><code>:%s/old/new/g</code> - replace all old with new throughout file</td>
-<td align="left"></td>
+<td align="left"><code>:%s/old/new/g</code></td>
+<td align="left">replace all old with new throughout file</td>
 </tr>
 
 <tr>
-<td align="left"><code>:%s/old/new/gc</code> - replace all old with new throughout file with confirmations</td>
-<td align="left"></td>
+<td align="left"><code>:%s/old/new/gc</code></td>
+<td align="left">replace all old with new throughout file with confirmations</td>
 </tr>
 
 <tr>
-<td align="left"><code>:noh</code> - remove highlighting of search matches</td>
-<td align="left"></td>
+<td align="left"><code>:noh</code></td>
+<td align="left">remove highlighting of search matches</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="search-in-multiple-files">Search in multiple files</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:vimgrep /pattern/ {file}</code></td>
+<td align="left">search for pattern in multiple files e.g. <code>:vimgrep /foo/ **/*</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>:cn</code></td>
+<td align="left">jump to the next match</td>
+</tr>
+
+<tr>
+<td align="left"><code>:cp</code></td>
+<td align="left">jump to the previous match</td>
+</tr>
+
+<tr>
+<td align="left"><code>:copen</code></td>
+<td align="left">open a window containing the list of matches</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="productivity">Productivity</h2>
 
+<h3 id="registers">Registers</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Registers</th>
-<th align="left">Marks</th>
-<th align="left">Macros</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>:reg</code> - show registers content</td>
-<td align="left"><code>:marks</code> - list of marks</td>
-<td align="left"><code>qa</code> - record macro a</td>
+<td align="left"><code>:reg</code></td>
+<td align="left">show registers content</td>
 </tr>
 
 <tr>
-<td align="left"><code>&quot;xy</code> - yank into register x</td>
-<td align="left"><code>ma</code> - set current position for mark A</td>
-<td align="left"><code>q</code> - stop recording macro</td>
+<td align="left"><code>&quot;xy</code></td>
+<td align="left">yank into register x</td>
 </tr>
 
 <tr>
-<td align="left"><code>&quot;xp</code> - paste contents of register x</td>
+<td align="left"><code>&quot;xp</code></td>
+<td align="left">paste contents of register x</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="marks">Marks</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:marks</code></td>
+<td align="left">list of marks</td>
+</tr>
+
+<tr>
+<td align="left"><code>ma</code></td>
+<td align="left">set current position for mark A</td>
+</tr>
+
+<tr>
 <td align="left">&#96;a - jump to position of mark A</td>
-<td align="left"><code>@a</code> - run macro a</td>
+<td align="left"></td>
 </tr>
 
 <tr>
-<td align="left"></td>
 <td align="left">y&#96;a - yank text to position of mark A</td>
-<td align="left"><code>@@</code> - rerun last run macro</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="macros">Macros</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>qa</code></td>
+<td align="left">record macro a</td>
+</tr>
+
+<tr>
+<td align="left"><code>q</code></td>
+<td align="left">stop recording macro</td>
+</tr>
+
+<tr>
+<td align="left"><code>@a</code></td>
+<td align="left">run macro a</td>
+</tr>
+
+<tr>
+<td align="left"><code>@@</code></td>
+<td align="left">rerun last run macro</td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="application">Application</h2>
 
+<h3 id="global">Global</h3>
+
 <table>
 <thead>
 <tr>
-<th align="left">Global</th>
-<th align="left">Exiting</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>:help keyword</code> - open help for keyword</td>
-<td align="left"><code>:w</code> - write (save) the file, but don&rsquo;t exit</td>
+<td align="left"><code>:help keyword</code></td>
+<td align="left">open help for keyword</td>
 </tr>
 
 <tr>
-<td align="left"><code>:o file</code> - open file</td>
-<td align="left"><code>:w !sudo tee %</code> - write out the current file using sudo</td>
+<td align="left"><code>:o file</code></td>
+<td align="left">open file</td>
 </tr>
 
 <tr>
-<td align="left"><code>:saveas file</code> - save file as</td>
-<td align="left"><code>:wq</code> or <code>:x</code> or <code>ZZ</code> - write (save) and quit</td>
+<td align="left"><code>:saveas file</code></td>
+<td align="left">save file as</td>
 </tr>
 
 <tr>
-<td align="left"><code>:close</code> - close current pane</td>
-<td align="left"><code>:q</code> - quit (fails if there are unsaved changes)</td>
+<td align="left"><code>:close</code></td>
+<td align="left">close current pane</td>
 </tr>
 
 <tr>
-<td align="left"><code>K</code> - open man page for word under the cursor</td>
-<td align="left"><code>:q!</code> or <code>ZQ</code> - quit and throw away unsaved changes</td>
+<td align="left"><code>K</code></td>
+<td align="left">open man page for word under the cursor</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="existing">Existing</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:w</code></td>
+<td align="left">write (save) the file, but don&rsquo;t exit</td>
 </tr>
 
 <tr>
-<td align="left"></td>
-<td align="left"><code>:wqa</code> - write (save) and quit on all tabs</td>
+<td align="left"><code>:w !sudo tee %</code></td>
+<td align="left">write out the current file using sudo</td>
+</tr>
+
+<tr>
+<td align="left"><code>:wq</code> or <code>:x</code> or <code>ZZ</code></td>
+<td align="left">write (save) and quit</td>
+</tr>
+
+<tr>
+<td align="left"><code>:q</code></td>
+<td align="left">quit (fails if there are unsaved changes)</td>
+</tr>
+
+<tr>
+<td align="left"><code>:q!</code> or <code>ZQ</code></td>
+<td align="left">quit and throw away unsaved changes</td>
+</tr>
+
+<tr>
+<td align="left"><code>:wqa</code></td>
+<td align="left">write (save) and quit on all tabs</td>
 </tr>
 </tbody>
 </table>
@@ -812,33 +1195,40 @@
 <table>
 <thead>
 <tr>
-<th align="left">Opening files</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>:e **/*foo&lt;TAB&gt;</code> - choose from all the files with <code>foo</code> in their name under <code>pwd</code></td>
+<td align="left"><code>:e **/*foo&lt;TAB&gt;</code></td>
+<td align="left">choose from all the files with <code>foo</code> in their name under <code>pwd</code></td>
 </tr>
 
 <tr>
-<td align="left"><code>:e **/*foo/*bar&lt;TAB&gt;</code> - choose from all files containing <code>bar</code> in their name under any subdir under <code>pwd</code> containing <code>foo</code></td>
+<td align="left"><code>:e **/*foo/*bar&lt;TAB&gt;</code></td>
+<td align="left">choose from all files containing <code>bar</code> in their name under any subdir under <code>pwd</code> containing <code>foo</code></td>
 </tr>
 
 <tr>
-<td align="left"><code>:tabe[dit] ...</code> - <em>same as edit</em></td>
+<td align="left"><code>:tabe[dit] ...</code></td>
+<td align="left"><em>same as edit</em></td>
 </tr>
 
 <tr>
-<td align="left"><code>:sp[lit] ...</code> - <em>same as edit</em></td>
+<td align="left"><code>:sp[lit] ...</code></td>
+<td align="left"><em>same as edit</em></td>
 </tr>
 
 <tr>
-<td align="left"><code>:vs[plit] ...</code> - <em>same as edit</em></td>
+<td align="left"><code>:vs[plit] ...</code></td>
+<td align="left"><em>same as edit</em></td>
 </tr>
 
 <tr>
-<td align="left"><code>:next **/*.js</code> - open all files under <code>pwd</code> with a <code>.js</code> extension <em>(TODO: <code>:help arglist</code>)</em></td>
+<td align="left"><code>:next **/*.js</code></td>
+<td align="left">open all files under <code>pwd</code> with a <code>.js</code> extension <em>(TODO: <code>:help arglist</code>)</em></td>
 </tr>
 </tbody>
 </table>
@@ -850,50 +1240,50 @@
 <table>
 <thead>
 <tr>
-<th align="left">&hellip;.</th>
-<th align="left">&hellip;.</th>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td align="left"><code>set hidden</code> - hide buffers when abandoned</td>
-<td align="left"></td>
+<td align="left"><code>set hidden</code></td>
+<td align="left">hide buffers when abandoned</td>
 </tr>
 
 <tr>
-<td align="left"><code>:sb</code> - switch to a buffer you already opened</td>
-<td align="left"></td>
+<td align="left"><code>:sb</code></td>
+<td align="left">switch to a buffer you already opened</td>
 </tr>
 
 <tr>
-<td align="left"><code>:sb</code> and <code>:b</code> - can take partial names and globs e.g. <code>:sb foo*</code></td>
-<td align="left"></td>
+<td align="left"><code>:sb</code> and <code>:b</code></td>
+<td align="left">can take partial names and globs e.g. <code>:sb foo*</code></td>
 </tr>
 
 <tr>
-<td align="left"><code>'switchbuf'</code> - <em>TODO: look into this</em></td>
-<td align="left"></td>
+<td align="left"><code>'switchbuf'</code></td>
+<td align="left"><em>TODO: look into this</em></td>
 </tr>
 
 <tr>
+<td align="left"></td>
 <td align="left">Use capital letter <em>marks</em> to jump back to buffers</td>
-<td align="left"></td>
 </tr>
 
 <tr>
-<td align="left"><code>&lt;c-w&gt;</code> - <em>TODO: learn some to make life easier with splits</em></td>
-<td align="left"></td>
+<td align="left"><code>&lt;c-w&gt;</code></td>
+<td align="left"><em>TODO: learn some commands to make life easier with splits</em></td>
 </tr>
 
 <tr>
-<td align="left"><code>&lt;c-6&gt;</code> - switch to the previously edited file</td>
-<td align="left"></td>
+<td align="left"><code>&lt;c-6&gt;</code></td>
+<td align="left">switch to the previously edited file</td>
 </tr>
 
 <tr>
-<td align="left"><code>&lt;c-o&gt;</code> and <code>&lt;c-i&gt;</code> - move to older/newer positions in jump list</td>
-<td align="left"></td>
+<td align="left"><code>&lt;c-o&gt;</code> and <code>&lt;c-i&gt;</code></td>
+<td align="left">move to older/newer positions in jump list</td>
 </tr>
 </tbody>
 </table>
