@@ -8,8 +8,8 @@
   <title>VIM Cheat Sheet</title>
   <meta property="og:title" content="VIM Cheat Sheet" />
   <meta name="twitter:title" content="VIM Cheat Sheet" />
-  <meta name="description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo (with tab completion)   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   :sb switch to a buffer you already opened   :sb and :b can take partial names and globs e.">
-  <meta property="og:description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo (with tab completion)   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   :sb switch to a buffer you already opened   :sb and :b can take partial names and globs e.">
+  <meta name="description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   Ctrl &#43; w &#43; &#43; or - inc.">
+  <meta property="og:description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to first buffer   :bl go to last buffer   :b foo&lt;TAB&gt; go to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned    Windows    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   Ctrl &#43; w &#43; &#43; or - inc.">
   <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :e file edit a file in a new buffer   :bn or :bnext go to the next buffer   :bp or :bprev go to the previous buffer   :b4 go to buffer number 4   :bf go to …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -236,7 +236,7 @@
 
 <tr>
 <td align="left"><code>:b foo&lt;TAB&gt;</code></td>
-<td align="left">go to buffer <code>foo</code> <em>(with tab completion)</em></td>
+<td align="left">go to buffer <code>foo</code></td>
 </tr>
 
 <tr>
@@ -253,16 +253,6 @@
 <td align="left"><code>set hidden</code></td>
 <td align="left">hide buffers when abandoned</td>
 </tr>
-
-<tr>
-<td align="left"><code>:sb</code></td>
-<td align="left">switch to a buffer you already opened</td>
-</tr>
-
-<tr>
-<td align="left"><code>:sb</code> and <code>:b</code></td>
-<td align="left">can take partial names and globs e.g. <code>:sb foo*</code></td>
-</tr>
 </tbody>
 </table>
 
@@ -278,12 +268,17 @@
 
 <tbody>
 <tr>
-<td align="left"><code>:sp file</code></td>
-<td align="left">open a file in a new buffer and split window</td>
+<td align="left"><code>:sb foo&lt;TAB&gt;</code></td>
+<td align="left">split window and edit file / buffer</td>
 </tr>
 
 <tr>
-<td align="left"><code>:vs file</code></td>
+<td align="left"><code>:sp</code> or <code>:sp foo</code></td>
+<td align="left">split window in two or edit file in new split window</td>
+</tr>
+
+<tr>
+<td align="left"><code>:vs foo&lt;TAB&gt;</code></td>
 <td align="left">open a file in a new buffer and vertically split window</td>
 </tr>
 
@@ -295,6 +290,16 @@
 <tr>
 <td align="left"><code>:vert belowright sb N</code></td>
 <td align="left">open buffer #N in right vertical split</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + w</code> + <code>+</code> or <code>-</code></td>
+<td align="left">inc. or dec. height</td>
+</tr>
+
+<tr>
+<td align="left"><code>Ctrl + w</code> + <code>&gt;</code> or <code>&lt;</code></td>
+<td align="left">inc. or dec. width</td>
 </tr>
 
 <tr>
