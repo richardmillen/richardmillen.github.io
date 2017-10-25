@@ -522,8 +522,8 @@
 
 <tbody>
 <tr>
-<td align="left"><code>:s/old/new/g</code></td>
-<td align="left">replace all <code>old</code> with <code>new</code> current line only</td>
+<td align="left"><code>:s/\&lt;old\&gt;/new/g</code></td>
+<td align="left">replace all <code>old</code> <em>(exact matches)</em> with <code>new</code> current line only</td>
 </tr>
 
 <tr>
@@ -532,8 +532,8 @@
 </tr>
 
 <tr>
-<td align="left"><code>:%s/\&lt;old\&gt;/new/g</code>, <code>c</code>, <code>i</code></td>
-<td align="left">replace all words exactly matching <code>old</code> with <code>new</code> throughout file, with confirmation, ignoring case</td>
+<td align="left"><code>:%s/old/new/g</code>, <code>c</code>, <code>i</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> throughout file, with confirmation, ignoring case</td>
 </tr>
 
 <tr>
