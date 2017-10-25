@@ -472,7 +472,68 @@
 
 <h2 id="search">Search</h2>
 
-<h3 id="search-replace">Search &amp; Replace</h3>
+<h3 id="find">Find</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>/pattern</code></td>
+<td align="left">search for pattern</td>
+</tr>
+
+<tr>
+<td align="left"><code>?pattern</code></td>
+<td align="left">search backward for pattern</td>
+</tr>
+
+<tr>
+<td align="left"><code>\vpattern</code></td>
+<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
+</tr>
+
+<tr>
+<td align="left"><code>n</code></td>
+<td align="left">repeat search in same direction</td>
+</tr>
+
+<tr>
+<td align="left"><code>N</code></td>
+<td align="left">repeat search in opposite direction</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="replace">Replace</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:%s/old/new/g</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> throughout file</td>
+</tr>
+
+<tr>
+<td align="left"><code>:%s/old/new/gc</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> throughout file with confirmations</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="configure-1">Configure</h3>
 
 <table>
 <thead>
@@ -501,41 +562,6 @@
 <tr>
 <td align="left"><code>:set hlsearch!</code></td>
 <td align="left">toggle searching highlighting</td>
-</tr>
-
-<tr>
-<td align="left"><code>/pattern</code></td>
-<td align="left">search for pattern</td>
-</tr>
-
-<tr>
-<td align="left"><code>?pattern</code></td>
-<td align="left">search backward for pattern</td>
-</tr>
-
-<tr>
-<td align="left"><code>\vpattern</code></td>
-<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
-</tr>
-
-<tr>
-<td align="left"><code>n</code></td>
-<td align="left">repeat search in same direction</td>
-</tr>
-
-<tr>
-<td align="left"><code>N</code></td>
-<td align="left">repeat search in opposite direction</td>
-</tr>
-
-<tr>
-<td align="left"><code>:%s/old/new/g</code></td>
-<td align="left">replace all old with new throughout file</td>
-</tr>
-
-<tr>
-<td align="left"><code>:%s/old/new/gc</code></td>
-<td align="left">replace all old with new throughout file with confirmations</td>
 </tr>
 </tbody>
 </table>
@@ -885,7 +911,7 @@
 </tbody>
 </table>
 
-<h3 id="replace">Replace</h3>
+<h3 id="replace-1">Replace</h3>
 
 <table>
 <thead>
