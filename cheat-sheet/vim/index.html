@@ -470,9 +470,9 @@
 </tbody>
 </table>
 
-<h2 id="search">Search</h2>
+<h2 id="find-replace">Find &amp; Replace</h2>
 
-<h3 id="find">Find</h3>
+<h3 id="search">Search</h3>
 
 <table>
 <thead>
@@ -494,11 +494,6 @@
 </tr>
 
 <tr>
-<td align="left"><code>\vpattern</code></td>
-<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
-</tr>
-
-<tr>
 <td align="left"><code>n</code></td>
 <td align="left">repeat search in same direction</td>
 </tr>
@@ -507,10 +502,15 @@
 <td align="left"><code>N</code></td>
 <td align="left">repeat search in opposite direction</td>
 </tr>
+
+<tr>
+<td align="left"><code>\vpattern</code></td>
+<td align="left">&lsquo;very magic&rsquo; pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</td>
+</tr>
 </tbody>
 </table>
 
-<h3 id="replace">Replace</h3>
+<h3 id="substitute">Substitute</h3>
 
 <table>
 <thead>
@@ -522,13 +522,18 @@
 
 <tbody>
 <tr>
-<td align="left"><code>:%s/old/new/g</code></td>
-<td align="left">replace all <code>old</code> with <code>new</code> throughout file</td>
+<td align="left"><code>:s/old/new/g</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> current line only</td>
 </tr>
 
 <tr>
-<td align="left"><code>:%s/old/new/gc</code></td>
-<td align="left">replace all <code>old</code> with <code>new</code> throughout file with confirmations</td>
+<td align="left"><code>5,12s/old/new/g</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> from line 5 to 12 inclusive</td>
+</tr>
+
+<tr>
+<td align="left"><code>:%s/\&lt;old\&gt;/new/g</code>, <code>c</code>, <code>i</code></td>
+<td align="left">replace all words exactly matching <code>old</code> with <code>new</code> throughout file, with confirmation, ignoring case</td>
 </tr>
 </tbody>
 </table>
@@ -545,23 +550,23 @@
 
 <tbody>
 <tr>
-<td align="left"><code>:set hlsearch</code></td>
-<td align="left">highlight all future search matches</td>
+<td align="left"><code>:set hlsearch</code> or <code>:set nohlsearch</code></td>
+<td align="left">do or do not highlight all future search matches</td>
 </tr>
 
 <tr>
 <td align="left"><code>:noh</code></td>
-<td align="left">turn off highlighting until next search</td>
-</tr>
-
-<tr>
-<td align="left"><code>:set nohlsearch</code></td>
-<td align="left">turn off highlighting</td>
+<td align="left">turn off current highlighting <em>(until next search)</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>:set hlsearch!</code></td>
 <td align="left">toggle searching highlighting</td>
+</tr>
+
+<tr>
+<td align="left"><code>:set ignorecase</code> or <code>:set noignorecase</code></td>
+<td align="left">ignore or don&rsquo;t ignore case when searching</td>
 </tr>
 </tbody>
 </table>
@@ -911,7 +916,7 @@
 </tbody>
 </table>
 
-<h3 id="replace-1">Replace</h3>
+<h3 id="replace">Replace</h3>
 
 <table>
 <thead>
