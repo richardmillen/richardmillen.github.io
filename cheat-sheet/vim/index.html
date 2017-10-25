@@ -575,7 +575,65 @@
 </tbody>
 </table>
 
-<h3 id="jump">Jump</h3>
+<h3 id="characters">Characters</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">move to matching character. default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; (<code>:help matchpairs</code>)</td>
+</tr>
+
+<tr>
+<td align="left"><code>fx</code></td>
+<td align="left">jump to next occurrence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>tx</code></td>
+<td align="left">jump to before next occurrence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>Fx</code></td>
+<td align="left">jump to previous occurence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>Tx</code></td>
+<td align="left">jump to after previous occurence of character x</td>
+</tr>
+
+<tr>
+<td align="left"><code>;</code></td>
+<td align="left">repeat previous f, t, F or T movement</td>
+</tr>
+
+<tr>
+<td align="left"><code>,</code></td>
+<td align="left">repeat previous f, t, F or T movement, backwards</td>
+</tr>
+
+<tr>
+<td align="left"><code>^</code></td>
+<td align="left">jump to the first non-blank character of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>g_</code></td>
+<td align="left">jump to the last non-blank character of the line</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="words">Words</h3>
 
 <table>
 <thead>
@@ -617,51 +675,6 @@
 </tr>
 
 <tr>
-<td align="left"><code>%</code></td>
-<td align="left">move to matching character (default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; - use :h matchpairs in vim for more info)</td>
-</tr>
-
-<tr>
-<td align="left"><code>0</code></td>
-<td align="left">jump to the start of the line</td>
-</tr>
-
-<tr>
-<td align="left"><code>^</code></td>
-<td align="left">jump to the first non-blank character of the line</td>
-</tr>
-
-<tr>
-<td align="left"><code>$</code></td>
-<td align="left">jump to the end of the line</td>
-</tr>
-
-<tr>
-<td align="left"><code>g_</code></td>
-<td align="left">jump to the last non-blank character of the line</td>
-</tr>
-
-<tr>
-<td align="left"><code>fx</code></td>
-<td align="left">jump to next occurrence of character x</td>
-</tr>
-
-<tr>
-<td align="left"><code>tx</code></td>
-<td align="left">jump to before next occurrence of character x</td>
-</tr>
-
-<tr>
-<td align="left"><code>Fx</code></td>
-<td align="left">jump to previous occurence of character x</td>
-</tr>
-
-<tr>
-<td align="left"><code>Tx</code></td>
-<td align="left">jump to after previous occurence of character x</td>
-</tr>
-
-<tr>
 <td align="left"><code>}</code></td>
 <td align="left">jump to next paragraph (or function/block, when editing code)</td>
 </tr>
@@ -669,6 +682,29 @@
 <tr>
 <td align="left"><code>{</code></td>
 <td align="left">jump to previous paragraph (or function/block, when editing code)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="lines">Lines</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>0</code></td>
+<td align="left">jump to the start of the line</td>
+</tr>
+
+<tr>
+<td align="left"><code>$</code></td>
+<td align="left">jump to the end of the line</td>
 </tr>
 
 <tr>
@@ -685,20 +721,23 @@
 <td align="left"><code>5G</code></td>
 <td align="left">go to line 5</td>
 </tr>
+</tbody>
+</table>
 
+<h3 id="screen">Screen</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
 <tr>
 <td align="left"><code>zz</code></td>
 <td align="left">center cursor on screen</td>
-</tr>
-
-<tr>
-<td align="left"><code>;</code></td>
-<td align="left">repeat previous f, t, F or T movement</td>
-</tr>
-
-<tr>
-<td align="left"><code>,</code></td>
-<td align="left">repeat previous f, t, F or T movement, backwards</td>
 </tr>
 
 <tr>
