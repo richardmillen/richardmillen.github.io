@@ -778,6 +778,36 @@
 </tbody>
 </table>
 
+<h2 id="visual-mode">Visual Mode</h2>
+
+<h3 id="replace">Replace</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>cc</code></td>
+<td align="left">change (replace) entire line</td>
+</tr>
+
+<tr>
+<td align="left"><code>cw</code></td>
+<td align="left">change (replace) to the end of the word</td>
+</tr>
+
+<tr>
+<td align="left"><code>c$</code></td>
+<td align="left">change (replace) to the end of the line</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="editing">Editing</h3>
 
 <table>
@@ -789,6 +819,21 @@
 </thead>
 
 <tbody>
+<tr>
+<td align="left"><code>u</code></td>
+<td align="left">undo</td>
+</tr>
+
+<tr>
+<td align="left"><code>CTRL-R</code></td>
+<td align="left">redo</td>
+</tr>
+
+<tr>
+<td align="left"><code>.</code></td>
+<td align="left">repeat last command</td>
+</tr>
+
 <tr>
 <td align="left"><code>r</code></td>
 <td align="left">replace a single character</td>
@@ -805,21 +850,6 @@
 </tr>
 
 <tr>
-<td align="left"><code>cc</code></td>
-<td align="left">change (replace) entire line</td>
-</tr>
-
-<tr>
-<td align="left"><code>cw</code></td>
-<td align="left">change (replace) to the end of the word</td>
-</tr>
-
-<tr>
-<td align="left"><code>c$</code></td>
-<td align="left">change (replace) to the end of the line</td>
-</tr>
-
-<tr>
 <td align="left"><code>s</code></td>
 <td align="left">delete character and substitute text</td>
 </tr>
@@ -833,25 +863,10 @@
 <td align="left"><code>xp</code></td>
 <td align="left">transpose two letters (delete and paste)</td>
 </tr>
-
-<tr>
-<td align="left"><code>u</code></td>
-<td align="left">undo</td>
-</tr>
-
-<tr>
-<td align="left"><code>CTRL-R</code></td>
-<td align="left">redo</td>
-</tr>
-
-<tr>
-<td align="left"><code>.</code></td>
-<td align="left">repeat last command</td>
-</tr>
 </tbody>
 </table>
 
-<h3 id="cut-paste">Cut &amp; Paste</h3>
+<h3 id="copy">Copy</h3>
 
 <table>
 <thead>
@@ -862,6 +877,11 @@
 </thead>
 
 <tbody>
+<tr>
+<td align="left"><code>y</code></td>
+<td align="left">yank (copy) marked text</td>
+</tr>
+
 <tr>
 <td align="left"><code>yy</code></td>
 <td align="left">yank (copy) a line</td>
@@ -881,17 +901,20 @@
 <td align="left"><code>y$</code></td>
 <td align="left">yank (copy) to end of line</td>
 </tr>
+</tbody>
+</table>
 
+<h3 id="cut">Cut</h3>
+
+<table>
+<thead>
 <tr>
-<td align="left"><code>p</code></td>
-<td align="left">put (paste) the clipboard after cursor</td>
+<th align="left">Command</th>
+<th align="left">Info</th>
 </tr>
+</thead>
 
-<tr>
-<td align="left"><code>P</code></td>
-<td align="left">put (paste) before cursor</td>
-</tr>
-
+<tbody>
 <tr>
 <td align="left"><code>dd</code></td>
 <td align="left">delete (cut) a line</td>
@@ -924,7 +947,28 @@
 </tbody>
 </table>
 
-<h2 id="visual-mode">Visual Mode</h2>
+<h3 id="paste">Paste</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>p</code></td>
+<td align="left">put (paste) the clipboard after cursor</td>
+</tr>
+
+<tr>
+<td align="left"><code>P</code></td>
+<td align="left">put (paste) before cursor</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="marking-text">Marking Text</h3>
 
@@ -994,7 +1038,7 @@
 </tbody>
 </table>
 
-<h3 id="visual-commands">Visual Commands</h3>
+<h3 id="other-commands">Other Commands</h3>
 
 <table>
 <thead>
@@ -1013,11 +1057,6 @@
 <tr>
 <td align="left"><code>&lt;</code></td>
 <td align="left">shift text left</td>
-</tr>
-
-<tr>
-<td align="left"><code>y</code></td>
-<td align="left">yank (copy) marked text</td>
 </tr>
 
 <tr>
