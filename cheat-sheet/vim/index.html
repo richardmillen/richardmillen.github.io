@@ -535,6 +535,21 @@
 <td align="left"><code>*</code> then <code>ciw</code></td>
 <td align="left"><em>(put cursor on a word)</em> search for next occurrence then <em>change inner word</em> then <code>whatever</code> then <code>Esc</code>. <code>n</code> to next and <code>.</code> to repeat</td>
 </tr>
+
+<tr>
+<td align="left"><code>:.,$s/old/new/g</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> from current line to last line inclusive</td>
+</tr>
+
+<tr>
+<td align="left"><code>:.,+2s/foo/bar/g</code></td>
+<td align="left">replace all <code>old</code> with <code>new</code> for current line and next two lines</td>
+</tr>
+
+<tr>
+<td align="left"><code>:g/^foo/s/old/new/g</code></td>
+<td align="left">replace each <code>old</code> with <code>new</code> in each line starting with <code>foo</code></td>
+</tr>
 </tbody>
 </table>
 
