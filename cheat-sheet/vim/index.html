@@ -8,9 +8,9 @@
   <title>VIM Cheat Sheet</title>
   <meta property="og:title" content="VIM Cheat Sheet" />
   <meta name="twitter:title" content="VIM Cheat Sheet" />
-  <meta name="description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc.">
-  <meta property="og:description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc.">
-  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file …">
+  <meta name="description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc.">
+  <meta property="og:description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc.">
+  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -204,6 +204,21 @@
 </thead>
 
 <tbody>
+<tr>
+<td align="left"><code>:w</code></td>
+<td align="left">write (save) changes to file</td>
+</tr>
+
+<tr>
+<td align="left"><code>:wa</code></td>
+<td align="left">write all changed files</td>
+</tr>
+
+<tr>
+<td align="left"><code>:w !sudo tee %</code></td>
+<td align="left">write out the current file using sudo <strong>(use case?)</strong></td>
+</tr>
+
 <tr>
 <td align="left"><code>:e foo</code> or <code>:edit foo</code></td>
 <td align="left">edit a file in a new buffer</td>
@@ -1404,16 +1419,6 @@
 </thead>
 
 <tbody>
-<tr>
-<td align="left"><code>:w</code></td>
-<td align="left">write (save) the file, but don&rsquo;t exit</td>
-</tr>
-
-<tr>
-<td align="left"><code>:w !sudo tee %</code></td>
-<td align="left">write out the current file using sudo</td>
-</tr>
-
 <tr>
 <td align="left"><code>:wq</code> or <code>:x</code> or <code>ZZ</code></td>
 <td align="left">write (save) and quit</td>
