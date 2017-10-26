@@ -542,11 +542,6 @@
 </tr>
 
 <tr>
-<td align="left"><code>*</code> then <code>ciw</code></td>
-<td align="left"><em>(put cursor on a word)</em> search for next occurrence then <em>change inner word</em> then <code>whatever</code> then <code>Esc</code>. <code>n</code> to next and <code>.</code> to repeat</td>
-</tr>
-
-<tr>
 <td align="left"><code>:.,$s/old/new/g</code></td>
 <td align="left">replace all <code>old</code> with <code>new</code> from current line to last line inclusive</td>
 </tr>
@@ -882,6 +877,16 @@
 <tr>
 <td align="left"><code>c</code></td>
 <td align="left">change; delete current visual selection and insert</td>
+</tr>
+
+<tr>
+<td align="left"><code>ciw</code></td>
+<td align="left">change; delete <em>(inner)</em> word and insert</td>
+</tr>
+
+<tr>
+<td align="left"><code>ci</code></td>
+<td align="left">change; delete <em>(inner)</em> enclosed content <em>(inside quotes, or parens)</em> and insert</td>
 </tr>
 
 <tr>
