@@ -495,12 +495,12 @@
 <tbody>
 <tr>
 <td align="left"><code>*</code></td>
-<td align="left">search for next instance of current word <em>(under cursor)</em></td>
+<td align="left">search for next occurrence of current word <em>(under cursor)</em></td>
 </tr>
 
 <tr>
 <td align="left"><code>#</code></td>
-<td align="left">search for previous instance of current word <em>(under cursor)</em></td>
+<td align="left">search for previous occurrence of current word <em>(under cursor)</em></td>
 </tr>
 
 <tr>
@@ -686,6 +686,11 @@
 <td align="left"><code>L</code></td>
 <td align="left">move to bottom of screen</td>
 </tr>
+
+<tr>
+<td align="left">&#96;&#96;</td>
+<td align="left">return to where last jump from <em>(two backticks!)</em></td>
+</tr>
 </tbody>
 </table>
 
@@ -701,28 +706,23 @@
 
 <tbody>
 <tr>
-<td align="left"><code>%</code></td>
-<td align="left">move to matching character. default supported pairs: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; (<code>:help matchpairs</code>)</td>
-</tr>
-
-<tr>
 <td align="left"><code>fx</code></td>
-<td align="left">jump to next occurrence of character x</td>
-</tr>
-
-<tr>
-<td align="left"><code>tx</code></td>
-<td align="left">jump to before next occurrence of character x</td>
+<td align="left">jump to next <code>x</code></td>
 </tr>
 
 <tr>
 <td align="left"><code>Fx</code></td>
-<td align="left">jump to previous occurence of character x</td>
+<td align="left">jump to previous <code>x</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>tx</code></td>
+<td align="left">jump to before next <code>x</code></td>
 </tr>
 
 <tr>
 <td align="left"><code>Tx</code></td>
-<td align="left">jump to after previous occurence of character x</td>
+<td align="left">jump to after previous <code>x</code></td>
 </tr>
 
 <tr>
@@ -732,7 +732,7 @@
 
 <tr>
 <td align="left"><code>,</code></td>
-<td align="left">repeat previous f, t, F or T movement, backwards</td>
+<td align="left">repeat previous f, t, F or T movement (opposite direction)</td>
 </tr>
 
 <tr>
@@ -760,32 +760,32 @@
 <tbody>
 <tr>
 <td align="left"><code>w</code></td>
-<td align="left">jump forwards to the start of a word</td>
+<td align="left">jump forward to the start of a word</td>
 </tr>
 
 <tr>
 <td align="left"><code>W</code></td>
-<td align="left">jump forwards to the start of a word (words can contain punctuation)</td>
+<td align="left">jump forward to the start of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
 <td align="left"><code>e</code></td>
-<td align="left">jump forwards to the end of a word</td>
+<td align="left">jump forward to the end of a word</td>
 </tr>
 
 <tr>
 <td align="left"><code>E</code></td>
-<td align="left">jump forwards to the end of a word (words can contain punctuation)</td>
+<td align="left">jump forward to the end of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
 <td align="left"><code>b</code></td>
-<td align="left">jump backwards to the start of a word</td>
+<td align="left">jump back to the start of a word</td>
 </tr>
 
 <tr>
 <td align="left"><code>B</code></td>
-<td align="left">jump backwards to the start of a word (words can contain punctuation)</td>
+<td align="left">jump back to the start of a word (words can contain punctuation)</td>
 </tr>
 
 <tr>
@@ -796,6 +796,82 @@
 <tr>
 <td align="left"><code>{</code></td>
 <td align="left">jump to previous paragraph (or function/block, when editing code)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="sentences">Sentences</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>)</code></td>
+<td align="left">jump forward one sentence</td>
+</tr>
+
+<tr>
+<td align="left"><code>(</code></td>
+<td align="left">jump back one sentence</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="blocks">Blocks</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">jump to matching char: &lsquo;()&rsquo;, &lsquo;{}&rsquo;, &lsquo;[]&rsquo; (<code>:help matchpairs</code>)</td>
+</tr>
+
+<tr>
+<td align="left"><code>[{</code></td>
+<td align="left">jump back to opening brace</td>
+</tr>
+
+<tr>
+<td align="left"><code>]}</code></td>
+<td align="left">jump forward to closing brace</td>
+</tr>
+
+<tr>
+<td align="left"><code>[(</code></td>
+<td align="left">jump to opening paren</td>
+</tr>
+
+<tr>
+<td align="left"><code>])</code></td>
+<td align="left">jump to closing paren</td>
+</tr>
+
+<tr>
+<td align="left"><code>[[</code></td>
+<td align="left">jump back to previous <code>{</code> <em>(first column)</em></td>
+</tr>
+
+<tr>
+<td align="left"><code>]]</code></td>
+<td align="left">jump forward to next <code>{</code> <em>(first column)</em></td>
+</tr>
+
+<tr>
+<td align="left"><code>[]</code></td>
+<td align="left">jump back to previous <code>}</code> <em>(first column)</em></td>
 </tr>
 </tbody>
 </table>
@@ -1067,7 +1143,7 @@
 </tbody>
 </table>
 
-<h3 id="blocks">Blocks</h3>
+<h3 id="blocks-1">Blocks</h3>
 
 <table>
 <thead>
