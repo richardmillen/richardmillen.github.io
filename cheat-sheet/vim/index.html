@@ -8,9 +8,9 @@
   <title>VIM Cheat Sheet</title>
   <meta property="og:title" content="VIM Cheat Sheet" />
   <meta name="twitter:title" content="VIM Cheat Sheet" />
-  <meta name="description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   :set autoread configure to reload stale, out-of-date buffers from disk; bypass confirm message when :checkt   :checktime force reload out-of-date buffers from disk   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc or dec height; add w &#43; N for multiple lines   CTRL-W &gt; or &lt; inc or dec width; add w &#43; N for multiple columns   set number, set nonumber show, hide line numbers   set nu!">
-  <meta property="og:description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a file in a new buffer   :r foo or :read foo or :read !foo read a file or output of shell command   :10read foo read and insert file / shell output after line 10   :bn or :bnext switch to the next buffer   :bp or :bprev switch to the previous buffer   :b4 switch to buffer number 4   :bf switch to first buffer   :bl switch to last buffer   :b foo&lt;TAB&gt; switch to buffer foo   :bd delete a buffer (close a file)   :ls or :buffers list all open buffers   :set autoread configure to reload stale, out-of-date buffers from disk; bypass confirm message when :checkt   :checktime force reload out-of-date buffers from disk   set hidden hide buffers when abandoned   set splitbelow, set splitright new split panes at bottom, right    Windows Open &amp; Close    Command Info     :sb foo&lt;TAB&gt; split window and edit file / buffer   :sp or :sp foo split window in two or edit file in new split window   :10sp foo new split 10 lines tall   :vs foo&lt;TAB&gt; open a file in a new buffer and vertically split window   :vert sb N open buffer #N in left vertical split   :vert belowright sb N open buffer #N in right vertical split   CTRL-W T turn window into new tab   CTRL-W o close all windows but the current (in the current tab)   CTRL-W q quit a window    Configure    Command Info     CTRL-W = normalise split window sizes   CTRL-W R swap top/bottom or left/right split   CTRL-W &#43; or - inc or dec height; add w &#43; N for multiple lines   CTRL-W &gt; or &lt; inc or dec width; add w &#43; N for multiple columns   set number, set nonumber show, hide line numbers   set nu!">
-  <meta name="twitter:description" content="Multiple Files Buffers    Command Info     :w write (save) changes to file   :wa write all changed files   :w !sudo tee % write out the current file using sudo (use case?)   :e foo or :edit foo edit a …">
+  <meta name="description" content="Application Starting    Command Info     find -xtype f -regex &quot;.*\.md&quot; -exec vim {} &#43; open all markdown (.md) files under the current working directory   find -xtype f -regex &quot;.*\.\(cpp\|hpp\)&quot; -exec vim {} &#43; open all c&#43;&#43; source files under the current working directory    Exiting    Command Info     :wq or :x or ZZ write (save) and quit   :q quit (fails if there are unsaved changes)   :q!">
+  <meta property="og:description" content="Application Starting    Command Info     find -xtype f -regex &quot;.*\.md&quot; -exec vim {} &#43; open all markdown (.md) files under the current working directory   find -xtype f -regex &quot;.*\.\(cpp\|hpp\)&quot; -exec vim {} &#43; open all c&#43;&#43; source files under the current working directory    Exiting    Command Info     :wq or :x or ZZ write (save) and quit   :q quit (fails if there are unsaved changes)   :q!">
+  <meta name="twitter:description" content="Application Starting    Command Info     find -xtype f -regex &quot;.*\.md&quot; -exec vim {} &#43; open all markdown (.md) files under the current working directory   find -xtype f -regex …">
   <meta name="author" content="Richard Millen"/>
   <link href='https://richardmillen.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://richardmillen.github.io/img/avatar-icon.png" />
@@ -190,6 +190,102 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
+
+<h2 id="application">Application</h2>
+
+<h3 id="starting">Starting</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>find -xtype f -regex &quot;.*\.md&quot; -exec vim {} +</code></td>
+<td align="left">open all markdown (<code>.md</code>) files under the current working directory</td>
+</tr>
+
+<tr>
+<td align="left"><code>find -xtype f -regex &quot;.*\.\(cpp\|hpp\)&quot; -exec vim {} +</code></td>
+<td align="left">open all c++ source files under the current working directory</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="exiting">Exiting</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:wq</code> or <code>:x</code> or <code>ZZ</code></td>
+<td align="left">write (save) and quit</td>
+</tr>
+
+<tr>
+<td align="left"><code>:q</code></td>
+<td align="left">quit (fails if there are unsaved changes)</td>
+</tr>
+
+<tr>
+<td align="left"><code>:q!</code> or <code>ZQ</code></td>
+<td align="left">quit and throw away unsaved changes</td>
+</tr>
+
+<tr>
+<td align="left"><code>:wqa</code></td>
+<td align="left">write (save) and quit on all tabs</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="global">Global</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>:help keyword</code></td>
+<td align="left">open help for keyword</td>
+</tr>
+
+<tr>
+<td align="left"><code>:o file</code></td>
+<td align="left">open file</td>
+</tr>
+
+<tr>
+<td align="left"><code>:saveas file</code></td>
+<td align="left">save file as</td>
+</tr>
+
+<tr>
+<td align="left"><code>:close</code></td>
+<td align="left">close current pane</td>
+</tr>
+
+<tr>
+<td align="left"><code>K</code></td>
+<td align="left">open man page for word under the cursor</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="multiple-files">Multiple Files</h2>
 
@@ -1531,79 +1627,6 @@
 <tr>
 <td align="left"><code>@@</code></td>
 <td align="left">rerun last run macro</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="application">Application</h2>
-
-<h3 id="global">Global</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left">Command</th>
-<th align="left">Info</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>:help keyword</code></td>
-<td align="left">open help for keyword</td>
-</tr>
-
-<tr>
-<td align="left"><code>:o file</code></td>
-<td align="left">open file</td>
-</tr>
-
-<tr>
-<td align="left"><code>:saveas file</code></td>
-<td align="left">save file as</td>
-</tr>
-
-<tr>
-<td align="left"><code>:close</code></td>
-<td align="left">close current pane</td>
-</tr>
-
-<tr>
-<td align="left"><code>K</code></td>
-<td align="left">open man page for word under the cursor</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="exiting">Exiting</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left">Command</th>
-<th align="left">Info</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><code>:wq</code> or <code>:x</code> or <code>ZZ</code></td>
-<td align="left">write (save) and quit</td>
-</tr>
-
-<tr>
-<td align="left"><code>:q</code></td>
-<td align="left">quit (fails if there are unsaved changes)</td>
-</tr>
-
-<tr>
-<td align="left"><code>:q!</code> or <code>ZQ</code></td>
-<td align="left">quit and throw away unsaved changes</td>
-</tr>
-
-<tr>
-<td align="left"><code>:wqa</code></td>
-<td align="left">write (save) and quit on all tabs</td>
 </tr>
 </tbody>
 </table>
