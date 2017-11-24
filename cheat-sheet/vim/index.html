@@ -329,13 +329,13 @@
 
 <tbody>
 <tr>
-<td align="left">`:bufdo %s/foo/bar/ge</td>
-<td align="left">update`</td>
+<td align="left"><code>:bufdo %s/foo/bar/ge \| update</code></td>
+<td align="left">global substitute of <code>foo</code> with <code>bar</code> in all buffers, suppressing errors where <code>foo</code> isn&rsquo;t found, then update <em>(save)</em> file <strong>if</strong> changed</td>
 </tr>
 
 <tr>
-<td align="left">`:tabdo %s/foo/bar/ge</td>
-<td align="left">w`</td>
+<td align="left"><code>:tabdo %s/foo/bar/ge \| w</code></td>
+<td align="left">same as above, but in all tabs and writing each file even if it&rsquo;s not changed</td>
 </tr>
 
 <tr>
