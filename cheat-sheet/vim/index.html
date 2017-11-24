@@ -317,6 +317,39 @@
 
 <h2 id="multiple-files">Multiple Files</h2>
 
+<h3 id="operations">Operations</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Info</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">`:bufdo %s/foo/bar/ge</td>
+<td align="left">update`</td>
+</tr>
+
+<tr>
+<td align="left"><code>:tabdo some-command</code></td>
+<td align="left">run &lsquo;some-command&rsquo; in all tabs</td>
+</tr>
+
+<tr>
+<td align="left"><code>:windo some-command</code></td>
+<td align="left">run &lsquo;some-command&rsquo; in all windows in the current tab</td>
+</tr>
+
+<tr>
+<td align="left"><code>:set autowriteall</code></td>
+<td align="left">automatically save changed buffers when required (enables switching if <code>bufdo</code>, <code>tabdo</code> or <code>windo</code> causes buffer to change)</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="buffers">Buffers</h3>
 
 <table>
