@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html --out-dir app",
-    "prod": "parcel build src/index.html --out-dir app --public-url ./app/"
+    "prod": "parcel build src/index.html --out-dir app --public-url app"
   },
   "author": {
     "name": "Richard Millen"
