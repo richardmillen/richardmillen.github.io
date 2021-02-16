@@ -1,5 +1,5 @@
-import BABYLON from "../_snowpack/pkg/babylonjs.js";
-import "../_snowpack/pkg/babylonjs-loaders.js";
+import BABYLON from "../snowpack/pkg/babylonjs.js";
+import "../snowpack/pkg/babylonjs-loaders.js";
 const canvas = document.getElementById("renderCanvas");
 const engine = new BABYLON.Engine(canvas, true);
 const scene = new BABYLON.Scene(engine);
